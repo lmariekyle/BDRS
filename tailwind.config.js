@@ -35,7 +35,10 @@ export default {
                 'dirtywhite': '#fffcf2', 
                 'darkblue': '#0D5384 ',
                 'gold' :  '#eddea4',
-            }
+            },
+            boxShadow:{
+                inner: 'inset 0 5px 7px 0 rgba(0, 0, 0, 0.06)',
+            },
         },
     },
 

@@ -20,7 +20,7 @@
     <body class="bg-dirtywhite">
     @include('layouts.navigation')
         
-        <div class="flex items-center justify-center container mx-auto w-[1226px] h-[583px] mt-20 rounded-lg border-2 border-darkblue">
+        <div class="flex items-center justify-center container mx-auto w-[1226px] h-[583px] mt-20 rounded-lg border-2 border-darkblue shadow-inner">
             <div class="flex flex-row w-[1220px] h-[573px] px-5 py-5 space-x-8 justify-around items-center">
                 <div class="mb-14">
                     <div class="">

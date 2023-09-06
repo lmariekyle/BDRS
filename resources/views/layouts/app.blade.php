@@ -18,8 +18,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-dirtywhite antialiased">
-            @include('layouts.navigation')
-            
+    
             <!-- Page Heading -->
             <!-- @if (isset($header))
                 <header class="bg-white shadow">
