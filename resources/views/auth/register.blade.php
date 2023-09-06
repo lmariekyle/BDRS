@@ -1,12 +1,24 @@
-<x-guest-layout>
+<x-app-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <x-input-label for="firstName" :value="__('First Name')" />
+            <x-text-input id="firstName" class="block mt-1 w-full" type="text" name="firstName" :value="old('firstName')" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('firstName')" class="mt-2" />
+        </div>
+
+        <div>
+            <x-input-label for="firstName" :value="__('Middle Name')" />
+            <x-text-input id="firstName" class="block mt-1 w-full" type="text" name="firstName" :value="old('firstName')" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('firstName')" class="mt-2" />
+        </div>
+
+        <div>
+            <x-input-label for="firstName" :value="__('Last Name')" />
+            <x-text-input id="firstName" class="block mt-1 w-full" type="text" name="firstName" :value="old('firstName')" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('firstName')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
@@ -49,4 +61,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-app-layout>
