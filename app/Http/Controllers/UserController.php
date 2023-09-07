@@ -16,7 +16,7 @@ class UserController extends Controller
         $roles=Role::all();
         // $users= User::all();
         $users=User::all();
-        return view('dashboard',compact('users','roles'));
+        return view('accounts.index',compact('users','roles'));
     }
 
     /**
