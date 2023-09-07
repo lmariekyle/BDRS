@@ -13,11 +13,27 @@
             <div class="-mt-[112px] sm:ml-[112px] lg:ml-[112px]">
                 <img src="images/logo.png" alt=""  style="width: 100px; height:100px;">
             </div>
+            
             <div class="mt-20 self-center">
-                <p class="font-poppins text-2xl underline underline-offset-8">Isabella Rodriguez</p>
+            @auth
+                <p class="font-poppins text-2xl underline underline-offset-8"> {{Auth::user()->firstName}} {{Auth::user()->middleName}} {{Auth::user()->lastName}}</p>
+            @endauth
+
                 @role('Admin')
-                <p class="font-poppins text-2xl text-center text-darkblue">ADMIN</p>
+                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">ADMIN</p>
                 @endrole
+
+                @role('Customer Service')
+                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">CUSTOMER SERVICE</p>
+                @endrole
+
+                @role('Marketing')
+                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">MARKETING</p>
+                @endrole
+
+                @hasallroles('Customer Service|Guest')
+                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">Guest</p>
+                @endhasallroles
             </div>
 
             <div class="mt-24 self-center bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
@@ -54,9 +70,6 @@
                     <thead class="bg-darkblue border-2 border-dirtywhite-600 shadow-inner text-md text-dirtywhite uppercase">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                ID
-                            </th>
-                            <th scope="col" class="px-6 py-3">
                                 NAME
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -71,57 +84,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($users as $user)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                               EMP001
-                            </th>
+                            <!-- <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                               {{$user->id}}
+                            </th> -->
                             <td class="px-6 py-4">
-                                Kim Mingyu
+                                {{$user->firstName}} {{$user->middleName}} {{$user->lastName}}
                             </td>
                             <td class="px-6 py-4">
-                                mingyu@bdrs.com
+                                {{$user->email}}
                             </td>
                             <td class="px-6 py-4">
-                                2999
-                            </td>
-                            <td class="px-6 py-4">
-                                UPDATE | ARCHIVE
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                EMP002
-                            </th>
-                            <td class="px-6 py-4">
-                                Lalisa Manoban
-                            </td>
-                            <td class="px-6 py-4">
-                                lalisa@bdrs.com
-                            </td>
-                            <td class="px-6 py-4">
-                                1999
+                                {{$user->contactNumber}}
                             </td>
                             <td class="px-6 py-4">
                                 UPDATE | ARCHIVE
                             </td>
                         </tr>
-                        <tr class="bg-white dark:bg-gray-800">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                EMP003
-                            </th>
-                            <td class="px-6 py-4">
-                                Jeon Wonwoo
-                            </td>
-                            <td class="px-6 py-4">
-                                wonwoo@gmail.com
-                            </td>
-                            <td class="px-6 py-4">
-                                9987
-                            </td>
-                            <td class="px-6 py-4">
-                                UPDATE | ARCHIVE
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

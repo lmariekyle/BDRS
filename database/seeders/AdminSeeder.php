@@ -16,6 +16,7 @@ class AdminSeeder extends Seeder
     public function run()
     {
         User::create([
+            'employeeID'=>'A0001',
             'firstName' => 'Admin',
             'middleName' => 'BDRS',
             'lastName' => 'Realty',

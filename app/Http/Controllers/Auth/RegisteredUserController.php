@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Spatie\Permission\Models\Role;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class RegisteredUserController extends Controller
 {
@@ -35,9 +36,19 @@ class RegisteredUserController extends Controller
         $request->validate([
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'userRole' => 'required|exists:roles,name',
         ]);
+        
+
+        if($request->userRole == "Marketing"){
+            $userId = IdGenerator::generate(['table' => 'users','field'=>'employeeID' ,'length' => 6, 'prefix' =>'M-']);
+        }else if($request->userRole == "Customer Service"){
+            $userId = IdGenerator::generate(['table' => 'users','field'=>'employeeID','length' => 6, 'prefix' =>'C-']);
+        };
+        
 
         $user = User::create([
+            'employeeID' =>$userId,
             'firstName' => $request->firstName,
             'middleName' => $request->middleName,
             'lastName' => $request->lastName,
