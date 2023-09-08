@@ -24,6 +24,9 @@
                 <table class="w-full  text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="bg-darkblue border-2 border-dirtywhite-600 shadow-inner text-md text-dirtywhite uppercase">
                         <tr>
+                        <th scope="col" class="px-6 py-3">
+                                ID
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 NAME
                             </th>
@@ -39,11 +42,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+
+                        @forelse ($users as $user)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <!-- <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                               {{$user->id}}
-                            </th> -->
                             <td class="px-6 py-4">
                                 {{$user->firstName}} {{$user->middleName}} {{$user->lastName}}
                             </td>
@@ -54,10 +55,15 @@
                                 {{$user->contactNumber}}
                             </td>
                             <td class="px-6 py-4">
-                                UPDATE | ARCHIVE
+                                <a href="{{ route('accounts.edit', $user->id) }}"><i class="fa-solid fa-user-pen"></i></a>        
                             </td>
                         </tr>
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td colspan="4">No users found.</td>
+                        </tr>
+                    @endforelse
+
                     </tbody>
                 </table>
             </div>
