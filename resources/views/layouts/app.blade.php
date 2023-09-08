@@ -28,7 +28,7 @@
                    <!-- <img src="images/logo.png" alt=""  style="width: 100px; height:100px;"> -->
             </div>
             <div class="-mt-[112px] sm:ml-[112px] lg:ml-[112px]">
-                <img src="images/logo.png" alt=""  style="width: 100px; height:100px;">
+                <img src="/images/logo.png" alt=""  style="width: 100px; height:100px;">
             </div>
             
             <div class="mt-20 self-center">
@@ -58,10 +58,19 @@
                 <a href="{{ route('dashboard') }}" class="font-poppins text-[18px] font-medium">HOME</a>
             </div>
 
+            @role('Admin')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
                 <a href="{{ route('accounts.index') }}" class="font-poppins text-[18px] font-medium">USERS</a>
             </div>
+            @endrole
+
+            @role('Marketing')
+            <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
+                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
+                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium">PROPERTIES</a>
+            </div>
+            @endrole
 
             <div class="static mt-24 self-center bg-gold border-y-2 border-dirtywhite shadow-md px-8 py-2 hover:shadow-inner">
                 <form method="POST" action="{{ route('logout') }}">
