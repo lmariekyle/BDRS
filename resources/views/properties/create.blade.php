@@ -14,7 +14,7 @@
                 <div class="mt-4 px-4">
                 <x-input-label for="type" :value="__('Property Type')" />
                         <select id="type" class="block mt-1 w-full" name="type" :value="old('type')" required autofocus>
-                            <option value="1">Condominium</option>
+                            <option value="0">Condominium</option>
                             <option value="1">Apartment</option>
                         </select>
                 </div>
@@ -66,13 +66,21 @@
                     <x-input-error :messages="$errors->get('provision')" class="mt-2" />
                 </div>
 
-                <!-- <div class="mt-4 px-4 ">
+                <div class="mt-4 px-4">
+                <x-input-label for="status" :value="__('Property Statuss')" />
+                        <select id="status" class="block mt-1 w-full" name="status" :value="old('status')" required autofocus>
+                            <option value="0">For Rent</option>
+                            <option value="1">For Sale</option>
+                        </select>
+                </div>
+
+                <div class="mt-4 px-4 ">
                 <x-input-label for="approve" :value="__('Approve')" />
                         <select id="approve" class="block mt-1 w-full" name="approve" :value="old('approve')" required autofocus>
                             <option value="0">Approve</option>
                             <option value="1">Disapprove</option>
                         </select>
-                </div> -->
+                </div>
 
                 <div class="mt-4 px-4"> 
                     <x-input-label for="img" :value="__('Image')" />

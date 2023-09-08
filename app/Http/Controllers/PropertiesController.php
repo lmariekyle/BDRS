@@ -43,7 +43,7 @@ class PropertiesController extends Controller
             'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust file types and size limit as needed
         ]);
 
-        $propertyimages=array();
+        $propertyimages=[];
 
         if ($request->hasFile('img')){
             // dd($request->img);
@@ -55,9 +55,11 @@ class PropertiesController extends Controller
                     $propertyimages[]=$path;
                 }
             }
+            $imgJson = json_encode($propertyimages);
         }else{
-            $path="property/default.jpg";
-        };
+            $imgJson = "property/default.jpg";
+        }
+        
 
         $property = Property::create([
             'name' => $request->name,
@@ -72,7 +74,7 @@ class PropertiesController extends Controller
             'provision'=> $request->provision,
             'approve' => $request->approve,
             'status'=> $request->status,
-            'img'=> $propertyimages,
+            'img'=> $imgJson,
             'vid'=> NULL,
         ]);
 
@@ -86,7 +88,8 @@ class PropertiesController extends Controller
     public function show(string $id)
     {
         $property=Property::where('id',$id)->first();
-        return view('properties.show', compact('property'));
+        $imagePaths = json_decode($property->img, true);
+        return view('properties.show', compact('property','imagePaths'));
     }
 
     /**

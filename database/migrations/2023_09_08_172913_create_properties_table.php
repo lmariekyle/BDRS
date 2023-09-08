@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('bed')->nullable();
             $table->string('provision')->nullable();
             $table->string('status')->nullable();
-            $table->string('approve')->nullable();
+            $table->string('approve')->default('Pending');
             $table->string('img')->nullable();
             $table->string('vid')->nullable();
             $table->timestamps();
