@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
 
 class PropertiesController extends Controller
 {
@@ -40,7 +42,7 @@ class PropertiesController extends Controller
 
         $request->validate([
             'img' => 'required|array',
-            'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust file types and size limit as needed
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:32000', // Adjust file types and size limit as needed
         ]);
 
         $propertyimages=[];
@@ -97,7 +99,16 @@ class PropertiesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        try {
+            $property = Property::where('id',$id)->first();
+            $imagePaths = json_decode($property->img, true);
+        } catch (QueryException $e) {
+            // Handle the database query exception.
+            // You can log the error or display a user-friendly message.
+            return view('error.index', ['message' => 'An error occurred while fetching data from the database.']);
+        }
+    
+        return view('properties.edit', compact('property','imagePaths'));
     }
 
     /**
@@ -105,9 +116,50 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
-    }
+    
+        $request->validate([
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:32000', // Adjust file types and size limit as needed
+        ]);
 
+        $property = Property::where('id',$id)->first();
+
+        $propertyimages=[];
+
+        if ($request->hasFile('img')){
+            foreach($request->file('img')as $img){
+                if($img->isValid()){
+                    $image_name = time().'.'.$img->getClientOriginalExtension();
+                    $img->move(public_path('property'),$image_name);
+                    $path="property/".$image_name;
+                    $propertyimages[]=$path;
+                }
+            }
+            $imgJson = json_encode($propertyimages);
+        }else{
+            $imgJson = $property->img;
+        }
+        
+            $property->name = $request->name;
+            $property->type = $request->type;
+            $property->price =$request->price;
+            $property->sizes = $request->sizes;
+            $property->measurement = $request->measurement;
+            $property->address= $request->address;
+            $property->state= $request->state;
+            $property->zip= $request->zip;
+            $property->bed= $request->bed;
+            $property->provision= $request->provision;
+            $property->approve = $request->approve;
+            $property->status= $request->status;
+            $property->img= $imgJson;
+            $property->vid= NULL;
+        
+            $property->save();
+
+            return redirect('/properties')->with('success','Property has been Updated!');
+            
+    }
+ 
     /**
      * Remove the specified resource from storage.
      */
