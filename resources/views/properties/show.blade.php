@@ -36,7 +36,7 @@
                                 {{$property->price}}
                             </td>
                             <td class="px-6 py-4">
-                                {{$property->size}}
+                                {{$property->sizes}}
                             </td>
                             <td class="px-6 py-4">
                                 {{$property->measurement}}

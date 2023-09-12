@@ -45,20 +45,19 @@ class PropertiesController extends Controller
             'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:32000', // Adjust file types and size limit as needed
         ]);
 
-        $propertyimages=[];
+        $propertyimages = [];
 
-        if ($request->hasFile('img')){
-            // dd($request->img);
-            foreach($request->file('img')as $img){
-                if($img->isValid()){
-                    $image_name = time().'.'.$img->getClientOriginalExtension();
-                    $img->move(public_path('property'),$image_name);
-                    $path="property/".$image_name;
-                    $propertyimages[]=$path;
+        if ($request->hasFile('img')) {
+            foreach ($request->file('img') as $image) {
+                if ($image->isValid()) {
+                    $image_name = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                    $image->move(public_path('property'), $image_name);
+                    $path = "property/" . $image_name;
+                    $propertyimages[] = $path;
                 }
             }
             $imgJson = json_encode($propertyimages);
-        }else{
+        } else {
             $imgJson = "property/default.jpg";
         }
         
@@ -123,22 +122,35 @@ class PropertiesController extends Controller
 
         $property = Property::where('id',$id)->first();
 
-        $propertyimages=[];
+        $propertyimages = [];
 
-        if ($request->hasFile('img')){
-            foreach($request->file('img')as $img){
-                if($img->isValid()){
-                    $image_name = time().'.'.$img->getClientOriginalExtension();
-                    $img->move(public_path('property'),$image_name);
-                    $path="property/".$image_name;
-                    $propertyimages[]=$path;
+        // Check if new images are being uploaded
+        if ($request->hasFile('img')) {
+            foreach ($request->file('img') as $image) {
+                if ($image->isValid()) {
+                    $image_name = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                    $image->move(public_path('property'), $image_name);
+                    $path = "property/".$image_name;
+                    $propertyimages[] = $path;
                 }
             }
+
+        // If new images are uploaded, delete the old images
+        $existingImages = json_decode($property->img, true); // Assuming $property represents the existing property data
+        foreach ($existingImages as $existingImage) {
+            if (file_exists(public_path($existingImage))) {
+                unlink(public_path($existingImage));
+            }
+        }
+            // Merge the new images with the existing images
+            // $updatedImages = array_merge($existingImages, $propertyimages);
             $imgJson = json_encode($propertyimages);
-        }else{
+        } else {
+            // If no new images are uploaded, keep the existing images
             $imgJson = $property->img;
         }
-        
+
+       
             $property->name = $request->name;
             $property->type = $request->type;
             $property->price =$request->price;

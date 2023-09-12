@@ -20,6 +20,7 @@ class Property extends Model
         'zip',
         'bed',
         'provision',
+        'approve',
         'status',
         'img',
         'vid',

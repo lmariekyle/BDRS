@@ -15,10 +15,13 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 anton: ['Anton'],
                 poppin: ['Poppins'],
+                playfair: ['Playfair Display'],
+                baby: ['Oooh Baby'],
             },
             backgroundColor: {
                 'dirtywhite': '#fffcf2', 
                 'darkblue': '#0d5385',
+                'greywhite': '#edede9',
                 'gold' :  '#eddea4',
             },
             color: {
