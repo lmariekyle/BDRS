@@ -9,9 +9,12 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
         @vite('resources/css/app.css')
@@ -29,9 +32,10 @@
             </div>
             <div class="absolute mt-[4rem] right-[10rem]">
                     @include('layouts.navigation')
+    
             </div>
            
-            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[7rem] ml-[35rem] ">
+            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] ml-[32rem] ">
                 <p class="ml-[8rem] -mt-6 font-playfair text-[60px] font-dirtywhite">We are the key</p>
                 <div class="flex flex-row px-2 -mt-5 ml-[10rem]">
                 <p class="font-playfair text-[60px] font-dirtywhite">to your new</p>
@@ -43,33 +47,78 @@
             </div>
         </div>
 
-        <div class="flex flex-col justify-start  ml-5 mt-[10rem] h-[732px] w-[1800px]">
+        <div class="flex flex-col justify-start  ml-5 mt-[8rem] h-[732px] w-[1800px]">
                 <div class="flex flex-row justify-evenly self-center mt-5 w-max h-[100px]">
                     <p class="font-playfair text-[68px] ml-2">We Sell,</p>
                     <p class="font-playfair text-[68px] ml-2">We Buy,</p>
-                    <p class="font-playfair text-[68px] ml-2">We Rent,</p>
+                    <p class="font-playfair text-[68px] ml-2">We Rent</p>
                 </div>
                 <div class="flex flex-col ml-4">
                     <p class="font-poppins text-[28px] self-center">Helping you find the property that suits your lifestyle and needs.</p>
                 </div>
 
                 <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
-                @foreach($property as $p)
-                    <div class="flex flex-col justify-start w-max h-max px-4 py-4 shadow-md mt-14 ml-[10rem] bg-white">
-                        
-                        <p class="font-playfair text-[28px]">Name:</p>
-                        <p class="font-poppins text-[38px] -mt-3">{{$p->name}}</p>
-                        <p class="font-playfair text-[28px]">Type:</p>
-                        <p class="font-poppins text-[38px] -mt-3">{{$p->type}}</p>
-                        <p class="font-playfair text-[28px]">Address:</p>
-                        <p class="font-poppins text-[38px] -mt-3">{{$p->address}} {{$p->state}} {{$p->zip}}</p>
-                        
+                    
+                 @foreach($property as $p)
+                    <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[5rem] border-t-2 border-l-2 border-b-2 border-darkblue">
+                        <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                        <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
+                        <p class="font-poppins text-[38px]">{{$p->name}}</p>
+                        <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
+                        <p class="font-poppins text-[38px]">{{$p->type}}</p>
+                        <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
+                        <p class="font-poppins text-[38px]">{{$p->address}} {{$p->state}} {{$p->zip}}</p>
+                        <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
+                        <a href="" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
                     </div>
-                    <div class="">
+                    <!-- gallery -->
+                    <div x-data="imageSlider" class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-10">
+                        <div class="absolute right-5 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
+                            <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
+                        </div>
+
+                        <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
+                            <i class="fa-solid fa-caret-left text-2xl font-bold text-black"></i>
+                        </button>
+
+                        <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
+                            <i class="fa-solid fa-caret-right text-2xl font-bold text-black"></i>
+                        </button>
+                
+                        <div class="relative h-[530px]" style="width: 800px">
+                            <template x-for="(image, index) in images">
+                                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
+                                    <img :src="image" alt="image" class="rounded-sm" />
+                                </div>
+                            </template>
+                        </div>
                     </div>
                 @endforeach
                 </div>
-                
         </div>
+
+        <script>
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("imageSlider", () => ({
+            currentIndex: 1,
+            images: [
+                "images/example1.jpg",
+                "images/example2.jpg",
+                "images/example3.jpg",
+            ],
+            previous() {
+                if (this.currentIndex > 1) {
+                this.currentIndex = this.currentIndex - 1;
+                }
+            },
+            forward() {
+                if (this.currentIndex < this.images.length) {
+                this.currentIndex = this.currentIndex + 1;
+                }
+            },
+            }));
+        });
+        </script>
+
     </body>
 </html>
