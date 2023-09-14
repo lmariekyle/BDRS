@@ -21,7 +21,9 @@ use Spatie\Permission\Models\Role;
 |
 */
 
-Route::get('/', [PostsController::class, 'index'])->name('welcome');
+// Route::get('/', [PostsController::class, 'index'])->name('welcome');
+Route::resource('/', \App\Http\Controllers\PostsController::class);
+Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name('posts.viewproperties');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

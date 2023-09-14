@@ -42,7 +42,7 @@
                 <p class="font-baby text-[78px] font-dirtywhite ml-2">Home</p>
                 </div>
                 <div class="self-center -ml-[13rem] -mt-5 border-2 border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
-                    <a href="" class="font-playfair text-[18px] font-semibold hover:text-darkblue">explore now.</a>
+                    <a href="{{route('posts.viewproperties')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">explore now.</a>
                 </div>
             </div>
         </div>
@@ -59,15 +59,15 @@
 
                 <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
                     
-                 @foreach($property as $p)
+
                     <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[5rem] border-t-2 border-l-2 border-b-2 border-darkblue">
                         <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
                         <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                        <p class="font-poppins text-[38px]">{{$p->name}}</p>
+                        <p class="font-poppins text-[38px]">{{$property->name}}</p>
                         <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                        <p class="font-poppins text-[38px]">{{$p->type}}</p>
+                        <p class="font-poppins text-[38px]">{{$property->type}}</p>
                         <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
-                        <p class="font-poppins text-[38px]">{{$p->address}} {{$p->state}} {{$p->zip}}</p>
+                        <p class="font-poppins text-[38px]">{{$property->address}} {{$property->state}} {{$property->zip}}</p>
                         <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
                         <a href="" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
                     </div>
@@ -88,36 +88,34 @@
                         <div class="relative h-[530px]" style="width: 800px">
                             <template x-for="(image, index) in images">
                                 <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
-                                    <img :src="image" alt="image" class="rounded-sm" />
+                                <img :src="image" alt="image" class="rounded-sm" />
                                 </div>
                             </template>
                         </div>
                     </div>
-                @endforeach
-                </div>
-        </div>
 
-        <script>
-        document.addEventListener("alpine:init", () => {
-            Alpine.data("imageSlider", () => ({
-            currentIndex: 1,
-            images: [
-                "images/example1.jpg",
-                "images/example2.jpg",
-                "images/example3.jpg",
-            ],
-            previous() {
-                if (this.currentIndex > 1) {
-                this.currentIndex = this.currentIndex - 1;
-                }
-            },
-            forward() {
-                if (this.currentIndex < this.images.length) {
-                this.currentIndex = this.currentIndex + 1;
-                }
-            },
-            }));
-        });
+            <script>
+                var imageData = @json($imagePaths);
+                console.log(imageData);
+            </script>
+
+            <script>
+                 document.addEventListener("alpine:init", () => {
+                Alpine.data("imageSlider", () => ({
+                currentIndex: 1,
+                images: imageData,
+                previous() {
+                 if (this.currentIndex > 1) {
+                 this.currentIndex = this.currentIndex - 1;
+                 }
+                 },
+                  forward() {
+                  if (this.currentIndex < this.images.length) {
+                  this.currentIndex = this.currentIndex + 1;
+                  }
+                },
+                }));
+            });
         </script>
 
     </body>

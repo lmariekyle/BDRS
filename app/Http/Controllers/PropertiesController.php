@@ -60,21 +60,30 @@ class PropertiesController extends Controller
         } else {
             $imgJson = "property/default.jpg";
         }
+
+        if ($request->hasFile('coverphoto')){
+            $img_name = time().'.'.$request->coverphoto->getClientOriginalExtension();
+            $request->coverphoto->move(public_path('property'),$img_name);
+            $imgpath="property/".$img_name;
+        }else{
+            $imgpath="property/default.jpg";
+        }
         
 
         $property = Property::create([
             'name' => $request->name,
+            'description' => $request->description,
             'type' => $request->type,
             'price' =>$request->price,
             'sizes' => $request->sizes,
-            'measurement' => $request->measurement,
             'address'=> $request->address,
             'state'=> $request->state,
             'zip'=> $request->zip,
             'bed'=> $request->bed,
             'provision'=> $request->provision,
-            'approve' => $request->approve,
-            'status'=> $request->status,
+            'status' => $request->status,
+            'featured'=> $request->featured,
+            'coverphoto'=> $imgpath,
             'img'=> $imgJson,
             'vid'=> NULL,
         ]);
@@ -137,35 +146,43 @@ class PropertiesController extends Controller
 
         // If new images are uploaded, delete the old images
         $existingImages = json_decode($property->img, true); // Assuming $property represents the existing property data
-        foreach ($existingImages as $existingImage) {
-            if (file_exists(public_path($existingImage))) {
-                unlink(public_path($existingImage));
-            }
-        }
+        // foreach ($existingImages as $existingImage) {
+        //     if (file_exists(public_path($existingImage))) {
+        //         unlink(public_path($existingImage));
+        //     }
+        // }
             // Merge the new images with the existing images
-            // $updatedImages = array_merge($existingImages, $propertyimages);
-            $imgJson = json_encode($propertyimages);
+            $updatedImages = array_merge($existingImages, $propertyimages);
+            $imgJson = json_encode($updatedImages);
         } else {
             // If no new images are uploaded, keep the existing images
             $imgJson = $property->img;
         }
 
+        if ($request->hasFile('coverphoto')){
+            $img_name = time().'.'.$request->coverphoto->getClientOriginalExtension();
+            $request->coverphoto->move(public_path('property'),$img_name);
+            $imgpath="property/".$img_name;
+        }else{
+            $imgpath=$property->coverphoto;
+        }
        
             $property->name = $request->name;
+            $property->description = $request->description;
             $property->type = $request->type;
             $property->price =$request->price;
             $property->sizes = $request->sizes;
-            $property->measurement = $request->measurement;
             $property->address= $request->address;
             $property->state= $request->state;
             $property->zip= $request->zip;
             $property->bed= $request->bed;
             $property->provision= $request->provision;
-            $property->approve = $request->approve;
             $property->status= $request->status;
+            $property->featured= $request->featured;
+            $property->coverphoto =$imgpath;
             $property->img= $imgJson;
             $property->vid= NULL;
-        
+            // dd($property);
             $property->save();
 
             return redirect('/properties')->with('success','Property has been Updated!');
@@ -179,4 +196,5 @@ class PropertiesController extends Controller
     {
         //
     }
+
 }

@@ -14,8 +14,8 @@
                 <div class="mt-4 px-4">
                 <x-input-label for="type" :value="__('Property Type')" />
                         <select id="type" class="block mt-1 w-full" name="type" :value="old('type')" required autofocus>
-                            <option value="0">Condominium</option>
-                            <option value="1">Apartment</option>
+                            <option value="Condominium">Condominium</option>
+                            <option value="Apartment">Apartment</option>
                         </select>
                 </div>
 
@@ -46,8 +46,8 @@
                 <div class="mt-4 px-4 ">
                 <x-input-label for="state" :value="__('State')" />
                         <select id="state" class="block mt-1 w-full" name="state" :value="old('state')" required autofocus>
-                            <option value="1">Cebu</option>
-                            <option value="1">Manila</option>
+                            <option value="Cebu">Cebu</option>
+                            <option value="Manila">Manila</option>
                         </select>
                 </div>
                 <div class="mt-4 px-4">
@@ -69,21 +69,34 @@
                 <div class="mt-4 px-4">
                 <x-input-label for="status" :value="__('Property Statuss')" />
                         <select id="status" class="block mt-1 w-full" name="status" :value="old('status')" required autofocus>
-                            <option value="0">For Rent</option>
-                            <option value="1">For Sale</option>
+                            <option value="For Rent">For Rent</option>
+                            <option value="For Sale">For Sale</option>
                         </select>
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="description" :value="__('Property Description')" />
+                    <x-text-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autofocus autocomplete="name" />
+                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
                 </div>
 
                 <div class="mt-4 px-4 ">
                 <x-input-label for="approve" :value="__('Approve')" />
                         <select id="approve" class="block mt-1 w-full" name="approve" :value="old('approve')" required autofocus>
-                            <option value="0">Approve</option>
-                            <option value="1">Disapprove</option>
+                            <option value="Approve">Approve</option>
+                            <option value="Disapprove">Disapprove</option>
                         </select>
                 </div>
 
                 <div class="mt-4 px-4"> 
-                    <x-input-label for="img" :value="__('Image')" />
+                    <x-input-label for="coverphoto" :value="__('Cover Image Upload')" />
+                    <div>
+                    <x-text-input id="coverphoto" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="coverphoto" multiple :value="old('coverphoto')" accept=".jpg, .jpeg, .png" autocomplete="on" />
+                    </div>
+                </div>
+
+                <div class="mt-4 px-4"> 
+                    <x-input-label for="img" :value="__('Amenities Image Upload')" />
                     <div>
                     <x-text-input id="img" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="img[]" multiple :value="old('img')" accept=".jpg, .jpeg, .png" autocomplete="on" />
                     </div>

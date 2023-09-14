@@ -32,12 +32,6 @@
                     <x-input-error :messages="$errors->get('dateOfBirth')" class="mt-2" />
                 </div>
 
-                <div class="mt-4 px-4 ">
-                    <x-input-label for="measurement" :value="__('Measurement')" />
-                    <x-text-input id="measurement" class="block mt-1 w-full" type="text" name="measurement" :value="$property->measurement" required autocomplete="on" />
-                    <x-input-error :messages="$errors->get('measurement')" class="mt-2" />
-                </div>
-
                 <div class="mt-4 px-4">
                     <x-input-label for="address" :value="__('Address')" />
                     <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="$property->address" required autocomplete="username" />
@@ -75,13 +69,20 @@
                         </select>
                 </div>
 
+                <div class="mt-4 px-4">
+                    <x-input-label for="description" :value="__('Property Description')" />
+                    <x-text-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autofocus autocomplete="name" />
+                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                </div>
+
                 <div class="mt-4 px-4 ">
-                <x-input-label for="approve" :value="__('Approve')" />
-                        <select id="approve" class="block mt-1 w-full" name="approve" :value="$property->approve" required autofocus>
-                            <option value="Displayed">Approve</option>
-                            <option value="Not Displayed">Disapprove</option>
+                <x-input-label for="featured" :value="__('Featured')" />
+                        <select id="featured" class="block mt-1 w-full" name="featured" :value="$property->featured" required autofocus>
+                            <option value="Feature">Feature</option>
+                            <option value="Not">Not Featured</option>
                         </select>
                 </div>
+                
 
                 <div class="mt-4 px-4"> 
                     <x-input-label for="img" :value="__('Image')" />

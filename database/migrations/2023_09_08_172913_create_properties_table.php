@@ -15,18 +15,19 @@ return new class extends Migration
             $table->id();
             $table->string('propertyID')->nullable();
             $table->string('name')->nullable();
+            $table->string('description')->nullable();
             $table->string('type')->nullable();
             $table->string('price')->nullable();
             $table->string('sizes')->nullable();
-            $table->string('measurement')->nullable();
             $table->string('address')->nullable();
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
             $table->string('bed')->nullable();
             $table->string('provision')->nullable();
-            $table->string('status')->nullable();
-            $table->string('approve')->default('1');
+            $table->string('status')->default('Pending');
+            $table->string('featured')->default('Not Featured'); //0 is not featured
             $table->string('img')->nullable();
+            $table->string('coverphoto')->nullable();
             $table->string('vid')->nullable();
             $table->timestamps();
         });

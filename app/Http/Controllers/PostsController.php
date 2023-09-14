@@ -12,11 +12,21 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $property = Property::where('approve','Displayed')->get();
+        $property = Property::where('featured','Featured')->first();
+        
+        $imagePaths = json_decode($property->img,true);
+
         // dd($property);
-        return view('welcome', compact('property')); 
+        return view('welcome', compact('property','imagePaths')); 
     }
 
+    public function viewproperties()
+    {
+        $properties = Property::where('status','Approved')->get();
+        
+        // dd($property);
+        return view('posts.viewproperties', compact('properties')); 
+    }
     /**
      * Show the form for creating a new resource.
      */
