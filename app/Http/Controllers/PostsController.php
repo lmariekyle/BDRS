@@ -34,6 +34,13 @@ class PostsController extends Controller
             return view('posts.viewproperties', compact('properties','user')); 
         // dd($property);
     }
+
+    public function showproperty(string $id)
+    {
+        $property=Property::where('id',$id)->first();
+        $imagePaths = json_decode($property->img,true);
+        return view('posts.showproperty', compact('property','imagePaths')); 
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -55,7 +62,9 @@ class PostsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $property=Property::where('id',$id)->first();
+        $imagePaths = json_decode($property->img,true);
+        return view('posts.showproperty', compact('property','imagePaths')); 
     }
 
     /**
