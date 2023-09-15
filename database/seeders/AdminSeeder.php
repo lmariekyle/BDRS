@@ -16,7 +16,7 @@ class AdminSeeder extends Seeder
     public function run()
     {
         User::create([
-            'employeeID'=>'A0001',
+            'accountID'=>'A0001',
             'firstName' => 'Admin',
             'middleName' => 'BDRS',
             'lastName' => 'Realty',
@@ -30,7 +30,7 @@ class AdminSeeder extends Seeder
         ])->assignRole('Admin');
 
         User::create([
-            'employeeID'=>'C-0001',
+            'accountID'=>'C-0001',
             'firstName' => 'Mingyu',
             'middleName' => 'Jeon',
             'lastName' => 'Kim',
@@ -44,7 +44,7 @@ class AdminSeeder extends Seeder
         ])->assignRole('Customer Service');
 
         User::create([
-            'employeeID'=>'M-0001',
+            'accountID'=>'M-0001',
             'firstName' => 'Lisa',
             'middleName' => 'La',
             'lastName' => 'Manoban',

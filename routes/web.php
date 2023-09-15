@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserAccountController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PropertiesController;
@@ -24,6 +25,7 @@ use Spatie\Permission\Models\Role;
 // Route::get('/', [PostsController::class, 'index'])->name('welcome');
 Route::resource('/', \App\Http\Controllers\PostsController::class);
 Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name('posts.viewproperties');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

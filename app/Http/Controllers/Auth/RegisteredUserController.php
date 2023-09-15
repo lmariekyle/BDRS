@@ -41,14 +41,14 @@ class RegisteredUserController extends Controller
         
 
         if($request->userRole == "Marketing"){
-            $userId = IdGenerator::generate(['table' => 'users','field'=>'employeeID' ,'length' => 6, 'prefix' =>'M-']);
+            $userId = IdGenerator::generate(['table' => 'users','field'=>'accountID' ,'length' => 6, 'prefix' =>'M-']);
         }else if($request->userRole == "Customer Service"){
-            $userId = IdGenerator::generate(['table' => 'users','field'=>'employeeID','length' => 6, 'prefix' =>'C-']);
+            $userId = IdGenerator::generate(['table' => 'users','field'=>'accountID','length' => 6, 'prefix' =>'C-']);
         };
         
 
         $user = User::create([
-            'employeeID' =>$userId,
+            'accountID' =>$userId,
             'firstName' => $request->firstName,
             'middleName' => $request->middleName,
             'lastName' => $request->lastName,

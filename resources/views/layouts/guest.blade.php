@@ -15,7 +15,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -27,7 +26,7 @@
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-darkblue shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-max sm:max-w-md mt-6 px-6 py-4 bg-darkblue shadow-md sm:rounded-lg">
                 {{ $slot }}
             </div>
         </div>
