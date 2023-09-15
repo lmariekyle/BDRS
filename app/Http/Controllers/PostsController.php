@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -14,18 +16,23 @@ class PostsController extends Controller
     {
         $property = Property::where('featured','Featured')->first();
         
-        $imagePaths = json_decode($property->img,true);
-
+        if($property == NULL){
+            return view('welcome', compact('property')); 
+        }else{
+            $imagePaths = json_decode($property->img,true);
+            return view('welcome', compact('property','imagePaths')); 
+        }
         // dd($property);
-        return view('welcome', compact('property','imagePaths')); 
     }
 
     public function viewproperties()
     {
+        $user = Auth::user();
         $properties = Property::where('status','Approved')->get();
         
+
+            return view('posts.viewproperties', compact('properties','user')); 
         // dd($property);
-        return view('posts.viewproperties', compact('properties')); 
     }
     /**
      * Show the form for creating a new resource.

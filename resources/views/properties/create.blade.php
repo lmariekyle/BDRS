@@ -14,6 +14,7 @@
                 <div class="mt-4 px-4">
                 <x-input-label for="type" :value="__('Property Type')" />
                         <select id="type" class="block mt-1 w-full" name="type" :value="old('type')" required autofocus>
+                        <option value="">Property Type</option>
                             <option value="Condominium">Condominium</option>
                             <option value="Apartment">Apartment</option>
                         </select>
@@ -46,6 +47,7 @@
                 <div class="mt-4 px-4 ">
                 <x-input-label for="state" :value="__('State')" />
                         <select id="state" class="block mt-1 w-full" name="state" :value="old('state')" required autofocus>
+                        <option value="">State</option>
                             <option value="Cebu">Cebu</option>
                             <option value="Manila">Manila</option>
                         </select>
@@ -61,14 +63,9 @@
                     <x-input-error :messages="$errors->get('bed')" class="mt-2" />
                 </div>
                 <div class="mt-4 px-4">
-                    <x-input-label for="provision" :value="__('Provision')" />
-                    <x-text-input id="provision" class="block mt-1 w-full" type="text" name="provision" :value="old('provision')" required autocomplete="username" />
-                    <x-input-error :messages="$errors->get('provision')" class="mt-2" />
-                </div>
-
-                <div class="mt-4 px-4">
-                <x-input-label for="status" :value="__('Property Statuss')" />
-                        <select id="status" class="block mt-1 w-full" name="status" :value="old('status')" required autofocus>
+                <x-input-label for="provision" :value="__('Provision')" />
+                        <select id="provision" class="block mt-1 w-full" name="provision" :value="$property->provision" required autofocus>
+                        <option value="">Provision</option>
                             <option value="For Rent">For Rent</option>
                             <option value="For Sale">For Sale</option>
                         </select>
@@ -76,15 +73,24 @@
 
                 <div class="mt-4 px-4">
                     <x-input-label for="description" :value="__('Property Description')" />
-                    <x-text-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autofocus autocomplete="name" />
+                    <x-text-input id="description" class="block mt-1 w-full" type="text" name="description" :value="$property->description" required autofocus autocomplete="name" />
                     <x-input-error :messages="$errors->get('description')" class="mt-2" />
                 </div>
 
                 <div class="mt-4 px-4 ">
-                <x-input-label for="approve" :value="__('Approve')" />
-                        <select id="approve" class="block mt-1 w-full" name="approve" :value="old('approve')" required autofocus>
-                            <option value="Approve">Approve</option>
+                <x-input-label for="status" :value="__('Property Status')" />
+                        <select id="status" class="block mt-1 w-full" name="status" :value="$property->status" required autofocus>
+                        <option value="">Property Status</option>
+                            <option value="Approved">Approve</option>
                             <option value="Disapprove">Disapprove</option>
+                        </select>
+                </div>
+
+                <div class="mt-4 px-4 ">
+                <x-input-label for="featured" :value="__('Feature')" />
+                        <select id="featured" class="block mt-1 w-full" name="featured" :value="old('featured')" required autofocus>
+                        <option value="Not Featured">Not Featured</option>
+                            <option value="Featured">Featured</option>
                         </select>
                 </div>
 

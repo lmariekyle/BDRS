@@ -1,9 +1,9 @@
 <x-app-layout>
-    <div class="flex flex-col sm:px-6 lg:ml-[20rem] -mt-[25rem]">
+    <div class="flex flex-col sm:px-6 lg:ml-[20rem] -mt-[30rem]">
     <div class="ml-[79rem] bg-gold w-max shadow-inner px-4 py-2 hover:shadow-md">
                 <a href="{{ route('properties.edit', $property->id) }}" class="text-center text-sm text-darkblue font-semibold hover:text-dirtywhite">UPDATE PROPERTY</a>
             </div>
-    <div class="relative overflow-x-auto bg-dirtywhite border-2 border-darkblue shadow-md w-[1400px] h-max mt-4 ml-5">
+    <div class="relative overflow-x-auto bg-dirtywhite border-2 border-darkblue shadow-md w-[1400px] h-max mt-2 ml-5">
                 <table class="w-full  text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="bg-darkblue border-2 border-dirtywhite-600 shadow-inner text-md text-dirtywhite uppercase">
                         <tr>
@@ -20,7 +20,7 @@
                                 Size
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Measurement
+                                Description
                             </th>
                         </tr>
                     </thead>
@@ -39,7 +39,7 @@
                                 {{$property->sizes}}
                             </td>
                             <td class="px-6 py-4">
-                                {{$property->measurement}}
+                                {{$property->description}}
                             </td>
                         </tr>
                     </tbody>
@@ -58,7 +58,7 @@
                             Property Status
                             </th>
                             <th scope="col" class="px-6 py-3">
-                            Status
+                            Featured
                             </th>
                         </tr>
                     </thead>
@@ -79,7 +79,7 @@
                             {{$property->status}}
                             </td>
                             <td class="px-6 py-4">
-                            {{$property->approve}}  
+                            {{$property->featured}}  
                             </td>
                         </tr>
                     </tbody>

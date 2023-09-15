@@ -11,8 +11,9 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-     function welcome(){
-        $property = Property::where('approve','=',0)->paginate();
-        return view('/', compact('property'));
+     function authorization(){
+       return view('modal.authentication-modal');
      }
+
+
 }

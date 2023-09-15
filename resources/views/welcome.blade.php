@@ -62,6 +62,7 @@
 
                     <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[5rem] border-t-2 border-l-2 border-b-2 border-darkblue">
                         <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                        @if( ! empty($property))
                         <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
                         <p class="font-poppins text-[38px]">{{$property->name}}</p>
                         <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
@@ -92,8 +93,10 @@
                                 </div>
                             </template>
                         </div>
+                        @endif
                     </div>
 
+    @if( ! empty($property))
             <script>
                 var imageData = @json($imagePaths);
                 console.log(imageData);
@@ -117,6 +120,6 @@
                 }));
             });
         </script>
-
+     @endif
     </body>
 </html>
