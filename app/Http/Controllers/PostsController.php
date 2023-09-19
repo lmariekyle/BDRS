@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inquiry;
 use App\Models\Property;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\InquiriesReply;
 
 class PostsController extends Controller
 {
@@ -54,7 +57,24 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inquiry=Inquiry::create([
+            'propertyName'=> $request->propertyName,
+            'clientName'=>$request->clientName,
+            'clientContact'=>$request->clientContact,
+            'clientEmail'=>$request->clientEmail,
+            'clientMessage'=>$request->clientMessage,
+            'inquiryStatus'=>'Unread',
+        ]);
+        
+        $subject=$request->propertyName. ' Property Inquiry';
+        $body=$request->clientMessage;
+        $senderMail=$request->clientEmail;
+
+
+        Mail::to('bdrs@realty.com')->send(new InquiriesReply($subject, $body,$senderMail));
+
+        return redirect('posts.showproperty')->with('success','Property has been Added!');
+
     }
 
     /**

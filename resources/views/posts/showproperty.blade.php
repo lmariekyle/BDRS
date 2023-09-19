@@ -86,30 +86,36 @@
                 <img src="/{{$imagePaths[2]}}" alt="" style="height: 500px; width: 800px;">
                 </div>
         </div>
+
+        
+            <div class="flex flex-row justify-center w-full h-[500px] mt-[7rem] mb-10">
+                <div class="absolute border-2 self-start w-max h-max px-2 py-4 border-black mr-[55rem] mt-10 bg-darkblue
+                shadow-md">
+                        <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Like what you see?</p>
+                        <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Send us an inquiry</p>
+                    </div>
+                    <form method="POST" action="{{ route('posts.showproperty', $property->id) }}">
+                        @method('PUT')    
+                        @csrf
+                        <div class="flex flex-col w-max h-max bg-[#f6f6f6] border-2 border-black -mt-10 pl-[12rem] pr-[5rem] py-8">
+                            <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8">FULL NAME:</p>
+                            <input type="text" name="clientName" id="clientName" class="-mt-2 w-[450px]" required>
+
+                            <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8" >CONTACT NUMBER:</p>
+                            <input type="text" name="clientContact" id="clientContact" class="-mt-2" required>
+
+                            <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8">EMAIL ADDRESS:</p>
+                            <input type="text" name="clientEmail" id="clientEmail" class="-mt-2" required>
+                
+                            <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8">INQUIRY MESSAGE:</p>
+                            <input type="text" name="clientMessage" id="clientMessage" class="-mt-2 h-[100px]" required>
+                            <input type="text" name="propertyName" id="propertyName" class="hidden -mt-2 h-[100px]" value="{{$property->name}}">
+
+                            <button type="submit" class="px-8 py-2 font-poppin text-[22px] font-medium text-black border-2 border-black">Send Inquiry</button>
+                    </div>
+            </div>
+        </form>
     </div>
 
-         <script>
-            var imageData = @json($imagePaths);
-            console.log(imageData);
-            </script>
-
-            <script>
-                 document.addEventListener("alpine:init", () => {
-                Alpine.data("imageSlider", () => ({
-                currentIndex: 1,
-                images: imageData,
-                previous() {
-                 if (this.currentIndex > 1) {
-                 this.currentIndex = this.currentIndex - 1;
-                 }
-                 },
-                  forward() {
-                  if (this.currentIndex < this.images.length) {
-                  this.currentIndex = this.currentIndex + 1;
-                  }
-                },
-                }));
-            });
-        </script>
     </body>
 </html>
