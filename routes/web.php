@@ -37,6 +37,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::resource('accounts', \App\Http\Controllers\UserController::class);
     Route::resource('properties', \App\Http\Controllers\PropertiesController::class);
+    Route::resource('inquiry', \App\Http\Controllers\InquiryController::class);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

@@ -47,10 +47,6 @@
                 @role('Marketing')
                 <p class="font-poppins mt-4 text-2xl text-center text-darkblue">MARKETING</p>
                 @endrole
-
-                @hasallroles('Customer Service|Guest')
-                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">Guest</p>
-                @endhasallroles
             </div>
 
             <div class="mt-24 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
@@ -73,6 +69,13 @@
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
                 <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium">PROPERTIES</a>
+            </div>
+            @endrole
+
+            @role('Customer Service')
+            <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
+                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
+                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium">INQUIRIES</a>
             </div>
             @endrole
 
