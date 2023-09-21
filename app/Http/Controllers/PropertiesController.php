@@ -88,7 +88,7 @@ class PropertiesController extends Controller
             'vid'=> NULL,
         ]);
 
-        return redirect('/properties')->with('success','Property has been Added!');
+         
 
     }
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\InquiryReply;
 use App\Models\Inquiry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class InquiryController extends Controller
 {
@@ -33,6 +35,7 @@ class InquiryController extends Controller
         //
     }
 
+ 
     /**
      * Display the specified resource.
      */
@@ -42,12 +45,14 @@ class InquiryController extends Controller
         return view('inquiry.show', compact('inquiry'));
     }
 
+    
+
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
@@ -55,7 +60,17 @@ class InquiryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $inquiry = Inquiry::where('id',$id)->first();
+        
+        $subject = $inquiry->propertyName . ' Inquiry Reply';
+        $body=$request->reply;
+        $clientName = $request->clientName;
+        $inquiry->inquiryStatus = 'Replied';
+        $inquiry->save();
+
+        Mail::to($inquiry->clientEmail)->send(new InquiryReply($subject, $body,$clientName));
+
+        return redirect('inquiry.show');
     }
 
     /**

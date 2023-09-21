@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ClientInquiries;
 use App\Models\Inquiry;
 use App\Models\Property;
 use App\Models\User;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InquiriesReply;
+use App\Models\ClientInquiries as ModelsClientInquiries;
 
 class PostsController extends Controller
 {
@@ -71,9 +73,9 @@ class PostsController extends Controller
         $senderMail=$request->clientEmail;
 
 
-        Mail::to('bdrs@realty.com')->send(new InquiriesReply($subject, $body,$senderMail));
+        Mail::to('bdrs@realty.com')->send(new ClientInquiries($subject, $body,$senderMail));
 
-        return redirect('posts.showproperty')->with('success','Property has been Added!');
+        return redirect('posts.showproperty');
 
     }
 

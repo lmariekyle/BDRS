@@ -9,7 +9,7 @@
 <body>
     <h3 class="">PROPERTY INQUIRY</h1>
     @auth
-    <p class="text-[18px]">Client Email Address: {{$senderMail}}</p>
+    <p class="text-[18px]">Hello {{$clientName}}!</p>
     <h2 class="">INQUIRY MESSAGE</h2>
     <p class="text-[18px]">{{$body}}</p>
     @else

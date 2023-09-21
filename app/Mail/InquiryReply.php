@@ -8,24 +8,22 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Mail\Mailables\Address;
 
-class InquiriesReply extends Mailable
+class InquiryReply extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject,$body,$senderMail;
-
+    public $subject,$body,$clientName;
     /**
      * Create a new message instance.
      */
-    public function __construct($subject,$body,$senderMail)
+    public function __construct($subject,$body, $clientName)
     {
         $this->subject = $subject;
         $this->body = $body;
-        $this->senderMail = $senderMail;
+        $this->clientName = $clientName;
     }
 
     /**
@@ -36,7 +34,7 @@ class InquiriesReply extends Mailable
         $user = Auth::user();
 
         return new Envelope(
-            from: new Address($user->email, $user->firstName),
+            from: new Address($user->email),
             subject: $this->subject,
         );
     }
@@ -47,9 +45,8 @@ class InquiriesReply extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.inquiryMail',
+            view: 'mail.inquiryReply',
         );
-        
     }
 
     /**
@@ -61,5 +58,4 @@ class InquiriesReply extends Mailable
     {
         return [];
     }
-
 }
