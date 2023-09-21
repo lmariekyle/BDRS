@@ -152,7 +152,7 @@
                     <p class="absolute -mt-[18rem] self-center font-baby text-[34px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
                     <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left max-h-max w-[225px] ml-[16rem] px-1">{{$property->description}}</p>
-                    <div class="absolute px-1 self-start mt-[19rem]  ml-1 rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    <div class="absolute px-1 py-1 self-center mt-[14rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
                     @else
@@ -176,8 +176,12 @@
                     <p class="absolute -mt-[18rem] self-center font-baby text-[34px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
                     <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left max-h-max w-[225px] ml-[16rem] px-1">{{$property->description}}</p>
-                    <div class="absolute px-1 self-start mt-[19rem] ml-1 rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
-                        <a href=""  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    <div class="absolute px-1 py-1 self-center mt-[14rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    @if ($user) 
+                        <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @else
+                        <a href="{{route('modal.authorization-modal')}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @endif
                     </div>
                 </div>
                 @endif

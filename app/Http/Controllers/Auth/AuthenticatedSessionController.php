@@ -38,9 +38,8 @@ class AuthenticatedSessionController extends Controller
             return Redirect::back()->with('error','Account has been Archived!');
         }else{
             $request->session()->regenerate();
-            
             return redirect()->intended(RouteServiceProvider::HOME);
-    }
+        }
     }
     /**
      * Destroy an authenticated session.

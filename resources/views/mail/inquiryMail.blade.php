@@ -7,7 +7,7 @@
     <title>Property Inquiry</title>
 </head>
 <body>
-    <h3 class="">PROPERTY INQUIRY</h1>
+    <h3 class="font-playfair">Property Inquiry</h1>
     @auth
     <p class="text-[18px]">Client Email Address: {{$senderMail}}</p>
     <h2 class="">INQUIRY MESSAGE</h2>

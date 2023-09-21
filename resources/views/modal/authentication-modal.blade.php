@@ -45,14 +45,14 @@
             </div>
         </div>
 
-        <div class="flex flex-col mt-[15rem] ml-[30rem] mb-10 h-max w-max bg-[#e9ecef] shadow-md px-8 py-8 rounded-lg order-r-2 border-b-2 border-white">
+        <div class="flex flex-col mt-[15rem] ml-[45rem] mb-10 h-max w-max bg-[#e9ecef] shadow-md px-8 py-8 rounded-lg order-r-2 border-t-2 border-b-2 border-darkblue">
             <div class="flex flex-col justify-center mt-3 w-max h-max px-4 py-4">
                 <p class="font-poppin text-[18px] ml-3">To view the details of this property,</p>
                 <p class="font-poppin text-[18px]">we would like to require you to sign up</p>
                 <a href="{{route('guest-register')}}" class="mt-4 self-center px-4 py-1 font-poppin text-[16px] border-2 border-black">CREATE ACCOUNT</a>
             </div>
         <div>
-            <p class="font-poppin text-[18px] mb-4 ml-[4.5rem]">Already have an Account?</p>
+            <p class="font-poppin text-[18px] mb-4 ml-[4.5rem] mt-5">Already have an Account?</p>
             <a href="{{route('login')}}" class="ml-[8.5rem] px-4 py-1 font-poppin text-[16px] border-2 border-black">LOGIN</a>
         </div>
     </div>
