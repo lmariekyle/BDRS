@@ -30,13 +30,41 @@ class PostsController extends Controller
         // dd($property);
     }
 
-    public function viewproperties()
+    public function viewproperties(Request $request)
     {
         $user = Auth::user();
-        $properties = Property::where('status','Approved')->get();
-        
+        $query = Property::query()->where('status','Approved');
 
-            return view('posts.viewproperties', compact('properties','user')); 
+        if ($request->has('availability') && !empty($request->availability)) {
+            $query->where('availability', $request->availability);
+        }
+
+        if ($request->has('furnish') && !empty($request->furnish)) {
+            $query->where('furnish', $request->furnish);
+        }
+
+        if ($request->has('type') && !empty($request->type)) {
+            $query->where('type', $request->type);
+        }
+
+        if ($request->has('price') && !empty($request->price)) {
+            $query->where('price', $request->price);
+        }
+
+        if ($request->has('sizes') && !empty($request->sizes)) {
+            $query->where('sizes', $request->sizes);
+        }
+
+        if ($request->has('bed') && !empty($request->bedroom)) {
+            $query->where('bed', $request->bedroom);
+        }
+
+        if ($request->has('state') && !empty($request->state)) {
+            $query->where('state', $request->state);
+        }
+
+        $properties=$query->get();
+        return view('posts.viewproperties', compact('properties','user')); 
         // dd($property);
     }
 
@@ -45,6 +73,12 @@ class PostsController extends Controller
         $property=Property::where('id',$id)->first();
         $imagePaths = json_decode($property->img,true);
         return view('posts.showproperty', compact('property','imagePaths')); 
+    }
+
+    public function filterproperty(Request $request)
+    {
+        dd($request);
+        return redirect()->back();  
     }
     /**
      * Show the form for creating a new resource.

@@ -52,6 +52,8 @@ class PropertySeeder extends Seeder
 
         Property::create([
             'propertyID' => '1BR-001',
+            'availability' => 'For Rent',
+            'furnish' => 'Partially Furnished',
             'name' => 'Ample Apartments',
             'description' => 'An excellent choice for those seeking a minimalist and low-maintenance lifestyle, offering convenience and often located in urban or highly desirable locations.',
             'type' => 'Apartment',
@@ -71,11 +73,13 @@ class PropertySeeder extends Seeder
 
         Property::create([
             'propertyID' => '1BR-002',
+            'availability' => 'For Sale',
+            'furnish' => 'Fully Furnished',
             'name' => 'Luxurious Landing',
             'description' => 'An excellent choice for those seeking a minimalist and low-maintenance lifestyle, offering convenience and often located in urban or highly desirable locations.',
             'type' => 'Condominium',
-            'price' =>'1500',
-            'sizes' => '42 Sqm',
+            'price' =>'4000',
+            'sizes' => '51 Sqm',
             'address'=> 'Banawa',
             'state'=> 'Cebu',
             'zip'=> '6663',
@@ -90,11 +94,13 @@ class PropertySeeder extends Seeder
 
         Property::create([
             'propertyID' => '2BR-001',
+            'availability' => 'For Rent',
+            'furnish' => 'Not Furnished',
             'name' => 'The Views',
             'description' => 'An excellent choice for those seeking a minimalist and low-maintenance lifestyle, offering convenience and often located in urban or highly desirable locations.',
             'type' => 'Condominium',
             'price' =>'2000',
-            'sizes' => '100 Sqm',
+            'sizes' => '51 Sqm',
             'address'=> 'Banawa',
             'state'=> 'Cebu',
             'zip'=> '6663',
@@ -109,10 +115,12 @@ class PropertySeeder extends Seeder
 
         Property::create([
             'propertyID' => '2BR-002',
+            'availability' => 'For Sale',
+            'furnish' => 'Partially Furnished',
             'name' => 'Minded Manor',
             'description' => 'An excellent choice for those seeking a minimalist and low-maintenance lifestyle, offering convenience and often located in urban or highly desirable locations.',
             'type' => 'Apartment',
-            'price' =>'2500',
+            'price' =>'3000',
             'sizes' => '100 Sqm',
             'address'=> 'Makati',
             'state'=> 'Manila',
@@ -128,11 +136,13 @@ class PropertySeeder extends Seeder
 
         Property::create([
             'propertyID' => 'ST-001',
+            'availability' => 'For Rent',
+            'furnish' => 'Fully Furnished',
             'name' => 'Useful Units',
             'description' => 'An excellent choice for those seeking a minimalist and low-maintenance lifestyle, offering convenience and often located in urban or highly desirable locations.',
             'type' => 'Apartment',
             'price' =>'3000',
-            'sizes' => '22 Sqm',
+            'sizes' => '100 Sqm',
             'address'=> 'Makati',
             'state'=> 'Manila',
             'zip'=> '4663', 
