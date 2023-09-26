@@ -70,9 +70,10 @@ class PostsController extends Controller
 
     public function showproperty(string $id)
     {
+        $user = Auth::user();
         $property=Property::where('id',$id)->first();
         $imagePaths = json_decode($property->img,true);
-        return view('posts.showproperty', compact('property','imagePaths')); 
+        return view('posts.showproperty', compact('property','imagePaths','user')); 
     }
 
     public function filterproperty(Request $request)
@@ -93,6 +94,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        
         $inquiry=Inquiry::create([
             'propertyName'=> $request->propertyName,
             'clientName'=>$request->clientName,
@@ -102,12 +104,15 @@ class PostsController extends Controller
             'inquiryStatus'=>'Unread',
         ]);
         
-        $subject=$request->propertyName. ' Property Inquiry';
+        // $email='samplemail@bdrs-realty.com';
+        $subject=$request->propertyName . ' Property Inquiry';
         $body=$request->clientMessage;
-        $senderMail=$request->clientEmail;
+        $clientEmail=$request->clientEmail;
+        $clientName =$request->clientName;
+        $clientContact =$request->clientContact;
 
 
-        Mail::to('bdrs@realty.com')->send(new ClientInquiries($subject, $body,$senderMail));
+        Mail::to('samplemail@bdrs-realty.com')->send(new ClientInquiries($subject, $body,$clientEmail,$clientName,$clientContact));
 
         return redirect('posts.showproperty');
 

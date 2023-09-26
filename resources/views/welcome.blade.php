@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>BDRS</title>
+        <title>BDRS Realty Management Services Co.</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,7 +20,7 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="bg-greywhite antialised">
+    <body class="bg-dirtywhite antialised">
         <div class="flex justify-center ml-5 mt-10">
             <div class="h-[732px] w-full ml-1 mt-8">
                 <img src="images/welcomebg.png" style="width: 1799px; height: 798px;">

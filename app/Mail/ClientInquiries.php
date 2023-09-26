@@ -17,17 +17,19 @@ class ClientInquiries extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject,$body,$senderMail;
+    public $subject,$body,$clientEmail,$clientName,$clientContact;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($subject,$body,$senderMail)
+    public function __construct($subject,$body,$clientEmail,$clientName,$clientContact)
     {
 
         $this->subject = $subject;
         $this->body = $body;
-        $this->senderMail = $senderMail;
+        $this->clientEmail = $clientEmail;
+        $this->clientName = $clientName;
+        $this->clientContact = $clientContact;
     }
 
     /**

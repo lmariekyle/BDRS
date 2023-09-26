@@ -47,15 +47,14 @@
             </div>
         </div>
 <form action="{{route('posts.viewproperties')}}" method="GET">
-    <div class=" flex flex-col justify-evenly mt-[12rem] ml-[10rem] h-[220px] w-[1500px] bg-white-800 rounded-md shadow-md border-1 px-4">
-
-        <div class="flex items-center justify-between -mt-10">
-                <p class="font-poppin text-[20px] font-medium">
-                    Filters
+    <div class=" flex flex-col justify-evenly mt-[12rem] ml-[5rem] h-[220px] w-[1500px] bg-white-800 rounded-md shadow-md border-1 px-4">
+        <div class="flex items-center justify-between">
+                <p class="font-poppin text-[20px] font-medium -mt-10">
+                    Select what you are looking for... 
                 </p>
 	     </div>
-	    <div>
-	        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 -mt-[2rem] w-[1100px] h-[30px]">
+
+	        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 -mt-[5rem] w-[1100px] h-[30px]">
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="availability">
                     <option value="">All Type</option>
                     <option value="For Rent">For Rent</option>
@@ -127,10 +126,10 @@
                     <option value="Siquijor">Siquijor</option>
                     <option value="Davao">Davao</option>
                     </select>
+
 	            </div>
-	        </div>
-        </div>
-        <button class="btn btn-block btn-primary">Apply</button>
+            </div>
+        <button class="absolute flex flex-col ml-[1260px] -mt-[113px] bg-darkblue text-dirtywhite font-poppin text-[16px] shadow-sm rounded-md px-4 py-2">Apply</button>
     </div>
 </form>
 

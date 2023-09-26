@@ -35,7 +35,7 @@ class InquiryReply extends Mailable
 
         return new Envelope(
             from: new Address($user->email),
-            subject: $this->subject,
+            subject: 'RE: ' . $this->subject,
         );
     }
 

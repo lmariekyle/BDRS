@@ -54,7 +54,6 @@ class InquiryController extends Controller
     {
         
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -62,7 +61,7 @@ class InquiryController extends Controller
     {
         $inquiry = Inquiry::where('id',$id)->first();
         
-        $subject = $inquiry->propertyName . ' Inquiry Reply';
+        $subject =$inquiry->propertyName;
         $body=$request->reply;
         $clientName = $request->clientName;
         $inquiry->inquiryStatus = 'Replied';

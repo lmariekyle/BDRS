@@ -26,9 +26,8 @@ use Spatie\Permission\Models\Role;
 // Route::get('/', [PostsController::class, 'index'])->name('welcome');
 Route::resource('/', \App\Http\Controllers\PostsController::class);
 Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name('posts.viewproperties');
-Route::get('/viewproperties', [PostsController::class, 'filterproperties']);
 Route::get('showproperty/{id}', [PostsController::class, 'showproperty'])->name('posts.showproperty');
-// Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
+Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
 Route::get('/authorization', [Controller::class, 'authorization'])->name('modal.authorization-modal');
 
 Route::get('/dashboard', function () {
