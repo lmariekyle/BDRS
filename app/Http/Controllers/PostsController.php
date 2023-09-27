@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ClientInquiries;
 use App\Models\Inquiry;
 use App\Models\Property;
 use App\Models\User;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InquiriesReply;
+use App\Models\ClientInquiries as ModelsClientInquiries;
 
 class PostsController extends Controller
 {
@@ -28,21 +30,56 @@ class PostsController extends Controller
         // dd($property);
     }
 
-    public function viewproperties()
+    public function viewproperties(Request $request)
     {
         $user = Auth::user();
-        $properties = Property::where('status','Approved')->get();
-        
+        $query = Property::query()->where('status','Approved');
 
-            return view('posts.viewproperties', compact('properties','user')); 
+        if ($request->has('availability') && !empty($request->availability)) {
+            $query->where('availability', $request->availability);
+        }
+
+        if ($request->has('furnish') && !empty($request->furnish)) {
+            $query->where('furnish', $request->furnish);
+        }
+
+        if ($request->has('type') && !empty($request->type)) {
+            $query->where('type', $request->type);
+        }
+
+        if ($request->has('price') && !empty($request->price)) {
+            $query->where('price', $request->price);
+        }
+
+        if ($request->has('sizes') && !empty($request->sizes)) {
+            $query->where('sizes', $request->sizes);
+        }
+
+        if ($request->has('bed') && !empty($request->bedroom)) {
+            $query->where('bed', $request->bedroom);
+        }
+
+        if ($request->has('state') && !empty($request->state)) {
+            $query->where('state', $request->state);
+        }
+
+        $properties=$query->get();
+        return view('posts.viewproperties', compact('properties','user')); 
         // dd($property);
     }
 
     public function showproperty(string $id)
     {
+        $user = Auth::user();
         $property=Property::where('id',$id)->first();
         $imagePaths = json_decode($property->img,true);
-        return view('posts.showproperty', compact('property','imagePaths')); 
+        return view('posts.showproperty', compact('property','imagePaths','user')); 
+    }
+
+    public function filterproperty(Request $request)
+    {
+        dd($request);
+        return redirect()->back();  
     }
     /**
      * Show the form for creating a new resource.
@@ -57,6 +94,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        
         $inquiry=Inquiry::create([
             'propertyName'=> $request->propertyName,
             'clientName'=>$request->clientName,
@@ -66,14 +104,17 @@ class PostsController extends Controller
             'inquiryStatus'=>'Unread',
         ]);
         
-        $subject=$request->propertyName. ' Property Inquiry';
+        // $email='samplemail@bdrs-realty.com';
+        $subject=$request->propertyName . ' Property Inquiry';
         $body=$request->clientMessage;
-        $senderMail=$request->clientEmail;
+        $clientEmail=$request->clientEmail;
+        $clientName =$request->clientName;
+        $clientContact =$request->clientContact;
 
 
-        Mail::to('bdrs@realty.com')->send(new InquiriesReply($subject, $body,$senderMail));
+        Mail::to('samplemail@bdrs-realty.com')->send(new ClientInquiries($subject, $body,$clientEmail,$clientName,$clientContact));
 
-        return redirect('posts.showproperty')->with('success','Property has been Added!');
+        return redirect('posts.showproperty');
 
     }
 
