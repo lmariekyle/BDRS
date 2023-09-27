@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'BDRS Realty Management Services Co.') }}</title>
+        <title>BDRS Realty Management Services Co</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -50,7 +50,7 @@
 
             <div class="mt-24 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
             <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{ route('dashboard') }}" class="font-poppins text-[18px] font-medium">HOME</a>
+                <a href="/" class="font-poppins text-[18px] font-medium">HOME</a>
             </div>
 
             @role('Admin')
@@ -59,7 +59,7 @@
                 <a href="{{ route('accounts.index') }}" class="font-poppins text-[18px] font-medium">USERS</a>
             </div>
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
-                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
+                <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
                 <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium">PROPERTIES</a>
             </div>
             @endrole

@@ -43,6 +43,9 @@ export default {
             boxShadow:{
                 inner: 'inset 0 5px 7px 0 rgba(0, 0, 0, 0.06)',
             },
+            backgroundImage: {
+                'registerbg': "url('/public/images/registerbg.jpg')",
+              },
         },
     },
 

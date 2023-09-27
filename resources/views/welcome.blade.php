@@ -21,7 +21,7 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="bg-dirtywhite antialised">
+    <body class="bg-dirtywhite antialised">s
         <div class="flex justify-center ml-5 mt-10">
             <div class="h-[732px] w-full ml-1 mt-8">
                 <img src="images/welcomebg.png" style="width: 1799px; height: 798px;">

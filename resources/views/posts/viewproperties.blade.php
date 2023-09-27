@@ -87,16 +87,21 @@
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="price">
                     <option value="">Any Price</option>
-                    <option value="1000">1000</option>
-                    <option value="2000">2000</option>
-                    <option value="3000">3000</option>
-                    <option value="4000">4000</option>
+                    <option value="100,000">100,000</option>
+                    <option value="500,000">500,000</option>
+                    <option value="1,000,000">1,000,000</option>
+                    <option value="3,000,000">3,000,000</option>
+                    <option value="5,000,000">5,000,000</option>
+                    <option value="8,000,000">8,000,000</option>
+                    <option value="10,000,000">10,000,000</option>
                     </select>
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="sizes">
                     <option value="">Floor Area</option>
-                    <option value="42">Below 50 Sqm</option>
-                    <option value="51">51 Sqm</option>
+                    <option value="18">18 Sqm</option>
+                    <option value="22">22 Sqm</option>
+                    <option value="42">42 Sqm</option>
+                    <option value="50">50 Sqm</option>
                     <option value="100">100 Sqm</option>
                     <option value="200">200 Sqm</option>
                     <option value="201">Above 201 Sqm</option>
@@ -104,7 +109,7 @@
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="bed">
                     <option value="">Bedrooms</option>
-                    <option value="1">Studio Only</option>
+                    <option value="0">Studio Only</option>
                     <option value="1">1 bedroom</option>
                     <option value="2">2 bedrooms</option>
                     <option value="3">3 bedrooms</option>

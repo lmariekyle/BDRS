@@ -15,27 +15,50 @@
                 <x-input-label for="type" :value="__('Property Type')" />
                         <select id="type" class="block mt-1 w-full" name="type" :value="old('type')" required autofocus>
                         <option value="">Property Type</option>
-                            <option value="Condominium">Condominium</option>
-                            <option value="Apartment">Apartment</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Condominium">Condominium</option>
+                        <option value="Studio Unit Type">Studio Unit</option>
+                        <option value="Loft Unit Type">Loft Unit</option>
+                        <option value="Penthouse Unit Type">Penthouse Unit</option>
+                        <option value="Town House">Town House</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Row House">Row House</option>
+                        <option value="Duplex House">Duplex House</option>
+                        <option value="Single Detached House">Single Detached House</option>
+                        <option value="Office">Office</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Industrial">Industrial</option>
                         </select>
                 </div>
 
                 <div class="mt-4  px-4">
-                    <x-input-label for="price" :value="__('Price')" />
-                    <x-text-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price')" required autofocus autocomplete="name" />
+                    <x-input-label for="price" :value="__('Price Range')" />
+                    <select id="price" class="block mt-1 w-full" name="price" :value="old('price')" required autofocus>
+                    <option value="">Price</option>
+                    <option value="100,000">100,000</option>
+                    <option value="500,000">500,000</option>
+                    <option value="1,000,000">1,000,000</option>
+                    <option value="3,000,000">3,000,000</option>
+                    <option value="5,000,000">5,000,000</option>
+                    <option value="8,000,000">8,000,000</option>
+                    <option value="10,000,000">10,000,000</option>
+                        </select>
                     <x-input-error :messages="$errors->get('price')" class="mt-2" />
                 </div>
                 
                 <div class="mt-4 px-4 ">
                     <x-input-label for="sizes" :value="__('Size')" />
-                    <x-text-input id="sizes" class="block mt-1 w-full" type="text" name="sizes" :value="old('sizes')" required autocomplete="on" />
-                    <x-input-error :messages="$errors->get('dateOfBirth')" class="mt-2" />
-                </div>
-
-                <div class="mt-4 px-4 ">
-                    <x-input-label for="measurement" :value="__('Measurement')" />
-                    <x-text-input id="measurement" class="block mt-1 w-full" type="text" name="measurement" :value="old('measurement')" required autocomplete="on" />
-                    <x-input-error :messages="$errors->get('measurement')" class="mt-2" />
+                    <select id="sizes" class="block mt-1 w-full" name="sizes" :value="old('sizes')" required autofocus>
+                    <option value="">Measurement</option>
+                    <option value="18">18 Sqm</option>
+                    <option value="22">22 Sqm</option>
+                    <option value="42">42 Sqm</option>
+                    <option value="50">50 Sqm</option>
+                    <option value="100">100 Sqm</option>
+                    <option value="200">200 Sqm</option>
+                    <option value="201">Above 201 Sqm</option>
+                    </select>
+                    <x-input-error :messages="$errors->get('sizes')" class="mt-2" />
                 </div>
 
                 <div class="mt-4 px-4">
@@ -59,13 +82,21 @@
                 </div>
                 <div class="mt-4 px-4">
                     <x-input-label for="bed" :value="__('Bed')" />
-                    <x-text-input id="bed" class="block mt-1 w-full" type="text" name="bed" :value="old('bed')" required autocomplete="username" />
+                    <select id="bed" class="block mt-1 w-full" name="bed" :value="old('bed')" required autofocus>
+                    <option value="0">Number of Bed</option>
+                    <option value="0">Studio Only</option>
+                    <option value="1">1 bedroom</option>
+                    <option value="2">2 bedrooms</option>
+                    <option value="3">3 bedrooms</option>
+                    <option value="4">4 bedrooms</option>
+                    <option value="5">5 bedrooms</option>
+                        </select>
                     <x-input-error :messages="$errors->get('bed')" class="mt-2" />
                 </div>
                 <div class="mt-4 px-4">
-                <x-input-label for="provision" :value="__('Provision')" />
-                        <select id="provision" class="block mt-1 w-full" name="provision" :value="$property->provision" required autofocus>
-                        <option value="">Provision</option>
+                <x-input-label for="availability" :value="__('Availability')" />
+                        <select id="availability" class="block mt-1 w-full" name="provision" :value="old('availability')" required autofocus>
+                        <option value="">Availability</option>
                             <option value="For Rent">For Rent</option>
                             <option value="For Sale">For Sale</option>
                         </select>
@@ -73,13 +104,13 @@
 
                 <div class="mt-4 px-4">
                     <x-input-label for="description" :value="__('Property Description')" />
-                    <x-text-input id="description" class="block mt-1 w-full" type="text" name="description" :value="$property->description" required autofocus autocomplete="name" />
+                    <textarea id="description" class="block mt-1 w-[250px] h-[350px] resize rounded-md" type="text" name="description" :value="old('description')" required autofocus autocomplete="name"></textarea>
                     <x-input-error :messages="$errors->get('description')" class="mt-2" />
                 </div>
 
                 <div class="mt-4 px-4 ">
                 <x-input-label for="status" :value="__('Property Status')" />
-                        <select id="status" class="block mt-1 w-full" name="status" :value="$property->status" required autofocus>
+                        <select id="status" class="block mt-1 w-full" name="status" :value="old('status')" required autofocus>
                         <option value="">Property Status</option>
                             <option value="Approved">Approve</option>
                             <option value="Disapprove">Disapprove</option>
