@@ -55,10 +55,7 @@
                             {{$inquiry->clientMessage}}
                             </td>
                             <td class="px-6 py-4">
-                            <select id="inquiryStatus" class="block mt-1 w-full" name="inquiryStatus" :value="$inquiry->inquiryStatus" required autofocus>
-                                <option value="Unread">Unread</option>
-                                <option value="Read">Read</option>
-                            </select>
+                            {{$inquiry->inquiryStatus}}
                             </td>
                         </tr>
                     </tbody>
@@ -66,21 +63,21 @@
             </div>
 
             <div class="absolute flex flex-row w-full h-[500px] mt-[24rem] ml-5">
-                    <form method="POST" action="">
+                    <form method="POST" action="{{route('inquiry.update' , $inquiry->id) }}">
                         @method('PUT')    
                         @csrf
                         <div class="flex flex-col w-max h-max bg-[#f6f6f6] border-2 border-black -mt-10 px-8 py-8">
                             <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8">CLIENT NAME:</p>
-                            <input type="text" name="clientName" id="clientName" class="-mt-2 w-[450px] h-[40px]" required value="{{$inquiry->clientName}}">
+                            <input type="text" name="clientName" id="clientName" class="-mt-2 w-[450px] h-[40px]" required value="{{$inquiry->clientName}}" readonly>
 
                             <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8" >CONTACT NUMBER:</p>
-                            <input type="text" name="clientContact" id="clientContact" class="-mt-2 h-[40px]" required value="{{$inquiry->clientContact}}">
+                            <input type="text" name="clientContact" id="clientContact" class="-mt-2 h-[40px]" required value="{{$inquiry->clientContact}}" readonly>
 
                             <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8">EMAIL ADDRESS:</p>
-                            <input type="text" name="clientEmail" id="clientEmail" class="-mt-2 h-[40px]" required value="{{$inquiry->clientEmail}}">
+                            <input type="text" name="clientEmail" id="clientEmail" class="-mt-2 h-[40px]" required value="{{$inquiry->clientEmail}}" readonly>
                 
                             <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8">MESSAGE:</p>
-                            <input type="text" name="clientMessage" id="clientMessage" class="-mt-2 h-[100px]" required>
+                            <input type="text" name="reply" id="reply" class="-mt-2 h-[100px]" required>
                             <input type="text" name="propertyName" id="propertyName" class="hidden -mt-2 h-[100px]" value="{{$inquiry->propertyName}}">
 
                             <button type="submit" class="px-8 mt-8 py-2 font-poppin text-[22px] font-medium text-black border-2 border-black">Email to Client</button>

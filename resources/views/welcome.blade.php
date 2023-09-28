@@ -4,15 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>BDRS</title>
+        <title>BDRS Realty Management Services Co.</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&family=Rozha+One&display=swap" rel="stylesheet">
 
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -20,7 +21,7 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="bg-greywhite antialised">
+    <body class="bg-dirtywhite antialised">
         <div class="flex justify-center ml-5 mt-10">
             <div class="h-[732px] w-full ml-1 mt-8">
                 <img src="images/welcomebg.png" style="width: 1799px; height: 798px;">
@@ -57,15 +58,7 @@
                     <p class="font-poppins text-[28px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
                 </div>
 
-        <!--button for buy and rent-->
-                
-                <br><br><div class = "gap-10 flex sm:justify-start md:justify-center items-center"> 
-                    <button class = "border-solid border-darkblue border-4 hover:bg-blue-200 text-black py-4 px-6 rounded " >  
-                        <h1 class = "font-anton uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider ">Buy Properties  </h1>     
-                            <button class = "border-solid border-darkblue border-4 hover:bg-blue-200 text-black py-4 px-6 rounded ">  
-                                <h1 class = "font-anton uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider">Rent Properties  </h1>
-                           
-                    </div>
+       
                     
     
                 
@@ -107,12 +100,70 @@
                         @endif
                 </div>
 
+               
+<!--Empowering chuchu-->
+
+
+                <div class = "flex flex-col absolute mt-[50rem] justify-start left-[15rem] ">                                               
+                        <img src="images/bldg1.jpg" alt="" class="w-[50rem] h-[55rem]">                                 
+                </div>
+                <div class = "flex flex-col absolute mt-[60rem] left-[75rem] gap-5">
+                    <p class = "flex justify-center text-center font-rozha font-bold text-7xl tracking-widest">Empowering <br>
+                        Your Choice<br></p>
+                  
+                    <p class = "flex justify-center text-center font-playfair font-bold text-4xl tracking-widest" >
+                        Buy or Rent,<br>
+                        We've got you<br>
+                        covered<br></p>
+                        <br>
+                        <p class = "flex justify-center text-center font-poppin font-bold text-xl tracking-widest">SEE PROPERTIES</p>
+
+                         <!--button for buy and rent-->
+                
+                <br><br><div class = "gap-10 flex sm:justify-start md:justify-center items-center"> 
+                    
+                    <button class = "border-solid border-darkblue border-4 bg-amber-200 hover:bg-amber-100  text-black  py-4 px-6 rounded " >  
+                        <h1 class = "font-poppin uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider ">FOR SALE  </h1>  
+
+                            <button class = "border-solid border-darkblue border-4 bg-amber-200 hover:bg-amber-100 text-black py-4 px-6 rounded ">  
+                                <h1 class = "font-poppin uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider">FOR RENT  </h1>
+                           
+                    </div>  
+                </div>
+           
+                <div class = "flex flex-col absolute mt-[105rem] justify-start left-[15rem] ">   
+                                  
+                    <br><br><br> <p class = "flex justify-start text-left font-rozha text-7xl">News and<br>
+                        Events </p> 
+                        
+                        <div class = "flex flex-col absolute mt-[4rem] left-[30rem] ">   
+                            <br><br><br><hr class="border-t-2 border-black w-[68rem]">         
+                    <p class = " justify-start text-right font-rozha text-7xl"><br>  
+                    </div>         
+                </div>
+                
+
+                <!--Heading-->
+                <div class = "flex flex-col absolute mt-[120rem] justify-start left-[7rem] "> 
+                    <br><br><div class="w-[103rem] h-[30rem] border-4 border-amber-300 bg-amber-100">
+                        <p>Empty</p>
+                    </div>
+                </div>
+               
+               
+
+                
+                
+
+                
 
 
 
 
 
-                <!--about me-->
+
+
+                <!--about me
 
                 <div class = "absolute flex sm:justify-start md:justify-center mt-[48rem] w-1/8  ">          
                     <div class="">
@@ -120,9 +171,10 @@
                                 MEET OUR AMAZING LEADERS</p>
                     </div>
                 </div>
+-->
                 
            
-                 <!--Marketing Head-->
+                 <!--Marketing Head
 
                   <div class = "flex flex-col absolute mt-[65rem] left-[60rem] sm:justify-start  "> 
                     <img src="/images/b3.jpg" alt="" class="rounded-full w-[18rem] h-[20rem] overflow-hidden mt-[2rem] border-4 border-x-8 border-y-8 border-double border-darkblue"> 
@@ -141,7 +193,8 @@
                                  clients and will always serve what truly matters to them."</p>                              
                  </div>
          </div>
-                 <!--COO--> 
+ -->
+                 <!--COO
 
                 <div class = "flex flex-col absolute mt-[50rem] justify-start left-[7rem] ">          
                     <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center"><br><br>
@@ -159,8 +212,8 @@
                                  the 1500s. It has been popularized in the 1960s with Letraset sheets and desktop 
                                  publishing software like Aldus PageMaker.</p>                              
                  </div>                 
-
-                 <!--Chairwoman-->
+--> 
+                 <!--Chairwoman
 
                  <div class = "flex flex-col absolute mt-[27rem] justify-start left-[0rem] ">          
                     <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center "><br><br>
@@ -181,8 +234,9 @@
                  </div>     
            </div>
     </div>
+->
 
-                   <!--connect with us-->
+                   <!--connect with us
 
                   
 
@@ -199,11 +253,13 @@
                             <p>We provide a variety of customer care options if you require assistance.<br><br>
                             </p>
                         </div>
+-->
 
-                        <!--gif-->
+                        <!--gif
                         <div class = "flex flex-col absolute mt-[128rem] justify-start left-[60rem]">  
                                 <img src ="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXdqN2I0d244ODlzMDNqcW8zcGt5dTcza3N6OG9tdnQ0YmQ5NDhoaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26SdS6M9jzxdqq72JU/giphy.gif ">
                         </div>
+-->
 
 
 
@@ -211,11 +267,12 @@
 
 
 
-                <!--contact-->
+                <!--contact
 
                             
                         <br>
-                        <!--Email-->
+-->
+                        <!--Email
                       
                         <div class = "flex flex-col absolute mt-[125rem] justify-start left-[30rem]">
                             <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
@@ -231,8 +288,9 @@
                                   </div>
 							</div>
 						</div>
+-->
 
-                        <!--Mobile-->
+                        <!--Mobile
 
                         <div class = "flex flex-col absolute mt-[108rem] justify-start left-[30rem]">
                             <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
@@ -247,10 +305,11 @@
                                 </div>
                             </div>
                         </div>
+-->
 
                         <!--Telephone-->
 
-<!--animated office gif   https://giphy.com/gifs/animation-loop-life-26SdS6M9jzxdqq72JU-->
+<!--animated office gif   https://giphy.com/gifs/animation-loop-life-26SdS6M9jzxdqq72JU
 
                         <div class = "flex flex-col absolute mt-[118rem] justify-start left-[30rem] gap-3">
                             <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
@@ -267,14 +326,16 @@
                             </div>
                         </div>
                     </div>
+-->
 
 
-        <!--INQUIRY-->
+        <!--INQUIRY
                      <div class= "mt-[140rem] flex justify-center">
 
                         INQUIRY
 
                      </div>
+-->
                        
 
 

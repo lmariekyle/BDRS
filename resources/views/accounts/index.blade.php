@@ -62,7 +62,7 @@
                         <tr>
                             <td colspan="4">No users found.</td>
                         </tr>
-                    @endforelse
+                        @endforelse
 
                     </tbody>
                 </table>

@@ -13,6 +13,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <!--Filter Scripts-->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -44,40 +46,29 @@
                 </div>
             </div>
         </div>
-
-    <div class=" flex flex-col justify-evenly mt-[12rem] ml-[10rem] h-[220px] w-[1500px] bg-white-800 rounded-md shadow-md border-1 px-4">
-        <div class="relative">
-            <div class="absolute flex items-center ml-2 h-full">
-                <svg class="w-4 h-4 fill-current text-primary-gray-dark" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.8898 15.0493L11.8588 11.0182C11.7869 10.9463 11.6932 10.9088 11.5932 10.9088H11.2713C12.3431 9.74952 12.9994 8.20272 12.9994 6.49968C12.9994 2.90923 10.0901 0 6.49968 0C2.90923 0 0 2.90923 0 6.49968C0 10.0901 2.90923 12.9994 6.49968 12.9994C8.20272 12.9994 9.74952 12.3431 10.9088 11.2744V11.5932C10.9088 11.6932 10.9495 11.7869 11.0182 11.8588L15.0493 15.8898C15.1961 16.0367 15.4336 16.0367 15.5805 15.8898L15.8898 15.5805C16.0367 15.4336 16.0367 15.1961 15.8898 15.0493ZM6.49968 11.9994C3.45921 11.9994 0.999951 9.54016 0.999951 6.49968C0.999951 3.45921 3.45921 0.999951 6.49968 0.999951C9.54016 0.999951 11.9994 3.45921 11.9994 6.49968C11.9994 9.54016 9.54016 11.9994 6.49968 11.9994Z"></path>
-                </svg>
-            </div>
-            <input type="text" placeholder="Search by listing, location, bedroom number..." class="px-8 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
-        </div>
-
-            <div class="flex items-center justify-between -mt-10">
-                <p class="font-poppin text-[20px] font-medium">
-                    Filters
+<form action="{{route('posts.viewproperties')}}" method="GET">
+    <div class=" flex flex-col justify-evenly mt-[12rem] ml-[5rem] h-[220px] w-[1500px] bg-white-800 rounded-md shadow-md border-1 px-4">
+        <div class="flex items-center justify-between">
+                <p class="font-poppin text-[20px] font-medium -mt-10">
+                    Select what you are looking for... 
                 </p>
+	     </div>
 
-	        </div>
-
-	    <div>
-	  <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 -mt-[2rem] w-[1100px] h-[30px]">
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
+	        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 -mt-[5rem] w-[1100px] h-[30px]">
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="availability">
                     <option value="">All Type</option>
                     <option value="For Rent">For Rent</option>
                     <option value="For Sale">For Sale</option>
                     </select>
 
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="furnish">
                     <option value="">Furnish Type</option>
                     <option value="Fully Furnished">Fully Furnished</option>
                     <option value="Partially Furnished">Partially Furnished</option>
                     <option value="Not Furnished">Not Furnished</option>
                     </select>
 
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="type">
                     <option value="" >Unit Type</option>
                     <option value="Apartment">Apartment</option>
                     <option value="Condominium">Condominium</option>
@@ -94,7 +85,7 @@
                     <option value="Industrial">Industrial</option>
                     </select>
 
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="price">
                     <option value="">Any Price</option>
                     <option value="1000">1000</option>
                     <option value="2000">2000</option>
@@ -102,16 +93,16 @@
                     <option value="4000">4000</option>
                     </select>
 
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="sizes">
                     <option value="">Floor Area</option>
-                    <option value="range1">Below 50 Sqm</option>
-                    <option value="range2">51-100 Sqm</option>
-                    <option value="range3">101-200 Sqm</option>
-                    <option value="range4">201-300 Sqm</option>
-                    <option value="range5">Above 301 Sqm</option>
+                    <option value="42">Below 50 Sqm</option>
+                    <option value="51">51 Sqm</option>
+                    <option value="100">100 Sqm</option>
+                    <option value="200">200 Sqm</option>
+                    <option value="201">Above 201 Sqm</option>
                     </select>
 
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="bed">
                     <option value="">Bedrooms</option>
                     <option value="1">Studio Only</option>
                     <option value="1">1 bedroom</option>
@@ -121,7 +112,7 @@
                     <option value="5">5 bedrooms</option>
                     </select>
 
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="state">
                     <option value="">Location</option>
                     <option value="Cebu">Cebu</option>
                     <option value="Ilo-Ilo">Ilo-Ilo</option>
@@ -135,11 +126,12 @@
                     <option value="Siquijor">Siquijor</option>
                     <option value="Davao">Davao</option>
                     </select>
+
 	            </div>
-	        </div>
-        </div>
-        
+            </div>
+        <button class="absolute flex flex-col ml-[1260px] -mt-[113px] bg-darkblue text-dirtywhite font-poppin text-[16px] shadow-sm rounded-md px-4 py-2">Apply</button>
     </div>
+</form>
 
     <div class="flex flex-col mt-[3rem] ml-[5rem] mb-10 h-max w-max bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
         <div class="-mt-[2rem] w-[1600px]">
@@ -152,11 +144,11 @@
                     <p class="absolute -mt-[18rem] self-center font-baby text-[34px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
                     <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left max-h-max w-[225px] ml-[16rem] px-1">{{$property->description}}</p>
-                    <div class="absolute px-1 self-start mt-[19rem]  ml-1 rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    <div class="absolute px-1 py-1 self-center mt-[14rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
                     @else
-                        <a href="{{route('modal.authorization-modal')}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
                     @endif
                     </div>
                 </div>
@@ -176,8 +168,12 @@
                     <p class="absolute -mt-[18rem] self-center font-baby text-[34px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
                     <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left max-h-max w-[225px] ml-[16rem] px-1">{{$property->description}}</p>
-                    <div class="absolute px-1 self-start mt-[19rem] ml-1 rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
-                        <a href=""  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    <div class="absolute px-1 py-1 self-center mt-[14rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    @if ($user) 
+                        <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @else
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @endif
                     </div>
                 </div>
                 @endif
@@ -185,7 +181,65 @@
         </div>
     </div>
         
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h5 class="modal-title font-poppin text-[18px]" id="LoginModal">NOTICE</h5>
 
-      
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+            </div>
+        <div class="modal-body flex flex-col"> 
+    
+        <div class="flex flex-col justify-center self-center w-max h-max ml-2 px-4 py-4">
+                <p class="font-poppin text-[18px] ml-3">To view the details of this property,</p>
+                <p class="font-poppin text-[18px]">we would like to require you to sign up</p>
+                <a href="{{route('guest-register')}}" class="mt-3 self-center px-4 py-1 font-poppin text-[16px] border-2 border-black">CREATE ACCOUNT</a>
+                <p class="font-poppin text-[18px] mt-4 self-center">Already have an account?</p>
+        </div>
+   
+        <div>
+        <p class="font-poppin text-[18px] self-start bg-darkblue text-dirtywhite py-2 w-full px-4 mb-3">LOGIN</p>
+        <form method="POST" action="{{ route('loginGuest') }}">
+        @csrf
+
+        <!-- Email Address -->
+        <div>
+            <x-input-label for="email" :value="__('Email')" class="text-black" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
+
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Password')" class="text-black"/>
+
+            <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password" />
+
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
+
+        <!-- Remember Me -->
+        <div class="block mt-4">
+            <label for="remember_me" class="inline-flex items-center">
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <span class="ml-2 text-sm text-black">{{ __('Remember me') }}</span>
+            </label>
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            <x-primary-button class="ml-3">
+                {{ __('Log in') }}
+            </x-primary-button>
+        </div>
+    </form>
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
     </body>
 </html>

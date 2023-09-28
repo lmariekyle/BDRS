@@ -17,6 +17,7 @@ export default {
                 poppin: ['Poppins'],
                 playfair: ['Playfair Display'],
                 baby: ['Oooh Baby'],
+                rozha: ['Rozha One'],
             },
             backgroundColor: {
                 'dirtywhite': '#fffcf2', 

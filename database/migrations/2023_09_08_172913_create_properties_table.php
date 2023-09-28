@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->string('propertyID')->nullable();
+            $table->string('availability')->nullable();
+            $table->string('furnish')->nullable();
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->string('type')->nullable();
@@ -24,7 +26,7 @@ return new class extends Migration
             $table->string('zip')->nullable();
             $table->string('bed')->nullable();
             $table->string('provision')->nullable();
-            $table->string('status')->default('Pending');
+            $table->string('status')->default('Approved');
             $table->string('featured')->default('Not Featured'); //0 is not featured
             $table->string('img')->nullable();
             $table->string('coverphoto')->nullable();

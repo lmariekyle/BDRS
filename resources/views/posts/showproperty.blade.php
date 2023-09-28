@@ -99,13 +99,13 @@
                         @csrf
                         <div class="flex flex-col w-max h-max bg-[#f6f6f6] border-2 border-black -mt-10 pl-[12rem] pr-[5rem] py-8">
                             <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8">FULL NAME:</p>
-                            <input type="text" name="clientName" id="clientName" class="-mt-2 w-[450px]" required>
+                            <input type="text" name="clientName" id="clientName" class="-mt-2 w-[450px]" value="{{$user->firstName}} {{$user->middleName}} {{$user->lastName}}" required>
 
                             <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8" >CONTACT NUMBER:</p>
-                            <input type="text" name="clientContact" id="clientContact" class="-mt-2" required>
+                            <input type="text" name="clientContact" id="clientContact" class="-mt-2" value="{{$user->contactNumber}}" required>
 
                             <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8">EMAIL ADDRESS:</p>
-                            <input type="text" name="clientEmail" id="clientEmail" class="-mt-2" required>
+                            <input type="text" name="clientEmail" id="clientEmail" class="-mt-2" value="{{$user->email}}" required>
                 
                             <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8">INQUIRY MESSAGE:</p>
                             <input type="text" name="clientMessage" id="clientMessage" class="-mt-2 h-[100px]" required>
