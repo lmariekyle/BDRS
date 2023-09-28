@@ -1,6 +1,11 @@
 <x-app-layout>
 <div class=" flex flex-row sm:px-6 lg:-ml-9">
+    @role('Admin')
+        <div class="flex flex-col items-center w-max -mt-[38rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+    @endrole
+    @role('Marketing')
         <div class="flex flex-col items-center w-max -mt-[30rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+    @endrole
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Update Property</p>
             <form method="POST" action="{{route('properties.update' , $property->id) }}" class="flex flex-col flex-wrap w-[1300px] h-[430px]" enctype="multipart/form-data">  
             @method('PUT') 
@@ -99,6 +104,17 @@
                             <option value="For Sale">For Sale</option>
                         </select>
                 </div>
+
+                <div class="mt-4 px-4">
+                <x-input-label for="furnish" :value="__('Furnish')" />
+                        <select id="furnish" class="block mt-1 w-full" name="furnish" :value="$property->furnish" required autofocus>
+                        <option value="">Furnish</option>
+                            <option value="Not Furnished">Not Furnished</option>
+                            <option value="Partially Furnished">Partially Furnished</option>
+                            <option value="Fully Furnished">Fully Furnished</option>
+                        </select>
+                </div>
+
 
                 <div class="mt-4 px-4">
                     <x-input-label for="description" :value="__('Property Description')" />

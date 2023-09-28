@@ -21,7 +21,7 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="bg-dirtywhite antialised">s
+    <body class="bg-dirtywhite antialised">
         <div class="flex justify-center ml-5 mt-10">
             <div class="h-[732px] w-full ml-1 mt-8">
                 <img src="images/welcomebg.png" style="width: 1799px; height: 798px;">
@@ -101,13 +101,13 @@
                 </div>
 
                
-<!--Empowering chuchu-->
+        <!--Empowering chuchu-->
 
 
-                <div class = "flex flex-col absolute mt-[50rem] justify-start left-[15rem] ">                                               
+                <div class = "flex flex-col absolute mt-[45rem] justify-start left-[10rem] ">                                               
                         <img src="images/bldg1.jpg" alt="" class="w-[50rem] h-[55rem]">                                 
                 </div>
-                <div class = "flex flex-col absolute mt-[60rem] left-[75rem] gap-5">
+                <div class = "flex flex-col absolute mt-[55rem] left-[68rem] gap-5">
                     <p class = "flex justify-center text-center font-rozha font-bold text-7xl tracking-widest">Empowering <br>
                         Your Choice<br></p>
                   
@@ -131,7 +131,7 @@
                     </div>  
                 </div>
            
-                <div class = "flex flex-col absolute mt-[105rem] justify-start left-[15rem] ">   
+                <div class = "flex flex-col absolute mt-[105rem] justify-start left-[10rem] ">   
                                   
                     <br><br><br> <p class = "flex justify-start text-left font-rozha text-7xl">News and<br>
                         Events </p> 

@@ -1,6 +1,11 @@
 <x-app-layout>
 <div class=" flex flex-row sm:px-6 lg:-ml-9">
-        <div class="flex flex-col items-center w-max -mt-[27rem] sm:px-6 lg:ml-[30rem] bg-dirtywhite border-l-blue-950 shadow-md">
+    @role('Admin')
+    <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+    @endrole
+    @role('Marketing')
+        <div class="flex flex-col items-center w-max -mt-[25rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+    @endrole       
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Create Property</p>
             <form method="POST" action="{{route('properties.store') }}" class="flex flex-col flex-wrap w-max h-[430px]" enctype="multipart/form-data">  
                 @csrf
@@ -95,7 +100,7 @@
                 </div>
                 <div class="mt-4 px-4">
                 <x-input-label for="availability" :value="__('Availability')" />
-                        <select id="availability" class="block mt-1 w-full" name="provision" :value="old('availability')" required autofocus>
+                        <select id="availability" class="block mt-1 w-full" name="availability" :value="old('availability')" required autofocus>
                         <option value="">Availability</option>
                             <option value="For Rent">For Rent</option>
                             <option value="For Sale">For Sale</option>
@@ -103,11 +108,15 @@
                 </div>
 
                 <div class="mt-4 px-4">
-                    <x-input-label for="description" :value="__('Property Description')" />
-                    <textarea id="description" class="block mt-1 w-[250px] h-[350px] resize rounded-md" type="text" name="description" :value="old('description')" required autofocus autocomplete="name"></textarea>
-                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                <x-input-label for="furnish" :value="__('Furnish')" />
+                        <select id="furnish" class="block mt-1 w-full" name="furnish" :value="old('furnish')" required autofocus>
+                        <option value="">Furnish</option>
+                            <option value="Not Furnished">Not Furnished</option>
+                            <option value="Partially Furnished">Partially Furnished</option>
+                            <option value="Fully Furnished">Fully Furnished</option>
+                        </select>
                 </div>
-
+                
                 <div class="mt-4 px-4 ">
                 <x-input-label for="status" :value="__('Property Status')" />
                         <select id="status" class="block mt-1 w-full" name="status" :value="old('status')" required autofocus>
@@ -124,6 +133,13 @@
                             <option value="Featured">Featured</option>
                         </select>
                 </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="description" :value="__('Property Description')" />
+                    <textarea id="description" class="block mt-1 w-[250px] h-[350px] resize rounded-md" type="text" name="description" :value="old('description')" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                </div>
+
 
                 <div class="mt-4 px-4"> 
                     <x-input-label for="coverphoto" :value="__('Cover Image Upload')" />

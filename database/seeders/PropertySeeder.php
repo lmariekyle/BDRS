@@ -51,7 +51,6 @@ class PropertySeeder extends Seeder
         ];
 
         Property::create([
-            'propertyID' => '1BR-001',
             'availability' => 'For Rent',
             'furnish' => 'Partially Furnished',
             'name' => 'Ample Apartments',
@@ -63,8 +62,7 @@ class PropertySeeder extends Seeder
             'state'=> 'Cebu',
             'zip'=> '6666',
             'bed'=> '1',
-            'provision'=> 'For Sale',
-            'status' => 'Pending',
+            'status' => 'Approved',
             'featured'=> 'Not Featured',
             'coverphoto' => 'property/ex1.jpg',
             'img'=> json_encode($images1),
@@ -72,7 +70,6 @@ class PropertySeeder extends Seeder
         ]);
 
         Property::create([
-            'propertyID' => '1BR-002',
             'availability' => 'For Sale',
             'furnish' => 'Fully Furnished',
             'name' => 'Luxurious Landing',
@@ -84,8 +81,7 @@ class PropertySeeder extends Seeder
             'state'=> 'Cebu',
             'zip'=> '6663',
             'bed'=> '1',
-            'provision'=> 'For Rent',
-            'status' => 'Pending',
+            'status' => 'Approved',
             'featured'=> 'Featured',
             'coverphoto' => 'property/image1.jpg',
             'img'=> json_encode($images2),
@@ -93,7 +89,6 @@ class PropertySeeder extends Seeder
         ]);
 
         Property::create([
-            'propertyID' => '2BR-001',
             'availability' => 'For Rent',
             'furnish' => 'Not Furnished',
             'name' => 'The Views',
@@ -105,8 +100,7 @@ class PropertySeeder extends Seeder
             'state'=> 'Cebu',
             'zip'=> '6663',
             'bed'=> '2',
-            'provision'=> 'For Sale',
-            'status' => 'Pending',
+            'status' => 'Approved',
             'featured'=> 'Not Featured',
             'coverphoto' => 'property/img1.jpg',
             'img'=> json_encode($images3),
@@ -114,7 +108,6 @@ class PropertySeeder extends Seeder
         ]);
 
         Property::create([
-            'propertyID' => '2BR-002',
             'availability' => 'For Sale',
             'furnish' => 'Partially Furnished',
             'name' => 'Minded Manor',
@@ -126,8 +119,7 @@ class PropertySeeder extends Seeder
             'state'=> 'Manila',
             'zip'=> '4663',
             'bed'=> '2',
-            'provision'=> 'For Rent',
-            'status' => 'Pending',
+            'status' => 'Approved',
             'featured'=> 'Not Featured',
             'coverphoto' => 'property/photo1.jpg',
             'img'=> json_encode($images4),
@@ -135,7 +127,6 @@ class PropertySeeder extends Seeder
         ]);
 
         Property::create([
-            'propertyID' => 'ST-001',
             'availability' => 'For Rent',
             'furnish' => 'Fully Furnished',
             'name' => 'Useful Units',
@@ -147,8 +138,7 @@ class PropertySeeder extends Seeder
             'state'=> 'Manila',
             'zip'=> '4663', 
             'bed'=> '2',
-            'provision'=> 'For Sale',
-            'status' => 'Pending',
+            'status' => 'Approved',
             'featured'=> 'Not Featured',
             'coverphoto' => 'property/sample1.jpg',
             'img'=> json_encode($images5),

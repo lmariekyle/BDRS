@@ -59,9 +59,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{route('properties.show', 
-                                    $property->id)}}" class="mr-5"><i class="fa-solid fa-eye"></i> </a>
-                                <a href="/" class=""><i class="fa-solid fa-pen"></i></a>     
-                                   
+                                    $property->id)}}" class="mr-5"><i class="fa-solid fa-eye"></i> </a>          
                             </td>
                         </tr>
                         @empty

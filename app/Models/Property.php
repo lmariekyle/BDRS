@@ -9,7 +9,6 @@ class Property extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'propertyID',
         'availability',
         'furnish',
         'name',
@@ -21,7 +20,6 @@ class Property extends Model
         'state',
         'zip',
         'bed',
-        'provision',
         'status',
         'featured',
         'coverphoto',

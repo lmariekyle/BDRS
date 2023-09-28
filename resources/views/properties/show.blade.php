@@ -33,10 +33,10 @@
                                 {{$property->type}}
                             </td>
                             <td class="px-6 py-4">
-                                {{$property->price}}
+                                {{$property->price}} 
                             </td>
                             <td class="px-6 py-4">
-                                {{$property->sizes}}
+                                {{$property->sizes}} Sqm
                             </td>
                             <td class="px-6 py-4">
                                 {{$property->description}}
@@ -52,7 +52,7 @@
                             Bed
                             </th>
                             <th scope="col" class="px-6 py-3">
-                            Provision
+                            Property Availability
                             </th>            
                             <th scope="col" class="px-6 py-3">
                             Property Status
@@ -73,7 +73,7 @@
                             {{$property->bed}}
                             </td>
                             <td class="px-6 py-4">
-                            {{$property->provision}}
+                            {{$property->availability}}
                             </td>
                             <td class="px-6 py-4">
                             {{$property->status}}

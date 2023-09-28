@@ -72,6 +72,8 @@ class PropertiesController extends Controller
 
         $property = Property::create([
             'name' => $request->name,
+            'availability' => $request->availability,
+            'furnish' =>$request->furnish,
             'description' => $request->description,
             'type' => $request->type,
             'price' =>$request->price,
@@ -89,7 +91,7 @@ class PropertiesController extends Controller
         ]);
 
          
-
+        return redirect()->back();
     }
 
     /**
@@ -168,6 +170,8 @@ class PropertiesController extends Controller
         }
        
             $property->name = $request->name;
+            $property->availability = $request->availability;
+            $property->furnish = $request->furnish;
             $property->description = $request->description;
             $property->type = $request->type;
             $property->price =$request->price;
@@ -176,7 +180,6 @@ class PropertiesController extends Controller
             $property->state= $request->state;
             $property->zip= $request->zip;
             $property->bed= $request->bed;
-            $property->provision= $request->provision;
             $property->status= $request->status;
             $property->featured= $request->featured;
             $property->coverphoto =$imgpath;
@@ -185,7 +188,7 @@ class PropertiesController extends Controller
             // dd($property);
             $property->save();
 
-            return redirect('/properties')->with('success','Property has been Updated!');
+            return redirect()->back()->with('success','Property has been Updated!');
             
     }
  

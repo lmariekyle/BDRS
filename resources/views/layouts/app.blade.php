@@ -19,11 +19,15 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-dirtywhite antialiased">
     
-    <div class=" flex flex-row sm:px-6 lg:-ml-9">
+    <div class="flex flex-row sm:px-6 lg:-ml-9">
         <div class="bg-gold w-[315px] h-[1024px] flex justify-start flex-col py-5 px-2">
             <div class="self-center mr-5 bg-dirtywhite rounded-full w-[140px] h-[134px] sm:-my-px sm:ml-10 sm:flex px-14">
                    <!-- <img src="images/logo.png" alt=""  style="width: 100px; height:100px;"> -->
@@ -133,6 +137,21 @@
                 $("div.alert").remove();
             }, 3000);
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        var currentDate = new Date();
+        var maxYear = currentDate.getFullYear() - 18; // Maximum year for 18 years old and above
+
+        var dateOfBirthInput = document.getElementById("dateOfBirth");
+        dateOfBirthInput.setAttribute("max", formatDate(maxYear, 12, 31)); // Set maximum date to the end of the calculated maximum year
+
+        // Format the date as YYYY-MM-DD
+        function formatDate(month, day, year) {
+            month = String(month).padStart(2, "0");
+            day = String(day).padStart(2, "0");
+            return month + "-" + day + "-" + year;
+        }
+    });
         </script>
 
     </body>

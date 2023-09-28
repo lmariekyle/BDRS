@@ -39,7 +39,7 @@ class RegisteredUserController extends Controller
             'userRole' => 'required|exists:roles,name',
         ]);
         
-
+        
         if($request->userRole == "Marketing"){
             $userId = IdGenerator::generate(['table' => 'users','field'=>'accountID' ,'length' => 6, 'prefix' =>'M-']);
         }else if($request->userRole == "Customer Service"){

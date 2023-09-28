@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('clientName')->nullable();
             $table->string('clientContact')->nullable();
             $table->string('clientEmail')->nullable();
-            $table->string('clientMessage')->nullable();
+            $table->text('clientMessage')->nullable();
             $table->string('inquiryStatus')->default('Unread');
             $table->timestamps();
         });

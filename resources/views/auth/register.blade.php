@@ -1,36 +1,6 @@
 <x-app-layout>
-<div class=" flex flex-row sm:px-6 lg:-ml-9">
-        <div class="bg-gold w-[315px] h-[1024px] flex justify-start flex-col py-5 px-2">
-            <div class="self-center mr-5 bg-dirtywhite rounded-full w-[140px] h-[134px] sm:-my-px sm:ml-10 sm:flex px-14">
-                   <!-- <img src="images/logo.png" alt=""  style="width: 100px; height:100px;"> -->
-            </div>
-            <div class="-mt-[112px] sm:ml-[112px] lg:ml-[112px]">
-                <img src="images/logo.png" alt=""  style="width: 100px; height:100px;">
-            </div>
-            <div class="mt-20 self-center">
-                <p class="font-poppins text-2xl underline underline-offset-8">Isabella Rodriguez</p>
-                @role('Admin')
-                <p class="font-poppins text-2xl text-center text-darkblue">ADMIN</p>
-                @endrole
-            </div>
 
-            <div class="mt-24 self-center bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
-                <a href="" class="font-poppins text-2xl">User Accounts</a>
-            </div>
-
-            <div class="static mt-24 self-center bg-gold border-y-2 border-dirtywhite shadow-md px-8 py-2 hover:shadow-inner">
-                <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <a href="route('logout')"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            {{ __('LOGOUT') }}
-                        </a>
-                </form>
-            </div>
-        </div>
-
-        <div class="flex flex-col items-center w-max sm:px-6 lg:ml-[15rem] bg-dirtywhite border-l-blue-950 shadow-md h-max mt-[15rem]">
+        <div class="flex flex-col items-center self-center w-max sm:px-6 lg:ml-[35rem] bg-dirtywhite border-l-blue-950 shadow-md h-max -mt-[36rem]">
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Add Account</p>
             <form method="POST" action="{{ route('register') }}" class="flex flex-col flex-wrap w-[800px] h-[300px]">
                 @csrf
@@ -55,8 +25,8 @@
                 </div>
                 
                 <div class="mt-4 px-4 ">
-                    <x-input-label for="dateOfBirth" :value="__('Date of Birth')" />
-                    <x-text-input id="dateOfBirth" class="block mt-1 w-full" type="date" name="dateOfBirth" :value="old('dateOfBirth')" required autocomplete="on" />
+                    <x-input-label for="dateOfBirth" :value="__('Date of Birth (MM/DD/YYYY)')" />
+                    <x-text-input id="dateOfBirth" class="block mt-1 w-full" type="date" name="dateOfBirth" :value="old('dateOfBirth')" required autocomplete="on"  />
                     <x-input-error :messages="$errors->get('dateOfBirth')" class="mt-2" />
                 </div>
 
@@ -111,5 +81,5 @@
                 </div>
             </form>
         </div>
-    </div>
+
 </x-app-layout>
