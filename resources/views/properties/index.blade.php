@@ -73,7 +73,9 @@
                     </tbody>
                 </table>
             </div>
-
+            <div class="flex flex-row justify-evenly mt-4">
+                {{$properties->links()}}
+            </div>                       
         </div>
 
 </x-app-layout>

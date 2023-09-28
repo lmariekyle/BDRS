@@ -17,7 +17,7 @@ class UserController extends Controller
     {
         try {
             $roles = Role::all();
-            $users = User::whereNot('userRole','User')->get();
+            $users = User::whereNot('userRole','User')->paginate(10);
         } catch (QueryException $e) {
             // Handle the database query exception.
             // You can log the error or display a user-friendly message.

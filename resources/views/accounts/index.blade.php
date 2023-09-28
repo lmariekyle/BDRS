@@ -70,7 +70,9 @@
                     </tbody>
                 </table>
             </div>
-
+            <div class="flex flex-row justify-evenly mt-4">
+                {{$users->links()}}
+            </div>
         </div>
 
 </x-app-layout>

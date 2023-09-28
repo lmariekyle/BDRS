@@ -16,7 +16,7 @@ class PropertiesController extends Controller
     public function index()
     {
         try {
-            $properties = Property::all();
+            $properties = Property::paginate(10);
         } catch (QueryException $e) {
             // Handle the database query exception.
             // You can log the error or display a user-friendly message.

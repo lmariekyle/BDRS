@@ -14,7 +14,7 @@ class InquiryController extends Controller
      */
     public function index()
     {
-        $inquiries = Inquiry::where('inquiryStatus','Unread')->get();
+        $inquiries = Inquiry::paginate(10);
 
       return view('inquiry.index',compact('inquiries'));
     }

@@ -14,8 +14,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&family=Rozha+One&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -32,7 +34,7 @@
             
             <div class="mt-20 self-center">
             @auth
-                <p class="font-poppins text-2xl underline underline-offset-8"> {{Auth::user()->firstName}} {{Auth::user()->middleName}} {{Auth::user()->lastName}}</p>
+                <p class="font-poppins text-2xl text-center underline underline-offset-8"> {{Auth::user()->firstName}} {{Auth::user()->middleName}} {{Auth::user()->lastName}}</p>
             @endauth
 
                 @role('Admin')
@@ -50,31 +52,35 @@
 
             <div class="mt-24 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
             <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
-                <a href="/" class="font-poppins text-[18px] font-medium">HOME</a>
+                <a href="/" class="font-poppins text-[18px] font-medium ">HOME</a>
             </div>
 
             @role('Admin')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{ route('accounts.index') }}" class="font-poppins text-[18px] font-medium">USERS</a>
+                <a href="{{ route('accounts.index') }}" class="font-poppins text-[18px] font-medium ">USERS</a>
             </div>
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium">PROPERTIES</a>
+                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium ">PROPERTIES</a>
+            </div>
+            <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
+                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
+                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium ">INQUIRIES</a>
             </div>
             @endrole
 
             @role('Marketing')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium">PROPERTIES</a>
+                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium ">PROPERTIES</a>
             </div>
             @endrole
 
             @role('Customer Service')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium">INQUIRIES</a>
+                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium ">INQUIRIES</a>
             </div>
             @endrole
 
