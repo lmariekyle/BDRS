@@ -34,7 +34,7 @@
             <div class="absolute mt-[4rem] right-[10rem]">
                     @include('layouts.navigation')
     
-            </div>
+            </div> 
            
             <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] ml-[32rem] ">
                 <p class="ml-[8rem] -mt-6 font-playfair text-[60px] font-dirtywhite">We are the key</p>
@@ -50,17 +50,20 @@
 
         <div class="flex flex-col justify-start  ml-5 mt-[8rem] h-[732px] w-[1800px]">
                 <div class="flex flex-row justify-evenly self-center mt-5 w-max h-[100px]">
-                    <p class="font-playfair text-[68px] ml-2">We Sell,</p>
-                    <p class="font-playfair text-[68px] ml-2">We Buy,</p>
-                    <p class="font-playfair text-[68px] ml-2">We Rent</p>
+                    <p class="font-playfair text-[68px] ml-2 sm:text-start md:text-center ">We Sell,</p>
+                    <p class="font-playfair text-[68px] ml-2 ">We Buy,</p>
+                    <p class="font-playfair text-[68px] ml-2 ">We Rent</p>
                 </div>
                 <div class="flex flex-col ml-4">
-                    <p class="font-poppins text-[28px] self-center">Helping you find the property that suits your lifestyle and needs.</p>
+                    <p class="font-poppins text-[28px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
                 </div>
 
+       
+                    
+    
+                
                 <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
                     
-
                     <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[5rem] border-t-2 border-l-2 border-b-2 border-darkblue">
                         <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
                         @if( ! empty($property))
@@ -95,7 +98,279 @@
                             </template>
                         </div>
                         @endif
+                </div>
+
+               
+<!--Empowering chuchu-->
+
+
+                <div class = "flex flex-col absolute mt-[50rem] justify-start left-[15rem] ">                                               
+                        <img src="images/bldg1.jpg" alt="" class="w-[50rem] h-[55rem]">                                 
+                </div>
+                <div class = "flex flex-col absolute mt-[60rem] left-[75rem] gap-5">
+                    <p class = "flex justify-center text-center font-rozha font-bold text-7xl tracking-widest">Empowering <br>
+                        Your Choice<br></p>
+                  
+                    <p class = "flex justify-center text-center font-playfair font-bold text-4xl tracking-widest" >
+                        Buy or Rent,<br>
+                        We've got you<br>
+                        covered<br></p>
+                        <br>
+                        <p class = "flex justify-center text-center font-poppin font-bold text-xl tracking-widest">SEE PROPERTIES</p>
+
+                         <!--button for buy and rent-->
+                
+                <br><br><div class = "gap-10 flex sm:justify-start md:justify-center items-center"> 
+                    
+                    <button class = "border-solid border-darkblue border-4 bg-amber-200 hover:bg-amber-100  text-black  py-4 px-6 rounded " >  
+                        <h1 class = "font-poppin uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider ">FOR SALE  </h1>  
+
+                            <button class = "border-solid border-darkblue border-4 bg-amber-200 hover:bg-amber-100 text-black py-4 px-6 rounded ">  
+                                <h1 class = "font-poppin uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider">FOR RENT  </h1>
+                           
+                    </div>  
+                </div>
+           
+                <div class = "flex flex-col absolute mt-[105rem] justify-start left-[15rem] ">   
+                                  
+                    <br><br><br> <p class = "flex justify-start text-left font-rozha text-7xl">News and<br>
+                        Events </p> 
+                        
+                        <div class = "flex flex-col absolute mt-[4rem] left-[30rem] ">   
+                            <br><br><br><hr class="border-t-2 border-black w-[68rem]">         
+                    <p class = " justify-start text-right font-rozha text-7xl"><br>  
+                    </div>         
+                </div>
+                
+
+                <!--Heading-->
+                <div class = "flex flex-col absolute mt-[120rem] justify-start left-[7rem] "> 
+                    <br><br><div class="w-[103rem] h-[30rem] border-4 border-amber-300 bg-amber-100">
+                        <p>Empty</p>
                     </div>
+                </div>
+               
+               
+
+                
+                
+
+                
+
+
+
+
+
+
+
+                <!--about me
+
+                <div class = "absolute flex sm:justify-start md:justify-center mt-[48rem] w-1/8  ">          
+                    <div class="">
+                <p class="text-sm sm:text-base lg:text-xl xl:text-5xl font-poppin underline">                 
+                                MEET OUR AMAZING LEADERS</p>
+                    </div>
+                </div>
+-->
+                
+           
+                 <!--Marketing Head
+
+                  <div class = "flex flex-col absolute mt-[65rem] left-[60rem] sm:justify-start  "> 
+                    <img src="/images/b3.jpg" alt="" class="rounded-full w-[18rem] h-[20rem] overflow-hidden mt-[2rem] border-4 border-x-8 border-y-8 border-double border-darkblue"> 
+                    <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center"><br><br>
+                      
+                    </div>                          
+                        <div class = "flex flex-col absolute  mt-[3rem] left-[22rem] w-[27rem] h-1/2 gap-3 ">
+                            <p class="text-sm sm:text-base font-baby md:text-lg lg:text-xl xl:text-5xl flex flex-col bg-yellow-100 text-center">
+                               Marketing Head
+                             </p>
+                             <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl flex flex-col font-playfair text-center ">
+                                Benhur Medillo</p>
+                             <p class = "text-justify inline-block sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-full 2xl:w-full font-poppin">
+                                "Working with BDRS is such a blessing. It does not only shape our character to be a better individual 
+                                but evolve our passion and purpose in providing the best service. We at BDRS have always been with our
+                                 clients and will always serve what truly matters to them."</p>                              
+                 </div>
+         </div>
+ -->
+                 <!--COO
+
+                <div class = "flex flex-col absolute mt-[50rem] justify-start left-[7rem] ">          
+                    <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center"><br><br>
+                        <img src="/images/b1.png" alt="" class="rounded-full w-[100rem] h-[20rem] overflow-hidden mt-[3rem] border-4 border-x-8 border-y-8 border-double border-darkblue">
+                    </div>
+                            
+                        <div class = "flex flex-col absolute  mt-[4rem] left-[20rem] w-1/4 h-1/2 gap-3 " >
+                            <p class="text-sm sm:text-base font-baby md:text-lg lg:text-xl xl:text-5xl flex flex-col bg-yellow-100 text-center">
+                               President
+                             </p>
+                             <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl flex flex-col font-playfair text-center">
+                                Jerome Barbanida</p>
+                             <p class = "text-justify inline-block sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-full 2xl:w-full font-poppin">
+                                Lorem Ipsum, a dummy text in the printing and typesetting industry, has been used since
+                                 the 1500s. It has been popularized in the 1960s with Letraset sheets and desktop 
+                                 publishing software like Aldus PageMaker.</p>                              
+                 </div>                 
+--> 
+                 <!--Chairwoman
+
+                 <div class = "flex flex-col absolute mt-[27rem] justify-start left-[0rem] ">          
+                    <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center "><br><br>
+                        <br><br><br><img src="/images/b2.png" alt="" class="rounded-full w-[100rem] h-[20rem] overflow-hidden border-4 border-x-8 border-y-8 border-double border-darkblue">
+                    </div>
+                            
+                    <br><br><div class = "flex flex-col absolute  mt-[5rem] left-[20rem] w-1/4 h-1/2 gap-3 " >
+                            <p class="text-sm sm:text-base font-baby md:text-lg lg:text-xl xl:text-5xl flex flex-col bg-yellow-100 text-center">
+                               Chairwoman
+                             </p>
+                             <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl flex flex-col font-playfair text-center">
+                                Novellyn G. Quiambao</p>
+                             <p class = "text-justify inline-block sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-full 2xl:w-full font-poppin">
+                                "Despite the global pandemic, BDRS Realty Management Services Co. has achieved a milestone in 
+                                valuing client needs and achieving greater heights, standing up their slogan of Bridging Homes, Touching Lives.
+
+                             </p>                              
+                 </div>     
+           </div>
+    </div>
+->
+
+                   <!--connect with us
+
+                  
+
+                        <div class = "flex flex-col absolute mt-[115rem] justify-start left-[50rem]">  
+                            
+                             <div class = "flex flex-col mt-[0rem] justify-start right-[45rem]">
+                                 <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-anton tracking-widest">
+                                CONNECT WITH US                                   
+                                </p>                              
+                             </div>
+                        </div>
+
+                        <div class = "flex flex-col absolute mt-[118rem] justify-start left-[37rem] font-poppin"> 
+                            <p>We provide a variety of customer care options if you require assistance.<br><br>
+                            </p>
+                        </div>
+-->
+
+                        <!--gif
+                        <div class = "flex flex-col absolute mt-[128rem] justify-start left-[60rem]">  
+                                <img src ="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXdqN2I0d244ODlzMDNqcW8zcGt5dTcza3N6OG9tdnQ0YmQ5NDhoaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26SdS6M9jzxdqq72JU/giphy.gif ">
+                        </div>
+-->
+
+
+
+
+
+
+
+                <!--contact
+
+                            
+                        <br>
+-->
+                        <!--Email
+                      
+                        <div class = "flex flex-col absolute mt-[125rem] justify-start left-[30rem]">
+                            <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
+                            <div class="contactus-details  ">
+                                <br>
+							    <div class="contactus-icon ">
+								<a href="mailto:customerservice@bdrs-realty.com "><i class="fa-solid fa-envelope fa-2xl hover:text-white "></i></a>
+								<h3 class = "font-anton"><br>Email</h3>
+							    </div>
+							<div class="contaus-det ">
+								<a href="mailto:customerservice@bdrs-realty.com"><br><h4 class = "font-poppin hover:text-white">&nbsp;&nbsp;customerservice@bdrs-realty.com&nbsp;&nbsp;</h4></a>
+                            </button>
+                                  </div>
+							</div>
+						</div>
+-->
+
+                        <!--Mobile
+
+                        <div class = "flex flex-col absolute mt-[108rem] justify-start left-[30rem]">
+                            <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
+                            <div class="contactus-details ">
+                                <br>
+                                <div class="contactus-icon">
+                                    <a href="tel:9173110192"><i class="fa-solid fa-mobile-screen fa-2xl hover:text-white"></i></a>
+                                    <h3 class= "font-anton"><br>Mobile</h3>
+                                </div>
+                                <div class="contaus-det">
+                                    <a href="tel:9173110192"><br><h4 class= "font-poppin hover:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+63-917-311-0192&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h4></button>
+                                </div>
+                            </div>
+                        </div>
+-->
+
+                        <!--Telephone-->
+
+<!--animated office gif   https://giphy.com/gifs/animation-loop-life-26SdS6M9jzxdqq72JU
+
+                        <div class = "flex flex-col absolute mt-[118rem] justify-start left-[30rem] gap-3">
+                            <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
+                            <div class="contactus-details ">
+                                <br>
+                                <div class="contactus-icon">
+                                    <a href="#"><i class="fa-solid fa-phone fa-2xl hover:text-white"></i></a>
+                                    <h3 class= "font-anton"><br>Telephone</h3>
+                                </div>
+                                <div class="contaus-det">
+                                    <a href="tel:0324076687"><br><h4 class = "font-poppin hover:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+032-407 6687&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h4>
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+-->
+
+
+        <!--INQUIRY
+                     <div class= "mt-[140rem] flex justify-center">
+
+                        INQUIRY
+
+                     </div>
+-->
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
 
     @if( ! empty($property))
             <script>
