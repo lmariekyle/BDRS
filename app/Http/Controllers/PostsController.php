@@ -19,13 +19,14 @@ class PostsController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $property = Property::where('featured','Featured')->first();
         
         if($property == NULL){
             return view('welcome', compact('property')); 
         }else{
             $imagePaths = json_decode($property->img,true);
-            return view('welcome', compact('property','imagePaths')); 
+            return view('welcome', compact('property','imagePaths','user')); 
         }
         // dd($property);
     }

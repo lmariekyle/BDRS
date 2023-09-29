@@ -74,7 +74,11 @@
                         <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                         <p class="font-poppins text-[38px]">{{$property->address}} {{$property->state}} {{$property->zip}}</p>
                         <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                        <a href="" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
+                        @if ($user) 
+                        <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
+                        @else
+                        <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
+                        @endif
                     </div>
                     <!-- gallery -->
                     <div x-data="imageSlider" class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-10">
@@ -163,20 +167,20 @@
 
 
 
-                <!--about me
+                <!-- about me -->
 
-                <div class = "absolute flex sm:justify-start md:justify-center mt-[48rem] w-1/8  ">          
+                <!-- <div class = "absolute flex sm:justify-start md:justify-center mt-[48rem] w-1/8  ">          
                     <div class="">
                 <p class="text-sm sm:text-base lg:text-xl xl:text-5xl font-poppin underline">                 
                                 MEET OUR AMAZING LEADERS</p>
                     </div>
-                </div>
--->
+                </div> -->
+
                 
            
-                 <!--Marketing Head
+                 <!-- Marketing Head -->
 
-                  <div class = "flex flex-col absolute mt-[65rem] left-[60rem] sm:justify-start  "> 
+                  <!-- <div class = "flex flex-col absolute mt-[65rem] left-[60rem] sm:justify-start  "> 
                     <img src="/images/b3.jpg" alt="" class="rounded-full w-[18rem] h-[20rem] overflow-hidden mt-[2rem] border-4 border-x-8 border-y-8 border-double border-darkblue"> 
                     <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center"><br><br>
                       
@@ -193,8 +197,7 @@
                                  clients and will always serve what truly matters to them."</p>                              
                  </div>
          </div>
- -->
-                 <!--COO
+
 
                 <div class = "flex flex-col absolute mt-[50rem] justify-start left-[7rem] ">          
                     <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center"><br><br>
@@ -211,11 +214,11 @@
                                 Lorem Ipsum, a dummy text in the printing and typesetting industry, has been used since
                                  the 1500s. It has been popularized in the 1960s with Letraset sheets and desktop 
                                  publishing software like Aldus PageMaker.</p>                              
-                 </div>                 
---> 
-                 <!--Chairwoman
+                 </div>                  -->
 
-                 <div class = "flex flex-col absolute mt-[27rem] justify-start left-[0rem] ">          
+                 <!--Chairwoman-->
+
+                 <!-- <div class = "flex flex-col absolute mt-[27rem] justify-start left-[0rem] ">          
                     <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 items-center "><br><br>
                         <br><br><br><img src="/images/b2.png" alt="" class="rounded-full w-[100rem] h-[20rem] overflow-hidden border-4 border-x-8 border-y-8 border-double border-darkblue">
                     </div>
@@ -233,14 +236,14 @@
                              </p>                              
                  </div>     
            </div>
-    </div>
-->
+    </div> -->
 
-                   <!--connect with us
+
+                   <!--connect with us-->
 
                   
 
-                        <div class = "flex flex-col absolute mt-[115rem] justify-start left-[50rem]">  
+                        <!-- <div class = "flex flex-col absolute mt-[115rem] justify-start left-[50rem]">  
                             
                              <div class = "flex flex-col mt-[0rem] justify-start right-[45rem]">
                                  <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-anton tracking-widest">
@@ -252,29 +255,27 @@
                         <div class = "flex flex-col absolute mt-[118rem] justify-start left-[37rem] font-poppin"> 
                             <p>We provide a variety of customer care options if you require assistance.<br><br>
                             </p>
-                        </div>
--->
+                        </div> -->
 
-                        <!--gif
-                        <div class = "flex flex-col absolute mt-[128rem] justify-start left-[60rem]">  
+
+                        <!--gif-->
+                        <!-- <div class = "flex flex-col absolute mt-[128rem] justify-start left-[60rem]">  
                                 <img src ="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXdqN2I0d244ODlzMDNqcW8zcGt5dTcza3N6OG9tdnQ0YmQ5NDhoaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26SdS6M9jzxdqq72JU/giphy.gif ">
-                        </div>
--->
+                        </div> -->
 
 
 
 
 
 
-
-                <!--contact
+                <!--contact-->
 
                             
-                        <br>
--->
-                        <!--Email
+                        <!-- <br> -->
+
+                        <!--Email-->
                       
-                        <div class = "flex flex-col absolute mt-[125rem] justify-start left-[30rem]">
+                        <!-- <div class = "flex flex-col absolute mt-[125rem] justify-start left-[30rem]">
                             <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
                             <div class="contactus-details  ">
                                 <br>
@@ -287,11 +288,11 @@
                             </button>
                                   </div>
 							</div>
-						</div>
--->
+						</div> -->
 
-                        <!--Mobile
 
+                        <!--Mobile-->
+<!-- 
                         <div class = "flex flex-col absolute mt-[108rem] justify-start left-[30rem]">
                             <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
                             <div class="contactus-details ">
@@ -304,14 +305,14 @@
                                     <a href="tel:9173110192"><br><h4 class= "font-poppin hover:text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+63-917-311-0192&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h4></button>
                                 </div>
                             </div>
-                        </div>
--->
+                        </div> -->
+
 
                         <!--Telephone-->
 
-<!--animated office gif   https://giphy.com/gifs/animation-loop-life-26SdS6M9jzxdqq72JU
+<!--animated office gif   https://giphy.com/gifs/animation-loop-life-26SdS6M9jzxdqq72JU-->
 
-                        <div class = "flex flex-col absolute mt-[118rem] justify-start left-[30rem] gap-3">
+                        <!-- <div class = "flex flex-col absolute mt-[118rem] justify-start left-[30rem] gap-3">
                             <button class = "border-solid border-darkblue border-4 hover:bg-blue-200">
                             <div class="contactus-details ">
                                 <br>
@@ -325,8 +326,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
--->
+                    </div> -->
+
 
 
         <!--INQUIRY
@@ -337,40 +338,6 @@
                      </div>
 -->
                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                   
 
     @if( ! empty($property))
             <script>
