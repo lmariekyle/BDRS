@@ -11,7 +11,7 @@
         @else
         <a href="{{route('login')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">LOGIN</a>
         @endauth
-        <a href="" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">ABOUT US</a>
+        <a href="{{route('aboutpage')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">ABOUT US</a>
         <a href="" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">UPDATES</a>
     </div>
 

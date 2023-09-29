@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\InquiryReply;
 use App\Http\Controllers\PostsController;
@@ -26,6 +27,7 @@ use Spatie\Permission\Models\Role;
 
 // Route::get('/', [PostsController::class, 'index'])->name('welcome');
 Route::resource('/', \App\Http\Controllers\PostsController::class);
+Route::get('/aboutpage', [AboutController::class, 'index'])->name('aboutpage');
 Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name('posts.viewproperties');
 Route::get('showproperty/{id}', [PostsController::class, 'showproperty'])->name('posts.showproperty');
 Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
