@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -27,10 +28,20 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $request->session()->regenerate();
+        if(auth()->check() && (auth()->user()->userStatus == 1)){
+            Auth::guard('web')->logout();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
+            return Redirect::back()->with('error','Account has been Archived!');
+        }else{
+            $request->session()->regenerate();
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
     }
+
 
     /**
      * Destroy an authenticated session.
