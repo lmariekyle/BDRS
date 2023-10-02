@@ -111,7 +111,7 @@ class PropertySeeder extends Seeder
             'availability' => 'For Sale',
             'furnish' => 'Partially Furnished',
             'name' => 'Minded Manor',
-            'description' => 'An excellent choice for those seeking a minimalist and low-maintenance lifestyle, offering convenience and often located in urban or highly desirable locations.',
+            'description' => 'Welcome to Minded Manor, a charming two-bedroom apartment located in the heart of Makati, Manila. This partially furnished gem is now available for sale, making it an excellent opportunity for anyone looking for a cozy and convenient urban living space.',
             'type' => 'Apartment',
             'price' =>'3000',
             'sizes' => '100 Sqm',

@@ -53,12 +53,9 @@
                         </div>
                   
                     </div>
-                        <p class="px-3 py-4 font-baby font-semibold text-[74px] -mt-[4rem] self-center">{{$property->name}}</p>
-                        <div class="w-[500px] h-max self-center -mt-5">
+                        <p class="px-3 py-4 font-baby font-semibold text-[74px] -mt-[4rem] self-center">{{$property->name}}!</p>
+                        <div class="w-[900px] h-max self-center -mt-5">
                             <p class="font-poppin text-[18px]">{{$property->description}}</p>
-                        </div>
-                        <div class="w-[500px] h-max self-center mt-5">
-                            <p class="font-poppin text-[18px] font-semibold">Located At : {{$property->address}} {{$property->state}} , {{$property->zip}}</p>
                         </div>
         
          
@@ -69,18 +66,29 @@
             <img src="/{{$imagePaths[1]}}" alt="" style="height: 500px; width: 800px;">
             </div>
                 <div class="flex flex-col justify-center self-center w-[500px] h-[500px">
-                    <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-black">Property Type and Measurement</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Type: {{$property->type}}</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Bedroom: {{$property->bed}} Bedroom/s</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Measurement: {{$property->sizes}}</p>
+                    <p class="px-8 py-2 font-playfair text-[68px] w-max font-semibold text-black self-center ml-[10rem]">Property Highlights</p>
+                    <div class="">
+                    <p class="px-8 py-2 font-baby text-[48px] w-max font-semibold text-black self-start">Spacious Living:</p>
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -mt-4">With {{$property->sizes}} square meters of space, {{$property->name}} offers plenty of room to live and entertain comfortably. </p>
+                    </div>
+
+                    <div class="mt-4">
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -mt-4">This {{$property->type}} features {{$property->bed}} bedrooms, making it ideal for a small family, couples, or those who need extra space for a home office.</p>
+                    </div>
+                    <!-- <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">{{$property->name}} offers plenty of room to live and entertain comfortably.</p>
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">With {{$property->sizes}} Sqm of space, , this property strikes the perfect balance between size and coziness.</p> -->
+
+                    <div class="flex flex-row self-end mt-3 border-b-2 border-gray-500">
+                    <p class="px-8 py-2 font-poppin text-[12px] w-max self-start text-gray-500">{{$property->type}} | {{$property->sizes}} Sqm | {{$property->bed}} Bedroom/s</p>
+                    </div>
                 </div>
         </div>
 
         <div class="flex flex-row justify-end w-full h-[500px] mt-10 mb-10">
-                <div class="flex flex-col justify-center w-[500px] h-[500px">
-                    <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-black">Amenities</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Type: {{$property->type}}</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Measurement: {{$property->sizes}}</p>
+                <div class="flex flex-col justify-center w-[500px] h-[500px mr-[13rem]">
+                    <p class="px-8 py-2 font-playfair text-[68px] w-max font-semibold text-black self-center ml-[8rem]">{{$property->furnish}}</p>
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">The apartment comes {{$property->furnish}}, offering you the flexibility to add your personal touch and style to the space.</p>
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">At just PHP {{$property->price}}, {{$property->name}} is a fantastic value for a property in this prime location. </p>
                 </div>
                 <div class="border-r-2 border-b-2 w-max h-max px-2 py-4 border-black">
                 <img src="/{{$imagePaths[2]}}" alt="" style="height: 500px; width: 800px;">
@@ -92,7 +100,8 @@
                 <div class="absolute border-2 self-start w-max h-max px-2 py-4 border-black mr-[55rem] mt-10 bg-darkblue
                 shadow-md">
                         <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Like what you see?</p>
-                        <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Send us an inquiry</p>
+                        <p class="px-8 py-2 font-playfair text-[28px] w-max font-semibold text-dirtywhite">Use this form for your inquiries</p>
+                        <p class="px-8 py-2 font-playfair text-[28px] w-max font-semibold text-dirtywhite">or schedule a viewing with us</p>
                     </div>
                     <form method="POST" action="{{ route('posts.showproperty', $property->id) }}">
                         @method('PUT')    

@@ -27,7 +27,8 @@ export default {
             },
             color: {
                 'dirtywhite': '#fffcf2', 
-                'darkblue': '#0D5384 ',
+                'darkblue': '#0d5385',
+                'greywhite': '#edede9',
                 'gold' :  '#eddea4',
             },
             borderColor:{

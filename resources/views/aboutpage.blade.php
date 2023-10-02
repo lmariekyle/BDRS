@@ -66,8 +66,9 @@
                             </table>
                 </div>
            </div>
-                            <p class="font-playfair text-[82px] text-black self-center mt-[20rem]">Our Brand Identity</p>
-                            <div class="border-b-1 border-black"></div>
+                
+           <p class="font-playfair text-[82px] text-black self-center mt-[20rem]">Our Brand Identity</p>
+            <div class="border-b-1 border-black"></div>
             <div class="flex flex-row justify-center place-items-center h-max w-max mt-[8rem] space-x-[8rem]">
                     <div class="flex flex-col justify-start place-items-center h-[500px] w-max mt-12">
                         <p class="font-rozha text-[92px] text-black self-center mt-8">Realty</p>
@@ -80,12 +81,13 @@
                             </div>
                     </div>
             </div>
+
             <div class="flex flex-row justify-center place-items-center h-max w-max mt-[12rem] space-x-[10rem]">
-            <div class="flex flex-row justify-center place-items-center bg-black h-[500px] w-[500px]">
+                    <div class="flex flex-row justify-center place-items-center bg-black h-[500px] w-[500px]">
                             <div class="bg-darkblue border-2 border-black h-[500px] w-[500px] shadow-lg"></div>
-                            <div class="flex flex-col justify-center items-center absolute bg-dirtywhite border-2 border-black h-[500px] w-[500px] mr-12 mt-10">
-                                <img src="images/management.jpg" alt="" style="height:460px; width:460px;" class="border-4 border-greywhite rounded-md shadow-inner">
-                            </div>
+                                    <div class="flex flex-col justify-center items-center absolute bg-dirtywhite border-2 border-black h-[500px] w-[500px] mr-12 mt-10">
+                                        <img src="images/management.jpg" alt="" style="height:460px; width:460px;" class="border-4 border-greywhite rounded-md shadow-inner">
+                                    </div>
                     </div>
 
                     <div class="flex flex-col justify-start place-items-center h-[500px] w-max mt-12">
@@ -94,6 +96,61 @@
                     </div>
             </div>
 
+        <div class="flex flex-row justify-center place-items-center h-max w-max mt-[11rem] space-x-[10rem]">
+                <div class="flex flex-col justify-start place-items-center h-[500px] w-max mt-12">
+                                <p class="font-rozha text-[92px] text-black self-center mt-8">Services</p>
+                                <p class="w-[50rem] h-[200px] px-6 py-4 font-poppin text-[22px] text-black self-center break-words indent-8">We champion the art of exemplary service, going above and beyond without expecting anything in return. It's not just about the business at hand; it's about the dedication to deliver the absolute best in service, elevating the customer experience to unparalleled heights.</p>
+                </div>
+                    <div class="flex flex-row justify-center place-items-center bg-black h-[500px] w-[500px]">
+                            <div class="bg-darkblue border-2 border-black h-[500px] w-[500px] shadow-lg"></div>
+                                    <div class="flex flex-col justify-center items-center absolute bg-dirtywhite border-2 border-black h-[500px] w-[500px] mr-12 mt-10">
+                                        <img src="images/services.jpg" alt="" style="height:460px; width:460px;" class="border-4 border-greywhite rounded-md shadow-inner">
+                                    </div>
+                    </div>
         </div>
+
+        <p class="font-playfair text-[82px] text-black self-center mt-[10rem]">Our Core Commitments</p>
+
+        <div class="flex flex-row justify-center place-items-center h-max w-max mt-[2rem]">
+            <div class="flex flex-row justify-center place-items-center shadow-lg px-5 py-7 space-x-[3rem]">
+                <div class="">
+                    <img src="images/4.png" alt="" style="height:460px; width:460px;" class="border-4 border-gold rounded-md shadow-md">
+                </div>
+                <div class="">
+                    <img src="images/5.png" alt="" style="height:460px; width:460px;" class="border-4 border-gold rounded-md shadow-md">
+                </div>
+                <div class="">
+                    <img src="images/6.png" alt="" style="height:460px; width:460px;" class="border-4 border-gold rounded-md shadow-md">
+                </div>
+            </div>
+        </div>
+
+        <p class="font-playfair text-[82px] text-black self-center mt-[10rem]">Our Leaders</p>
+
+        <div class="flex flex-col justify-center place-items-center h-max w-max mt-[2rem]">
+                <div class="flex flex-row">
+                    <img src="images/SirJerome.png" alt="" style="height:260px; width:260px;" class="absolute border-4 border-gold bg-dirtywhite rounded-md shadow-md">
+                    <div class="flex flex-col bg-dirtywhite border-2 border-darkblue shadow-lg ml-[10rem] mt-10 w-max">'
+                            <div class="ml-[8rem] px-3 py-3 w-[800px]">
+                                <p class="font-playfair text-[42px] text-black self-start mr-10 font-semibold border-b-2 border-gold mb-4 ">President Jerome Barbanida</p>
+                                <p class="font-poppin text-[22px] text-black self-start mr-10 mb-4">As the President of a thriving Realty Company, I've embarked on a journey of leadership, innovation, and unwavering dedication, shaping the company's success while helping countless individuals find their dream homes and build their futures.</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="flex flex-row mt-[3rem]">
+                    <img src="images/MamInin.png" alt="" style="height:260px; width:260px;" class="absolute border-4 border-gold bg-dirtywhite rounded-md shadow-md">
+                    <div class="flex flex-col bg-dirtywhite border-2 border-darkblue shadow-lg ml-[10rem] mt-10 w-max">'
+                            <div class="ml-[8rem] px-3 py-3 w-[800px]">
+                                <p class="font-playfair text-[42px] text-black self-start mr-10 font-semibold border-b-2 border-gold mb-4">Chairwoman Novellyn G. Quiambao</p>
+                                <p class="font-poppin text-[22px] text-black self-start mr-10 mb-4">As the Chairwoman of our esteemed Realty Company, I've led with a commitment to excellence, fostering growth, and empowering our team to redefine industry standards while creating countless success stories for our clients and partners.</p>
+                            </div>
+                    </div>
+                </div>
+        </div>
+
+
+        
+    </div> <!-- end div of col! -->
+
     </body>
 </html>
