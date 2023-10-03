@@ -7,7 +7,7 @@
         <div class="flex flex-col items-center w-max -mt-[30rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Update Property</p>
-            <form method="POST" action="{{route('properties.update' , $property->id) }}" class="flex flex-col flex-wrap w-[1300px] h-[430px]" enctype="multipart/form-data">  
+            <form method="POST" action="{{route('properties.update' , $property->id) }}" class="flex flex-col flex-wrap w-[1300px] h-[800px]" enctype="multipart/form-data">  
             @method('PUT') 
                 @csrf
                 <!-- Name -->
@@ -19,49 +19,51 @@
 
                 <div class="mt-4 px-4">
                 <x-input-label for="type" :value="__('Property Type')" />
-                        <select id="type" class="block mt-1 w-full" name="type" :value="$property->type" required autofocus>
-                        <option value="">Property Type</option>
-                        <option value="Apartment">Apartment</option>
-                        <option value="Condominium">Condominium</option>
-                        <option value="Studio Unit Type">Studio Unit</option>
-                        <option value="Loft Unit Type">Loft Unit</option>
-                        <option value="Penthouse Unit Type">Penthouse Unit</option>
-                        <option value="Town House">Town House</option>
-                        <option value="Villa">Villa</option>
-                        <option value="Row House">Row House</option>
-                        <option value="Duplex House">Duplex House</option>
-                        <option value="Single Detached House">Single Detached House</option>
-                        <option value="Office">Office</option>
-                        <option value="Retail">Retail</option>
-                        <option value="Industrial">Industrial</option>
-                        </select>
-                </div>
+                <select id="type" class="block mt-1 w-full" name="type" required autofocus>
+                    <option value="">Property Type</option>
+                    <option value="Apartment" {{ $property->type === 'Apartment' ? 'selected' : '' }}>Apartment</option>
+                    <option value="Condominium" {{ $property->type === 'Condominium' ? 'selected' : '' }}>Condominium</option>
+                    <option value="Studio Unit" {{ $property->type === 'Studio Unit' ? 'selected' : '' }}>Studio Unit</option>
+                    <option value="Loft Unit" {{ $property->type === 'Loft Unit' ? 'selected' : '' }}>Loft Unit</option>
+                    <option value="Penthouse Unit" {{ $property->type === 'Penthouse Unit' ? 'selected' : '' }}>Penthouse Unit</option>
+                    <option value="Town House" {{ $property->type === 'Town House' ? 'selected' : '' }}>Town House</option>
+                    <option value="Villa" {{ $property->type === 'Villa' ? 'selected' : '' }}>Villa</option>
+                    <option value="Row House" {{ $property->type === 'Row House' ? 'selected' : '' }}>Row House</option>
+                    <option value="Duplex House" {{ $property->type === 'Duplex House' ? 'selected' : '' }}>Duplex House</option>
+                    <option value="Single Detached House" {{ $property->type === 'Single Detached House' ? 'selected' : '' }}>Single Detached House</option>
+                    <option value="Office" {{ $property->type === 'Office' ? 'selected' : '' }}>Office</option>
+                    <option value="Retail" {{ $property->type === 'Retail' ? 'selected' : '' }}>Retail</option>
+                    <option value="Industrial" {{ $property->type === 'Industrial' ? 'selected' : '' }}>Industrial</option>
+                </select>
+            </div>
 
                 <div class="mt-4  px-4">
                     <x-input-label for="price" :value="__('Price Range')" />
                 
-                    <select id="price" class="block mt-1 w-full" name="price" :value="$property->price" required autofocus>
-                    <option value="100,000">100,000</option>
-                    <option value="500,000">500,000</option>
-                    <option value="1,000,000">1,000,000</option>
-                    <option value="3,000,000">3,000,000</option>
-                    <option value="5,000,000">5,000,000</option>
-                    <option value="8,000,000">8,000,000</option>
-                    <option value="10,000,000">10,000,000</option>
-                        </select>
+                    <select id="price" class="block mt-1 w-full" name="price" required autofocus>
+                        <option value="100,000" {{ $property->price === '100,000' ? 'selected' : '' }}>₱100,000</option>
+                        <option value="500,000" {{ $property->price === '500,000' ? 'selected' : '' }}>₱500,000</option>
+                        <option value="1,000,000" {{ $property->price === '1,000,000' ? 'selected' : '' }}>₱1,000,000</option>
+                        <option value="3,000,000" {{ $property->price === '3,000,000' ? 'selected' : '' }}>₱3,000,000</option>
+                        <option value="5,000,000" {{ $property->price === '5,000,000' ? 'selected' : '' }}>₱5,000,000</option>
+                        <option value="8,000,000" {{ $property->price === '8,000,000' ? 'selected' : '' }}>₱8,000,000</option>
+                        <option value="10,000,000" {{ $property->price === '10,000,000' ? 'selected' : '' }}>₱10,000,000</option>
+                    </select>
+
                     <x-input-error :messages="$errors->get('price')" class="mt-2" />
                 </div>
-                
+
+
                 <div class="mt-4 px-4 ">
                     <x-input-label for="sizes" :value="__('Size')" />
-                    <select id="sizes" class="block mt-1 w-full" name="sizes" :value="$property->sizes" required autofocus>
-                    <option value="18">18 Sqm</option>
-                    <option value="22">22 Sqm</option>
-                    <option value="42">42 Sqm</option>
-                    <option value="50">50 Sqm</option>
-                    <option value="100">100 Sqm</option>
-                    <option value="200">200 Sqm</option>
-                    <option value="201">Above 201 Sqm</option>
+                    <select id="sizes" class="block mt-1 w-full" name="sizes" required autofocus>
+                        <option value="18" {{ $property->sizes === '18 Sqm' ? 'selected' : '' }}>18 Sqm</option>
+                        <option value="22" {{ $property->sizes === '22 Sqm' ? 'selected' : '' }}>22 Sqm</option>
+                        <option value="42" {{ $property->sizes === '42 Sqm' ? 'selected' : '' }}>42 Sqm</option>
+                        <option value="50" {{ $property->sizes === '50 Sqm' ? 'selected' : '' }}>50 Sqm</option>
+                        <option value="100" {{ $property->sizes === '100 Sqm' ? 'selected' : '' }}>100 Sqm</option>
+                        <option value="200" {{ $property->sizes === '200 Sqm' ? 'selected' : '' }}>200 Sqm</option>
+                        <option value="201" {{ $property->sizes === '201 Sqm' ? 'selected' : '' }}>Above 201 Sqm</option>
                     </select>
                     <x-input-error :messages="$errors->get('sizes')" class="mt-2" />
                 </div>
@@ -84,24 +86,28 @@
                     <x-text-input id="zip" class="block mt-1 w-full" type="text" name="zip" :value="$property->zip" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('zip')" class="mt-2" />
                 </div>
+
+
                 <div class="mt-4 px-4">
                     <x-input-label for="bed" :value="__('Bed')" />
                     <select id="bed" class="block mt-1 w-full" name="bed" :value="$property->bed" required autofocus>
-                    <option value="0">Studio Only</option>
-                    <option value="1">1 bedroom</option>
-                    <option value="2">2 bedrooms</option>
-                    <option value="3">3 bedrooms</option>
-                    <option value="4">4 bedrooms</option>
-                    <option value="5">5 bedrooms</option>
-                        </select>
+                        <option value="0" {{ $property->bed === '0' ? 'selected' : '' }}>Studio Only</option>
+                        <option value="1" {{ $property->bed === '1' ? 'selected' : ''}}>1 bedroom</option>
+                        <option value="2" {{ $property->bed === '2' ? 'selected' : ''}}>2 bedrooms</option>
+                        <option value="3" {{ $property->bed === '3' ? 'selected' : ''}}>3 bedrooms</option>
+                        <option value="4" {{ $property->bed === '4' ? 'selected' : ''}}>4 bedrooms</option>
+                        <option value="5" {{ $property->bed === '5' ? 'selected' : ''}}>5 bedrooms</option>
+                    </select>
                     <x-input-error :messages="$errors->get('bed')" class="mt-2" />
                 </div>
+
+
 
                 <div class="mt-4 px-4">
                 <x-input-label for="provision" :value="__('Availability')" />
                         <select id="provision" class="block mt-1 w-full" name="provision" :value="$property->provision" required autofocus>
-                            <option value="For Rent">For Rent</option>
-                            <option value="For Sale">For Sale</option>
+                            <option value="For Rent" {{ $property->provision === 'For Rent' ? 'selected' : ''}}>For Rent</option>
+                            <option value="For Sale" {{ $property->provision === 'For Sale' ? 'selected' : ''}}>For Sale</option>
                         </select>
                 </div>
 
@@ -109,33 +115,62 @@
                 <x-input-label for="furnish" :value="__('Furnish')" />
                         <select id="furnish" class="block mt-1 w-full" name="furnish" :value="$property->furnish" required autofocus>
                         <option value="">Furnish</option>
-                            <option value="Not Furnished">Not Furnished</option>
-                            <option value="Partially Furnished">Partially Furnished</option>
-                            <option value="Fully Furnished">Fully Furnished</option>
+                            <option value="Not Furnished" {{ $property->furnish === 'Not Furnished' ? 'selected' : ''}}>Not Furnished</option>
+                            <option value="Partially Furnished" {{ $property->furnish === 'Partially Furnished' ? 'selected' : ''}}>Partially Furnished</option>
+                            <option value="Fully Furnished" {{ $property->furnish === 'Fully Furnished' ? 'selected' : ''}}>Fully Furnished</option>
                         </select>
-                </div>
-
-
-                <div class="mt-4 px-4">
-                    <x-input-label for="description" :value="__('Property Description')" />
-                    <textarea id="description" class="block mt-1 w-full h-[350px] resize rounded-md" type="text" name="description" :value="$property->description" required autofocus autocomplete="name">{{$property->description}}</textarea>
-                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
                 </div>
 
                 <div class="mt-4 px-4 ">
                 <x-input-label for="status" :value="__('Property Status')" />
                         <select id="status" class="block mt-1 w-full" name="status" :value="$property->status" required autofocus>
-                            <option value="Approved">Approve</option>
-                            <option value="Disapprove">Disapprove</option>
+                            <option value="Approved" {{ $property->status === 'Approved' ? 'selected' : ''}} >Approve</option>
+                            <option value="Disapprove" {{ $property->status === 'Disapprove' ? 'selected' : ''}}>Disapprove</option>
                         </select>
                 </div>
 
                 <div class="mt-4 px-4 ">
                 <x-input-label for="featured" :value="__('Feature')" />
-                        <select id="featured" class="block mt-1 w-full" name="featured" :value="old('featured')" required autofocus>
-                            <option value="Featured">Featured</option>
-                            <option value="Not Featured">Not Featured</option>
+                        <select id="featured" class="block mt-1 w-full" name="featured" :value="$property->featured" required autofocus>
+                            <option value="Featured" {{ $property->featured === 'Featured' ? 'selected' : ''}}>Featured</option>
+                            <option value="Not Featured" {{ $property->featured === 'Not Featured' ? 'selected' : ''}}>Not Featured</option>
                         </select>
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="description" :value="__('Property Description')" />
+                    <textarea id="description" class="block mt-1 w-[250px] h-[350px] resize rounded-md" type="text" name="description" :value="$property->description" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="unitdesc" :value="__('Unit Size Description')" />
+                    <textarea id="unitdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="unitdesc" :value="$property->unitdesc" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('unitdesc')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="locationdesc" :value="__('Area Description')" />
+                    <textarea id="locationdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="locationdesc" :value="$property->locationdesc" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('locationdesc')" class="mt-2" />
+                </div>
+
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="pricedesc" :value="__('Price Description')" />
+                    <textarea id="pricedesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="pricedesc" :value="$property->pricedesc" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('pricedesc')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="furnishdesc" :value="__('Furnish Description')" />
+                    <textarea id="furnishdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="furnishdesc" :value="$property->furnishdesc" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('furnishdesc')" class="mt-2" />
+                </div>
+                <div class="mt-4 px-4">
+                    <x-input-label for="beddesc" :value="__('Bed Description')" />
+                    <textarea id="beddesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="beddesc" :value="$property->beddesc" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('beddesc')" class="mt-2" />
                 </div>
                 
                 <div class="mt-4 px-4"> 
