@@ -37,6 +37,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/privacypolicy', function () {
+    return view('privacypolicy');
+})->name('privacypolicy');
+
+
 Route::middleware('auth')->group(function () {
     Route::resource('accounts', \App\Http\Controllers\UserController::class);
     Route::resource('properties', \App\Http\Controllers\PropertiesController::class);

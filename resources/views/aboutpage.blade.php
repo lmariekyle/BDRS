@@ -22,9 +22,26 @@
 
     </head>
     <body class="bg-dirtywhite antialised">
+        <!-- navigation -->
+        <div class="flex flex-row mt-2 absolute mr-10 right-0">
+            @auth
+            @hasanyrole('Admin|Customer Service|Marketing')
+            <a href="{{route('dashboard')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">DASHBOARD</a>
+            @endhasanyrole
+            @role('User')
+            <a href="{{route('posts.viewproperties')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">PROPERTIES</a>
+            @endrole
+            @else
+            <a href="{{route('login')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">LOGIN</a>
+            @endauth
+            <a href="{{route('aboutpage')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">ABOUT US</a>
+            <a href="" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">UPDATES</a>
+        </div>
+
+        <!-- start of  content -->
         <div class="flex flex-col justify-center place-items-center mt-10 w-full h-max">
            <div class="flex flex-col mb-[5rem]">
-            <p class="font-rozha text-[62px] text-black self-center mt-8">About Us</p>
+            <p class="font-rozha text-[62px] text-black self-center mt-[10rem]">About Us</p>
             <p class="font-poppins text-[32px] text-black self-center -mt-2 font-semibold ml-4">BDRS Realty Management Services Co.</p>
            </div>
 
@@ -148,7 +165,7 @@
                 </div>
         </div>
 
-
+        @include('layouts.navigation')
         
     </div> <!-- end div of col! -->
 
