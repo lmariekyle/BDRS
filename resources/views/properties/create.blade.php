@@ -4,7 +4,7 @@
     <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
     @role('Marketing')
-        <div class="flex flex-col items-center w-max -mt-[25rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+        <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole       
         <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Create Property</p>
             <form method="POST" action="{{route('properties.store') }}" class="flex flex-col flex-wrap w-max h-[800px]" enctype="multipart/form-data">  
