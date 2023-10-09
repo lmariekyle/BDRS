@@ -8,7 +8,7 @@
 
         <div class="absolute top-0  mt-56 flex flex-col w-max sm:px-6 lg:ml-[20rem]">
             <div class=" bg-gold w-max self-end shadow-inner px-4 py-2 hover:shadow-md">
-                <a href="" class="text-center text-sm text-darkblue font-semibold hover:text-dirtywhite">CREATE UPDATE</a>
+                <a href="{{route('updates.create')}}" class="text-center text-sm text-darkblue font-semibold hover:text-dirtywhite">CREATE UPDATE</a>
             </div>
             <!-- <div class=" bg-dirtywhite w-full h-96 mt-4 border-2 border-darkblue shadow-md relative overflow-x-auto"> -->
                 <!-- <div class="bg-darkblue w-full h-14 border-2 border-dirtywhite-600 shadow-inner flex justify-between items-center px-4">

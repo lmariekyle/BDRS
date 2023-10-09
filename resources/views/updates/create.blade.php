@@ -7,7 +7,7 @@
         <div class="flex flex-col items-center w-max -mt-[25rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole       
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Create Property</p>
-            <form method="POST" action="{{route('properties.store') }}" class="flex flex-col flex-wrap w-max h-[430px]" enctype="multipart/form-data">  
+            <form method="POST" action="{{route('updates.store') }}" class="flex flex-col flex-wrap w-max h-[430px]" enctype="multipart/form-data">  
                 @csrf
                 <!-- Name -->
                 <div class="mt-4 px-4">
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="mt-4 px-4 ">
-                    <x-input-label for="date" :value="__('Date" />
+                    <x-input-label for="date" :value="__('Date')" />
                     <x-text-input id="date" class="block mt-1 w-full" type="date" name="date" :value="old('date')" required autocomplete="on"  />
                     <x-input-error :messages="$errors->get('date')" class="mt-2" />
                 </div>
