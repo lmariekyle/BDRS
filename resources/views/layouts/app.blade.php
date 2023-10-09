@@ -28,11 +28,11 @@
     <body class="bg-dirtywhite antialiased">
     
     <div class="flex flex-row sm:px-6 lg:-ml-9">
-        <div class="bg-gold w-[315px] h-[1024px] flex justify-start flex-col py-5 px-2">
+        <div class="bg-gold w-[315px] h-[1200px] flex justify-start flex-col py-5 px-2">
             <div class="self-center mr-5 bg-dirtywhite rounded-full w-[140px] h-[134px] sm:-my-px sm:ml-10 sm:flex px-14">
                    <!-- <img src="images/logo.png" alt=""  style="width: 100px; height:100px;"> -->
             </div>
-            <div class="-mt-[112px] sm:ml-[112px] lg:ml-[112px]">
+            <div class="-mt-[7rem] sm:ml-[112px] lg:ml-[112px]">
                 <img src="/images/logo.png" alt=""  style="width: 100px; height:100px;">
             </div>
             
@@ -142,21 +142,6 @@
                 $("div.alert").remove();
             }, 3000);
         });
-
-        document.addEventListener("DOMContentLoaded", function () {
-        var currentDate = new Date();
-        var maxYear = currentDate.getFullYear() - 18; // Maximum year for 18 years old and above
-
-        var dateOfBirthInput = document.getElementById("dateOfBirth");
-        dateOfBirthInput.setAttribute("max", formatDate(maxYear, 12, 31)); // Set maximum date to the end of the calculated maximum year
-
-        // Format the date as YYYY-MM-DD
-        function formatDate(month, day, year) {
-            month = String(month).padStart(2, "0");
-            day = String(day).padStart(2, "0");
-            return month + "-" + day + "-" + year;
-        }
-    });
         </script>
 
     </body>

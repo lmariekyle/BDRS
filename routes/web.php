@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\InquiryReply;
 use App\Http\Controllers\PostsController;
@@ -26,6 +27,7 @@ use Spatie\Permission\Models\Role;
 
 // Route::get('/', [PostsController::class, 'index'])->name('welcome');
 Route::resource('/', \App\Http\Controllers\PostsController::class);
+Route::get('/aboutpage', [AboutController::class, 'index'])->name('aboutpage');
 Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name('posts.viewproperties');
 Route::get('showproperty/{id}', [PostsController::class, 'showproperty'])->name('posts.showproperty');
 Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
@@ -34,6 +36,11 @@ Route::get('/authorization', [Controller::class, 'authorization'])->name('modal.
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/privacypolicy', function () {
+    return view('privacypolicy');
+})->name('privacypolicy');
+
 
 Route::middleware('auth')->group(function () {
     Route::resource('accounts', \App\Http\Controllers\UserController::class);

@@ -4,10 +4,10 @@
     <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
     @role('Marketing')
-        <div class="flex flex-col items-center w-max -mt-[25rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+        <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole       
-                <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Create Property</p>
-            <form method="POST" action="{{route('properties.store') }}" class="flex flex-col flex-wrap w-max h-[430px]" enctype="multipart/form-data">  
+        <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Create Property</p>
+            <form method="POST" action="{{route('properties.store') }}" class="flex flex-col flex-wrap w-max h-[800px]" enctype="multipart/form-data">  
                 @csrf
                 <!-- Name -->
                 <div class="mt-4 px-4">
@@ -50,6 +50,7 @@
                         </select>
                     <x-input-error :messages="$errors->get('price')" class="mt-2" />
                 </div>
+
                 
                 <div class="mt-4 px-4 ">
                     <x-input-label for="sizes" :value="__('Size')" />
@@ -65,6 +66,7 @@
                     </select>
                     <x-input-error :messages="$errors->get('sizes')" class="mt-2" />
                 </div>
+
 
                 <div class="mt-4 px-4">
                     <x-input-label for="address" :value="__('Address')" />
@@ -85,6 +87,8 @@
                     <x-text-input id="zip" class="block mt-1 w-full" type="text" name="zip" :value="old('zip')" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('zip')" class="mt-2" />
                 </div>
+
+
                 <div class="mt-4 px-4">
                     <x-input-label for="bed" :value="__('Bed')" />
                     <select id="bed" class="block mt-1 w-full" name="bed" :value="old('bed')" required autofocus>
@@ -98,6 +102,8 @@
                         </select>
                     <x-input-error :messages="$errors->get('bed')" class="mt-2" />
                 </div>
+
+
                 <div class="mt-4 px-4">
                 <x-input-label for="availability" :value="__('Availability')" />
                         <select id="availability" class="block mt-1 w-full" name="availability" :value="old('availability')" required autofocus>
@@ -116,6 +122,7 @@
                             <option value="Fully Furnished">Fully Furnished</option>
                         </select>
                 </div>
+
                 
                 <div class="mt-4 px-4 ">
                 <x-input-label for="status" :value="__('Property Status')" />
@@ -140,6 +147,35 @@
                     <x-input-error :messages="$errors->get('description')" class="mt-2" />
                 </div>
 
+                <div class="mt-4 px-4">
+                    <x-input-label for="unitdesc" :value="__('Unit Size Description')" />
+                    <textarea id="unitdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="unitdesc" :value="old('unitdesc')" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('unitdesc')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="locationdesc" :value="__('Area Description')" />
+                    <textarea id="locationdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="locationdesc" :value="old('locationdesc')" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('locationdesc')" class="mt-2" />
+                </div>
+
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="pricedesc" :value="__('Price Description')" />
+                    <textarea id="pricedesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="pricedesc" :value="old('pricedesc')" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('pricedesc')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="furnishdesc" :value="__('Furnish Description')" />
+                    <textarea id="furnishdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="furnishdesc" :value="$property->furnishdesc" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('furnishdesc')" class="mt-2" />
+                </div>
+                <div class="mt-4 px-4">
+                    <x-input-label for="beddesc" :value="__('Bed Description')" />
+                    <textarea id="beddesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="beddesc" :value="old('beddesc')" required autofocus autocomplete="name"></textarea>
+                    <x-input-error :messages="$errors->get('beddesc')" class="mt-2" />
+                </div>
 
                 <div class="mt-4 px-4"> 
                     <x-input-label for="coverphoto" :value="__('Cover Image Upload')" />

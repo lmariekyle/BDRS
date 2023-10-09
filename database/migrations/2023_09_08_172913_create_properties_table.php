@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('furnish')->nullable();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
+            $table->text('unitdesc')->nullable();
+            $table->text('beddesc')->nullable();
+            $table->text('furnishdesc')->nullable();
+            $table->text('pricedesc')->nullable();
+            $table->text('locationdesc')->nullable();
             $table->string('type')->nullable();
             $table->string('price')->nullable();
             $table->string('sizes')->nullable();

@@ -53,46 +53,55 @@
                         </div>
                   
                     </div>
-                        <p class="px-3 py-4 font-baby font-semibold text-[74px] -mt-[4rem] self-center">{{$property->name}}</p>
-                        <div class="w-[500px] h-max self-center -mt-5">
+                        <p class="px-3 py-4 font-baby font-semibold text-[74px] -mt-[1rem] self-center">{{$property->name}}</p>
+                        <div class="w-[900px] h-max self-center mt-3">
                             <p class="font-poppin text-[18px]">{{$property->description}}</p>
-                        </div>
-                        <div class="w-[500px] h-max self-center mt-5">
-                            <p class="font-poppin text-[18px] font-semibold">Located At : {{$property->address}} {{$property->state}} , {{$property->zip}}</p>
                         </div>
         
          
         </div>
 
         <div class="flex flex-row justify-start w-full h-[500px] mt-10">
-            <div class="border-l-2 border-t-2 w-max h-max px-2 py-4 border-black">
+            <div class="border-l-2 border-t-2 w-max h-max px-6 py-5 border-black">
             <img src="/{{$imagePaths[1]}}" alt="" style="height: 500px; width: 800px;">
             </div>
                 <div class="flex flex-col justify-center self-center w-[500px] h-[500px">
-                    <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-black">Property Type and Measurement</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Type: {{$property->type}}</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Bedroom: {{$property->bed}} Bedroom/s</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Measurement: {{$property->sizes}}</p>
+                    <p class="px-8 py-2 font-playfair text-[58px] w-max font-semibold text-black">Property Highlights</p>
+                    <p class="px-8 py-2 font-poppin text-[24px] font-semibold w-max text-black -mt-4">{{$property->type}} | {{$property->sizes}} | {{$property->bed}} Bedroom/s</p>
+                    <div class="">
+                
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] mt-2">{{$property->unitdesc}}</p>
+                    </div>
+
+                    <div class="mt-4">
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -mt-4">{{$property->beddesc}}</p>
+                    </div>
+                
+                    <div class="flex flex-row self-end mt-3 border-b-2 border-gray-500">
+                    <p class="px-8 py-2 font-poppin text-[12px] w-max self-start text-gray-500">{{$property->type}} | {{$property->sizes}} | {{$property->bed}} Bedroom/s</p>
+                    </div>
                 </div>
         </div>
 
-        <div class="flex flex-row justify-end w-full h-[500px] mt-10 mb-10">
-                <div class="flex flex-col justify-center w-[500px] h-[500px">
-                    <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-black">Amenities</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Type: {{$property->type}}</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black">Measurement: {{$property->sizes}}</p>
+        <div class="flex flex-row justify-end w-full h-[500px] mt-[7rem] mb-10">
+                <div class="flex flex-col justify-center w-[500px] h-[500px mr-[13rem]">
+                    <p class="px-8 py-2 font-poppin text-[24px] w-max font-semibold text-black self-center ml-[8rem]">{{$property->furnish}} | {{$property->price}} | {{$property->address}}, {{$property->state}}</p>
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">{{$property->furnishdesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">{{$property->pricedesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">{{$property->locationdesc}}</p>
                 </div>
-                <div class="border-r-2 border-b-2 w-max h-max px-2 py-4 border-black">
+                <div class="border-r-2 border-b-2 w-max h-max px-6 py-5 border-black">
                 <img src="/{{$imagePaths[2]}}" alt="" style="height: 500px; width: 800px;">
                 </div>
         </div>
 
         
-            <div class="flex flex-row justify-center w-full h-[500px] mt-[7rem] mb-10">
+            <div class="flex flex-row justify-center w-full h-[500px] mt-[10rem] mb-10">
                 <div class="absolute border-2 self-start w-max h-max px-2 py-4 border-black mr-[55rem] mt-10 bg-darkblue
                 shadow-md">
                         <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Like what you see?</p>
-                        <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Send us an inquiry</p>
+                        <p class="px-8 py-2 font-playfair text-[28px] w-max font-semibold text-dirtywhite">Use this form for your inquiries</p>
+                        <p class="px-8 py-2 font-playfair text-[28px] w-max font-semibold text-dirtywhite">or schedule a viewing with us</p>
                     </div>
                     <form method="POST" action="{{ route('posts.showproperty', $property->id) }}">
                         @method('PUT')    
@@ -108,10 +117,10 @@
                             <input type="text" name="clientEmail" id="clientEmail" class="-mt-2" value="{{$user->email}}" required>
                 
                             <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black -ml-8">INQUIRY MESSAGE:</p>
-                            <input type="text" name="clientMessage" id="clientMessage" class="-mt-2 h-[100px]" required>
+                            <textarea id="clientMessage" class="-mt-2 h-[100px] resize rounded-md" type="text" name="clientMessage" required></textarea>
                             <input type="text" name="propertyName" id="propertyName" class="hidden -mt-2 h-[100px]" value="{{$property->name}}">
 
-                            <button type="submit" class="px-8 py-2 font-poppin text-[22px] font-medium text-black border-2 border-black">Send Inquiry</button>
+                            <button type="submit" class="px-8 py-2 font-poppin mt-4 text-[22px] font-medium text-black border-2 border-black">Send Inquiry</button>
                     </div>
             </div>
         </form>

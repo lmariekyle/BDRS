@@ -58,7 +58,7 @@
                                 {{$update->date}}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="" class="mr-5"><i class="fa-solid fa-eye"></i> </a>          
+                                <a href="{{route('updates.show', $update->id)}}" class="mr-5"><i class="fa-solid fa-eye"></i> </a>          
                             </td>
                         </tr>
                         @empty
