@@ -165,7 +165,7 @@
                 </div>
         </div>
 
-        @include('layouts.navigation')
+        @include('layouts.footer')
         
     </div> <!-- end div of col! -->
 

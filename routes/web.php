@@ -28,6 +28,7 @@ use Spatie\Permission\Models\Role;
 // Route::get('/', [PostsController::class, 'index'])->name('welcome');
 Route::resource('/', \App\Http\Controllers\PostsController::class);
 Route::get('/aboutpage', [AboutController::class, 'index'])->name('aboutpage');
+Route::get('/newsupdates', [UpdatesController::class, 'newsupdates'])->name('updates.newsupdates');
 Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name('posts.viewproperties');
 Route::get('showproperty/{id}', [PostsController::class, 'showproperty'])->name('posts.showproperty');
 Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
@@ -42,14 +43,19 @@ Route::get('/privacypolicy', function () {
 })->name('privacypolicy');
 
 
+
 Route::middleware('auth')->group(function () {
     Route::resource('accounts', \App\Http\Controllers\UserController::class);
     Route::resource('properties', \App\Http\Controllers\PropertiesController::class);
     Route::resource('inquiry', \App\Http\Controllers\InquiryController::class);
     Route::resource('updates', \App\Http\Controllers\UpdatesController::class);
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/dashboard', [UserAccountController::class, 'index'])->name('dashboard');
+    Route::get('/profile/{id}', [UserAccountController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/{id}', [UserAccountController::class, 'update'])->name('profile.update');
+    Route::get('/userinquiries', [UserAccountController::class, 'showinquiries'])->name('profile.inquiries');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 

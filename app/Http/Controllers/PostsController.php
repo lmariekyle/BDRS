@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InquiriesReply;
 use App\Models\ClientInquiries as ModelsClientInquiries;
+use App\Models\Update;
 
 class PostsController extends Controller
 {
@@ -21,12 +22,13 @@ class PostsController extends Controller
     {
         $user = Auth::user();
         $property = Property::where('featured','Featured')->first();
-        
-        if($property == NULL){
-            return view('welcome', compact('property')); 
+        $update=Update::where('featured','Featured')->get();
+
+        if($property == NULL && $update == NULL){
+            return view('welcome', compact('property','update')); 
         }else{
             $imagePaths = json_decode($property->img,true);
-            return view('welcome', compact('property','imagePaths','user')); 
+            return view('welcome', compact('property','imagePaths','user','update')); 
         }
         // dd($property);
     }

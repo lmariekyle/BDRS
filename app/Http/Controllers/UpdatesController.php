@@ -19,6 +19,13 @@ class UpdatesController extends Controller
     
     }
 
+    public function newsupdates()
+    {
+            $updates=Update::where('status','Approved')->get();
+            
+            return view('updates.newsupdates', compact('updates'));
+        
+    }
     /**
      * Show the form for creating a new resource.
      */

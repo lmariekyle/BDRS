@@ -131,23 +131,31 @@
                     </div>  
                 </div>
            
-                <div class = "flex flex-col absolute mt-[105rem] justify-start left-[10rem] ">   
-                                  
-                    <br><br><br> <p class = "flex justify-start text-left font-rozha text-7xl">News and<br>
-                        Events </p> 
-                        
-                        <div class = "flex flex-col absolute mt-[4rem] left-[30rem] ">   
-                            <br><br><br><hr class="border-t-2 border-black w-[68rem]">         
-                    <p class = " justify-start text-right font-rozha text-7xl"><br>  
-                    </div>         
+                <div class = "flex flex-col absolute mt-[105rem] justify-center left-[10rem] ">   
+                     <p class = "self-center text-center font-rozha text-7xl">News &</p>  
+                     <p class = "self-center text-center font-rozha text-7xl -mt-1">Events </p>
+                     
                 </div>
                 
 
                 <!--Heading-->
-                <div class = "flex flex-col absolute mt-[120rem] justify-start left-[7rem] "> 
-                    <br><br><div class="w-[103rem] h-[30rem] border-4 border-amber-300 bg-amber-100">
-                        <p>Empty</p>
+                <div class = "flex flex-col absolute mt-[120rem] justify-start ml-[7rem]"> 
+                    <!-- start of update -->
+                    @foreach($update as $upt)
+                    <div class="flex flex-col w-[93rem] h-[22rem] border-2 border-gold bg-dirtywhire px-8 py-5 shadow-md mt-[5rem]">
+                        <div class="flex flex-col justify-center">
+                        <p class="font-playfair font-semibold text-[20px] text-black bg-gold h-max w-max px-4 py-2 shadow-lg">{{$upt->titleHeading}}</p>
+                        </div>
+                        <div class="flex flex-row justify-start space-x-10 mt-4">
+                            <img src="{{$upt->coverphoto}}" alt="" style="height: 240px; width:390px" class="rounded-md border-4 border-gold">
+                            <div class="flex flex-col justify-center h-max w-[60rem] px-4 py-4 -mt-[1rem]">
+                                  <p class="font-playfair font-semibold text-[22px] h-max w-max px-4 py-2 text-black self-center">{{$upt->titleSub}}</p>
+                                <p class="font-poppin text-[16px] text-black text-center">{{$upt->description}}</p>
+                            </div>
+                        </div>
                     </div>
+                    @endforeach
+                    <!-- end of update -->
                 </div>
                
     @if( ! empty($property))

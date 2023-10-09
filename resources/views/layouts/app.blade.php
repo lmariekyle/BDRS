@@ -59,6 +59,13 @@
                 <a href="/" class="font-poppins text-[18px] font-medium ">HOME</a>
             </div>
 
+            @role('User')
+            <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
+                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
+                <a href="{{route('profile.inquiries')}}" class="font-poppins text-[18px] font-medium ">INQUIRIES</a>
+            </div>
+            @endrole
+
             @role('Admin')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>

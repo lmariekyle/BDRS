@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\Models\Inquiry;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Models\UserAccount;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Spatie\Permission\Models\Role;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -23,7 +25,8 @@ class UserAccountController extends Controller
      */
     public function index()
     {
-        return view('auth.guest-register');
+        $user = Auth::user();
+        return view('dashboard',compact('user'));
     }
 
     /**
@@ -72,25 +75,44 @@ class UserAccountController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(UserAccount $userAccount)
+    public function showinquiries()
     {
-        //
+        $user=Auth::user();
+        $check = DB::table('inquiries')
+            ->where('clientEmail', '=', $user->email)
+            ->paginate(5);
+
+        $inq = $check;
+
+        return view('profile.inquiries', compact('inq'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(UserAccount $userAccount)
+    public function edit($userAccount)
     {
-        //
+        $user = User::where('id', $userAccount)->first();
+        return view('profile.update', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, UserAccount $userAccount)
+    public function update(Request $request, $userAccount)
     {
-        //
+        $user=User::where('id', $userAccount)->first();
+        $user->firstName=$request->firstName;
+        $user->middleName=$request->middleName;
+        $user->lastName=$request->lastName;
+        $user->contactNumber=$request->contactNumber;
+        $user->email=$request->email;
+
+        $user->save();
+
+        // return redirect('accounts.show',compact('user','personalInfo'))->with('success','Account has been Updated!');
+        return redirect()->back()->with('success','Account has been Updated!');
     }
 
     /**
