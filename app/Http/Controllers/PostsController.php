@@ -79,6 +79,20 @@ class PostsController extends Controller
         return view('posts.showproperty', compact('property','imagePaths','user')); 
     }
 
+    public function showbuy()
+    {
+        $user = Auth::user();
+        $properties=Property::where('availability','For Sale')->get();
+        return view('posts.showbuy', compact('properties','user')); 
+    }
+
+    public function showrent()
+    {
+        $user = Auth::user();
+        $properties=Property::where('availability','For Rent')->get();
+        return view('posts.showrent', compact('properties','user')); 
+    }
+
     public function filterproperty(Request $request)
     {
         dd($request);

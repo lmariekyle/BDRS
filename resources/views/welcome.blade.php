@@ -22,8 +22,11 @@
 
     </head>
     <body class="bg-dirtywhite antialised">
-
-        <div class="flex justify-center ml-5 mt-10">
+        <div class="sticky z-50 top-0">
+                    @include('layouts.navigation')
+        </div> 
+        <!-- landing page welcome content -->
+        <div class="flex  justify-center ml-5 mt-[2rem]">
             <div class="h-[732px] w-full ml-1 mt-8">
                 <img src="images/welcomebg.png" style="width: 1799px; height: 798px;">
             </div>
@@ -32,24 +35,22 @@
                     <img src="images/bdrswelcomebg.png" style="width: 1800px; height: 728px;">
                 </div>
             </div>
-            <div class="absolute mt-[4rem] right-[10rem]">
-                    @include('layouts.navigation')
-    
-            </div> 
            
             <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] ml-[32rem] ">
-                <p class="ml-[8rem] -mt-6 font-playfair text-[60px] font-dirtywhite">We are the key</p>
+                    <p class="ml-[8rem] -mt-6 font-playfair text-[60px] font-dirtywhite">We are the key</p>
                 <div class="flex flex-row px-2 -mt-5 ml-[10rem]">
-                <p class="font-playfair text-[60px] font-dirtywhite">to your new</p>
-                <p class="font-baby text-[78px] font-dirtywhite ml-2">Home</p>
+                    <p class="font-playfair text-[60px] font-dirtywhite">to your new</p>
+                    <p class="font-baby text-[78px] font-dirtywhite ml-2">Home</p>
                 </div>
                 <div class="self-center -ml-[13rem] -mt-5 border-2 border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
                     <a href="{{route('posts.viewproperties')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">explore now.</a>
                 </div>
             </div>
         </div>
+        <!-- end of landing page welcome content -->
 
-        <div class="flex flex-col justify-start  ml-5 mt-[8rem] h-[732px] w-[1800px]">
+        <!-- start of featured content -->
+        <div class="flex flex-col justify-start  ml-3 mt-[8rem] h-[732px] w-[1800px]">
                 <div class="flex flex-row justify-evenly self-center mt-5 w-max h-[100px]">
                     <p class="font-playfair text-[68px] ml-2 sm:text-start md:text-center ">We Sell,</p>
                     <p class="font-playfair text-[68px] ml-2 ">We Buy,</p>
@@ -58,89 +59,130 @@
                 <div class="flex flex-col ml-4">
                     <p class="font-poppins text-[28px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
                 </div>
-                <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
-                    
-                    <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[5rem] border-t-2 border-l-2 border-b-2 border-darkblue">
-                        <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
-                        @if( ! empty($property))
-                        <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                        <p class="font-poppins text-[38px]">{{$property->name}}</p>
-                        <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                        <p class="font-poppins text-[38px]">{{$property->type}}</p>
-                        <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
-                        <p class="font-poppins text-[38px]">{{$property->address}} {{$property->state}} {{$property->zip}}</p>
-                        <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                        @if ($user) 
-                        <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
-                        @else
-                        <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
-                        @endif
-                    </div>
-                    <!-- gallery -->
-                    <div x-data="imageSlider" class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-10">
-                        <div class="absolute right-5 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
-                            <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
-                        </div>
-
-                        <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fa-solid fa-caret-left text-2xl font-bold text-black"></i>
-                        </button>
-
-                        <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fa-solid fa-caret-right text-2xl font-bold text-black"></i>
-                        </button>
-                
-                        <div class="relative h-[530px]" style="width: 800px">
-                            <template x-for="(image, index) in images">
-                                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
-                                <img :src="image" alt="image" class="rounded-sm" />
+                <ul class="slider flex flex-col justify-items-center" id="slider1">
+                    <li class="relative">
+                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
+                            <!-- featured property description -->
+                            <div class="flex flex-col justify-center w-[630px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
+                                <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
+                                    <p class="font-poppins text-[38px]">Taft East Gate</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
+                                    <p class="font-poppins text-[38px]">Condominium Complex</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
+                                    <p class="font-poppins text-[28px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
+                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p> 
+                                    @if ($user) 
+                                    <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
+                                    @else
+                                    <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
+                                    @endif                               
+                            </div><!--end of featured property description -->
+                            <!-- image section -->
+                            <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
+                                <div>
+                                    <img src="/images/tafteastgate.png" alt="" style="width: 800px; height:500px;">
                                 </div>
-                            </template>
+                            </div>
+                            <!-- end of image section -->
                         </div>
-                        @endif
-                </div>
-
-        <!--Empowering chuchu-->
-
-
-                <div class = "flex flex-col absolute mt-[45rem] justify-start left-[10rem] ">                                               
-                        <img src="images/bldg1.jpg" alt="" class="w-[50rem] h-[55rem]">                                 
-                </div>
-                <div class = "flex flex-col absolute mt-[55rem] left-[68rem] gap-5">
-                    <p class = "flex justify-center text-center font-rozha font-bold text-7xl tracking-widest">Empowering <br>
-                        Your Choice<br></p>
+                    </li>
+                    <li class="relative hidden">
+                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
+                            <!-- featured property description -->
+                            <div class="flex flex-col justify-center w-[630px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
+                                <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
+                                    <p class="font-poppins text-[38px]">Vertex Central</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
+                                    <p class="font-poppins text-[38px]">Condominium Complex</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
+                                    <p class="font-poppins text-[28px]">491 Archbishop Reyes Ave, Cebu City, 6000 Cebu</p>
+                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
+                                    @if ($user) 
+                                    <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
+                                    @else
+                                    <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
+                                    @endif                               
+                            </div><!--end of featured property description -->
+                            <!-- image section -->
+                            <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
+                                <div>
+                                    <img src="/images/vertexcentral.jpg" alt="" style="width: 800px;">
+                                </div>
+                            </div>
+                            <!-- end of image section -->
+                        </div>
+                    </li>
+                    <li class="relative hidden">
+                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
+                            <!-- featured property description -->
+                            <div class="flex flex-col justify-center w-[630px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
+                                <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
+                                    <p class="font-poppins text-[38px]">Vertex Coast</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
+                                    <p class="font-poppins text-[38px]">Condominium Complex</p>
+                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
+                                    <p class="font-poppins text-[28px]">Punta Engaño Road, Lapu-Lapu City</p>
+                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
+                                    @if ($user) 
+                                    <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
+                                    @else
+                                    <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
+                                    @endif                               
+                            </div><!--end of featured property description -->
+                            <!-- image section -->
+                            <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
+                                <div>
+                                    <img src="/images/vertexcoast.png" alt="" style="width: 800px; height:500px;">
+                                </div>
+                            </div>
+                            <!-- end of image section -->
+                        </div>
+                    </li>
                   
-                    <p class = "flex justify-center text-center font-playfair font-bold text-4xl tracking-widest" >
-                        Buy or Rent,<br>
-                        We've got you<br>
-                        covered<br></p>
-                        <br>
-                        <p class = "flex justify-center text-center font-poppin font-bold text-xl tracking-widest">SEE PROPERTIES</p>
+                </ul>
+                  <!-- slider buttons -->
+                  <div class="absolute self-center mt-[30rem] ml-[52rem] w-[800px] flex flex-row justify-between px-2">
+                            <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button  id="nextButtonslider1" class="p-3 text-black bg-dirtywhite opacity-75 rounded-full">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                     </div> <!-- end of buttons -->
+        </div> <!-- end of featured content -->
+        
+        <!-- start of buy or rent  -->
+        <div class="flex flex-row mt-[15rem] ml-[10rem] px-[4rem] space-x-[3rem]">
+                <img src="/images/bldg1.jpg" alt="" style="width:695px; height:701px;">
 
-                         <!--button for buy and rent-->
-                
-                <br><br>
-                <div class = "gap-10 flex sm:justify-start md:justify-center items-center"> 
-                    
-                    <button class = "border-solid border-darkblue border-4 bg-amber-200 hover:bg-amber-100  text-black  py-4 px-6 rounded " >  
-                        <h1 class = "font-poppin uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider ">FOR SALE  </h1>  
-
-                            <button class = "border-solid border-darkblue border-4 bg-amber-200 hover:bg-amber-100 text-black py-4 px-6 rounded ">  
-                                <h1 class = "font-poppin uppercase text-2xl sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider">FOR RENT  </h1>
-                           
-                    </div>  
+                <div class="flex flex-col justify-center place-items-center px-4 py-4 w-[800px]">
+                        <p class="font-rozha text-[65px] font-medium">EMPOWERING</p>
+                        <p class="font-rozha text-[65px] font-medium -mt-[2.5rem]">YOUR CHOICE</p>
+                        <p class="font-playfair text-[55px] font-medium">Buy or Rent</p>
+                        <p class="font-playfair text-[55px] font-medium">We've got you covered.</p>
+                        <p class="font-poppin text-[25px] font-medium mt-[3rem]">See Properties</p>
+                        <div class="flex flex-row self-center mt-5 space-x-5">
+                            <div class="border-2 bg-gold border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
+                                <a href="{{route('posts.showbuy')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">BUY</a>
+                            </div>
+                            <div class="self-center border-2 bg-gold border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
+                                <a href="{{route('posts.showrent')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">RENT</a>
+                            </div>
+                        </div>
                 </div>
-           
-                <div class = "flex flex-col absolute mt-[105rem] justify-center left-[10rem] ">   
-                     <p class = "self-center text-center font-rozha text-7xl">News &</p>  
-                     <p class = "self-center text-center font-rozha text-7xl -mt-1">Events </p>
-                     
-                </div>
-                
+        </div>
+        <!-- end of buy or rent  -->
 
-                <!--Heading-->
+
+
+
+        @include('layouts.footer')
+                <!-- Heading
                 <div class = "flex flex-col absolute mt-[120rem] justify-start ml-[7rem]"> 
-                    <!-- start of update -->
+                    start of update
                     @foreach($update as $upt)
                     <div class="flex flex-col w-[93rem] h-[22rem] border-2 border-gold bg-dirtywhire px-8 py-5 shadow-md mt-[5rem]">
                         <div class="flex flex-col justify-center">
@@ -155,33 +197,65 @@
                         </div>
                     </div>
                     @endforeach
-                    <!-- end of update -->
-                </div>
+                    end of update
+                </div> -->
                
-    @if( ! empty($property))
-            <script>
-                var imageData = @json($imagePaths);
-                console.log(imageData);
-            </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Function to initialize a slider
+        function initializeSlider(sliderID) {
+            let currentSlideID = 1;
+            let sliderElement = document.getElementById(sliderID);
+            let totalSlides = sliderElement ? sliderElement.childElementCount : 0;
+            console.log(`Slider ID: ${sliderID}`);
+        console.log(`Total Slides: ${totalSlides}`);
 
-            <script>
-                 document.addEventListener("alpine:init", () => {
-                Alpine.data("imageSlider", () => ({
-                currentIndex: 1,
-                images: imageData,
-                previous() {
-                 if (this.currentIndex > 1) {
-                 this.currentIndex = this.currentIndex - 1;
-                 }
-                 },
-                  forward() {
-                  if (this.currentIndex < this.images.length) {
-                  this.currentIndex = this.currentIndex + 1;
-                  }
-                },
-                }));
-            });
-        </script>
-     @endif
+            if (sliderElement) {
+                // Get references to the buttons for this slider
+                let prevButton = document.getElementById(`prevButton${sliderID}`);
+                let nextButton = document.getElementById(`nextButton${sliderID}`);
+
+
+                if (prevButton && nextButton) {
+                    prevButton.addEventListener('click', prev);
+                    nextButton.addEventListener('click', next);
+                }
+
+                function next() {
+                    console.log('Next button clicked');
+                    if (currentSlideID < totalSlides) {
+                        currentSlideID++;
+                        showSlide();
+                    }
+                }
+
+                function prev() {
+                    console.log('prev button clicked');
+                    if (currentSlideID > 1) {
+                        currentSlideID--;
+                        showSlide();
+                    }
+                }
+
+                function showSlide() {
+                    slides = sliderElement.getElementsByTagName('li');
+                    for (let index = 0; index < totalSlides; index++) {
+                        const element = slides[index];
+                        if (currentSlideID === index + 1) {
+                            element.classList.remove('hidden');
+                        } else {
+                            element.classList.add('hidden');
+                        }
+                    }
+                }
+            }
+        }
+
+        // Initialize each slider
+        initializeSlider('slider1');
+        // Initialize more sliders as needed
+    });
+</script>
+
     </body>
 </html>
