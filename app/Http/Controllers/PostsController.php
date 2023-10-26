@@ -6,6 +6,7 @@ use App\Mail\ClientInquiries;
 use App\Models\Inquiry;
 use App\Models\Property;
 use App\Models\User;
+use App\Models\Update;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -24,13 +25,12 @@ class PostsController extends Controller
     {
         $user = Auth::user();
         $property = Property::where('featured','Featured')->first();
-        $update=Update::where('featured','Featured')->get();
-
-        if($property == NULL && $update == NULL){
-            return view('welcome', compact('property','update')); 
+        $updates = Update::where('featured','Featured')->get()->take(4);
+        if($property == NULL){
+            return view('welcome', compact('property')); 
         }else{
             $imagePaths = json_decode($property->img,true);
-            return view('welcome', compact('property','imagePaths','user','update')); 
+            return view('welcome', compact('property','imagePaths','user','updates')); 
         }
         // dd($property);
     }
@@ -84,6 +84,14 @@ class PostsController extends Controller
         $property=Property::where('id',$id)->first();
         $imagePaths = json_decode($property->img,true);
         return view('posts.showproperty', compact('property','imagePaths','user')); 
+    }
+    public function showupdate(string $id)
+    {
+        $user = Auth::user();
+        $update = Update::where('id',$id)->first();
+        $imagePaths = json_decode($update->img,true);
+        return view('posts.showupdate', compact('update','imagePaths','user')); 
+
     }
 
     public function showbuy()

@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\InquiryReply;
@@ -35,7 +36,10 @@ Route::get('/rentproperties', [PostsController::class, 'showrent'])->name('posts
 Route::get('showproperty/{id}', [PostsController::class, 'showproperty'])->name('posts.showproperty');
 Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
 Route::get('/authorization', [Controller::class, 'authorization'])->name('modal.authorization-modal');
-
+Route::get('showupdate/{id}', [PostsController::class, 'showupdate']) ->name('posts.showupdate');
+Route::get('/newsupdates', [UpdatesController::class, 'newsupdates'])->name('updates.newsupdates');
+0
+.
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

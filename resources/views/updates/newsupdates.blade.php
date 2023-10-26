@@ -1,74 +1,63 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>BDRS Realty Management Services Co.</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&family=Rozha+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
 
+        <!--Filter Scripts-->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
         @vite('resources/css/app.css')
+        
+    <title>Document</title>
+</head>
+<body>
+<div class="bg-gray-300 py-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="http://127.0.0.1:8000" class="flex items-center space-x-2">
+            <img src="/images/logo.png" alt="Logo" class="w-16 h-16 hover:scale-105 transform transition-transform">
+            <
+        </a>
+        <nav class="flex space-x-8">
+            <a href="/" class="text-white text-lg font-medium hover:text-yellow-400 transition duration-300">HOME</a>
+            <a href="#" class="text-white text-lg font-medium hover:text-yellow-400 transition duration-300">ABOUT US</a>
+            <a href="#" class="text-white text-lg font-medium hover:text-yellow-400 transition duration-300">UPDATES</a>
+        </nav>
+    </div>
+</div>
 
-    </head>
-    <body class="bg-dirtywhite antialised">
-        <!-- navigation -->
-        @include('layouts.navigation')
+<div class = "">
+@foreach($updates as $update)
+<div class="border-gold mt-8 mb-8 border-4 h-[19rem] w-[60rem] mx-auto">
+    <article class="p-4 flex items-center">
+        <img class="h-60 w-60" src="{{$update->coverphoto}}" alt="Image">
+        <div class="flex flex-col ml-4 pb-8">
+            <figcaption class = "font-bold text-2xl ">{{$update->titleHeading}}</figcaption>
+            <div class="line-clamp-4 mt-4"><?php $paragraph = $update->description ?>
+                        <?php $maxCharacters = 200 ?>
+                        <?php if (strlen($paragraph) > $maxCharacters): ?>
+                       <p class="line-clamp-9 text-left text-gray-700 dark:text-gray-400 text-lg font-light my-4  h4 mb-[10px] font-poppin"><?php echo substr($paragraph, 0, $maxCharacters); ?></p>
+                      <a href="{{route('posts.showupdate', $update->id)}}" class="text-darkblue hover:text-gold ">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                      <?php else: ?>
+                      <p class = "text-left text-gray-700 dark:text-gray-400 text-lg font-poppin  my-4 h4 mb-[10px]"><?php echo $paragraph; ?></p>
+                     <?php endif; ?></div>
+        </div>
+    </article>
+</div>
+@endforeach
+</div>
 
-        <!-- start of  content -->
-        <div class="flex flex-col justify-center mt-10 ml-10 w-full h-max px-10">
 
-            <div class="flex flex-row -mt-[6rem]">
-                <div class="flex flex-col">                
-                <p class="font-rozha text-[72px] text-black self-start mt-[10rem]">News &</p>
-                <p class="font-rozha text-[72px] text-black self-start -mt-8">Events</p>
-                </div>
-                <div class="border-t-2 border-t-black w-[1250px] h-10 mt-[17rem] ml-8"></div>
-            </div>
-
-          <div class = "flex flex-col absolute mt-[80rem] justify-start ml-[7rem]"> 
-                    <!-- start of update -->
-                    <!-- @foreach($updates as $upt)
-                    <div class="flex flex-col w-[93rem] h-[21rem] border-2 border-black bg-gold px-8 py-4 shadow-md mt-[5rem]">
-                        <div class="flex flex-col justify-center">
-                        <p class="font-playfair font-semibold text-[20px] text-black bg-dirtywhite h-max w-max px-4 py-2 shadow-lg ">{{$upt->titleHeading}}</p>
-                        </div>
-                        <div class="flex flex-row justify-start space-x-10 mt-4">
-                            <img src="{{$upt->coverphoto}}" alt="" style="height: 230px; width:390px" class="rounded-md border-2 border-white">
-                            <div class="flex flex-col justify-center h-[21.5rem] w-[60rem] px-4 py-4 -mt-[4rem]">
-                                  <p class="font-playfair font-semibold text-[22px] h-max w-max px-4 py-2 text-black self-center">{{$upt->titleSub}}</p>
-                                <p class="font-poppin text-[16px] px-2 py-2 text-black text-center">{{$upt->description}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach -->
-                    @foreach($updates as $upt)
-                    <div class="flex flex-col w-max h-[51rem] border-2 border-black bg-gold px-8 py-4 shadow-md mt-[5rem]">
-                        <div class="flex flex-col justify-center">
-                            <p class="font-playfair font-semibold text-[20px] text-black bg-dirtywhite h-max w-max px-4 py-2 shadow-lg ">{{$upt->date}}</p>
-                        </div>
-                        <div class="flex flex-col justify-center">
-                            <p class="font-playfair font-semibold text-[22px] h-max w-max px-4 py-2 text-black self-center">{{$upt->titleHeading}}</p>
-                            <p class="font-playfair font-semibold text-[18px] h-max w-max px-4 py-2 text-black self-center -mt-2">{{$upt->titleSub}}</p>
-                        </div>
-                        <div class="flex flex-col">
-                            
-                        </div>
-
-                    </div>
-                    @endforeach
-                    <!-- end of update -->
-                </div>
-         </div> <!-- end div of col! -->
-    </body>
+    
+</body>
 </html>

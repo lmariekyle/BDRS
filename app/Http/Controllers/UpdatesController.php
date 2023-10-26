@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Update;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
@@ -19,13 +20,26 @@ class UpdatesController extends Controller
     
     }
 
-    public function newsupdates()
-    {
-            $updates=Update::where('status','Approved')->get();
-            
-            return view('updates.newsupdates', compact('updates'));
+    public function newsupdates(){
+        $updates = Update::all()->filter(function ($update) {
+            return $update->featured === 'Featured';
+        });
         
+        if ($updates->count() > 0) {
+            return view('updates.newsupdates', compact('updates'));
+        }
     }
+
+    public function newsupdates(){
+        $updates = Update::all()->filter(function ($update) {
+            return $update->featured === 'Featured';
+        });
+        
+        if ($updates->count() > 0) {
+            return view('updates.newsupdates', compact('updates'));
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -85,9 +99,13 @@ class UpdatesController extends Controller
      */
     public function show(string $id)
     {
-        $update=Update::where('id',$id)->first();
-        $imagePaths = json_decode($update->img, true);
-        return view('updates.show', compact('update','imagePaths'));
+         $update=Update::where('id',$id)->first();
+        
+        if ($update->featured === 'Featured'){
+          $imagePaths = json_decode($update->img, true);
+         return view('updates.show', compact('update','imagePaths'));
+        } 
+       
     }
 
     /**
