@@ -52,6 +52,10 @@
                 @role('Marketing')
                 <p class="font-poppins mt-4 text-2xl text-center text-darkblue">MARKETING</p>
                 @endrole
+
+                @role('User')
+                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">Welcome, {{Auth::user()->firstName}}!</p>
+                @endrole
             </div>
 
             <div class="mt-24 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">

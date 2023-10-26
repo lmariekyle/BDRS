@@ -19,41 +19,32 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
         <!-- Styles -->
         @vite('resources/css/app.css')
 
     </head>
-    <body class="bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] antialised px-5">
-        <div class="flex justify-center ml-5 mt-10">
-            <!-- <div class="h-[732px] w-full ml-1 mt-8">
-                <img src="images/welcomebg.png" style="width: 1799px; height: 798px;">
-            </div>
-            <div class="absolute mt-7 -ml-7 bg-greywhite border-2 border-darkblue shadow-inner bg-opacity-80 w-[1800px] h-[802px]">
-                <div class="absolute mt-14 px-2 shadow-md">
-                    <img src="images/bdrswelcomebg.png" style="width: 1800px; height: 728px;">
-                </div>
-            </div> -->
-            <div class="absolute mt-[4rem] left-[7rem]">
-                <div class="flex justify-evenly space-x-5 max-w-7xl mx-auto md:px-6 lg:px-8">
-                    <img src="/images/logo.png" alt="" style="width: 100px; height: 100px;" class="mr-[3rem] -mt-[1rem]">
-                    <a href="/" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">HOME</a>
-                    <a href="" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">ABOUT US</a>
-                    <a href="" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">UPDATES</a>
-                </div>
-            </div>
-        </div>
+    <body class="bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] antialised">
 
-    <div class="flex flex-col h-max w-max mt-[13rem] ml-[5rem] bg-[#f6f6f6] shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
+        @include('layouts.navigation')
+        @include('components.alert')
+
+    <div class="flex flex-col h-max w-max mt-[8rem] ml-[7rem] bg-[#f6f6f6] shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
         <div class="-mt-[2rem] w-[1600px] flex flex-col justify-start items-start px-4 py-8">
                            <!-- gallery -->
                     <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-10">
                         <div class="relative h-[530px] w-[800px]">                       
-                                <img src="/{{$property->coverphoto}}" alt="image" class="rounded-sm shadow-inner" style="height:530px; width:800px;" />
+                                <img src="/{{$imagePaths[0]}}" alt="image" class="rounded-sm shadow-inner" style="height:530px; width:800px;" />
 
                         </div>
                   
                     </div>
-                        <p class="px-3 py-4 font-baby font-semibold text-[74px] -mt-[1rem] self-center">{{$property->name}}</p>
+                        <p class="px-3 py-4 font-playfair font-semibold text-[54px] -mt-[1rem] self-center">{{$property->name}}</p>
                         <div class="w-[900px] h-max self-center mt-3">
                             <p class="font-poppin text-[18px]">{{$property->description}}</p>
                         </div>
@@ -66,15 +57,15 @@
             <img src="/{{$imagePaths[1]}}" alt="" style="height: 500px; width: 800px;">
             </div>
                 <div class="flex flex-col justify-center self-center w-[500px] h-[500px">
-                    <p class="px-8 py-2 font-playfair text-[58px] w-max font-semibold text-black">Property Highlights</p>
-                    <p class="px-8 py-2 font-poppin text-[24px] font-semibold w-max text-black -mt-4">{{$property->type}} | {{$property->sizes}} | {{$property->bed}} Bedroom/s</p>
+                    <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-black">Property Highlights</p>
+                    <p class="px-8 py-2 font-poppin text-[18px] font-semibold w-max text-black -mt-4">{{$property->type}} | {{$property->sizes}} | {{$property->bed}} Bedroom/s</p>
                     <div class="">
                 
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] mt-2">{{$property->unitdesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] mt-2">{{$property->unitdesc}}</p>
                     </div>
 
                     <div class="mt-4">
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -mt-4">{{$property->beddesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -mt-4">{{$property->beddesc}}</p>
                     </div>
                 
                     <div class="flex flex-row self-end mt-3 border-b-2 border-gray-500">
@@ -85,10 +76,10 @@
 
         <div class="flex flex-row justify-end w-full h-[500px] mt-[7rem] mb-10">
                 <div class="flex flex-col justify-center w-[500px] h-[500px mr-[13rem]">
-                    <p class="px-8 py-2 font-poppin text-[24px] w-max font-semibold text-black self-center ml-[8rem]">{{$property->furnish}} | {{$property->price}} | {{$property->address}}, {{$property->state}}</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">{{$property->furnishdesc}}</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">{{$property->pricedesc}}</p>
-                    <p class="px-8 py-2 font-poppin text-[22px] font-medium text-black w-[700px] -ml-4">{{$property->locationdesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[18px] w-max font-semibold text-black self-center ml-[8rem]">{{$property->furnish}} | {{$property->price}} | {{$property->address}}, {{$property->state}}</p>
+                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->furnishdesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->pricedesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->locationdesc}}</p>
                 </div>
                 <div class="border-r-2 border-b-2 w-max h-max px-6 py-5 border-black">
                 <img src="/{{$imagePaths[2]}}" alt="" style="height: 500px; width: 800px;">

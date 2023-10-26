@@ -22,8 +22,9 @@
 
     </head>
     <body class="bg-dirtywhite antialised">
+        @include('layouts.navigation')
         <!-- navigation -->
-        <div class="flex flex-row mt-2 absolute mr-10 right-0">
+        <!-- <div class="flex flex-row mt-2 absolute mr-10 right-0">
             @auth
             @hasanyrole('Admin|Customer Service|Marketing')
             <a href="{{route('dashboard')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">DASHBOARD</a>
@@ -36,7 +37,7 @@
             @endauth
             <a href="{{route('aboutpage')}}" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">ABOUT US</a>
             <a href="" class="px-8 py-2 font-poppin text-[22px] font-medium text-black">UPDATES</a>
-        </div>
+        </div> -->
 
         <!-- start of  content -->
         <div class="flex flex-col justify-center place-items-center mt-10 w-full h-max">

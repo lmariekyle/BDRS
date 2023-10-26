@@ -14,8 +14,9 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Spatie\Permission\Models\Role;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class RegisteredUserController extends Controller
+class RegisteredUserController extends Controller 
 {
     /**
      * Display the registration view.
@@ -62,7 +63,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        // Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
     }

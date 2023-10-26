@@ -67,6 +67,12 @@
                             <x-input-error :messages="$errors->get('lastName')" class="mt-2" />
                         </div>
 
+                        <div class="mt-4 px-4 ">
+                            <x-input-label for="dateOfBirth" :value="__('Date of Birth (MM/DD/YYYY)')" class="text-white" />
+                            <x-text-input id="dateOfBirth" class="block mt-1 w-full" type="date" name="dateOfBirth" :value="old('dateOfBirth')" required autocomplete="on"  />
+                            <x-input-error :messages="$errors->get('dateOfBirth')" class="mt-2" />
+                        </div>
+
                         <!-- Password -->
                             <div class="mt-4 px-4">
                                 <x-input-label for="password" :value="__('Password')" class="text-white" />
@@ -89,8 +95,8 @@
                                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                 </div>
 
-                                <div class="self-end">
-                                    <x-primary-button class="flex -mt-5 mb-1 ml-10 px-4">
+                                <div class="ml-[1rem] mt-5 mr-[7rem]">
+                                    <x-primary-button class="">
                                         {{ __('Create Account') }}
                                     </x-primary-button>
                                 </div>
@@ -106,7 +112,23 @@
                 </div>
             </div>
         </div>
-      
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+        var currentDate = new Date();
+        var maxYear = currentDate.getFullYear() - 18; // Maximum year for 18 years old and above
+
+        var dateOfBirthInput = document.getElementById("dateOfBirth");
+        dateOfBirthInput.setAttribute("max", formatDate(maxYear, 12, 31)); // Set maximum date to the end of the calculated maximum year
+
+        // Format the date as YYYY-MM-DD
+        function formatDate(month, day, year) {
+            month = String(month).padStart(2, "0");
+            day = String(day).padStart(2, "0");
+            return month + "-" + day + "-" + year;
+        }
+    });
+        </script>
+
     </body>
 </html>
 

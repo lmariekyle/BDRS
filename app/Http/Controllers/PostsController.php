@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\InquiriesReply;
 use App\Models\ClientInquiries as ModelsClientInquiries;
 use App\Models\Update;
+use Illuminate\Support\Facades\Redirect;
+
 
 class PostsController extends Controller
 {
@@ -49,6 +51,11 @@ class PostsController extends Controller
         if ($request->has('type') && !empty($request->type)) {
             $query->where('type', $request->type);
         }
+
+        if ($request->has('unitType') && !empty($request->unitType)) {
+            $query->where('unitType', $request->unitType);
+        }
+
 
         if ($request->has('price') && !empty($request->price)) {
             $query->where('price', $request->price);
@@ -129,9 +136,9 @@ class PostsController extends Controller
         $clientContact =$request->clientContact;
 
 
-        Mail::to('samplemail@bdrs-realty.com')->send(new ClientInquiries($subject, $body,$clientEmail,$clientName,$clientContact));
+        Mail::to('realtybdrs@gmail.com')->send(new ClientInquiries($subject, $body,$clientEmail,$clientName,$clientContact));
 
-        return redirect('posts.showproperty');
+        return redirect()->back()->withSuccess('Property Inquiry has been sent!');;  
 
     }
 

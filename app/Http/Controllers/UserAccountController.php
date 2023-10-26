@@ -63,11 +63,9 @@ class UserAccountController extends Controller
             'userRole' => 'User',
             'password' => Hash::make($request->password),
         ]);
-        // dd($useraccount);
+
         $user->assignRole('User');
         event(new Registered($user));
-
-        // Auth::login($useraccount);
 
         return redirect(RouteServiceProvider::HOME);
     }

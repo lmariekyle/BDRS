@@ -37,24 +37,37 @@
                 </select>
             </div>
 
+            <div class="mt-4 px-4">
+                <x-input-label for="type" :value="__('Property Unit Type')" />
+                <select id="type" class="block mt-1 w-full" name="unitType" required autofocus>
+                    <option value="" >Unit Type</option>
+                    <option value="Studio Home Office" {{ $property->type === 'Studio Home Office' ? 'selected' : '' }}>Studio Home Office</option>
+                    <option value="Bedroom Home Office" {{ $property->type === 'Bedroom Home Office' ? 'selected' : '' }}>Bedroom Home Office</option>
+                    <option value="Studio Residence" {{ $property->type === 'Studio Residence' ? 'selected' : '' }}>Studio Residence</option>
+                    <option value="1 Bedroom Residence" {{ $property->type === '1 Bedroom Residence' ? 'selected' : '' }}>1 Bedroom Residence</option>
+                    <option value="2 Bedroom Residence" {{ $property->type === '2 Bedroom Residence' ? 'selected' : '' }}>2 Bedroom Residence</option>
+                </select>
+            </div>
+
+
                 <div class="mt-4  px-4">
                     <x-input-label for="price" :value="__('Price Range')" />
                 
                     <select id="price" class="block mt-1 w-full" name="price" required autofocus>
-                        <option value="100,000" {{ $property->price === '100,000' ? 'selected' : '' }}>₱100,000</option>
-                        <option value="500,000" {{ $property->price === '500,000' ? 'selected' : '' }}>₱500,000</option>
                         <option value="1,000,000" {{ $property->price === '1,000,000' ? 'selected' : '' }}>₱1,000,000</option>
                         <option value="3,000,000" {{ $property->price === '3,000,000' ? 'selected' : '' }}>₱3,000,000</option>
-                        <option value="5,000,000" {{ $property->price === '5,000,000' ? 'selected' : '' }}>₱5,000,000</option>
-                        <option value="8,000,000" {{ $property->price === '8,000,000' ? 'selected' : '' }}>₱8,000,000</option>
+                        <option value="4,000,000" {{ $property->price === '4,000,000' ? 'selected' : '' }}>₱4,000,000</option>
+                        <option value="6,000,000" {{ $property->price === '6,000,000' ? 'selected' : '' }}>₱6,000,000</option>
+                        <option value="9,000,000" {{ $property->price === '9,000,000' ? 'selected' : '' }}>₱9,000,000</option>
                         <option value="10,000,000" {{ $property->price === '10,000,000' ? 'selected' : '' }}>₱10,000,000</option>
+                        <option value="12,000,000" {{ $property->price === '12,000,000' ? 'selected' : '' }}>12,000,000</option>
                     </select>
 
                     <x-input-error :messages="$errors->get('price')" class="mt-2" />
                 </div>
 
 
-                <div class="mt-4 px-4 ">
+                <!-- <div class="mt-4 px-4 ">
                     <x-input-label for="sizes" :value="__('Size')" />
                     <select id="sizes" class="block mt-1 w-full" name="sizes" required autofocus>
                         <option value="18" {{ $property->sizes === '18 Sqm' ? 'selected' : '' }}>18 Sqm</option>
@@ -66,7 +79,7 @@
                         <option value="201" {{ $property->sizes === '201 Sqm' ? 'selected' : '' }}>Above 201 Sqm</option>
                     </select>
                     <x-input-error :messages="$errors->get('sizes')" class="mt-2" />
-                </div>
+                </div> -->
 
                 <div class="mt-4 px-4">
                     <x-input-label for="address" :value="__('Address')" />
@@ -88,7 +101,7 @@
                 </div>
 
 
-                <div class="mt-4 px-4">
+                <!-- <div class="mt-4 px-4">
                     <x-input-label for="bed" :value="__('Bed')" />
                     <select id="bed" class="block mt-1 w-full" name="bed" :value="$property->bed" required autofocus>
                         <option value="0" {{ $property->bed === '0' ? 'selected' : '' }}>Studio Only</option>
@@ -99,7 +112,7 @@
                         <option value="5" {{ $property->bed === '5' ? 'selected' : ''}}>5 bedrooms</option>
                     </select>
                     <x-input-error :messages="$errors->get('bed')" class="mt-2" />
-                </div>
+                </div> -->
 
 
 
@@ -108,6 +121,7 @@
                         <select id="provision" class="block mt-1 w-full" name="provision" :value="$property->provision" required autofocus>
                             <option value="For Rent" {{ $property->provision === 'For Rent' ? 'selected' : ''}}>For Rent</option>
                             <option value="For Sale" {{ $property->provision === 'For Sale' ? 'selected' : ''}}>For Sale</option>
+                            <option value="For Sale" {{ $property->provision === 'Pre - Selling' ? 'selected' : ''}}>Pre - Selling</option>
                         </select>
                 </div>
 

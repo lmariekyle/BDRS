@@ -46,7 +46,7 @@ Route::get('/privacypolicy', function () {
 
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
     Route::resource('accounts', \App\Http\Controllers\UserController::class);
     Route::resource('properties', \App\Http\Controllers\PropertiesController::class);
     Route::resource('inquiry', \App\Http\Controllers\InquiryController::class);

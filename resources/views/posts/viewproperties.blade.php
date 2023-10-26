@@ -59,6 +59,7 @@
                     <option value="">All Type</option>
                     <option value="For Rent">For Rent</option>
                     <option value="For Sale">For Sale</option>
+                    <option value="Pre-Selling">Pre-Selling</option>
                     </select>
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="furnish">
@@ -69,33 +70,32 @@
                     </select>
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="type">
-                    <option value="" >Unit Type</option>
-                    <option value="Apartment">Apartment</option>
+                    <option value="" >Type</option>
                     <option value="Condominium">Condominium</option>
-                    <option value="Studio Unit Type">Studio Unit</option>
-                    <option value="Loft Unit Type">Loft Unit</option>
-                    <option value="Penthouse Unit Type">Penthouse Unit</option>
-                    <option value="Town House">Town House</option>
-                    <option value="Villa">Villa</option>
-                    <option value="Row House">Row House</option>
-                    <option value="Duplex House">Duplex House</option>
-                    <option value="Single Detached House">Single Detached House</option>
-                    <option value="Office">Office</option>
-                    <option value="Retail">Retail</option>
-                    <option value="Industrial">Industrial</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="House and Lot">House and Lot</option>
+                    </select>
+
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="unitType">
+                    <option value="">Unit Type</option>
+                    <option value="Studio Home Office">Studio Home Office</option>
+                    <option value="Bedroom Home Office">Bedroom Home Office</option>
+                    <option value="Studio Residence">Studio Residence</option>
+                    <option value="1 Bedroom Residence">1 Bedroom Residence</option>
+                    <option value="2 Bedroom Residence">2 Bedroom Residence</option>
                     </select>
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="price">
                     <option value="">Any Price</option>
-                    <option value="100,000">100,000</option>
-                    <option value="500,000">500,000</option>
                     <option value="1,000,000">1,000,000</option>
                     <option value="3,000,000">3,000,000</option>
-                    <option value="5,000,000">5,000,000</option>
-                    <option value="8,000,000">8,000,000</option>
+                    <option value="4,000,000">4,000,000</option>
+                    <option value="6,000,000">6,000,000</option>
+                    <option value="9,000,000">9,000,000</option>
                     <option value="10,000,000">10,000,000</option>
+                    <option value="12,000,000">12,000,000</option>
                     </select>
-
+<!-- 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="sizes">
                     <option value="">Floor Area</option>
                     <option value="18">18 Sqm</option>
@@ -105,8 +105,8 @@
                     <option value="100">100 Sqm</option>
                     <option value="200">200 Sqm</option>
                     <option value="201">Above 201 Sqm</option>
-                    </select>
-
+                    </select> -->
+<!-- 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="bed">
                     <option value="">Bedrooms</option>
                     <option value="0">Studio Only</option>
@@ -115,11 +115,12 @@
                     <option value="3">3 bedrooms</option>
                     <option value="4">4 bedrooms</option>
                     <option value="5">5 bedrooms</option>
-                    </select>
+                    </select> -->
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="state">
                     <option value="">Location</option>
                     <option value="Cebu">Cebu</option>
+                    <option value="Lapu-Lapu">Lapu-Lapu</option>
                     <option value="Ilo-Ilo">Ilo-Ilo</option>
                     <option value="Bacolod">Bacolod</option>
                     <option value="Dumaguete">Dumaguete</option>
@@ -138,18 +139,18 @@
     </div>
 </form>
 
-    <div class="flex flex-col mt-[3rem] ml-[5rem] mb-10 h-max w-max bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
+    <div class="flex flex-col mt-[3rem] ml-[3rem] mb-10 h-max w-max bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
         <div class="-mt-[2rem] w-[1600px]">
-        <p class="px-3 py-4 ml-14 font-playfair text-[54px]">CONDOMINIUMS</p>
+        <p class="px-3 py-4 ml-14 font-playfair text-[54px]">Studio Home Office</p>
         </div>
         <div class="grid grid-cols-3 gap-8 justify-items-center w-max ml-16 mt-8">
             @foreach($properties as $property)
-                @if($property->type == "Condominium")
-                <div class="flex flex-col justify-center h-[300px] w-[500px] bg-white rounded-lg shadow-inner border-2">    
-                    <p class="absolute -mt-[18rem] self-center font-baby text-[34px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
+                @if($property->unitType == "Studio Home Office")
+                <div class="flex flex-col justify-center h-[400px] w-[500px] bg-white rounded-lg shadow-inner border-2">    
+                    <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
-                    <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left h-max w-[225px] ml-[16rem] px-1">{{$property->description}}</p>
-                    <div class="absolute px-1 py-1 self-center mt-[18rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left h-max w-[225px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <div class="absolute px-1 py-1 self-center mt-[22rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
                     @else
@@ -162,18 +163,90 @@
         </div>
     </div>
 
-    <div class="flex flex-col mt-[3rem] ml-[5rem] mb-10 h-max w-max bg-[#e9ecef] shadow-md px-8 py-8 rounded-lg  border-r-2 border-b-2 border-white">
+    <div class="flex flex-col mt-[3rem] ml-[3rem] mb-10 h-max w-max bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
         <div class="-mt-[2rem] w-[1600px]">
-        <p class="px-3 py-4 ml-14 font-playfair text-[54px]">APARTMENTS</p>
+        <p class="px-3 py-4 ml-14 font-playfair text-[54px]">One Bedroom Studio Home Office</p>
         </div>
         <div class="grid grid-cols-3 gap-8 justify-items-center w-max ml-16 mt-8">
             @foreach($properties as $property)
-                @if($property->type == "Apartment")
-                <div class="flex flex-col justify-center h-[300px] w-[500px] bg-white rounded-lg shadow-inner border-2">    
-                    <p class="absolute -mt-[18rem] self-center font-baby text-[34px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
+                @if($property->unitType == "Bedroom Home Office")
+                <div class="flex flex-col justify-center h-[400px] w-[500px] bg-white rounded-lg shadow-inner border-2">    
+                    <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
-                    <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left max-h-max w-[225px] ml-[16rem] px-1">{{$property->description}}</p>
-                    <div class="absolute px-1 py-1 self-center mt-[14rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left h-max w-[225px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <div class="absolute px-1 py-1 self-center mt-[22rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    @if ($user) 
+                        <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @else
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @endif
+                    </div>
+                </div>
+                @endif
+            @endforeach
+        </div>
+    </div>
+
+    <div class="flex flex-col mt-[3rem] ml-[3rem] mb-10 h-max w-max bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
+        <div class="-mt-[2rem] w-[1600px]">
+        <p class="px-3 py-4 ml-14 font-playfair text-[54px]">Studio Residence</p>
+        </div>
+        <div class="grid grid-cols-3 gap-8 justify-items-center w-max ml-16 mt-8">
+            @foreach($properties as $property)
+                @if($property->unitType == "Studio Residence")
+                <div class="flex flex-col justify-center h-[400px] w-[500px] bg-white rounded-lg shadow-inner border-2">    
+                    <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
+                    <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
+                    <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left h-max w-[225px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <div class="absolute px-1 py-1 self-center mt-[22rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    @if ($user) 
+                        <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @else
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @endif
+                    </div>
+                </div>
+                @endif
+            @endforeach
+        </div>
+    </div>
+
+    <div class="flex flex-col mt-[3rem] ml-[3rem] mb-10 h-max w-max bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
+        <div class="-mt-[2rem] w-[1600px]">
+        <p class="px-3 py-4 ml-14 font-playfair text-[54px]">One Bedroom Residence</p>
+        </div>
+        <div class="grid grid-cols-3 gap-8 justify-items-center w-max ml-16 mt-8">
+            @foreach($properties as $property)
+                @if($property->unitType == "1 Bedroom Residence")
+                <div class="flex flex-col justify-center h-[400px] w-[500px] bg-white rounded-lg shadow-inner border-2">    
+                    <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
+                    <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
+                    <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left h-max w-[225px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <div class="absolute px-1 py-1 self-center mt-[22rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
+                    @if ($user) 
+                        <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @else
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                    @endif
+                    </div>
+                </div>
+                @endif
+            @endforeach
+        </div>
+    </div>
+
+    <div class="flex flex-col mt-[3rem] ml-[3rem] mb-10 h-max w-max bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
+        <div class="-mt-[2rem] w-[1600px]">
+        <p class="px-3 py-4 ml-14 font-playfair text-[54px]">Two Bedroom Residence</p>
+        </div>
+        <div class="grid grid-cols-3 gap-8 justify-items-center w-max ml-16 mt-8">
+            @foreach($properties as $property)
+                @if($property->unitType == "2 Bedroom Residence")
+                <div class="flex flex-col justify-center h-[400px] w-[500px] bg-white rounded-lg shadow-inner border-2">    
+                    <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
+                    <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:230px; height: 260px;">
+                    <p class="absolute font-poppin text-black text-[14px] inline-block indent-2 text-left h-max w-[225px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <div class="absolute px-1 py-1 self-center mt-[22rem] ml-[14rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
                     @else

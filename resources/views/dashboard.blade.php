@@ -6,7 +6,7 @@
     </x-slot>
 
     @role('User')
-            <div class="flex flex-col ml-[50rem] -mt-[25rem] bg-dirtywhite border-2 border-black shadow-md rounded-md h-[500px] w-[500px] px-4 py-4">
+            <div class="flex flex-col ml-[50rem] -mt-[30rem] bg-dirtywhite border-2 border-black shadow-md rounded-md h-[500px] w-[500px] px-4 py-4">
                     <div class="flex flex-row w-full h-[50px] space-x-8 justify-center place-items-center">
                             <p class="font-poppin text-[38px]">MY PROFILE</p>
                     </div>
