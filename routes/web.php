@@ -29,7 +29,6 @@ use Spatie\Permission\Models\Role;
 // Route::get('/', [PostsController::class, 'index'])->name('welcome');
 Route::resource('/', \App\Http\Controllers\PostsController::class);
 Route::get('/aboutpage', [AboutController::class, 'index'])->name('aboutpage');
-Route::get('/newsupdates', [UpdatesController::class, 'newsupdates'])->name('updates.newsupdates');
 Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name('posts.viewproperties');
 Route::get('/buyproperties', [PostsController::class, 'showbuy'])->name('posts.showbuy');
 Route::get('/rentproperties', [PostsController::class, 'showrent'])->name('posts.showrent');
@@ -38,8 +37,8 @@ Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.
 Route::get('/authorization', [Controller::class, 'authorization'])->name('modal.authorization-modal');
 Route::get('showupdate/{id}', [PostsController::class, 'showupdate']) ->name('posts.showupdate');
 Route::get('/newsupdates', [UpdatesController::class, 'newsupdates'])->name('updates.newsupdates');
-0
-.
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

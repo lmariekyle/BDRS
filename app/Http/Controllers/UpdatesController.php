@@ -30,16 +30,6 @@ class UpdatesController extends Controller
         }
     }
 
-    public function newsupdates(){
-        $updates = Update::all()->filter(function ($update) {
-            return $update->featured === 'Featured';
-        });
-        
-        if ($updates->count() > 0) {
-            return view('updates.newsupdates', compact('updates'));
-        }
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -101,10 +91,10 @@ class UpdatesController extends Controller
     {
          $update=Update::where('id',$id)->first();
         
-        if ($update->featured === 'Featured'){
+
           $imagePaths = json_decode($update->img, true);
          return view('updates.show', compact('update','imagePaths'));
-        } 
+
        
     }
 

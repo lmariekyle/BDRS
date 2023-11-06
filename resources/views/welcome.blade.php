@@ -173,71 +173,50 @@
                             </div>
                         </div>
                 </div>
+        </div>
+        <!-- end of buy or rent -->
            
-                <!-- <div class = "flex flex-col absolute mt-[105rem] justify-start left-[10rem] ">   
-                                  
-                    <br><br><br> <p class = "flex justify-start text-left font-rozha text-7xl">News and<br>
-                        Events </p> 
-                        
-                        <div class = "flex flex-col absolute mt-[4rem] left-[30rem] ">   
-                            <br><br><br><hr class="border-t-2 border-black w-[68rem]">         
-                    <p class = " justify-start text-right font-rozha text-7xl"><br>  
-                    </div>         
-                </div> -->
-                
+        <!-- start of update -->
+        <div class = "flex flex-col absolute mt-[5rem] ml-[13rem] justify-start">   
+                    <div class="flex flex-row">
+                        <div>
+                            <p class = "self-center text-center font-rozha text-[5rem]">News &</p>  
+                            <p class = "self-center text-center font-rozha text-[5rem] -mt-[3rem]">Events </p>
+                        </div>
+                        <hr class="h-px my-8 bg-black border-0">
+                    </div>
+                        <div class="flex flex-row overflow-x-auto space-x-4 p-4 -ml-[4rem] mt-[2rem]">
+                            @foreach($updates as $update)
+                            <div class="container">
+                                <div class="blog__post w-[22rem] shadow-mg border-4 rounded-lg overflow-hidden hover:cursor-pointer group h-[37rem] hover:shadow-xl border-gold">
+                                    <div class="relative overflow-hidden">
+                                        <img class="flex group-hover:scale-105 transition-transform duration-500 object-cover h-60 w-full" src="{{$update->coverphoto}}" alt="Update Image">
+                                        <div class="px-5 pt-5 bg-gradient-to-b text-black font-bold text-lg">
+                                            <h2 class="text-2xl text-left font-playfair">{{$update->titleHeading}}</h2>
+                                        </div>
+                                        <div class="px-6 pb-5">
+                                                <?php $paragraph = $update->description ?>
+                                                <?php $maxCharacters = 200 ?>
+                                                <?php if (strlen($paragraph) > $maxCharacters): ?>
+                                                <p class="line-clamp-5 text-left text-gray-700 dark:text-gray-400 text-lg font-light my-4  h4 mb-[10px] font-poppin"><?php echo substr($paragraph, 0, $maxCharacters); ?></p>
+                                                <a href="{{route('posts.showupdate', $update->id)}}" class="text-darkblue hover:text-gold">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                                                    <?php else: ?>
+                                                        <p class = "text-left text-gray-700 dark:text-gray-400 text-lg font-poppin  my-4 h4 mb-[10px]"><?php echo $paragraph; ?></p>
+                                                    <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+        </div>
+        <!-- end of update -->
 
-                <!-- Heading-->
-                <!-- <div class = "flex flex-col absolute mt-[120rem] justify-start left-[7rem] "> 
-                    <br><br><div class="w-[103rem] h-[30rem] border-4 border-amber-300 bg-orange-100">
-                        <p>Empty</p>
-                    </div>
-                </div> -->
-                <div class = "flex flex-col absolute mt-[105rem] justify-start left-[10rem] ">
 
-                <br><br><br> <p class = "flex justify-start text-left font-rozha text-7xl">News and<br>
-                    Events </p> 
-                    
-                    <div class = "flex flex-col absolute mt-[4rem] left-[30rem] ">   
-                        <br><br><br><hr class="border-t-2 border-black w-[68rem]">         
-                <p class = " justify-start text-right font-rozha text-7xl">
-                    <br>  
-                </div>         
-            </div>
-            <div class = "flex flex-col absolute mt-[120rem] justify-start left-[5rem] "> 
-                    <br><br><div class="w-[100rem] h-[80rem]">
-                    <div class="flex flex-col absolute mt-20 justify-start left-20 space-y-8">
-                    <div class="flex flex-row overflow-x-auto space-x-4 p-4">
-                    
-                    @foreach($updates as $update)
-                    <div class="container mx-auto px-4">
-                    <div class="blog__post max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl shadow-mg border-4 rounded-lg overflow-hidden hover:cursor-pointer group h-[37rem] hover:shadow-xl border-gold">
-                    <div class="relative overflow-hidden">
-                   <img class="flex group-hover:scale-105 transition-transform duration-500 object-cover h-60 w-full"
-                     src="{{$update->coverphoto}}" alt="Update Image">
-                    <div class="px-5 pt-5 bg-gradient-to-b text-black font-bold text-lg">
-                    <h2 class="text-2xl text-left font-playfair">{{$update->titleHeading}}</h2>
-                   </div>
-                   <div class="px-6 pb-5">
-                <!-- <p class="text-left text-gray-700 dark:text-gray-400 text-lg font-light my-4 line-clamp-5 h4 mb-[10px]">{{$update->description}} </p>
-                <a href="/" class="text-blue-500 hover:text-blue-700">here</a>. -->
-                        <?php $paragraph = $update->description ?>
-                        <?php $maxCharacters = 200 ?>
-                        <?php if (strlen($paragraph) > $maxCharacters): ?>
-                       <p class="line-clamp-5 text-left text-gray-700 dark:text-gray-400 text-lg font-light my-4  h4 mb-[10px] font-poppin"><?php echo substr($paragraph, 0, $maxCharacters); ?></p>
-                      <a href="{{route('posts.showupdate', $update->id)}}" class="text-darkblue hover:text-gold">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                      <?php else: ?>
-                      <p class = "text-left text-gray-700 dark:text-gray-400 text-lg font-poppin  my-4 h4 mb-[10px]"><?php echo $paragraph; ?></p>
-                     <?php endif; ?>
-                    </div>
-                 </div>
-               </div>
-             </div>
-             
-                      @endforeach
-                    </div>
-                    
-                </div>
-                </div>
+        <div class="mt-[65rem]">
+            @include('layouts.footer')
+        </div>
+           
 
 
                

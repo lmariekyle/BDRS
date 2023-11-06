@@ -6,7 +6,6 @@ use App\Mail\ClientInquiries;
 use App\Models\Inquiry;
 use App\Models\Property;
 use App\Models\User;
-use App\Models\Update;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
