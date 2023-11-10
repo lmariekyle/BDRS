@@ -18,11 +18,11 @@
 
         <!-- Styles -->
         @vite('resources/css/app.css')
-        
+
     <title>Document</title>
 </head>
 <body>
-<div class="bg-gray-300 py-4">
+{{-- <div class="bg-gray-300 py-4">
     <div class="container mx-auto flex justify-between items-center">
         <a href="http://127.0.0.1:8000" class="flex items-center space-x-2">
             <img src="/images/logo.png" alt="Logo" class="w-16 h-16 hover:scale-105 transform transition-transform">
@@ -34,7 +34,8 @@
             <a href="#" class="text-white text-lg font-medium hover:text-yellow-400 transition duration-300">UPDATES</a>
         </nav>
     </div>
-</div>
+</div> --}}
+@include('layouts.navigation')
 
 <div class = "">
 @foreach($updates as $update)
@@ -56,8 +57,9 @@
 </div>
 @endforeach
 </div>
+@include('layouts.footer')
 
 
-    
+
 </body>
 </html>

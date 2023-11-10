@@ -32,7 +32,7 @@
         <!-- Styles -->
         @vite('resources/css/app.css')
     <title>BDRS</title>
-</head>        
+</head>
 
 <body class="bg-dirtywhite antialised">
 
@@ -42,13 +42,14 @@
         <div class="w-max h-max px-3 py-3 bg-dirtywhite shadow-md border-2 border-gold self-center">
             <h1 class="font-playfair text-3xl font-semibold text-center">{{ $update->titleHeading }}</h1>
         </div>
+        {{-- <div class = "border-2 border-darkblue "> --}}
         <div class="overflow-hidden mb-7 h-[34rem] w-[40rem] mx-auto pt-8 pb-6 px-7">
             <img src="/{{ $update->coverphoto }}" alt="Image" class="h-[30rem] w-[30rem] object-cover rounded-md shadow-lg mx-auto">
         </div>
-        
+
         <div class="flex flex-row justify-center space-x-1 mx-2">
             @foreach ($imagePaths as $key => $path)
-                <img src="{{ asset($path) }}" alt="Image {{ $key }}" 
+                <img src="{{ asset($path) }}" alt="Image {{ $key }}"
                     style="width: 280px; height: 280px; margin-bottom: 20px; padding: 5px 5px 7px 7px; position: flex; justify-content: center; "
                     data-toggle="modal" data-target="#imageModal{{ $key }}">
                 <div class="modal fade" id="imageModal{{ $key }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ $key }}" aria-hidden="true" >
@@ -60,10 +61,13 @@
                 </div>
             @endforeach
         </div>
-    
-        <div class=" w-[1000px] mt-[2rem] self-center mx-5 px-3 py-4">
-            <p class="font-poppin text-lg indent-4">{{ $update->description }}</p>
+
+        <div class=" w-[1000px] mt-[2rem] self-center mx-5 px-3 py-4 ">
+            <p class="font-poppin text-lg indent-4 text-justify">{{ $update->description }}</p>
         </div>
     </div>
+</div>
+
+    @include('layouts.footer')
 </body>
 </html>
