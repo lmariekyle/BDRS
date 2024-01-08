@@ -53,6 +53,9 @@
                     <x-input-error :messages="$errors->get('description')" class="mt-2" />
                 </div>
 
+                <div class="">
+
+                </div>
 
                 <div class="mt-4 px-4"> 
                     <x-input-label for="coverphoto" :value="__('Cover Image Upload')" />

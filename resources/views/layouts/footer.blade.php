@@ -3,10 +3,10 @@
 
             <div class="flex flex-col mt-4">
                    <p class="font-playfair text-[22px] text-black self-start font-semibold mb-3">FOLLOW US</p>    
-                   <a href="http://" class="font-poppin text-[15px] text-black self-start mb-2 font-medium hover:text-darkblue hover:shadow-md"><i class="fa-brands fa-facebook mr-3"></i>FACEBOOK</a>      
-                   <a href="http://" class="font-poppin text-[15px] text-black self-start mb-2 font-medium hover:text-white hover:shadow-md"><i class="fa-brands fa-instagram mr-3"></i>INSTAGRAM</a>     
+                   <a href="https://www.facebook.com/BDRSRealtyManagementServices" class="font-poppin text-[15px] text-black self-start mb-2 font-medium hover:text-darkblue hover:shadow-md"><i class="fa-brands fa-facebook mr-3"></i>FACEBOOK</a>      
+                   <a href="https://www.instagram.com/bdrsrealty/" class="font-poppin text-[15px] text-black self-start mb-2 font-medium hover:text-white hover:shadow-md"><i class="fa-brands fa-instagram mr-3"></i>INSTAGRAM</a>     
                    <a href="http://" class="font-poppin text-[15px] text-black self-start mb-2 font-medium hover:text-red-600 hover:shadow-md"><i class="fa-brands fa-youtube mr-3"></i>YOUTUBE</a>  
-                   <a href="http://" class="font-poppin text-[15px] text-black self-start mb-2 font-medium hover:text-darkblue hover:shadow-md"><i class="fa-brands fa-tiktok mr-3"></i>TIKTOK</a>    
+                   <a href="https://www.tiktok.com/@bdrs.realty" class="font-poppin text-[15px] text-black self-start mb-2 font-medium hover:text-darkblue hover:shadow-md"><i class="fa-brands fa-tiktok mr-3"></i>TIKTOK</a>    
             </div>
 
             <div class="flex flex-col -mt-[45px]">

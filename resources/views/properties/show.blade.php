@@ -49,9 +49,6 @@
                             Full Address
                             </th>
                             <th scope="col" class="px-6 py-3">
-                            Bed
-                            </th>
-                            <th scope="col" class="px-6 py-3">
                             Property Availability
                             </th>            
                             <th scope="col" class="px-6 py-3">
@@ -59,6 +56,9 @@
                             </th>
                             <th scope="col" class="px-6 py-3">
                             Featured
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                 
                             </th>
                         </tr>
                     </thead>
@@ -70,9 +70,6 @@
                                 {{$property->zip}}
                             </td>
                             <td class="px-6 py-4">
-                            {{$property->bed}}
-                            </td>
-                            <td class="px-6 py-4">
                             {{$property->availability}}
                             </td>
                             <td class="px-6 py-4">
@@ -80,6 +77,9 @@
                             </td>
                             <td class="px-6 py-4">
                             {{$property->featured}}  
+                            </td>
+                            <td class="px-6 py-4">
+                        
                             </td>
                         </tr>
                     </tbody>

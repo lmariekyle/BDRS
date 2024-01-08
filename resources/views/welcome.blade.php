@@ -177,7 +177,7 @@
         <!-- end of buy or rent -->
            
         <!-- start of update -->
-        <div class = "flex flex-col absolute mt-[5rem] ml-[13rem] justify-start">   
+        <!-- <div class = "flex flex-col absolute mt-[5rem] ml-[13rem] justify-start">   
                     <div class="flex flex-row">
                         <div>
                             <p class = "self-center text-center font-rozha text-[5rem]">News &</p>  
@@ -209,6 +209,42 @@
                             </div>
                             @endforeach
                         </div>
+        </div> -->
+        <div style="display: flex; flex-direction: column; position: absolute; margin-top: 5rem; margin-left: 13rem; justify-content: start;">
+
+        <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 2rem;">
+            <p style="font-family: 'Rozha One', serif; font-size: 44px; margin-right: 1rem;">News & Events</p>
+            <div style=" margin-left:5px;width: 70%; border-bottom-width: 3px; border-bottom-color: #000000;">
+            </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-left: -2rem;">
+
+            @foreach($updates as $update)
+            <div style="width: 18rem; margin: 0 2rem 2rem 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease-in-out, transform 0.5s ease-in-out;">
+
+                <div style="position: relative; overflow: hidden; border-radius: 1rem;">
+
+                    <img style="width: 100%; height: 500px; object-fit: cover; border-radius: 1rem 1rem 0 0; transition: transform 0.5s ease-in-out;" src="bdrsrealty/public/{{$update->coverphoto}}" alt="Update Image">
+
+                    <div style="padding: 1rem; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); color: #fff; position: absolute; bottom: 0; left: 0; right: 0;">
+
+                        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; color: white; font-weight: bold;">{{$update->titleHeading}}</h2>
+
+                        <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
+                            <?php
+                            $paragraph = $update->description;
+                            $maxCharacters = 200;
+                            echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
+                            ?>
+                        </p>
+
+                        <a href="{{route('posts.showupdate', $update->id)}}" style="color: #FFD700; text-decoration: none; transition: color 0.3s ease-in-out; display: inline-block; margin-top: 1rem;">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
         </div>
         <!-- end of update -->
 
