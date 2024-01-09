@@ -25,6 +25,7 @@
         <div class="sticky z-50 top-0">
                     @include('layouts.navigation')
         </div> 
+        
         <!-- landing page welcome content -->
         <div class="flex  justify-center ml-5 mt-[2rem]">
             <div class="h-[732px] w-full ml-1 mt-8">
@@ -71,12 +72,7 @@
                                     <p class="font-poppins text-[38px]">Condominium Complex</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
-                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p> 
-                                    @if ($user) 
-                                    <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
-                                    @else
-                                    <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
-                                    @endif                               
+                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>                          
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
@@ -99,11 +95,7 @@
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">491 Archbishop Reyes Ave, Cebu City, 6000 Cebu</p>
                                     <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                                    @if ($user) 
-                                    <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
-                                    @else
-                                    <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
-                                    @endif                               
+                         
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
@@ -126,11 +118,7 @@
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">Punta Engaño Road, Lapu-Lapu City</p>
                                     <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                                    @if ($user) 
-                                    <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
-                                    @else
-                                    <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
-                                    @endif                               
+                           
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">

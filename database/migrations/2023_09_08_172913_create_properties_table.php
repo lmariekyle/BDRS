@@ -20,21 +20,19 @@ return new class extends Migration
             $table->text('unitdesc')->nullable();
             $table->text('beddesc')->nullable();
             $table->text('furnishdesc')->nullable();
-            $table->text('pricedesc')->nullable();
             $table->text('locationdesc')->nullable();
             $table->string('unitType')->nullable();
             $table->string('type')->nullable();
-            $table->string('price')->nullable();
             $table->string('sizes')->nullable();
             $table->string('address')->nullable();
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
-            $table->string('bed')->nullable();
-            $table->string('status')->default('Approved');
+            $table->string('status')->default('Pending');
             $table->string('featured')->default('Not Featured'); //0 is not featured
             $table->string('img')->nullable();
             $table->string('coverphoto')->nullable();
             $table->string('vid')->nullable();
+            $table->string('priceimg')->nullable();
             $table->timestamps();
         });
     }

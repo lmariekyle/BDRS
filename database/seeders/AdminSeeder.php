@@ -68,7 +68,21 @@ class AdminSeeder extends Seeder
             'userStatus' => 'Active',
             'email' => 'lourdes@bdrs.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('lourdeskyle'),
+            'password' => Hash::make('lourdesbdrs'),
         ])->assignRole('User');
+
+        User::create([
+            'accountID'=>'  MH-001',
+            'firstName' => 'Horbs',
+            'middleName' => 'Reb',
+            'lastName' => 'Barriga',
+            'dateOfBirth' => NULL,
+            'contactNumber' => '1234567890',
+            'userRole' => 'User',
+            'userStatus' => 'Active',
+            'email' => 'horbs@bdrs.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('horbsbdrs'),
+        ])->assignRole('Marketing Head');
     }
 }

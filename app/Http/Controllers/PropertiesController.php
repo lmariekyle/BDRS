@@ -42,7 +42,9 @@ class PropertiesController extends Controller
 
         $request->validate([
             'img' => 'required|array',
-            'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:32000', // Adjust file types and size limit as needed
+            'coverphoto' => 'required|image|mimes:jpeg,png,jpg,gif|max:102400',
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:102400',
+            'vid' => 'required|mimes:mp4,mov,avi|max:102400', // Adjust file types and size limit as needed
         ]);
 
         $propertyimages = [];
@@ -68,6 +70,22 @@ class PropertiesController extends Controller
         }else{
             $imgpath="property/default.jpg";
         }
+
+        if ($request->hasFile('vid')){
+            $vid_name = time().'.'.$request->vid->getClientOriginalExtension();
+            $request->vid->move(public_path('property'),$vid_name);
+            $vidpath="property/".$vid_name;
+        }else{
+            $vidpath="property/default.mp4";
+        }
+
+        if ($request->hasFile('priceimg')){
+            $priceimg_name = time().'.'.$request->priceimg->getClientOriginalExtension();
+            $request->priceimg->move(public_path('property'),$priceimg_name);
+            $priceimgpath="property/".$priceimg_name;
+        }else{
+            $priceimgpath="property/default.jpg";
+        }
         
 
         $property = Property::create([
@@ -75,9 +93,12 @@ class PropertiesController extends Controller
             'availability' => $request->availability,
             'furnish' =>$request->furnish,
             'description' => $request->description,
+            'unitdesc' => $request->unitdesc,
+            'beddesc' => $request->unitdesc,
+            'furnishdesc' => $request->furnishdesc,
+            'locationdesc' => $request->locationdesc,
             'type'=> $request->type,
             'unitType'=> $request->unitType,
-            'price' =>$request->price,
             'sizes' => $request->sizes,
             'address'=> $request->address,
             'state'=> $request->state,
@@ -88,11 +109,12 @@ class PropertiesController extends Controller
             'featured'=> $request->featured,
             'coverphoto'=> $imgpath,
             'img'=> $imgJson,
-            'vid'=> NULL,
+            'vid'=> $vidpath,
+            'priceimg' => $priceimgpath
         ]);
 
          
-        return redirect()->back();
+        return redirect()->back()->with('success','Property has been Added!');
     }
 
     /**
@@ -127,13 +149,15 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-    
-        $request->validate([
-            'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:32000', // Adjust file types and size limit as needed
-        ]);
 
         $property = Property::where('id',$id)->first();
 
+        // $request->validate([
+        //     'img' => 'required|array',
+        //     'coverphoto' => 'required|image|mimes:jpeg,png,jpg,gif|max:102400',
+        //     'img.*' => 'image|mimes:jpeg,png,jpg,gif|mmax:102400',
+        //     'vid' => 'required|mimes:mp4,mov,avi|max:102400', // Adjust file types and size limit as needed
+        // ]);
         $propertyimages = [];
 
         // Check if new images are being uploaded
@@ -161,7 +185,7 @@ class PropertiesController extends Controller
             // If no new images are uploaded, keep the existing images
             $imgJson = $property->img;
         }
-
+    
         if ($request->hasFile('coverphoto')){
             $img_name = time().'.'.$request->coverphoto->getClientOriginalExtension();
             $request->coverphoto->move(public_path('property'),$img_name);
@@ -170,25 +194,47 @@ class PropertiesController extends Controller
             $imgpath=$property->coverphoto;
         }
        
+        if ($request->hasFile('vid')){
+            $vid_name = time().'.'.$request->vid->getClientOriginalExtension();
+            $request->vid->move(public_path('property'),$vid_name);
+            $vidpath="property/".$vid_name;
+        }else{
+            $vidpath="property/default.mp4";
+        }
+
+
+
+        if ($request->hasFile('priceimg')){
+            $priceimg_name = time().'.'.$request->priceimg->getClientOriginalExtension();
+            $request->priceimg->move(public_path('property'),$priceimg_name);
+            $priceimgpath="property/".$priceimg_name;
+        }else{
+            $priceimgpath="property/default.jpg";
+        }
+
             $property->name = $request->name;
             $property->availability = $request->availability;
             $property->furnish = $request->furnish;
             $property->description = $request->description;
+            $property->unitdesc = $request->unitdesc;
+            $property->beddesc = $request->beddesc;
+            $property->furnishdesc = $request->furnishdesc;
+            $property->locationdesc = $request->locationdesc;
             $property->type = $request->type;
-            $property->price =$request->price;
+            $property->unitType = $request->unitType;
             $property->sizes = $request->sizes;
             $property->address= $request->address;
             $property->state= $request->state;
             $property->zip= $request->zip;
-            $property->bed= $request->bed;
             $property->status= $request->status;
             $property->featured= $request->featured;
             $property->coverphoto =$imgpath;
             $property->img= $imgJson;
-            $property->vid= NULL;
-            // dd($property);
-            $property->save();
+            $property->vid= $vidpath;
+            $property->priceimg= $priceimgpath;
 
+            $property->save();
+          
             return redirect()->back()->with('success','Property has been Updated!');
             
     }

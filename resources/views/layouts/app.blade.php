@@ -26,9 +26,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-dirtywhite antialiased">
-    
-    <div class="flex flex-row sm:px-6 lg:-ml-9">
-        <div class="bg-gold w-[315px] h-[1200px] flex justify-start flex-col py-5 px-2">
+
+    <div class="flex flex-row">
+        <div class="bg-gold w-[315px] h-full flex justify-start flex-col py-5 px-2 -ml-[2rem] z-10">
             <div class="self-center mr-5 bg-dirtywhite rounded-full w-[140px] h-[134px] sm:-my-px sm:ml-10 sm:flex px-14">
                    <!-- <img src="images/logo.png" alt=""  style="width: 100px; height:100px;"> -->
             </div>
@@ -37,29 +37,29 @@
             </div>
             
             <div class="mt-20 self-center">
-            @auth
-                <p class="font-poppins text-2xl text-center underline underline-offset-8"> {{Auth::user()->firstName}} {{Auth::user()->middleName}} {{Auth::user()->lastName}}</p>
-            @endauth
+                @auth
+                    <p class="font-poppins text-2xl text-center underline underline-offset-8"> {{Auth::user()->firstName}} {{Auth::user()->middleName}} {{Auth::user()->lastName}}</p>
+                @endauth
 
-                @role('Admin')
-                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">ADMIN</p>
-                @endrole
+                    @role('Admin')
+                    <p class="font-poppins mt-4 text-2xl text-center text-darkblue">ADMIN</p>
+                    @endrole
 
-                @role('Customer Service')
-                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">CUSTOMER SERVICE</p>
-                @endrole
+                    @role('Customer Service')
+                    <p class="font-poppins mt-4 text-2xl text-center text-darkblue">CUSTOMER SERVICE</p>
+                    @endrole
 
-                @role('Marketing')
-                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">MARKETING</p>
-                @endrole
+                    @role('Marketing')
+                    <p class="font-poppins mt-4 text-2xl text-center text-darkblue">MARKETING</p>
+                    @endrole
 
-                @role('User')
-                <p class="font-poppins mt-4 text-2xl text-center text-darkblue">Welcome, {{Auth::user()->firstName}}!</p>
-                @endrole
+                    @role('User')
+                    <p class="font-poppins mt-4 text-2xl text-center text-darkblue">Welcome, {{Auth::user()->firstName}}!</p>
+                    @endrole
             </div>
 
             <div class="mt-24 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
-            <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
+                <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
                 <a href="/" class="font-poppins text-[18px] font-medium ">HOME</a>
             </div>
 
@@ -114,20 +114,12 @@
                         </a>
                 </form>
             </div>
-            <!-- Page Heading -->
-            <!-- @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif -->
+        </div>
+        <div class="absolute">
+            {{$slot}}
+        </div>
+    </div>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        
         <script>
 
         $(document).ready(function(){

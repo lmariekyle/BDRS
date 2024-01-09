@@ -13,18 +13,21 @@ class Property extends Model
         'furnish',
         'name',
         'description',
+        'unitdesc',
+        'beddesc',
+        'furnishdesc',
+        'locationdesc',
         'type',
         'unitType',
-        'price',
         'sizes',
         'address',
         'state',
         'zip',
-        'bed',
         'status',
         'coverphoto',
         'img',
         'vid',
+        'priceimg',
 ];
     
 }

@@ -1,13 +1,12 @@
 <x-app-layout>
-<div class=" flex flex-row sm:px-6 lg:-ml-9">
     @role('Admin')
-        <div class="flex flex-col items-center w-max -mt-[38rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+    <div class="flex flex-col items-center w-max h-max mt-[8rem] ml-[25rem] mb-8 bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
     @role('Marketing')
         <div class="flex flex-col items-center w-max -mt-[30rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
-                <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Update Property</p>
-            <form method="POST" action="{{route('properties.update' , $property->id) }}" class="flex flex-col flex-wrap w-[1300px] h-[800px]" enctype="multipart/form-data">  
+                <p class="font-poppin mb-4 text-2xl underline underline-offset-8">UPDATE PROPERTY</p>
+            <form method="POST" action="{{route('properties.update' , $property->id) }}" class="grid grid-cols-3 w-max h-max py-4" enctype="multipart/form-data">  
             @method('PUT') 
                 @csrf
                 <!-- Name -->
@@ -23,34 +22,25 @@
                     <option value="">Property Type</option>
                     <option value="Apartment" {{ $property->type === 'Apartment' ? 'selected' : '' }}>Apartment</option>
                     <option value="Condominium" {{ $property->type === 'Condominium' ? 'selected' : '' }}>Condominium</option>
-                    <option value="Studio Unit" {{ $property->type === 'Studio Unit' ? 'selected' : '' }}>Studio Unit</option>
-                    <option value="Loft Unit" {{ $property->type === 'Loft Unit' ? 'selected' : '' }}>Loft Unit</option>
-                    <option value="Penthouse Unit" {{ $property->type === 'Penthouse Unit' ? 'selected' : '' }}>Penthouse Unit</option>
-                    <option value="Town House" {{ $property->type === 'Town House' ? 'selected' : '' }}>Town House</option>
-                    <option value="Villa" {{ $property->type === 'Villa' ? 'selected' : '' }}>Villa</option>
-                    <option value="Row House" {{ $property->type === 'Row House' ? 'selected' : '' }}>Row House</option>
-                    <option value="Duplex House" {{ $property->type === 'Duplex House' ? 'selected' : '' }}>Duplex House</option>
-                    <option value="Single Detached House" {{ $property->type === 'Single Detached House' ? 'selected' : '' }}>Single Detached House</option>
-                    <option value="Office" {{ $property->type === 'Office' ? 'selected' : '' }}>Office</option>
-                    <option value="Retail" {{ $property->type === 'Retail' ? 'selected' : '' }}>Retail</option>
-                    <option value="Industrial" {{ $property->type === 'Industrial' ? 'selected' : '' }}>Industrial</option>
+                    <option value="Commercial Space" {{ $property->type === 'Commercial Space' ? 'selected' : '' }}>Commercial Space</option>
+                    <option value="House and Lot" {{ $property->type === 'House and Lot' ? 'selected' : '' }}>House and Lot</option>
                 </select>
             </div>
 
             <div class="mt-4 px-4">
-                <x-input-label for="type" :value="__('Property Unit Type')" />
-                <select id="type" class="block mt-1 w-full" name="unitType" required autofocus>
+                <x-input-label for="unitType" :value="__('Property Unit Type')" />
+                <select id="unitType" class="block mt-1 w-full" name="unitType" required autofocus>
                     <option value="" >Unit Type</option>
-                    <option value="Studio Home Office" {{ $property->type === 'Studio Home Office' ? 'selected' : '' }}>Studio Home Office</option>
-                    <option value="Bedroom Home Office" {{ $property->type === 'Bedroom Home Office' ? 'selected' : '' }}>Bedroom Home Office</option>
-                    <option value="Studio Residence" {{ $property->type === 'Studio Residence' ? 'selected' : '' }}>Studio Residence</option>
-                    <option value="1 Bedroom Residence" {{ $property->type === '1 Bedroom Residence' ? 'selected' : '' }}>1 Bedroom Residence</option>
-                    <option value="2 Bedroom Residence" {{ $property->type === '2 Bedroom Residence' ? 'selected' : '' }}>2 Bedroom Residence</option>
+                    <option value="Studio Home Office" {{ $property->unitType === 'Studio Home Office' ? 'selected' : '' }}>Studio Home Office</option>
+                    <option value="Bedroom Home Office" {{ $property->unitType === 'Bedroom Home Office' ? 'selected' : '' }}>Bedroom Home Office</option>
+                    <option value="Studio Residence" {{ $property->unitType === 'Studio Residence' ? 'selected' : '' }}>Studio Residence</option>
+                    <option value="1 Bedroom Residence" {{ $property->unitType === '1 Bedroom Residence' ? 'selected' : '' }}>1 Bedroom Residence</option>
+                    <option value="2 Bedroom Residence" {{ $property->unitType === '2 Bedroom Residence' ? 'selected' : '' }}>2 Bedroom Residence</option>
                 </select>
             </div>
 
 
-                <div class="mt-4  px-4">
+                <!-- <div class="mt-4  px-4">
                     <x-input-label for="price" :value="__('Price Range')" />
                 
                     <select id="price" class="block mt-1 w-full" name="price" required autofocus>
@@ -64,7 +54,7 @@
                     </select>
 
                     <x-input-error :messages="$errors->get('price')" class="mt-2" />
-                </div>
+                </div> -->
 
 
                 <!-- <div class="mt-4 px-4 ">
@@ -80,6 +70,12 @@
                     </select>
                     <x-input-error :messages="$errors->get('sizes')" class="mt-2" />
                 </div> -->
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="sizes" :value="__('Unit Size (Sqm)')" />
+                    <x-text-input id="sizes" class="block mt-1 w-full" type="text" name="sizes" :value="$property->sizes" required autocomplete="username" />
+                    <x-input-error :messages="$errors->get('sizes')" class="mt-2" />
+                </div>
 
                 <div class="mt-4 px-4">
                     <x-input-label for="address" :value="__('Address')" />
@@ -117,8 +113,8 @@
 
 
                 <div class="mt-4 px-4">
-                <x-input-label for="provision" :value="__('Availability')" />
-                        <select id="provision" class="block mt-1 w-full" name="provision" :value="$property->provision" required autofocus>
+                <x-input-label for="availability" :value="__('Availability')" />
+                        <select id="availability" class="block mt-1 w-full" name="availability" :value="$property->availability" required autofocus>
                             <option value="For Rent" {{ $property->provision === 'For Rent' ? 'selected' : ''}}>For Rent</option>
                             <option value="For Sale" {{ $property->provision === 'For Sale' ? 'selected' : ''}}>For Sale</option>
                             <option value="For Sale" {{ $property->provision === 'Pre - Selling' ? 'selected' : ''}}>Pre - Selling</option>
@@ -135,6 +131,84 @@
                         </select>
                 </div>
 
+                <div class="col-span-3 border-t-[1px] border-b-[1px] py-2 border-black mt-4 ">
+                <p class="font-poppin text-base text-center">DESCRIPTION</p>
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="description" :value="__('Property Description')" />
+                    <textarea id="description" class="block mt-1 w-[250px] h-[150px]  rounded-md" type="text" name="description" :value="$property->description" required autofocus autocomplete="name">{{$property->description}}</textarea>
+                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="unitdesc" :value="__('Unit Size Description')" />
+                    <textarea id="unitdesc" class="block mt-1 w-[250px] h-[150px]  rounded-md" type="text" name="unitdesc" :value="$property->unitdesc" required autofocus autocomplete="name">{{$property->unitdesc}}</textarea>
+                    <x-input-error :messages="$errors->get('unitdesc')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="locationdesc" :value="__('Area Description')" />
+                    <textarea id="locationdesc" class="block mt-1 w-[250px] h-[150px]  rounded-md" type="text" name="locationdesc" :value="$property->locationdesc" required autofocus autocomplete="name">{{$property->locationdesc}}</textarea>
+                    <x-input-error :messages="$errors->get('locationdesc')" class="mt-2" />
+                </div>
+
+                <div class="mt-4 px-4">
+                    <x-input-label for="furnishdesc" :value="__('Furnish Description')" />
+                    <textarea id="furnishdesc" class="block mt-1 w-[250px] h-[150px]  rounded-md" type="text" name="furnishdesc" :value="$property->furnishdesc" required autofocus autocomplete="name">{{$property->furnishdesc}}</textarea>
+                    <x-input-error :messages="$errors->get('furnishdesc')" class="mt-2" />
+                </div>
+                <div class="mt-4 px-4">
+                    <x-input-label for="beddesc" :value="__('Bed Description')" />
+                    <textarea id="beddesc" class="block mt-1 w-[250px] h-[150px]  rounded-md" type="text" name="beddesc" :value="$property->beddesc" required autofocus autocomplete="name">{{$property->beddesc}}</textarea>
+                    <x-input-error :messages="$errors->get('beddesc')" class="mt-2" />
+                </div>
+                
+                <div class="col-span-3 border-t-[1px] border-b-[1px] py-2 border-black mt-4 ">
+                <p class="font-poppin text-base text-center">UPLOADS</p>
+                </div>
+
+                <div class="mt-4 px-4"> 
+                    <x-input-label for="coverphoto" :value="__('Cover Image Upload')" />
+                    <div>
+                    <x-text-input id="coverphoto" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="coverphoto" multiple :value="old('coverphoto')" accept=".jpg, .jpeg, .png" autocomplete="on" />
+                    </div>
+                </div>
+
+                <div class="mt-4 px-4"> 
+                    <x-input-label for="img" :value="__('Amenities Image Upload')" />
+                    <div>
+                    <x-text-input id="img" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="img[]" multiple :value="old('img[]')" accept=".jpg, .jpeg, .png" autocomplete="on" />
+                    </div>
+                </div>
+
+                <div class="mt-4 px-4"> 
+                    <x-input-label for="vid" :value="__('Video Upload')" />
+                    <div>
+                    <x-text-input id="vid" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="vid" multiple :value="old('$property->vid')" accept="video/*" autocomplete="on" />
+                    </div>
+                </div>
+
+                <div class="mt-4 px-4"> 
+                    <x-input-label for="priceimg" :value="__('Price Image Upload')" />
+                    <div>
+                    <x-text-input id="priceimg" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="priceimg" multiple :value="old('priceimg')" accept=".jpg, .jpeg, .png" autocomplete="on" />
+                    </div>
+                </div>
+                
+        
+                <!-- <div class="mt-4 px-4"> 
+                    <x-input-label for="vid" :value="__('Video')" />
+                    <div>
+                    <x-text-input id="vid" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="vid" :value="old('vid')" accept="video/*" autocomplete="on" />
+                    </div>
+                </div> -->
+
+                <div class="col-span-3 border-t-[1px] border-b-[1px] py-2 border-black mt-4 ">
+                <p class="font-poppin text-base text-center">REMARKS</p>
+                </div>
+
+                @hasanyrole('Admin|Marketing Head')
                 <div class="mt-4 px-4 ">
                 <x-input-label for="status" :value="__('Property Status')" />
                         <select id="status" class="block mt-1 w-full" name="status" :value="$property->status" required autofocus>
@@ -150,71 +224,14 @@
                             <option value="Not Featured" {{ $property->featured === 'Not Featured' ? 'selected' : ''}}>Not Featured</option>
                         </select>
                 </div>
+                @endhasanyrole
 
-                <div class="mt-4 px-4">
-                    <x-input-label for="description" :value="__('Property Description')" />
-                    <textarea id="description" class="block mt-1 w-[250px] h-[350px] resize rounded-md" type="text" name="description" :value="$property->description" required autofocus autocomplete="name"></textarea>
-                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
-                </div>
-
-                <div class="mt-4 px-4">
-                    <x-input-label for="unitdesc" :value="__('Unit Size Description')" />
-                    <textarea id="unitdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="unitdesc" :value="$property->unitdesc" required autofocus autocomplete="name"></textarea>
-                    <x-input-error :messages="$errors->get('unitdesc')" class="mt-2" />
-                </div>
-
-                <div class="mt-4 px-4">
-                    <x-input-label for="locationdesc" :value="__('Area Description')" />
-                    <textarea id="locationdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="locationdesc" :value="$property->locationdesc" required autofocus autocomplete="name"></textarea>
-                    <x-input-error :messages="$errors->get('locationdesc')" class="mt-2" />
-                </div>
-
-
-                <div class="mt-4 px-4">
-                    <x-input-label for="pricedesc" :value="__('Price Description')" />
-                    <textarea id="pricedesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="pricedesc" :value="$property->pricedesc" required autofocus autocomplete="name"></textarea>
-                    <x-input-error :messages="$errors->get('pricedesc')" class="mt-2" />
-                </div>
-
-                <div class="mt-4 px-4">
-                    <x-input-label for="furnishdesc" :value="__('Furnish Description')" />
-                    <textarea id="furnishdesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="furnishdesc" :value="$property->furnishdesc" required autofocus autocomplete="name"></textarea>
-                    <x-input-error :messages="$errors->get('furnishdesc')" class="mt-2" />
-                </div>
-                <div class="mt-4 px-4">
-                    <x-input-label for="beddesc" :value="__('Bed Description')" />
-                    <textarea id="beddesc" class="block mt-1 w-[250px] h-[150px] resize rounded-md" type="text" name="beddesc" :value="$property->beddesc" required autofocus autocomplete="name"></textarea>
-                    <x-input-error :messages="$errors->get('beddesc')" class="mt-2" />
-                </div>
-                
-                <div class="mt-4 px-4"> 
-                    <x-input-label for="coverphoto" :value="__('Cover Image Upload')" />
-                    <div>
-                    <x-text-input id="coverphoto" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="coverphoto" multiple :value="old('coverphoto')" accept=".jpg, .jpeg, .png" autocomplete="on" />
-                    </div>
-                </div>
-
-
-                <div class="mt-4 px-4"> 
-                    <x-input-label for="img" :value="__('Image')" />
-                    <div>
-                    <x-text-input id="img" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="img[]" multiple :value="old('img[]')" accept=".jpg, .jpeg, .png" autocomplete="on" />
-                    </div>
-                </div>
-                
-        
-                <!-- <div class="mt-4 px-4"> 
-                    <x-input-label for="vid" :value="__('Video')" />
-                    <div>
-                    <x-text-input id="vid" class="block mt-1 w-full file:w-[7rem] file:h-[42px]file:overflow-hidden file:bg-darkblue file:text-[14px] file:text-dirtywhite file:font-poppins file:cursor-pointer" type="file" name="vid" :value="old('vid')" accept="video/*" autocomplete="on" />
-                    </div>
-                </div> -->
                 <div class="">
-                    <x-primary-button class="flex justify-end mt-8 ml-32 px-4">
+                    <x-primary-button class="flex justify-end mt-12 ml-32 px-4">
                         {{ __('Update Property') }}
                     </x-primary-button>
                 </div>
             </form>
         </div>
-    </div>
+
 </x-app-layout>

@@ -47,6 +47,7 @@ export default {
             backgroundImage: {
                 'registerbg': "url('/public/images/registerbg.jpg')",
               },
+              
         },
     },
 

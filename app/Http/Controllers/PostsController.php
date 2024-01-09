@@ -26,7 +26,7 @@ class PostsController extends Controller
         $property = Property::where('featured','Featured')->first();
         $updates = Update::where('featured','Featured')->get()->take(4);
         if($property == NULL){
-            return view('welcome', compact('property')); 
+            return view('welcome', compact('property','user','updates')); 
         }else{
             $imagePaths = json_decode($property->img,true);
             return view('welcome', compact('property','imagePaths','user','updates')); 

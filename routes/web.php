@@ -33,7 +33,7 @@ Route::get('/viewproperties', [PostsController::class, 'viewproperties'])->name(
 Route::get('/buyproperties', [PostsController::class, 'showbuy'])->name('posts.showbuy');
 Route::get('/rentproperties', [PostsController::class, 'showrent'])->name('posts.showrent');
 Route::get('showproperty/{id}', [PostsController::class, 'showproperty'])->name('posts.showproperty');
-// Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
+Route::put('showproperty/{id}', [PostsController::class, 'store'])->name('posts.store');
 Route::get('/authorization', [Controller::class, 'authorization'])->name('modal.authorization-modal');
 Route::get('showupdate/{id}', [PostsController::class, 'showupdate']) ->name('posts.showupdate');
 Route::get('/newsupdates', [UpdatesController::class, 'newsupdates'])->name('updates.newsupdates');

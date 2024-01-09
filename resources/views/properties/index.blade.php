@@ -6,8 +6,8 @@
     </x-slot>
 
 
-        <div class="absolute top-0  mt-56 flex flex-col w-max sm:px-6 lg:ml-[20rem]">
-            <div class=" bg-gold w-max self-end shadow-inner px-4 py-2 hover:shadow-md">
+        <div class="absolute top-0 mt-[12rem] flex flex-col w-[1100px] py-2 sm:px-6 lg:ml-[20rem]">
+            <div class=" bg-gold w-max self-end shadow-inner px-4 py-2 hover:shadow-md mr-8">
                 <a href="{{ route('properties.create') }}" class="text-center text-sm text-darkblue font-semibold hover:text-dirtywhite">ADD PROPERTY</a>
             </div>
             <!-- <div class=" bg-dirtywhite w-full h-96 mt-4 border-2 border-darkblue shadow-md relative overflow-x-auto"> -->
@@ -20,7 +20,7 @@
                 </div> -->  
             <!-- </div> -->
 
-            <div class="relative overflow-x-auto bg-dirtywhite border-2 border-darkblue shadow-md w-[1400px] h-max mt-4 ml-5">
+            <div class="relative overflow-x-auto bg-dirtywhite border-2 border-darkblue shadow-md w-[1000px] h-max mt-4 ml-5">
                 <table class="w-full  text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="bg-darkblue border-2 border-dirtywhite-600 shadow-inner text-md text-dirtywhite uppercase">
                         <tr>
