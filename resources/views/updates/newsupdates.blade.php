@@ -114,18 +114,18 @@
         /* Media Query for Mobile Screens */
         @media (max-width: 600px) {
             .article-card {
-            max-width: 90%; /* Adjusting width for mobile screens */
+            max-width: 85%;
         }
 
         .article-card img {
-            width: 100%; /* Making the image responsive for mobile screens */
-            height: auto; /* Ensuring aspect ratio is maintained */
-            margin-right: 0; /* Removing margin for better layout */
+            width: 100%;
+            height: auto;
+            margin-right: 0;
         }
 
         .article-card article {
-            flex-direction: column; /* Stacking content vertically on mobile screens */
-            text-align: center; /* Centering text content */
+            flex-direction: column;
+            text-align: center; 
         }
 
         .article-card h2 {
