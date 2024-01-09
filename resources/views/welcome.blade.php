@@ -24,7 +24,7 @@
     <body class="bg-dirtywhite antialised">
         <div class="sticky z-50 top-0">
                     @include('layouts.navigation')
-        </div> 
+        </div>
         <!-- landing page welcome content -->
         <div class="flex  justify-center ml-5 mt-[2rem]">
             <div class="h-[732px] w-full ml-1 mt-8">
@@ -35,7 +35,7 @@
                     <img src="images/bdrswelcomebg.png" style="width: 1800px; height: 728px;">
                 </div>
             </div>
-           
+
             <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] ml-[32rem] ">
                     <p class="ml-[8rem] -mt-6 font-playfair text-[60px] font-dirtywhite">We are the key</p>
                 <div class="flex flex-row px-2 -mt-5 ml-[10rem]">
@@ -71,12 +71,12 @@
                                     <p class="font-poppins text-[38px]">Condominium Complex</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
-                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p> 
-                                    @if ($user) 
+                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
+                                    @if ($user)
                                     <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
                                     @else
                                     <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
-                                    @endif                               
+                                    @endif
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
@@ -99,11 +99,11 @@
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">491 Archbishop Reyes Ave, Cebu City, 6000 Cebu</p>
                                     <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                                    @if ($user) 
+                                    @if ($user)
                                     <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
                                     @else
                                     <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
-                                    @endif                               
+                                    @endif
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
@@ -126,11 +126,11 @@
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">Punta Engaño Road, Lapu-Lapu City</p>
                                     <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                                    @if ($user) 
+                                    @if ($user)
                                     <a href="{{route('posts.showproperty', $property->id)}}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Click Here</a>
                                     @else
                                     <a href="{{ route('login') }}" class="font-poppins text-[14px] underline underline-offset-4 self-center">Login to View Properties</a>
-                                    @endif                               
+                                    @endif
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
@@ -141,7 +141,7 @@
                             <!-- end of image section -->
                         </div>
                     </li>
-                  
+
                 </ul>
                   <!-- slider buttons -->
                   <div class="absolute self-center mt-[30rem] ml-[52rem] w-[800px] flex flex-row justify-between px-2">
@@ -153,7 +153,7 @@
                             </button>
                      </div> <!-- end of buttons -->
         </div> <!-- end of featured content -->
-        
+
         <!-- start of buy or rent  -->
         <div class="flex flex-row mt-[15rem] ml-[10rem] px-[4rem] space-x-[3rem]">
                 <img src="/images/bldg1.jpg" alt="" style="width:695px; height:701px;">
@@ -175,12 +175,12 @@
                 </div>
         </div>
         <!-- end of buy or rent -->
-           
+
         <!-- start of update -->
-        <!-- <div class = "flex flex-col absolute mt-[5rem] ml-[13rem] justify-start">   
+        <!-- <div class = "flex flex-col absolute mt-[5rem] ml-[13rem] justify-start">
                     <div class="flex flex-row">
                         <div>
-                            <p class = "self-center text-center font-rozha text-[5rem]">News &</p>  
+                            <p class = "self-center text-center font-rozha text-[5rem]">News &</p>
                             <p class = "self-center text-center font-rozha text-[5rem] -mt-[3rem]">Events </p>
                         </div>
                         <hr class="h-px my-8 bg-black border-0">
@@ -225,7 +225,7 @@
 
                 <div style="position: relative; overflow: hidden; border-radius: 1rem;">
 
-                    <img style="width: 100%; height: 500px; object-fit: cover; border-radius: 1rem 1rem 0 0; transition: transform 0.5s ease-in-out;" src="bdrsrealty/public/{{$update->coverphoto}}" alt="Update Image">
+                    <img style="width: 100%; height: 500px; object-fit: cover; border-radius: 1rem 1rem 0 0; transition: transform 0.5s ease-in-out;" img src="{{ asset($update->coverphoto) }}" alt="Image">
 
                     <div style="padding: 1rem; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); color: #fff; position: absolute; bottom: 0; left: 0; right: 0;">
 
@@ -252,10 +252,10 @@
         <div class="mt-[65rem]">
             @include('layouts.footer')
         </div>
-           
 
 
-               
+
+
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Function to initialize a slider

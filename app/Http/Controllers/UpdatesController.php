@@ -17,16 +17,17 @@ class UpdatesController extends Controller
     {
         $updates=Update::all();
         return view('updates.index', compact('updates'));
-    
+
     }
 
     public function newsupdates(){
         $updates = Update::all()->filter(function ($update) {
             return $update->featured === 'Featured';
         });
-        
-        if ($updates->count() > 0) {
+
+        if ($updates->count() >= 0) {
             return view('updates.newsupdates', compact('updates'));
+            
         }
     }
 
@@ -90,12 +91,12 @@ class UpdatesController extends Controller
     public function show(string $id)
     {
          $update=Update::where('id',$id)->first();
-        
+
 
           $imagePaths = json_decode($update->img, true);
          return view('updates.show', compact('update','imagePaths'));
 
-       
+
     }
 
     /**
@@ -111,7 +112,7 @@ class UpdatesController extends Controller
             // You can log the error or display a user-friendly message.
             return view('error.index', ['message' => 'An error occurred while fetching data from the database.']);
         }
-    
+
         return view('updates.edit', compact('update','imagePaths'));
     }
 
@@ -120,7 +121,7 @@ class UpdatesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-    
+
         $request->validate([
             'img.*' => 'image|mimes:jpeg,png,jpg,gif|max:32000', // Adjust file types and size limit as needed
         ]);

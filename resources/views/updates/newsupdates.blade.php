@@ -25,13 +25,11 @@
             background-color: #fffcf2;
         }
 
-        /* Add a max-width for the entire content */
         .container {
-            max-width: 1200px;
+            width: 1200px;
             margin: 0 auto;
         }
 
-        /* Responsive styles for the navigation */
         nav {
             display: flex;
             gap: 2rem;
@@ -48,7 +46,6 @@
             color: yellow;
         }
 
-        /* Responsive styles for the News and Updates heading */
         .heading {
             margin-top: 4rem;
             text-align: center;
@@ -61,7 +58,6 @@
             font-weight: bold;
         }
 
-        /* Responsive styles for the article cards */
         .article-card {
             background-color: #fffcf2;
             border: 4px solid #eddea4;
@@ -69,11 +65,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 60rem;
+            transition: max-width 0.3s;
         }
 
         .article-card img {
-            height: 13rem;
-            width: 13rem;
+            height: 15rem;
+            width: 15rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-right: 40px;
         }
@@ -113,7 +110,32 @@
         .article-card a:hover {
             color: #FFD700;
         }
+
+        /* Media Query for Mobile Screens */
+        @media (max-width: 600px) {
+            .article-card {
+            max-width: 90%; /* Adjusting width for mobile screens */
+        }
+
+        .article-card img {
+            width: 100%; /* Making the image responsive for mobile screens */
+            height: auto; /* Ensuring aspect ratio is maintained */
+            margin-right: 0; /* Removing margin for better layout */
+        }
+
+        .article-card article {
+            flex-direction: column; /* Stacking content vertically on mobile screens */
+            text-align: center; /* Centering text content */
+        }
+
+        .article-card h2 {
+            font-size: 1.5rem; /* Adjusting heading font size for mobile screens */
+            margin-bottom: 0.5rem; /* Reducing margin for better spacing */
+        }
+
+        }
     </style>
+
 </head>
 
 <body>
@@ -128,7 +150,7 @@
             @foreach($updates as $update)
             <div class="article-card">
                 <article>
-                    <img src="bdrsrealty/public/{{$update->coverphoto}}" alt="Image">
+                    <img src="{{ asset($update->coverphoto) }}" alt="Image">
                     <div>
                         <h2>{{$update->titleHeading}}</h2>
                         <div>
