@@ -1,4 +1,4 @@
-<div class="bg-gold w-full h-[230px] flex flex-row justify-evenly place-items-center mt-[10rem] px-8 py-8 top-0">
+<div class="bg-gold w-full h-[230px] flex flex-row justify-evenly place-items-center mt-[10rem] px-8 py-12 top-0">
             <img src="images/logo.png" alt="" style="width: 200px; height: 200px;" class="-ml-[7rem] mr-[3rem] mt-3">
 
             <div class="flex flex-col mt-4">

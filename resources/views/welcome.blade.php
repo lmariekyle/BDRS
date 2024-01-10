@@ -27,55 +27,54 @@
         </div> 
         
         <!-- landing page welcome content -->
-        <div class="flex  justify-center ml-5 mt-[2rem]">
-            <div class="h-[732px] w-full ml-1 mt-8">
-                <img src="images/welcomebg.png" style="width: 1799px; height: 798px;">
-            </div>
-            <div class="absolute mt-7 -ml-7 bg-greywhite border-2 border-darkblue shadow-inner bg-opacity-80 w-[1800px] h-[802px]">
-                <div class="absolute mt-14 px-2 shadow-md">
-                    <img src="images/bdrswelcomebg.png" style="width: 1800px; height: 728px;">
-                </div>
-            </div>
+        <div class="flex justify-center mt-[2rem] border-2 w-full border-darkblue shadow-inner">
+            <div class="">
+                <img src="images/welcomebg.png">
+            </div> 
            
-            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] ml-[32rem] ">
-                    <p class="ml-[8rem] -mt-6 font-playfair text-[60px] font-dirtywhite">We are the key</p>
+            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[5rem] ml-[32rem] ">
+                    <p class="ml-[8rem] -mt-6 font-playfair lg:text-[60px] text-black text-[40px]">We are the key</p>
                 <div class="flex flex-row px-2 -mt-5 ml-[10rem]">
-                    <p class="font-playfair text-[60px] font-dirtywhite">to your new</p>
-                    <p class="font-baby text-[78px] font-dirtywhite ml-2">Home</p>
+                    <p class="font-playfair lg:text-[60px] text-[40px] text-black">to your new</p>
+                    <p class="font-baby lg:text-[78px] text-[50px] text-black ml-2">Home</p>
                 </div>
-                <div class="self-center -ml-[13rem] -mt-5 border-2 border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
-                    <a href="{{route('posts.viewproperties')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">explore now.</a>
+                <div class="self-center lg:-ml-[13rem] -ml-[21rem] lg:-mt-5 mt-1 border-2 border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
+                    <a href="{{route('posts.viewproperties')}}" class="font-playfair lg:text-[18px] text-[14px] font-semibold hover:text-darkblue">explore now.</a>
                 </div>
             </div>
+
+
+
         </div>
         <!-- end of landing page welcome content -->
 
         <!-- start of featured content -->
-        <div class="flex flex-col justify-start  ml-3 mt-[8rem] h-[732px] w-[1800px]">
+        <div class="flex flex-col justify-start mt-[8rem] h-[732px] w-full">
                 <div class="flex flex-row justify-evenly self-center mt-5 w-max h-[100px]">
-                    <p class="font-playfair text-[68px] ml-2 sm:text-start md:text-center ">We Sell,</p>
-                    <p class="font-playfair text-[68px] ml-2 ">We Buy,</p>
-                    <p class="font-playfair text-[68px] ml-2 ">We Rent</p>
+                    <p class="font-playfair text-[68px] ml-2 sm:text-start md:text-center ">Sell,</p>
+                    <p class="font-playfair text-[68px] ml-8 "> Buy,</p>
+                    <p class="font-playfair text-[68px] ml-8 "> Rent,</p>
+                    <p class="font-playfair text-[68px] ml-8 "> Brokerage</p>
                 </div>
                 <div class="flex flex-col ml-4">
                     <p class="font-poppins text-[28px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
                 </div>
                 <ul class="slider flex flex-col justify-items-center" id="slider1">
                     <li class="relative">
-                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
+                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="flex flex-col justify-center w-[630px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
-                                <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                            <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
+                                <p class="font-playfair self-center mb-8 -mt-8 text-[38px] underline underline-offset-8">FEATURED</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                                    <p class="font-poppins text-[38px]">Taft East Gate</p>
+                                    <p class="font-poppins text-[28px]">Taft East Gate</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                                    <p class="font-poppins text-[38px]">Condominium Complex</p>
+                                    <p class="font-poppins text-[28px]">Condominium Complex</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
                                     <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>                          
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
+                            <div class="relative ml-[2rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
                                 <div>
                                     <img src="/images/tafteastgate.png" alt="" style="width: 800px; height:500px;">
                                 </div>
@@ -84,21 +83,21 @@
                         </div>
                     </li>
                     <li class="relative hidden">
-                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
+                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="flex flex-col justify-center w-[630px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
-                                <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                            <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
+                                <p class="font-playfair self-center mb-8 -mt-8 text-[38px] underline underline-offset-8">FEATURED</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                                    <p class="font-poppins text-[38px]">Vertex Central</p>
+                                    <p class="font-poppins text-[28px]">Vertex Central</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                                    <p class="font-poppins text-[38px]">Condominium Complex</p>
+                                    <p class="font-poppins text-[28px]">Condominium Complex</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">491 Archbishop Reyes Ave, Cebu City, 6000 Cebu</p>
                                     <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
                          
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
+                            <div class="relative ml-[2rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
                                 <div>
                                     <img src="/images/vertexcentral.jpg" alt="" style="width: 800px;">
                                 </div>
@@ -107,21 +106,21 @@
                         </div>
                     </li>
                     <li class="relative hidden">
-                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[10rem] w-max h-max">
+                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="flex flex-col justify-center w-[630px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
-                                <p class="font-playfair self-center mb-8 -mt-8 text-[58px] underline underline-offset-8">FEATURED</p>
+                            <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
+                                <p class="font-playfair self-center mb-8 -mt-8 text-[38px] underline underline-offset-8">FEATURED</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                                    <p class="font-poppins text-[38px]">Vertex Coast</p>
+                                    <p class="font-poppins text-[28px]">Vertex Coast</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                                    <p class="font-poppins text-[38px]">Condominium Complex</p>
+                                    <p class="font-poppins text-[28px]">Condominium Complex</p>
                                     <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
                                     <p class="font-poppins text-[28px]">Punta Engaño Road, Lapu-Lapu City</p>
                                     <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
                            
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative ml-[5rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
+                            <div class="relative ml-[2rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
                                 <div>
                                     <img src="/images/vertexcoast.png" alt="" style="width: 800px; height:500px;">
                                 </div>
@@ -132,7 +131,7 @@
                   
                 </ul>
                   <!-- slider buttons -->
-                  <div class="absolute self-center mt-[30rem] ml-[52rem] w-[800px] flex flex-row justify-between px-2">
+                  <div class="absolute self-center mt-[30rem] ml-[30rem] w-[800px] flex flex-row justify-between px-2">
                             <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
@@ -143,7 +142,7 @@
         </div> <!-- end of featured content -->
         
         <!-- start of buy or rent  -->
-        <div class="flex flex-row mt-[15rem] ml-[10rem] px-[4rem] space-x-[3rem]">
+        <div class="flex flex-row mt-[15rem] ml-[2rem] px-[4rem] space-x-[3rem]">
                 <img src="/images/bldg1.jpg" alt="" style="width:695px; height:701px;">
 
                 <div class="flex flex-col justify-center place-items-center px-4 py-4 w-[800px]">

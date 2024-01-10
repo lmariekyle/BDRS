@@ -1,4 +1,5 @@
 <x-app-layout>
+@include('components.alert')
     @role('Admin')
     <div class="flex flex-col items-center w-max h-max mt-[8rem] ml-[25rem] mb-8 bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
@@ -208,7 +209,7 @@
                 <p class="font-poppin text-base text-center">REMARKS</p>
                 </div>
 
-                @hasanyrole('Admin|Marketing Head')
+                @role('Admin')
                 <div class="mt-4 px-4 ">
                 <x-input-label for="status" :value="__('Property Status')" />
                         <select id="status" class="block mt-1 w-full" name="status" :value="$property->status" required autofocus>
@@ -224,7 +225,7 @@
                             <option value="Not Featured" {{ $property->featured === 'Not Featured' ? 'selected' : ''}}>Not Featured</option>
                         </select>
                 </div>
-                @endhasanyrole
+                @endrole
 
                 <div class="">
                     <x-primary-button class="flex justify-end mt-12 ml-32 px-4">

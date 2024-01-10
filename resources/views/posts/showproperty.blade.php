@@ -29,65 +29,82 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] antialised">
+    <body class="bg-dirtywhite antialised">
 
         @include('layouts.navigation')
-        @include('components.alert')
 
-    <div class="flex flex-col h-max w-max mt-[8rem] ml-[7rem] bg-[#f6f6f6] shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
-        <div class="-mt-[2rem] w-[1600px] flex flex-col justify-start items-start px-4 py-8">
+    <div class="flex flex-col h-max w-[1400px] mt-[8rem] ml-8 bg-[#f6f6f6] shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
+        <div class="-mt-[2rem] w-[600px] lg:w-[1400px] flex flex-col justify-start items-start px-4 py-8">
                            <!-- gallery -->
-                    <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-10">
-                        <div class="relative h-[530px] w-[800px]">                       
-                                <img src="/{{$imagePaths[0]}}" alt="image" class="rounded-sm shadow-inner" style="height:530px; width:800px;" />
-
-                        </div>
-                  
+                <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
+                         <video width="1140px" height="700px" controls>
+                            <source src="/{{$property->vid}}" type="video/mp4">
+                            Your browser does not support the video tag.
+                         </video>
                     </div>
-                        <p class="px-3 py-4 font-playfair font-semibold text-[54px] -mt-[1rem] self-center">{{$property->name}}</p>
-                        <div class="w-[900px] h-max self-center mt-3">
+                      
+                    <p class="px-3 py-4 font-playfair font-semibold text-[54px] -mt-[1rem] self-center">{{$property->name}}</p>
+
+                    <div class="flex flex-col lg:flex-row">
+                    <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-10">
+                        <div class="relative h-[430px] w-[600px]">                       
+                                <img src="/{{$property->coverphoto}}" alt="image" class="rounded-sm shadow-inner" style="height:430px; width:600px;" class="object-cover w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 h-auto" />
+                        </div>
+                    </div>
+                        
+                        <div class="ml-8 lg:w-[600px] h-max self-center mt-3">
                             <p class="font-poppin text-[18px]">{{$property->description}}</p>
                         </div>
+                    </div>
         
          
         </div>
 
-        <div class="flex flex-row justify-start w-full h-[500px] mt-10">
+        <div class="flex flex-col lg:flex-row justify-start w-full h-[500px] mt-10">
             <div class="border-l-2 border-t-2 w-max h-max px-6 py-5 border-black">
-            <img src="/{{$imagePaths[1]}}" alt="" style="height: 500px; width: 800px;">
+                <img src="/{{$imagePaths[0]}}" alt="" style="height:430px; width:600px;">
             </div>
-                <div class="flex flex-col justify-center self-center w-[500px] h-[500px">
-                    <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-black">Property Highlights</p>
-                    <p class="px-8 py-2 font-poppin text-[18px] font-semibold w-max text-black -mt-4">{{$property->type}} | {{$property->sizes}} | {{$property->bed}} Bedroom/s</p>
+                <div class="flex flex-col justify-center lg:self-center w-[500px] h-[500px]">
+                    <p class="px-8 py-2 font-playfair text-[28px] lg:text-[38px] w-max font-semibold text-black">Property Highlights</p>
+                    <p class="px-8 py-2 font-poppin text-[14px] lg:text-[18px] font-semibold w-max text-black -mt-4">{{$property->type}} | {{$property->sizes}} | {{$property->bed}} Bedroom/s</p>
                     <div class="">
                 
-                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] mt-2">{{$property->unitdesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[14px] lg:text-[16px] font-medium text-black w-[700px] mt-2">{{$property->unitdesc}}</p>
                     </div>
 
                     <div class="mt-4">
-                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -mt-4">{{$property->beddesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[14px] lg:text-[16px] font-medium text-black w-[700px] -mt-4">{{$property->beddesc}}</p>
                     </div>
                 
                     <div class="flex flex-row self-end mt-3 border-b-2 border-gray-500">
-                    <p class="px-8 py-2 font-poppin text-[12px] w-max self-start text-gray-500">{{$property->type}} | {{$property->sizes}} | {{$property->bed}} Bedroom/s</p>
+                    <p class="px-8 py-2 font-poppin text-[12px] w-max self-start text-gray-500">{{$property->type}} | {{$property->sizes}} Sqm. | {{$property->bed}} Bedroom/s</p>
                     </div>
                 </div>
         </div>
 
-        <div class="flex flex-row justify-end w-full h-[500px] mt-[7rem] mb-10">
+        <div class="flex flex-col lg:flex-row justify-end w-full h-[500px] mt-[53rem] lg:mt-[7rem] mb-10">
                 <div class="flex flex-col justify-center w-[500px] h-[500px mr-[13rem]">
-                    <p class="px-8 py-2 font-poppin text-[18px] w-max font-semibold text-black self-center ml-[8rem]">{{$property->furnish}} | {{$property->price}} | {{$property->address}}, {{$property->state}}</p>
-                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->furnishdesc}}</p>
-                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->pricedesc}}</p>
-                    <p class="px-8 py-2 font-poppin text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->locationdesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[14px] lg:text-[18px] w-max font-semibold text-black self-center ml-[8rem]">{{$property->furnish}} | {{$property->price}} | {{$property->address}}, {{$property->state}}</p>
+                    <p class="px-8 py-2 font-poppin text-[14px] lg:text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->furnishdesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[14px] lg:text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->pricedesc}}</p>
+                    <p class="px-8 py-2 font-poppin text-[14px] lg:text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->locationdesc}}</p>
                 </div>
                 <div class="border-r-2 border-b-2 w-max h-max px-6 py-5 border-black">
-                <img src="/{{$imagePaths[2]}}" alt="" style="height: 500px; width: 800px;">
+                <img src="/{{$imagePaths[1]}}" alt="" style="height: 500px; width: 800px;" >
                 </div>
         </div>
 
+        <div class="flex flex-col justify-center self-center w-max h-max mt-[3rem]">
+            <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-10">
+                    <div class="relative h-[530px] w-[700px]">                       
+                        <img src="/{{$property->priceimg}}" alt="image" class="rounded-sm shadow-inner" style="height:530px; width:700px;" />
+                    </div>
+            </div>
+              
+        </div>
+
         
-            <div class="flex flex-row justify-center w-full h-[500px] mt-[10rem] mb-10">
+            <div class="flex flex-row justify-center w-full h-[500px] mt-[5rem] mb-10">
                 <div class="absolute border-2 self-start w-max h-max px-2 py-4 border-black mr-[55rem] mt-10 bg-darkblue
                 shadow-md">
                         <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Like what you see?</p>
