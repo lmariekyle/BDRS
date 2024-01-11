@@ -19,11 +19,11 @@
                 </div> -->  
             <!-- </div> -->
 
-            <div class="relative bg-dirtywhite border-2 border-darkblue shadow-md w-[1400px] h-max mt-1 ml-5">
+            <div class="relative bg-dirtywhite border-2 border-darkblue shadow-md w-[1000px] h-max mt-1 ml-5">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="bg-darkblue border-2 border-dirtywhite-600 shadow-inner text-md text-dirtywhite uppercase">
                         <tr>
-                        <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3">
                                 ID
                             </th>
                             <th scope="col" class="px-6 py-3">

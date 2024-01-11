@@ -1,6 +1,6 @@
 <x-app-layout>
 
-        <div class="flex flex-col items-center self-center w-max sm:px-6 lg:ml-[35rem] bg-dirtywhite border-l-blue-950 shadow-md h-max -mt-[36rem]">
+        <div class="flex flex-col items-center self-center w-max sm:px-6 lg:ml-[30rem] bg-dirtywhite border-l-blue-950 shadow-md h-max mt-[14rem]">
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Add Account</p>
             <form method="POST" action="{{ route('register') }}" class="flex flex-col flex-wrap w-[800px] h-[300px]">
                 @csrf
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="generate-password">
-                    <x-primary-button class="flex justify-end mt-2 ml-40 px-4">
+                    <x-primary-button class="flex justify-end mt-8 ml-[7rem] px-4">
                         {{ __('Register') }}
                     </x-primary-button>
                 </div>

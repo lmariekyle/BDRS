@@ -27,19 +27,19 @@
         </div> 
         
         <!-- landing page welcome content -->
-        <div class="flex justify-center mt-[2rem] border-2 w-full border-darkblue shadow-inner">
+        <div class="flex flex-col ml-[1.8rem] justify-center self-center mt-[2rem] border-2 border-darkblue shadow-inner">
             <div class="">
-                <img src="images/welcomebg.png">
+                <img src="images/collageOne.png">
             </div> 
            
-            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[5rem] ml-[32rem] ">
-                    <p class="ml-[8rem] -mt-6 font-playfair lg:text-[60px] text-black text-[40px]">We are the key</p>
-                <div class="flex flex-row px-2 -mt-5 ml-[10rem]">
-                    <p class="font-playfair lg:text-[60px] text-[40px] text-black">to your new</p>
-                    <p class="font-baby lg:text-[78px] text-[50px] text-black ml-2">Home</p>
+            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] lg:mt-[25rem] lg:ml-[29rem] pn:ml-[3rem]">
+                    <p class="ml-[8rem] -mt-6 font-playfair lg:text-[60px] text-dirtywhite text-[16px]">We are the key</p>
+                <div class="flex flex-row px-2 lg:-mt-[3rem] pn:-mt-[1rem] pn:ml-[8.5rem] lg:ml-[10rem] mb-1">
+                    <p class="font-playfair mt-2 lg:text-[60px] text-[16px] text-dirtywhite">to your new</p>
+                    <p class="font-baby lg:text-[78px] text-[18px] pn:mt-2 pn:ml-1 text-dirtywhite lg:ml-2">Home</p>
                 </div>
-                <div class="self-center lg:-ml-[13rem] -ml-[21rem] lg:-mt-5 mt-1 border-2 border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
-                    <a href="{{route('posts.viewproperties')}}" class="font-playfair lg:text-[18px] text-[14px] font-semibold hover:text-darkblue">explore now.</a>
+                <div class="self-center lg:-ml-[13rem] -ml-[35rem] lg:-mt-5 -mt-1 border-2 border-dirtywhite bg-darkblue hover:bg-dirtywhite shadow-md lg:w-max lg:h-max lg:px-3 lg:py-2 pn:w-[80px] pn:h-[25px] text-center">
+                    <a href="{{route('posts.viewproperties')}}" class="font-playfair text-center text-dirtywhite lg:text-[18px] text-[12px] font-semibold hover:text-darkblue">explore now.</a>
                 </div>
             </div>
 
@@ -49,81 +49,95 @@
         <!-- end of landing page welcome content -->
 
         <!-- start of featured content -->
-        <div class="flex flex-col justify-start mt-[8rem] h-[732px] w-full">
+        <div class="flex flex-col justify-start mt-3 lg:mt-[5rem] h-[732px] w-full">
                 <div class="flex flex-row justify-evenly self-center mt-5 w-max h-[100px]">
-                    <p class="font-playfair text-[68px] ml-2 sm:text-start md:text-center ">Sell,</p>
-                    <p class="font-playfair text-[68px] ml-8 "> Buy,</p>
-                    <p class="font-playfair text-[68px] ml-8 "> Rent,</p>
-                    <p class="font-playfair text-[68px] ml-8 "> Brokerage</p>
+                    <p class="font-playfair text-[20px] lg:text-[68px] ml-2 sm:text-start md:text-center ">Sell,</p>
+                    <p class="font-playfair text-[20px] lg:text-[68px] lg:ml-8 ml-2"> Buy,</p>
+                    <p class="font-playfair text-[20px] lg:text-[68px] lg:ml-8 ml-2"> Rent,</p>
+                    <p class="font-playfair text-[20px] lg:text-[68px] lg:ml-8 ml-2"> Brokerage</p>
                 </div>
-                <div class="flex flex-col ml-4">
-                    <p class="font-poppins text-[28px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
+                <div class="flex flex-col justify-items-center lg:ml-4 pn:ml-8 pn:mt-[10px]">
+                    <p class="font-poppins lg:text-[28px] lg:w-max pn:w-[350px] text-[12px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
                 </div>
+
                 <ul class="slider flex flex-col justify-items-center" id="slider1">
                     <li class="relative">
-                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[2rem] w-max h-max">
+                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
-                                <p class="font-playfair self-center mb-8 -mt-8 text-[38px] underline underline-offset-8">FEATURED</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                                    <p class="font-poppins text-[28px]">Taft East Gate</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                                    <p class="font-poppins text-[28px]">Condominium Complex</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
-                                    <p class="font-poppins text-[28px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
-                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>                          
+                            <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
+                                    <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
+                                    <div>
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
+                                    <p class="font-poppins lg:text-[28px] text-[14px]">Taft East Gate</p>
+                                    </div>
+                                    <div>
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">TYPE</p>
+                                    <p class="font-poppins lg:text-[28px] text-[14px]">Condominium Complex</p>
+                                    </div>
+                                    <div class="ml-2 lg:ml-0"> 
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2 ">ADDRESS</p>
+                                    <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
+                                    </div>
+                             
+                                    <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                          
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative ml-[2rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
-                                <div>
-                                    <img src="/images/tafteastgate.png" alt="" style="width: 800px; height:500px;">
-                                </div>
+                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 lg:mx-auto lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
+                                    <img src="/images/tafteastgate.png" alt="" style="" class="w-auto h-auto">
                             </div>
                             <!-- end of image section -->
                         </div>
                     </li>
                     <li class="relative hidden">
-                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[2rem] w-max h-max">
+                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[10rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
-                                <p class="font-playfair self-center mb-8 -mt-8 text-[38px] underline underline-offset-8">FEATURED</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                                    <p class="font-poppins text-[28px]">Vertex Central</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                                    <p class="font-poppins text-[28px]">Condominium Complex</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
-                                    <p class="font-poppins text-[28px]">491 Archbishop Reyes Ave, Cebu City, 6000 Cebu</p>
-                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                         
+                            <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
+                                    <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
+                                    <div>
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
+                                    <p class="font-poppins lg:text-[28px] text-[14px]">Vertex Central</p>
+                                    </div>
+                                    <div>
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">TYPE</p>
+                                    <p class="font-poppins lg:text-[28px] text-[14px]">Condominium Complex</p>
+                                    </div>
+                                    <div class="ml-2 lg:ml-0"> 
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2 ">ADDRESS</p>
+                                    <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">491 Archbishop Reyes Ave, Cebu City, 6000 Cebu</p>
+                                    </div>
+                             
+                                    <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                          
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative ml-[2rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
-                                <div>
-                                    <img src="/images/vertexcentral.jpg" alt="" style="width: 800px;">
-                                </div>
+                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 mx-auto max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
+                                    <img src="/images/vertexcentral.jpg" alt="" style="" class="w-auto h-auto">
                             </div>
                             <!-- end of image section -->
                         </div>
                     </li>
                     <li class="relative hidden">
-                        <div class="flex flex-row justify-evenly self-start mt-5 ml-[2rem] w-max h-max">
+                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[10rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="flex flex-col justify-center w-[430px] h-[530px] px-[2rem] py-4 mt-14 ml-[2rem] border-t-2 border-l-2 border-b-2 border-darkblue">
-                                <p class="font-playfair self-center mb-8 -mt-8 text-[38px] underline underline-offset-8">FEATURED</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4">NAME</p>
-                                    <p class="font-poppins text-[28px]">Vertex Coast</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2">TYPE</p>
-                                    <p class="font-poppins text-[28px]">Condominium Complex</p>
-                                    <p class="font-poppins text-[18px] underline underline-offset-4 mt-2 ">ADDRESS</p>
-                                    <p class="font-poppins text-[28px]">Punta Engaño Road, Lapu-Lapu City</p>
-                                    <p class="font-poppins text-[16px] mt-8 ml-2 self-center">Interested?</p>
-                           
+                            <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
+                                    <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
+                                    <div>
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
+                                    <p class="font-poppins lg:text-[28px] text-[14px]">Vertex Coast</p>
+                                    </div>
+                                    <div>
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">TYPE</p>
+                                    <p class="font-poppins lg:text-[28px] text-[14px]">Condominium Complex</p>
+                                    </div>
+                                    <div class="ml-2 lg:ml-0"> 
+                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2 ">ADDRESS</p>
+                                    <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">Punta Engaño Road, Lapu-Lapu City</p>
+                                    </div>
+                             
+                                    <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                          
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative ml-[2rem] mx-auto max-w-[1400px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px]">
-                                <div>
-                                    <img src="/images/vertexcoast.png" alt="" style="width: 800px; height:500px;">
-                                </div>
+                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 lg:mx-auto lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
+                                    <img src="/images/vertexcoast.png" alt="" style="" class="w-auto h-auto">
                             </div>
                             <!-- end of image section -->
                         </div>
@@ -131,7 +145,7 @@
                   
                 </ul>
                   <!-- slider buttons -->
-                  <div class="absolute self-center mt-[30rem] ml-[30rem] w-[800px] flex flex-row justify-between px-2">
+                  <div class="absolute self-center mt-[30rem] lg:mt-[40rem] lg:ml-[30rem] lg:w-[790px] pn:w-[400px] pn:ml-[34px] flex flex-row justify-between px-2">
                             <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
@@ -142,15 +156,15 @@
         </div> <!-- end of featured content -->
         
         <!-- start of buy or rent  -->
-        <div class="flex flex-row mt-[15rem] ml-[2rem] px-[4rem] space-x-[3rem]">
-                <img src="/images/bldg1.jpg" alt="" style="width:695px; height:701px;">
+        <div class="flex flex-row -ml-[1rem] mt-[3rem] lg:mt-[15rem] lg:ml-[2rem] px-[4rem] space-x-[3rem]">
+                <img src="/images/bldg1 - Copy1.jpg" alt="" style="" class="h-auto w-auto">
 
-                <div class="flex flex-col justify-center place-items-center px-4 py-4 w-[800px]">
-                        <p class="font-rozha text-[65px] font-medium">EMPOWERING</p>
-                        <p class="font-rozha text-[65px] font-medium -mt-[2.5rem]">YOUR CHOICE</p>
-                        <p class="font-playfair text-[55px] font-medium">Buy or Rent</p>
-                        <p class="font-playfair text-[55px] font-medium">We've got you covered.</p>
-                        <p class="font-poppin text-[25px] font-medium mt-[3rem]">See Properties</p>
+                <div class="flex flex-col justify-center place-items-center px-2 lg:px-4 py-4 w-[480px] lg:w-[800px]">
+                        <p class="font-rozha lg:text-[55px] text-[25px] font-medium">EMPOWERING</p>
+                        <p class="font-rozha lg:text-[55px] text-[25px] font-medium -mt-[1.1rem] lg:-mt-[2.5rem]">YOUR CHOICE</p>
+                        <p class="font-playfair lg:text-[50px] text-[16px] font-medium">Buy or Rent</p>
+                        <p class="font-playfair lg:text-[50px] text-[14px] font-medium">We've got you covered.</p>
+                        <p class="font-poppin lg:text-[25px] text-[14px] font-medium mt-[3rem]">See Properties</p>
                         <div class="flex flex-row self-center mt-5 space-x-5">
                             <div class="border-2 bg-gold border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
                                 <a href="{{route('posts.showbuy')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">BUY</a>

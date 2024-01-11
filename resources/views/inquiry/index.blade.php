@@ -6,7 +6,7 @@
     </x-slot>
 
 
-        <div class="absolute top-0  mt-[5rem] flex flex-col w-max sm:px-6 lg:ml-[20rem]">
+        <div class="absolute top-0  mt-[10rem] flex flex-col w-max sm:px-6 lg:ml-[20rem]">
             <div class=" bg-dirtywhite w-max self-end  px-4 py-2 ">
             </div>
             <!-- <div class=" bg-dirtywhite w-full h-96 mt-4 border-2 border-darkblue shadow-md relative overflow-x-auto"> -->
@@ -19,7 +19,7 @@
                 </div> -->  
             <!-- </div> -->
 
-            <div class="relative bg-dirtywhite border-2 border-darkblue shadow-md w-[1400px] h-max mt-1 ml-5">
+            <div class="relative bg-dirtywhite border-2 border-darkblue shadow-md w-[1000px] h-max mt-1 ml-5">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="bg-darkblue border-2 border-dirtywhite-600 shadow-inner text-md text-dirtywhite uppercase">
                         <tr>

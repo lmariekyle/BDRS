@@ -150,7 +150,7 @@
                 <div class="flex flex-col justify-center h-[300px] w-[450px] bg-white rounded-lg shadow-inner border-2">    
                     <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:180px; height: 180px;">
-                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[13rem] px-1 mt-3">{{$property->description}}</p>
                     <div class="absolute px-1 py-1 self-center mt-[18rem] ml-[8rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
@@ -174,7 +174,7 @@
                 <div class="flex flex-col justify-center h-[300px] w-[450px] bg-white rounded-lg shadow-inner border-2">    
                     <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:180px; height: 180px;">
-                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[13rem] px-1 mt-3">{{$property->description}}</p>
                     <div class="absolute px-1 py-1 self-center mt-[18rem] ml-[8rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
@@ -222,7 +222,7 @@
                 <div class="flex flex-col justify-center h-[300px] w-[450px] bg-white rounded-lg shadow-inner border-2">    
                     <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:180px; height: 180px;">
-                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[13rem] px-1 mt-3">{{$property->description}}</p>
                     <div class="absolute px-1 py-1 self-center mt-[18rem] ml-[8rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
@@ -246,7 +246,7 @@
                 <div class="flex flex-col justify-center h-[300px] w-[450px] bg-white rounded-lg shadow-inner border-2">    
                     <p class="absolute -mt-[18rem] self-center font-playfair text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
                     <img src="{{$property->coverphoto}}" alt="" class="mt-1 ml-4 rounded-2xl self-start" style="width:180px; height: 180px;">
-                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[16rem] px-1 mt-3">{{$property->description}}</p>
+                    <p class="absolute font-poppin text-black text-[12px] inline-block indent-2 text-left h-max w-[228px] ml-[13rem] px-1 mt-3">{{$property->description}}</p>
                     <div class="absolute px-1 py-1 self-center mt-[18rem] ml-[8rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                     @if ($user) 
                         <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>

@@ -1,6 +1,6 @@
 <x-app-layout>
     @role('Customer Service')
-    <div class="flex flex-row justify-items-center sm:px-6 lg:ml-[25rem] -mt-[35rem]">
+    <div class="flex flex-row justify-items-center px-2 sm:px-6 lg:ml-[22rem] mt-[8rem]">
     @endrole
     @role('User')
     <div class="flex flex-row justify-items-center sm:px-6 lg:ml-[45rem] -mt-[26rem]">
@@ -95,14 +95,15 @@
 
             </body>
             </div>
-                @role('Customer Service')
+                
                 <div class="absolute flex flex-row w-max mt-[3rem] ml-[45rem]">
+                @role('Customer Service')
                         <form method="POST" action="{{route('inquiry.update' , $inquiry->id) }}">
                             @method('PUT')    
                             @csrf
-                            <div class="flex flex-col w-max h-[800px] bg-white border-2 border-darkblue -mt-10 px-8 py-8">
+                            <div class="flex flex-col w-[350px] h-[528px] bg-white border-2 border-darkblue -mt-10 px-8 py-8">
                                 <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8">CLIENT NAME:</p>
-                                <input type="text" name="clientName" id="clientName" class="-mt-2 w-[450px] h-[40px]" required value="{{$inquiry->clientName}}" readonly>
+                                <input type="text" name="clientName" id="clientName" class="-mt-2 h-[40px]" required value="{{$inquiry->clientName}}" readonly>
 
                                 <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8" >CONTACT NUMBER:</p>
                                 <input type="text" name="clientContact" id="clientContact" class="-mt-2 h-[40px]" required value="{{$inquiry->clientContact}}" readonly>
@@ -118,8 +119,31 @@
                                 <button type="submit" class="px-8 mt-8 py-2 font-poppin text-[22px] font-medium text-black border-2 border-black">Email to Client</button>
                             </div>
                         </form>
+                    @endrole
+                    @role('Admin')
+                        <form method="POST" action="{{route('inquiry.update' , $inquiry->id) }}">
+                            @method('PUT')    
+                            @csrf
+                            <div class="flex flex-col w-[350px] h-[528px] bg-white border-2 border-darkblue -mt-10 px-8 py-8">
+                                <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8">CLIENT NAME:</p>
+                                <input type="text" name="clientName" id="clientName" class="-mt-2 h-[40px]"  value="{{$inquiry->clientName}}" readonly>
+
+                                <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8" >CONTACT NUMBER:</p>
+                                <input type="text" name="clientContact" id="clientContact" class="-mt-2 h-[40px]"  value="{{$inquiry->clientContact}}" readonly>
+
+                                <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8">EMAIL ADDRESS:</p>
+                                <input type="text" name="clientEmail" id="clientEmail" class="-mt-2 h-[40px]" value="{{$inquiry->clientEmail}}" readonly>
+                    
+                                <p class="px-8 py-2 font-poppin text-[18px] font-medium text-black -ml-8">REPLY TO CLIENT:</p>
+                                <!-- <input type="text" name="reply" id="reply" class="-mt-2 h-[100px]" required> -->
+                                <textarea id="reply" class="-mt-2 h-[350px] resize rounded-md" type="text" name="reply" :value="{{$inquiry->clientEmail}}" readonly autofocus autocomplete="name"></textarea>
+                                <input type="text" name="propertyName" id="propertyName" class="hidden -mt-2 h-[100px]" value="{{$inquiry->clientEmail}}">
+
+                            </div>
+                        </form>
+                    @endrole
                 </div>
-                @endrole
+                
         </div>
 
 

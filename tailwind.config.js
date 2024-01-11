@@ -47,6 +47,9 @@ export default {
             backgroundImage: {
                 'registerbg': "url('/public/images/registerbg.jpg')",
               },
+            screens: {
+                'pn': '430px',
+            },
               
         },
     },
