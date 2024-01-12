@@ -11,7 +11,9 @@ class Update extends Model
     protected $fillable = [
         'titleHeading',
         'titleSub',
-        'description',
+        'firstParagraph',
+        'secondParagraph',
+        'thirdParagraph',
         'date',
         'status',
         'featured',

@@ -15,6 +15,24 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&family=Rozha+One&display=swap" rel="stylesheet">
 
+        <style>
+             @media print {
+ 
+                html,
+                body {
+
+                    /* Hide the whole page */
+                    display: none;
+                }
+                }
+
+                html {
+                    user-select: none;
+                }
+    </style>
+
+
+
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
@@ -32,7 +50,7 @@
                 <img src="images/collageOne.png">
             </div> 
            
-            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] lg:mt-[25rem] lg:ml-[29rem] pn:ml-[3rem]">
+            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] lg:mt-[28rem] lg:ml-[31rem] pn:ml-[3rem]">
                     <p class="ml-[8rem] -mt-6 font-playfair lg:text-[60px] text-dirtywhite text-[16px]">We are the key</p>
                 <div class="flex flex-row px-2 lg:-mt-[3rem] pn:-mt-[1rem] pn:ml-[8.5rem] lg:ml-[10rem] mb-1">
                     <p class="font-playfair mt-2 lg:text-[60px] text-[16px] text-dirtywhite">to your new</p>
@@ -89,7 +107,7 @@
                         </div>
                     </li>
                     <li class="relative hidden">
-                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[10rem] pn:mt-2 ml-[2rem] w-max h-max">
+                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
                             <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
                                     <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
@@ -116,7 +134,7 @@
                         </div>
                     </li>
                     <li class="relative hidden">
-                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[10rem] pn:mt-2 ml-[2rem] w-max h-max">
+                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
                             <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
                                     <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
@@ -145,7 +163,7 @@
                   
                 </ul>
                   <!-- slider buttons -->
-                  <div class="absolute self-center mt-[30rem] lg:mt-[40rem] lg:ml-[30rem] lg:w-[790px] pn:w-[400px] pn:ml-[34px] flex flex-row justify-between px-2">
+                  <div class="absolute self-center mt-[30rem] lg:mt-[35rem] lg:ml-[30rem] lg:w-[790px] pn:w-[400px] pn:ml-[34px] flex flex-row justify-between px-2">
                             <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
@@ -156,10 +174,10 @@
         </div> <!-- end of featured content -->
         
         <!-- start of buy or rent  -->
-        <div class="flex flex-row -ml-[1rem] mt-[3rem] lg:mt-[15rem] lg:ml-[2rem] px-[4rem] space-x-[3rem]">
-                <img src="/images/bldg1 - Copy1.jpg" alt="" style="" class="h-auto w-auto">
+        <div class="flex flex-row -ml-[1rem] mt-[3rem] lg:mt-[15rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
+                <img src="/images/BDRSPost.png" alt="" style="" class="h-auto w-auto border-2 border-white shadow-md rounded-md">
 
-                <div class="flex flex-col justify-center place-items-center px-2 lg:px-4 py-4 w-[480px] lg:w-[800px]">
+                <div class="flex flex-col justify-center place-items-center px-2 pn:ml-[10rem] lg:px-4 py-4 w-[180px] lg:w-[600px]">
                         <p class="font-rozha lg:text-[55px] text-[25px] font-medium">EMPOWERING</p>
                         <p class="font-rozha lg:text-[55px] text-[25px] font-medium -mt-[1.1rem] lg:-mt-[2.5rem]">YOUR CHOICE</p>
                         <p class="font-playfair lg:text-[50px] text-[16px] font-medium">Buy or Rent</p>
@@ -211,26 +229,26 @@
                             @endforeach
                         </div>
         </div> -->
-        <div style="display: flex; flex-direction: column; position: absolute; margin-top: 5rem; margin-left: 13rem; justify-content: start;">
+        <div class="flex flex-col absolute mt-20 ml-52 justify-start">
 
-        <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 2rem;">
-            <p style="font-family: 'Rozha One', serif; font-size: 44px; margin-right: 1rem;">News & Events</p>
-            <div style=" margin-left:5px;width: 70%; border-bottom-width: 3px; border-bottom-color: #000000;">
+        <div class="flex flex-row items-center mb-8 gap-0">
+            <p class="font-rozha text-[54px] w-[800px]">News & Events</p>
+            <div class="ml-4 w-[700px] border-b-3 border-black">
             </div>
         </div>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-left: -2rem;">
+        <div class="flex flex-wrap gap-8 ml-n8">
 
             @foreach($updates as $update)
-            <div style="width: 18rem; margin: 0 2rem 2rem 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease-in-out, transform 0.5s ease-in-out;">
+            <div class="w-[18rem] mx-2 mb-2 mr-0 rounded-lg overflow-hidden shadow-md transition ease-in-out duration-75 hover:shadow-lg ">
 
-                <div style="position: relative; overflow: hidden; border-radius: 1rem;">
+                <div class="relative overflow-hidden rounded-lg">
 
-                    <img style="width: 100%; height: 500px; object-fit: cover; border-radius: 1rem 1rem 0 0; transition: transform 0.5s ease-in-out;" src="bdrsrealty/public/{{$update->coverphoto}}" alt="Update Image">
+                    <img class="w-full h-[500px] object-cover rounded-t-lg transition-transform ease-in-out duration-75" src="/{{$update->coverphoto}}" alt="Update Image">
 
-                    <div style="padding: 1rem; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); color: #fff; position: absolute; bottom: 0; left: 0; right: 0;">
+                    <div class="p-4 bg-gradient-to-b from-transparent to-rgba(0,0,0,0.7) text-white absolute bottom-0 left-0 right-0">
 
-                        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; color: white; font-weight: bold;">{{$update->titleHeading}}</h2>
+                        <h2 class="text-[20px] mb-2 font-playfair text-white font-bold">{{$update->titleHeading}}</h2>
 
                         <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
                             <?php
@@ -312,7 +330,12 @@
         initializeSlider('slider1');
         // Initialize more sliders as needed
     });
-</script>
+
+    function Menu(e){
+      let list = document.querySelector('ul');
+      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+    </script>
 
     </body>
 </html>

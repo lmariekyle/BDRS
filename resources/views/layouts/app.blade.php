@@ -83,6 +83,10 @@
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
                 <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium ">INQUIRIES</a>
             </div>
+            <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
+                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
+                <a href="{{route('updates.index')}}" class="font-poppins text-[18px] font-medium ">UPDATES</a>
+            </div>
             @endrole
 
             @role('Marketing')

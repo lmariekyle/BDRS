@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('titleHeading');
             $table->string('titleSub');
-            $table->text('description');
+            $table->text('firstParagraph')->nullable();;
+            $table->text('secondParagraph')->nullable();;
+            $table->text('thirdParagraph')->nullable();;
             $table->date('date')->nullable();
             $table->string('status')->default('Approved');
             $table->string('featured')->default('Not Featured'); //0 is not featured
