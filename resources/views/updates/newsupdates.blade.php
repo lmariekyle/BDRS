@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +16,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/path/to/your/css/app.css">
-
     <style>
         body {
             background-color: #fffcf2;
@@ -32,21 +28,6 @@
         }
 
         /* Responsive styles for the navigation */
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            font-size: 1.125rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: yellow;
-        }
 
         /* Responsive styles for the News and Updates heading */
         .heading {
@@ -67,7 +48,8 @@
             border: 4px solid #eddea4;
             margin: 3rem auto 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 100%;
+            width: 500px;
+            height: 300px;
             max-width: 60rem;
         }
 
@@ -86,7 +68,7 @@
 
         .article-card h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 20px;
             color: black;
             font-weight: bold;
             margin-bottom: 1rem;
@@ -99,7 +81,7 @@
             -webkit-line-clamp: 4;
             text-align: left;
             color: black;
-            font-size: 1.125rem;
+            font-size: 16px;
             font-weight: 300;
             margin-bottom: 1rem;
             font-family: 'Poppins', sans-serif;
@@ -114,44 +96,52 @@
             color: #FFD700;
         }
     </style>
+    
+    @vite('resources/css/app.css')
+
 </head>
 
-<body>
+<body class="bg-dirtywhite">
     @include('layouts.navigation')
 
-    <div class="container">
-        <div class="heading">
-            <p>News and Updates</p>
-        </div>
+    <div class="heading">
+                    <p>News and Updates</p>
+    </div>
+    <div class="flex flex-col justify-center ml-[15rem] mt-6">
 
-        <div class="article-cards">
-            @foreach($updates as $update)
-            <div class="article-card">
-                <article>
-                    <img src="bdrsrealty/public/{{$update->coverphoto}}" alt="Image">
-                    <div>
-                        <h2>{{$update->titleHeading}}</h2>
-                        <div>
-                            <?php
-                            $paragraph = $update->description;
-                            $maxCharacters = 180;
-                            ?>
-                            <?php if (strlen($paragraph) > $maxCharacters): ?>
-                            <p style="margin-bottom: 0;"><?php echo substr($paragraph, 0, $maxCharacters); ?></p>
-                            <a href="{{route('posts.showupdate', $update->id)}}">Read more <i class="fa-solid fa-arrow-right" style="vertical-align: text-bottom;margin-top: 2rem;"></i></a>
-                            <?php else: ?>
-                            <p style="margin-top: 0.5rem; margin-bottom: 1rem; line-height: 1.25;"><?php echo $paragraph; ?></p>
-                            <a href="{{route('posts.showupdate', $update->id)}}" class="text-darkblue hover:text-gold ">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                            <?php endif; ?>
-                        </div>
+        <div class="grid grid-cols-2 gap-4 w-[1000px]">
+            <div class="container">
+                <div class="grid grid-cols-2 gap-4 w-[1000px]">
+                    @foreach($updates as $update)
+                    <div class="article-card">
+                        <article>
+                            <img src="/{{$update->coverphoto}}" alt="Image">
+                            <div>
+                                <h2>{{$update->titleHeading}}</h2>
+                                <div>
+                                    <?php
+                                    $paragraph = $update->firstParagraph;
+                                    $maxCharacters = 180;
+                                    ?>
+                                    <?php if (strlen($paragraph) > $maxCharacters): ?>
+                                    <p style="margin-bottom: 0;"><?php echo substr($paragraph, 0, $maxCharacters); ?></p>
+                                    <a href="{{route('posts.showupdate', $update->id)}}">Read More <i class="fa-solid fa-arrow-right" style="vertical-align: text-bottom;margin-top: 2rem;"></i></a>
+                                    <?php else: ?>
+                                    <p style="margin-top: 0.5rem; margin-bottom: 1rem; line-height: 1.25;"><?php echo $paragraph; ?></p>
+                                    <a href="{{route('posts.showupdate', $update->id)}}" class="text-darkblue hover:text-gold ">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </article>
+                    @endforeach
+                </div>
             </div>
-            @endforeach
         </div>
+        
     </div>
 
-    @include('layouts.footer')
+    <div class="mt-[5rem]">@include('layouts.footer')</div>
 </body>
 
 </html>

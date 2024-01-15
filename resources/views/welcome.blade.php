@@ -11,7 +11,6 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oooh+Baby&family=Playfair+Display&family=Poppins&family=Rozha+One&display=swap" rel="stylesheet">
 
@@ -174,7 +173,7 @@
         </div> <!-- end of featured content -->
         
         <!-- start of buy or rent  -->
-        <div class="flex flex-row -ml-[1rem] mt-[3rem] lg:mt-[15rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
+        <div class="flex flex-col lg:flex-row -ml-[3rem] mt-[3rem] lg:mt-[15rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
                 <img src="/images/BDRSPost.png" alt="" style="" class="h-auto w-auto border-2 border-white shadow-md rounded-md">
 
                 <div class="flex flex-col justify-center place-items-center px-2 pn:ml-[10rem] lg:px-4 py-4 w-[180px] lg:w-[600px]">
@@ -229,41 +228,41 @@
                             @endforeach
                         </div>
         </div> -->
-        <div class="flex flex-col absolute mt-20 ml-52 justify-start">
+        <div class="flex flex-col absolute mt-[3rem] ml-[1rem] lg:mt-[6rem] lg:ml-52 justify-start">
 
-        <div class="flex flex-row items-center mb-8 gap-0">
-            <p class="font-rozha text-[54px] w-[800px]">News & Events</p>
-            <div class="ml-4 w-[700px] border-b-3 border-black">
-            </div>
-        </div>
-
-        <div class="flex flex-wrap gap-8 ml-n8">
-
-            @foreach($updates as $update)
-            <div class="w-[18rem] mx-2 mb-2 mr-0 rounded-lg overflow-hidden shadow-md transition ease-in-out duration-75 hover:shadow-lg ">
-
-                <div class="relative overflow-hidden rounded-lg">
-
-                    <img class="w-full h-[500px] object-cover rounded-t-lg transition-transform ease-in-out duration-75" src="/{{$update->coverphoto}}" alt="Update Image">
-
-                    <div class="p-4 bg-gradient-to-b from-transparent to-rgba(0,0,0,0.7) text-white absolute bottom-0 left-0 right-0">
-
-                        <h2 class="text-[20px] mb-2 font-playfair text-white font-bold">{{$update->titleHeading}}</h2>
-
-                        <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
-                            <?php
-                            $paragraph = $update->description;
-                            $maxCharacters = 200;
-                            echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
-                            ?>
-                        </p>
-
-                        <a href="{{route('posts.showupdate', $update->id)}}" style="color: #FFD700; text-decoration: none; transition: color 0.3s ease-in-out; display: inline-block; margin-top: 1rem;">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+            <div class="flex flex-row items-center ml-[1rem] mb-8 gap-0">
+                <p class="font-rozha text-[28px] lg:text-[54px] w-[800px]">News & Events</p>
+                <div class="ml-4 w-[700px] border-b-3 border-black">
                 </div>
             </div>
-            @endforeach
-        </div>
+
+            <div class="flex flex-col lg:flex-row flex-wrap gap-8 ml-8">
+
+                @foreach($updates as $update)
+                <div class="w-[18rem] mx-2 mb-2 mr-0 rounded-lg overflow-hidden shadow-md transition ease-in-out duration-75 hover:shadow-lg ">
+
+                    <div class="relative overflow-hidden rounded-lg">
+
+                        <img class="w-full h-[300px] lg:h-[500px] object-cover rounded-t-lg transition-transform ease-in-out duration-75" src="/{{$update->coverphoto}}" alt="Update Image">
+
+                        <div class="p-4 bg-gradient-to-b from-transparent to-rgba(0,0,0,0.7) text-white absolute bottom-0 left-0 right-0">
+
+                            <h2 class="text-[20px] mb-2 font-playfair text-white font-bold">{{$update->titleHeading}}</h2>
+
+                            <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
+                                <?php
+                                $paragraph = $update->description;
+                                $maxCharacters = 200;
+                                echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
+                                ?>
+                            </p>
+
+                            <a href="{{route('posts.showupdate', $update->id)}}" style="color: #FFD700; text-decoration: none; transition: color 0.3s ease-in-out; display: inline-block; margin-top: 1rem;">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
         </div>
         <!-- end of update -->
 
@@ -331,10 +330,6 @@
         // Initialize more sliders as needed
     });
 
-    function Menu(e){
-      let list = document.querySelector('ul');
-      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-    }
     </script>
 
     </body>

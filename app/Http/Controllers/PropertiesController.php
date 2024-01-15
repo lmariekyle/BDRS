@@ -54,14 +54,14 @@ class PropertiesController extends Controller
             foreach ($request->file('img') as $image) {
                 if ($image->isValid()) {
                     $image_name = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                    $image->move(public_path('updates'), $image_name);
-                    $path = "updates/" . $image_name;
+                    $image->move(public_path('property'), $image_name);
+                    $path = "property/" . $image_name;
                     $propertyimages[] = $path;
                 }
             }
             $imgJson = json_encode($propertyimages);
         } else {
-            $imgJson = "updates/default.jpg";
+            $imgJson = "property/default.jpg";
         }
 
         if ($request->hasFile('coverphoto')){

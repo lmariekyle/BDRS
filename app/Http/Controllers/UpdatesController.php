@@ -22,13 +22,9 @@ class UpdatesController extends Controller
     }
 
     public function newsupdates(){
-        $updates = Update::all()->filter(function ($update) {
-            return $update->featured === 'Featured';
-        });
-        
-        if ($updates->count() > 0) {
-            return view('updates.newsupdates', compact('updates'));
-        }
+        $updates = Update::where('status','Approved')->get();
+
+        return view('updates.newsupdates', compact('updates'));
     }
 
     /**

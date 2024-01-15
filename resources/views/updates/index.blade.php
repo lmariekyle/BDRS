@@ -10,15 +10,6 @@
             <div class=" bg-gold w-max self-end shadow-inner px-4 py-2 hover:shadow-md">
                 <a href="{{route('updates.create')}}" class="text-center text-sm text-darkblue font-semibold hover:text-dirtywhite">CREATE UPDATE</a>
             </div>
-            <!-- <div class=" bg-dirtywhite w-full h-96 mt-4 border-2 border-darkblue shadow-md relative overflow-x-auto"> -->
-                <!-- <div class="bg-darkblue w-full h-14 border-2 border-dirtywhite-600 shadow-inner flex justify-between items-center px-4">
-                    <p class="font-poppins text-base text-dirtywhite font-semibold">ID</p>
-                    <p class="font-poppins text-base text-dirtywhite font-semibold">NAME</p>
-                    <p class="font-poppins text-base text-dirtywhite font-semibold">EMAIL</p>
-                    <p class="font-poppins text-base text-dirtywhite font-semibold">CONTACT NUMBER</p>
-                    <p class="font-poppins text-base text-dirtywhite font-semibold">ACTION</p>
-                </div> -->  
-            <!-- </div> -->
 
             <div class="relative overflow-x-auto bg-dirtywhite border-2 border-darkblue shadow-md w-[1000px] h-max mt-4 ml-5">
                 <table class="w-full  text-sm text-left text-gray-500 dark:text-gray-400">
@@ -69,9 +60,6 @@
 
                     </tbody>
                 </table>
-            </div>
-            <div class="flex flex-row justify-evenly mt-4">
-            </div>                       
+            </div>         
         </div>
-
 </x-app-layout>

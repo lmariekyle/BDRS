@@ -28,7 +28,7 @@
 
 
         <!-- Styles -->
-       <link rel="stylesheet" href="/path/to/your/css/app.css">
+        @vite('resources/css/app.css')
     <title>BDRS</title>
 </head>
 
@@ -56,12 +56,12 @@
                     $key = $update->coverphoto;
                 @endphp
                 <div style="position: relative; margin-bottom: 0.2rem;  overflow: hidden;">
-                    <img src="/bdrsrealty/public/{{ $update->coverphoto }}" alt="Cover Image {{ $key }}" style="width: 100%; height: auto; border-radius: 10px; border: 4px solid #eddea4; cursor: pointer; transition: transform 0.3s ease-in-out;"          data-toggle="modal" data-target="#imageModal{{ $key}}">
+                    <img src="/{{ $update->coverphoto }}" alt="Cover Image {{ $key }}" style="width: 100%; height: auto; border-radius: 10px; border: 4px solid #eddea4; cursor: pointer; transition: transform 0.3s ease-in-out;"          data-toggle="modal" data-target="#imageModal{{ $key}}">
                 </div>
                 <div class="modal fade" id="imageModal{{ $key }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ $key }}" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" style="align-items: center;">
                                 <div class="modal-content ml-2">
-                                    <img src="/bdrsrealty/public/{{ $update->coverphoto }}" alt="Image {{ $key }}" style=" height: 100%; width: 1000px;">
+                                    <img src="/{{ $update->coverphoto }}" alt="Image {{ $key }}" style=" height: 100%; width: 1000px;">
                                 </div>
                             </div>
                 </div>
@@ -77,7 +77,7 @@
                         <div style=" flex: 1 2 200px; position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;margin-top:10px;margin-left:10px;">
 
                             <!-- Image -->
-                            <img src="/bdrsrealty/public/{{ $path }}" alt="Image {{ $key }}" style=" height: auto; cursor: pointer; transition: transform 0.3s ease-in-out;" data-toggle="modal" data-target="#imageModal{{ $key}}">
+                            <img src="/{{ $path }}" alt="Image {{ $key }}" style=" height: auto; cursor: pointer; transition: transform 0.3s ease-in-out;" data-toggle="modal" data-target="#imageModal{{ $key}}">
 
                             <!-- Image Caption -->
                             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; opacity: 0; transition: opacity 0.3s ease-in-out;">
@@ -90,7 +90,7 @@
                         <div class="modal fade" id="imageModal{{ $key }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ $key }}" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" style="align-items: center;">
                                 <div class="modal-content ml-2">
-                                    <img src="/bdrsrealty/public/{{ $path }}" alt="Image {{ $key }}" style=" height: 100%; width: 1000px;">
+                                    <img src="/{{ $path }}" alt="Image {{ $key }}" style=" height: 100%; width: 1000px;">
                                 </div>
                             </div>
                         </div>
@@ -106,13 +106,15 @@
         </div>
             
                     <div style="display: flex; flex-direction: column;">
-                <div style="width: max-content; padding: 4px; align-self: center;">
+                <div style="width: 500px; padding: 4px; align-self: center;">
                     <h1 style="font-family: 'Playfair Display', serif; font-size: 1.875rem; font-weight: 600; text-align: center; font-size: 30px; margin-top:4rem;">{{ $update->titleSub }}</h1>
                 </div>
 
                 <!-- Description Container -->
                 <div style="width: min(80%, 900px); margin-top: 2rem; align-self: center; margin-left: 0.625rem; margin-right: 0.625rem; padding-left: 0.375rem; padding-right: 0.375rem; padding-top: 1rem; padding-bottom: 1rem; box-shadow: 2px 2px 2px 2px  rgba(0, 0, 0, 0.1);border-bottom-width: 2px; border-top-width: 2px; border-bottom-color: #eddea4;; border-top-color: #eddea4;;">
-                    <p style="font-family: 'Poppins', sans-serif; font-size: 20px; text-indent: 1rem; text-align: justify; margin: 20px;">{{ $update->description }}</p>
+                    <p style="font-family: 'Poppins', sans-serif; font-size: 20px; text-indent: 1rem; text-align: justify; margin: 20px;">{{ $update->firstParagraph }}</p>
+                    <p style="font-family: 'Poppins', sans-serif; font-size: 20px; text-indent: 1rem; text-align: justify; margin: 20px;">{{ $update->secondParagraph }}</p>
+                    <p style="font-family: 'Poppins', sans-serif; font-size: 20px; text-indent: 1rem; text-align: justify; margin: 20px;">{{ $update->thirdParagraph }}</p>
                 </div>
         </div>
     </div>

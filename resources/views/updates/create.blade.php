@@ -1,7 +1,7 @@
 <x-app-layout>
 <div class=" flex flex-row sm:px-6 lg:-ml-9">
     @role('Admin')
-    <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+    <div class="flex flex-col items-center w-max mt-[5rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
     @role('Marketing')
         <div class="flex flex-col items-center w-max mt-[5rem] sm:px-6 lg:ml-[30rem] bg-dirtywhite border-l-blue-950 shadow-md">
