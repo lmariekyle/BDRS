@@ -1,65 +1,53 @@
-<nav x-data="{ open: false }" class="static-center mt-10 ml-[10rem] mr-[10rem] dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div class="flex h-20 py-5">
-            <div class="flex items-stretch h-[70px]">
-                <!-- Navigation Links -->
-                <div class=" w-[450px] grid grid-cols-3 gap-4">
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex px-2 py-2">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('HOME') }}
-                    </x-nav-link>
-                </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex py-2">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('UPDATES') }}
-                    </x-nav-link>
-                </div>
+<div class="px-4 py-4 bg-dirtywhite md:flex md:items-center md:justify-between shadow-md border-b-2 border-darkblue">
+    <div class="flex justify-between items-center">
+      <span class="font-poppin text-black text-[12px] lg:text-[16px] font-medium cursor-pointer">
+        <a href="/">
+        <img class="h-20 inline"
+          src="/images/logo.png">
+           BDRS Realty Management Services Co.
+          </a>
+      </span>
 
-                
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex px-2 py-2">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('ABOUT US') }}
-                    </x-nav-link>
-                </div>
-                </div>
-
-                <div class="self-center sm:-my-px sm:ml-10 sm:flex px-14">
-                   <img src="images/logo.png" alt="" style="width: 100px;"  >
-                </div>
-
-                <div  class="ml-[200px] w-[150px] grid grid-cols-2 gap-4">
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex px-16">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('BUY') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex px-20">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('RENT') }}
-                    </x-nav-link>
-                </div>
-                </div>
-
-
-            </div>
-
-
-
-
-                <!-- Authentication -->
-                <!-- <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form> -->
-            </div>
-        </div>
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+        <!-- <ion-icon name="menu" onclick="Menu(this)"></ion-icon> -->
+        <i class="fa-solid fa-bars px-2 text-darkblue text-[18px]" name="menu"  onclick="Menu(this)"></i>
+      </span>
     </div>
-</nav>
+
+    <ul class="md:flex md:items-center md:z-auto md:static absolute bg-dirtywhite w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 pn:opacity-0 top-[-400px] transition-all ease-in duration-500">
+      <li class="mx-4 my-6 md:my-0">
+        <a href="{{route('posts.viewproperties')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">PROPERTIES</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="{{route('updates.newsupdates')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">NEWS & UPDATES</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="{{route('aboutpage')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">ABOUT US</a>
+      </li>
+      @auth
+      <li class="mx-4 my-6 md:my-0">
+        <a href="{{route('dashboard')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">DASHBOARD</a>
+      </li>
+      <form method="POST" action="{{ route('logout') }}" class="w-max px-8 py-2 font-poppin text-[14px] font-medium hover:text-darkblue hover:shadow-md">
+                        @csrf
+      <button class="bg-darkblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded ">
+        LOGOUT
+      </button>
+      </form>
+      @else
+      <a href="{{route('login')}}" class="bg-darkblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded ">
+        LOGIN
+      </a>
+      @endauth
+      <h2 class=""></h2>
+    </ul>
+  </div>
+
+  <script>
+      function Menu(e){
+      let list = document.querySelector('ul');
+      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+  </script>
+

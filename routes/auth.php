@@ -4,22 +4,34 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\UserAccountController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register');
+    // Route::get('register', [RegisteredUserController::class, 'create'])
+    //             ->name('register');
 
-    Route::post('register', [RegisteredUserController::class, 'store']);
+    // Route::post('register', [RegisteredUserController::class, 'store']);
+
+    Route::get('guest-register', [UserAccountController::class, 'create'])->name('guest-register');
+
+    Route::post('guest-register',[UserAccountController::class, 'store']);
+
+    Route::resource('posts', \App\Http\Controllers\PostsController::class);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
 
+    Route::get('loginGuest', [LoginController::class, 'create'])->name('loginGuest');
+    Route::post('loginGuest', [LoginController::class, 'store']);
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
@@ -36,6 +48,13 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    
+    Route::get('register', [RegisteredUserController::class, 'create'])
+                ->name('register');
+
+    Route::post('register', [RegisteredUserController::class, 'store']);
+
+
     Route::get('verify-email', EmailVerificationPromptController::class)
                 ->name('verification.notice');
 

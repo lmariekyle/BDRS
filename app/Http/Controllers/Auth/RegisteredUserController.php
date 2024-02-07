@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Spatie\Permission\Models\Role;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class RegisteredUserController extends Controller
+class RegisteredUserController extends Controller 
 {
     /**
      * Display the registration view.
@@ -35,9 +37,20 @@ class RegisteredUserController extends Controller
         $request->validate([
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'userRole' => 'required|exists:roles,name',
+            'contactNumber'=>'required|digits:11',
         ]);
+        
+        
+        if($request->userRole == "Marketing"){
+            $userId = IdGenerator::generate(['table' => 'users','field'=>'accountID' ,'length' => 6, 'prefix' =>'M-']);
+        }else if($request->userRole == "Customer Service"){
+            $userId = IdGenerator::generate(['table' => 'users','field'=>'accountID','length' => 6, 'prefix' =>'C-']);
+        };
+        
 
         $user = User::create([
+            'accountID' =>$userId,
             'firstName' => $request->firstName,
             'middleName' => $request->middleName,
             'lastName' => $request->lastName,
@@ -51,7 +64,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
     }
