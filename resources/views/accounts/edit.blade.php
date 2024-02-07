@@ -1,6 +1,7 @@
-<x-app-layout>
-<div class=" flex flex-row sm:px-6 lg:-ml-9">
+<x-app-layout>  
+<div class=" flex flex-row sm:px-6 lg:-ml-9">   
         <div class="flex flex-col items-center w-max mt-[10rem] sm:px-6 lg:ml-[30rem] bg-dirtywhite border-l-blue-950 shadow-md">
+        <a href="{{ route('accounts.index')}}"><i class="absolute -ml-[23rem] mt-[2rem] fa-solid fa-arrow-left text-[20px]"></i></a>   
                 <p class="font-poppin mb-2 mt-4 text-2xl underline underline-offset-8">UPDATE ACCOUNT</p>
             <form method="POST" action="{{ route('accounts.update', $user->id) }}" class="flex flex-col flex-wrap w-[800px] h-[500px] px-2 py-4">
             @method('PUT')    

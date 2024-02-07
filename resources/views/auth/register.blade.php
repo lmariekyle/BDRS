@@ -1,6 +1,7 @@
 <x-app-layout>
 
         <div class="flex flex-col items-center self-center w-max sm:px-6 lg:ml-[30rem] bg-dirtywhite border-l-blue-950 shadow-md h-max mt-[14rem]">
+        <a href="{{ route('accounts.index')}}"><i class="absolute -ml-[23rem] mt-[1rem] fa-solid fa-arrow-left text-[20px]"></i></a>
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Add Account</p>
             <form method="POST" action="{{ route('register') }}" class="flex flex-col flex-wrap w-[800px] h-[300px]">
                 @csrf

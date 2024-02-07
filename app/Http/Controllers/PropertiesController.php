@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use App\Models\Property;
+use App\Models\UnitType;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
@@ -32,7 +34,9 @@ class PropertiesController extends Controller
      */
     public function create()
     {
-        return view('properties.create');
+        $unitType = UnitType::where('status','Approved')->get();
+        $project = Project::where('status','Approved')->get();
+        return view('properties.create',compact('unitType','project'));
     }
 
     /**
@@ -95,7 +99,7 @@ class PropertiesController extends Controller
             'furnish' =>$request->furnish,
             'description' => $request->description,
             'unitdesc' => $request->unitdesc,
-            'beddesc' => $request->unitdesc,
+            'beddesc' => $request->beddesc,
             'furnishdesc' => $request->furnishdesc,
             'locationdesc' => $request->locationdesc,
             'type'=> $request->type,

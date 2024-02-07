@@ -23,6 +23,46 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+        <style>
+        .file {
+            width: 7rem; 
+            height: 42px;
+            overflow: hidden;
+            background-color: #001f3f;
+            color: #FDF5E6;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif; 
+            cursor: pointer;
+            }
+
+            .datetime {
+            font-size: 16px;
+            padding: 10px;
+            color: #ffffff;
+            background: #fffcf2;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            border-left: 10px #eddea4 solid;
+            margin-top: 10px;
+            margin-left:10px;
+            margin-bottom:15px;
+            width: 400px;
+            font-weight: 500;
+            font-family: "Inter", sans-serif;
+            }
+
+            .time {
+            font-size: 3em;
+            color: black;
+            }
+
+            .date {
+            margin-top: -12px;
+            font-size: 1.75em;
+            color: black;
+            }
+        </style>
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-dirtywhite antialiased">
@@ -86,6 +126,10 @@
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
                 <a href="{{route('updates.index')}}" class="font-poppins text-[18px] font-medium ">UPDATES</a>
+            </div>
+            <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
+                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
+                <a href="{{route('categories.index')}}" class="font-poppins text-[18px] font-medium ">CATEGORIES</a>
             </div>
             @endrole
 

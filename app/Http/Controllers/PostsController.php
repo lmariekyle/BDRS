@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InquiriesReply;
 use App\Models\ClientInquiries as ModelsClientInquiries;
+use App\Models\Project;
+use App\Models\UnitType;
 use App\Models\Update;
 use Illuminate\Support\Facades\Redirect;
 
@@ -38,6 +40,14 @@ class PostsController extends Controller
     {
         $user = Auth::user();
         $query = Property::query()->where('status','Approved');
+        $unitTypes = UnitType::where('status','Approved')->get();
+        $projects = Project::where('status','Approved')->get();
+ 
+
+    
+        if ($request->has('name') && !empty($request->name)) {
+            $query->where('name', $request->name);
+        }
 
         if ($request->has('availability') && !empty($request->availability)) {
             $query->where('availability', $request->availability);
@@ -73,7 +83,7 @@ class PostsController extends Controller
         }
 
         $properties=$query->get();
-        return view('posts.viewproperties', compact('properties','user')); 
+        return view('posts.viewproperties', compact('properties','user','projects','unitTypes')); 
         // dd($property);
     }
 
@@ -97,14 +107,18 @@ class PostsController extends Controller
     {
         $user = Auth::user();
         $properties=Property::where('availability','For Sale')->get();
-        return view('posts.showbuy', compact('properties','user')); 
+        $unitTypes = UnitType::where('status','Approved')->get();
+        $projects = Project::where('status','Approved')->get();
+        return view('posts.showbuy', compact('properties','user','unitTypes','projects')); 
     }
 
     public function showrent()
     {
         $user = Auth::user();
         $properties=Property::where('availability','For Rent')->get();
-        return view('posts.showrent', compact('properties','user')); 
+        $unitTypes = UnitType::where('status','Approved')->get();
+        $projects = Project::where('status','Approved')->get();
+        return view('posts.showrent', compact('properties','user','unitTypes','projects')); 
     }
 
     public function filterproperty(Request $request)

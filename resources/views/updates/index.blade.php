@@ -22,7 +22,7 @@
                                 Subheading
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Description
+                                Status
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Date
@@ -43,7 +43,7 @@
                                 {{$update->titleSub}}
                             </td>
                             <td class="px-6 py-4">
-                                {{$update->description}}
+                                {{$update->status}}
                             </td>
                             <td class="px-6 py-4">
                                 {{$update->date}}
@@ -60,6 +60,9 @@
 
                     </tbody>
                 </table>
+                <div class="flex flex-row justify-evenly mt-4">
+                {{$updates->links()}}
+            </div>
             </div>         
         </div>
 </x-app-layout>

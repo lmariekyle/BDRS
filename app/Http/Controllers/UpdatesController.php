@@ -16,7 +16,7 @@ class UpdatesController extends Controller
      */
     public function index()
     {
-        $updates=Update::all();
+        $updates=Update::paginate(10);
         return view('updates.index', compact('updates'));
     
     }

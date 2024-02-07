@@ -6,7 +6,7 @@
     </x-slot>
 
     @role('User')
-            <div class="flex flex-col ml-[50rem] -mt-[30rem] bg-dirtywhite border-2 border-black shadow-md rounded-md h-[500px] w-[500px] px-4 py-4">
+            <div class="flex flex-col ml-[40rem] mt-[10rem] bg-dirtywhite border-2 border-black shadow-md rounded-md h-[500px] w-[500px] px-4 py-4">
                     <div class="flex flex-row w-full h-[50px] space-x-8 justify-center place-items-center">
                             <p class="font-poppin text-[38px]">MY PROFILE</p>
                     </div>
@@ -31,13 +31,13 @@
     
     @hasanyrole('Customer Service|Marketing|Admin')
         @role('Customer Service')
-            <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: -25rem; height: 600px; width: max-content;">
+            <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: 10rem; height: 600px; width: max-content;">
         @endrole
         @role('Marketing')
-            <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: -30rem; height: 600px; width: max-content;">
+            <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: 10rem; height: 600px; width: max-content;">
         @endrole
         @role('Admin')
-            <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: -35rem; height: 600px; width: max-content;">
+            <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: 10rem; height: 600px; width: max-content;">
         @endrole
             <p style="font-family: Poppins; font-size: 30px; margin-left:10px; margin-top:8px; margin-bottom:10px; font-weight:bold;">Welcome back , {{$user->firstName}}!</p>
             <div class="datetime">

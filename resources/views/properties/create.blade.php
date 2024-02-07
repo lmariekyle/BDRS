@@ -1,19 +1,29 @@
 <x-app-layout>
-@include('components.alert')
     @role('Admin')
     <div class="flex flex-col items-center w-max h-max mt-[8rem] ml-[25rem] mb-8 bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
     @role('Marketing')
         <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole       
+        <a href="{{ route('properties.index')}}"><i class="absolute -ml-[30rem] mt-[2rem] fa-solid fa-arrow-left text-[20px]"></i></a> 
         <p class="font-poppin mb-4 text-2xl underline underline-offset-8">CREATE PROPERTY</p>
             <form method="POST" action="{{route('properties.store') }}" class="grid grid-cols-3 w-max h-max py-4" enctype="multipart/form-data">  
                 @csrf
                 <!-- Name -->
-                <div class="mt-4 px-4">
+                <!-- <div class="mt-4 px-4">
                     <x-input-label for="name" :value="__('Property Name')" />
                     <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                </div> -->
+
+                <div class="mt-4 px-4">
+                <x-input-label for="name" :value="__('Property Name')" />
+                        <select id="name" class="block mt-1 w-full" name="name" :value="old('name')" required autofocus>
+                        <option value="" >Property Name</option>
+                        @foreach($project as $p)
+                        <option value="{{$p->name}}">{{$p->name}}</option>
+                        @endforeach
+                        </select>
                 </div>
 
                 <div class="mt-4 px-4">
@@ -31,11 +41,9 @@
                 <x-input-label for="unitType" :value="__('Property Unit Type')" />
                         <select id="unitType" class="block mt-1 w-full" name="unitType" :value="old('unitType')" required autofocus>
                         <option value="" >Unit Type</option>
-                        <option value="Studio Home Office">Studio Home Office</option>
-                        <option value="Bedroom Home Office">Bedroom Home Office</option>
-                        <option value="Studio Residence">Studio Residence</option>
-                        <option value="1 Bedroom Residence">1 Bedroom Residence</option>
-                        <option value="2 Bedroom Residence">2 Bedroom Residence</option>
+                        @foreach($unitType as $u)
+                        <option value="{{$u->name}}">{{$u->name}}</option>
+                        @endforeach
                         </select>
                 </div>
 

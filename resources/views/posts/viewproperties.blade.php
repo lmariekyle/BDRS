@@ -26,7 +26,7 @@
 
     </head>
 <body class="bg-dirtywhite antialised">
-    @include('layouts.navigation')
+@include('layouts.navigation')
 <form action="{{route('posts.viewproperties')}}" method="GET">
     <div class="flex flex-col justify-evenly mt-[2rem] lg:ml-[5rem] h-[240px] w-[270px] lg:w-[1200px] bg-white-800 rounded-md px-4">
         <div class="flex items-center justify-between">
@@ -36,6 +36,21 @@
 	     </div>
 
 	        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 -mt-[5rem] w-[250px] lg:w-[1100px] h-[30px]">
+
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="name">
+                    <option value="">Project Name</option>
+                    @foreach($projects as $p)
+                    <option value="{{$p->name}}">{{$p->name}}</option>
+                    @endforeach
+                    </select>
+
+                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="unitType">
+                    <option value="">Unit Type</option>
+                    @foreach($unitTypes as $u)
+                    <option value="{{$u->name}}">{{$u->name}}</option>
+                    @endforeach
+                    </select>
+
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="availability">
                     <option value="">All Type</option>
                     <option value="For Rent">For Rent</option>
@@ -55,15 +70,6 @@
                     <option value="Condominium">Condominium</option>
                     <option value="Apartment">Apartment</option>
                     <option value="House and Lot">House and Lot</option>
-                    </select>
-
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="unitType">
-                    <option value="">Unit Type</option>
-                    <option value="Studio Home Office">Studio Home Office</option>
-                    <option value="Bedroom Home Office">Bedroom Home Office</option>
-                    <option value="Studio Residence">Studio Residence</option>
-                    <option value="1 Bedroom Residence">1 Bedroom Residence</option>
-                    <option value="2 Bedroom Residence">2 Bedroom Residence</option>
                     </select>
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="price">
@@ -99,15 +105,16 @@
     </div>
 </form>
 
-    <div class="flex flex-col mt-[15rem] lg:mt-[3rem] ml-[3rem] mb-10 h-max w-max lg:w-[1200px] bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
+@foreach($projects as $p)
+<div class="flex flex-col mt-[15rem] lg:mt-[3rem] ml-[3rem] mb-10 h-max w-max lg:w-[1200px] bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
         <div class="-mt-[2rem] w-max lg:w-[1200px]">
-        <p class="px-3 py-4 lg:ml-14 font-playfair text-[20px] lg:text-[34px] font-semibold">Studio Home Office</p>
+        <p class="px-3 py-4 lg:ml-14 font-playfair text-[20px] lg:text-[34px] font-semibold">{{$p->name}}</p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-items-center w-max lg:ml-16 lg:mt-8">
             @foreach($properties as $property)
-                @if($property->unitType == "Studio Home Office")
+                @if($property->name == "$p->name")
                 <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2">    
-                    <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
+                    <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->unitType}}</p>
                     <img src="{{$property->coverphoto}}" class="mt-1 lg:ml-4 rounded-2xl self-center lg:self-start" style="width:180px; height: 180px;">
                         <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>
                         <div class="lg:absolute px-1 py-1 self-center lg:mt-[18rem] lg:ml-[12rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
@@ -122,101 +129,9 @@
             @endforeach
         </div>
     </div>
-    <div class="flex flex-col mt-[15rem] lg:mt-[3rem] ml-[3rem] mb-10 h-max w-max lg:w-[1200px] bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
-        <div class="-mt-[2rem] w-max lg:w-[1200px]">
-        <p class="px-3 py-4 lg:ml-14 font-playfair text-[20px] lg:text-[34px] font-semibold">One Bedroom Studio Home Office</p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-items-center w-max lg:ml-16 lg:mt-8">
-            @foreach($properties as $property)
-                @if($property->unitType == "Bedroom Home Office")
-                <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2">    
-                    <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
-                    <img src="{{$property->coverphoto}}" class="mt-1 lg:ml-4 rounded-2xl self-center lg:self-start" style="width:180px; height: 180px;">
-                        <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>
-                        <div class="lg:absolute px-1 py-1 self-center lg:mt-[18rem] lg:ml-[12rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
-                        @if ($user) 
-                            <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @else
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @endif
-                        </div>
-                </div>
-                @endif
-            @endforeach
-        </div>
-    </div>
-
-    <div class="flex flex-col mt-[15rem] lg:mt-[3rem] ml-[3rem] mb-10 h-max w-max lg:w-[1200px] bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
-        <div class="-mt-[2rem] w-max lg:w-[1200px]">
-        <p class="px-3 py-4 lg:ml-14 font-playfair text-[20px] lg:text-[34px] font-semibold">Studio Residence</p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-items-center w-max lg:ml-16 lg:mt-8">
-            @foreach($properties as $property)
-                @if($property->unitType == "Studio Residence")
-                <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2">    
-                    <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
-                    <img src="{{$property->coverphoto}}" class="mt-1 lg:ml-4 rounded-2xl self-center lg:self-start" style="width:180px; height: 180px;">
-                        <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>
-                        <div class="lg:absolute px-1 py-1 self-center lg:mt-[18rem] lg:ml-[12rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
-                        @if ($user) 
-                            <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @else
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @endif
-                        </div>
-                </div>
-                @endif
-            @endforeach
-        </div>
-    </div>
-
-    <div class="flex flex-col mt-[15rem] lg:mt-[3rem] ml-[3rem] mb-10 h-max w-max lg:w-[1200px] bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
-        <div class="-mt-[2rem] w-max lg:w-[1200px]">
-        <p class="px-3 py-4 lg:ml-14 font-playfair text-[20px] lg:text-[34px] font-semibold">One Bedroom Residence</p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-items-center w-max lg:ml-16 lg:mt-8">
-            @foreach($properties as $property)
-                @if($property->unitType == "1 Bedroom Residence")
-                <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2">    
-                    <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
-                    <img src="{{$property->coverphoto}}" class="mt-1 lg:ml-4 rounded-2xl self-center lg:self-start" style="width:180px; height: 180px;">
-                        <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>
-                        <div class="lg:absolute px-1 py-1 self-center lg:mt-[18rem] lg:ml-[12rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
-                        @if ($user) 
-                            <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @else
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @endif
-                        </div>
-                </div>
-                @endif
-            @endforeach
-        </div>
-    </div>
-
-    <div class="flex flex-col mt-[15rem] lg:mt-[3rem] ml-[3rem] mb-10 h-max w-max lg:w-[1200px] bg-greywhite shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
-        <div class="-mt-[2rem] w-max lg:w-[1200px]">
-        <p class="px-3 py-4 lg:ml-14 font-playfair text-[20px] lg:text-[34px] font-semibold">Two Bedroom Residence</p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-items-center w-max lg:ml-16 lg:mt-8">
-            @foreach($properties as $property)
-                @if($property->unitType == "2 Bedroom Residence")
-                <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2">    
-                    <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->name}}</p>
-                    <img src="{{$property->coverphoto}}" class="mt-1 lg:ml-4 rounded-2xl self-center lg:self-start" style="width:180px; height: 180px;">
-                        <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>
-                        <div class="lg:absolute px-1 py-1 self-center lg:mt-[18rem] lg:ml-[12rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
-                        @if ($user) 
-                            <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @else
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
-                        @endif
-                        </div>
-                </div>
-                @endif
-            @endforeach
-        </div>
-    </div>
+@endforeach
+    
+    
 
         
     @include('modal.authentication-modal')

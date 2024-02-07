@@ -1,8 +1,9 @@
 <x-app-layout>
     <div class="flex flex-col sm:px-6 lg:ml-[20rem] mt-[15rem] w-[1065px]">
-    <div class="self-end -mt-20 bg-gold w-max shadow-inner px-4 py-2 mb-4 hover:shadow-md">
-                <a href="{{ route('properties.edit', $property->id) }}" class="text-center text-sm text-darkblue font-semibold hover:text-dirtywhite">UPDATE PROPERTY</a>
-            </div>
+    <div class="flex flex-row self-start justify-between w-max ml-4 -mt-20 gap-8">
+                <a href="{{ route('properties.index')}}"><i class="fa-solid fa-arrow-left text-[20px]"></i></a> 
+                <a href="{{ route('properties.edit', $property->id) }}" class="text-center text-sm text-darkblue font-semibold hover:text-dirtywhite bg-gold shadow-inner px-4 py-2 mb-4 hover:shadow-md">UPDATE PROPERTY</a>
+    </div>
     <div class="relative overflow-x-auto bg-dirtywhite border-2 border-darkblue shadow-md w-[1000px] h-max mt-[10px] ml-5">
                 <table class="w-full  text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="bg-darkblue border-2 border-dirtywhite-600 shadow-inner text-md text-dirtywhite uppercase">
