@@ -107,9 +107,9 @@
             <div class="flex flex-row justify-center w-full h-[500px] mt-[5rem] mb-10">
                 <div class="absolute border-2 self-start w-max h-max px-2 py-4 border-black mr-[55rem] mt-10 bg-darkblue
                 shadow-md">
-                        <p class="px-8 py-2 font-playfair text-[38px] w-max font-semibold text-dirtywhite">Like what you see?</p>
-                        <p class="px-8 py-2 font-playfair text-[28px] w-max font-semibold text-dirtywhite">Use this form for your inquiries</p>
-                        <p class="px-8 py-2 font-playfair text-[28px] w-max font-semibold text-dirtywhite">or schedule a viewing with us</p>
+                        <p class="px-8 py-2 font-playfair text-[30px] w-max font-semibold text-dirtywhite">Like what you see?</p>
+                        <p class="px-8 py-2 font-playfair text-[20px] w-max font-semibold text-dirtywhite">Use this form for your inquiries</p>
+                        <p class="px-8 py-2 font-playfair text-[20px] w-max font-semibold text-dirtywhite">or schedule a viewing with us</p>
                     </div>
                     <form method="POST" action="{{ route('posts.showproperty', $property->id) }}">
                         @method('PUT')    

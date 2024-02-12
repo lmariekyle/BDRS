@@ -2,6 +2,9 @@
     @role('Customer Service')
     <div class="flex flex-row justify-items-center px-2 sm:px-6 lg:ml-[22rem] mt-[8rem]">
     @endrole
+    @role('Admin')
+    <div class="flex flex-row justify-items-center px-2 sm:px-6 lg:ml-[22rem] mt-[8rem]">
+    @endrole
     @role('User')
     <div class="flex flex-row justify-items-center sm:px-6 lg:ml-[45rem] -mt-[26rem]">
     @endrole
