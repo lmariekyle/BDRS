@@ -16,7 +16,7 @@
 
         <!-- Scripts -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
     </head>
     <body class="bg-dirtywhite antialiased">
         <div class="min-h-screen flex flex-row sm:justify-start pt-6 sm:pt-0 bg-[#034D78]">

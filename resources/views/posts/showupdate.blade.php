@@ -28,7 +28,7 @@
 
 
         <!-- Styles -->
-        @vite('resources/css/app.css')
+       
     <title>BDRS</title>
 </head>
 
