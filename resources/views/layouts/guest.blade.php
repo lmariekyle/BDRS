@@ -8,6 +8,8 @@
         <title>BDRS Realty Management Services Co.</title>
 
         <!-- Fonts -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <script src="{{ mix('js/app.js') }}" defer></script>
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +18,7 @@
 
         <!-- Scripts -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        
+
     </head>
     <body class="bg-dirtywhite antialiased">
         <div class="min-h-screen flex flex-row sm:justify-start pt-6 sm:pt-0 bg-[#034D78]">
