@@ -24,12 +24,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
-<<<<<<< HEAD
-       
-=======
-      
->>>>>>> 44a9d5e6e0c687680f49e917303d9ee1e2fb1403
-
+    
     </head>
 <body class="bg-dirtywhite antialised">
 @include('layouts.navigation')

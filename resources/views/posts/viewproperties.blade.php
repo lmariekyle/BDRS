@@ -24,12 +24,6 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
-<<<<<<< HEAD
-       
-=======
-    
->>>>>>> 44a9d5e6e0c687680f49e917303d9ee1e2fb1403
-
     </head>
 <body class="bg-dirtywhite antialised">
 @include('layouts.navigation')
@@ -125,7 +119,7 @@
                         <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>
                         <div class="lg:absolute px-1 py-1 self-center lg:mt-[18rem] lg:ml-[12rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                         @if ($user) 
-                            <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
+                            <a href="{{route('posts.showproperty', $property->id)}}" style="text-decoration:none;" class="text-black font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
                         @else
                             <a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal" class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>
                         @endif

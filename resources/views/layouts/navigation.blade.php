@@ -1,12 +1,12 @@
 
 <div class="px-4 py-4 bg-dirtywhite md:flex md:items-center md:justify-between shadow-md border-b-2 border-darkblue">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center space-y-4">
       <span class="font-poppin text-black text-[12px] lg:text-[16px] font-medium cursor-pointer">
-        <a href="/">
+        <a href="/" style="text-decoration:none;" class="text-black">
         <img class="h-20 inline"
           src="/images/logo.png">
            BDRS Realty Management Services Co.
-          </a>
+        </a>
       </span>
 
       <span class="text-3xl cursor-pointer mx-2 md:hidden block">
@@ -17,26 +17,26 @@
 
     <ul class="md:flex md:items-center md:z-auto md:static absolute bg-dirtywhite w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 pn:opacity-0 top-[-400px] transition-all ease-in duration-500">
       <li class="mx-4 my-6 md:my-0">
-        <a href="{{route('posts.viewproperties')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">PROPERTIES</a>
+        <a href="{{route('posts.viewproperties')}}" style="text-decoration:none;"  class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">PROPERTIES</a>
       </li>
       <li class="mx-4 my-6 md:my-0">
-        <a href="{{route('updates.newsupdates')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">NEWS & UPDATES</a>
+        <a href="{{route('updates.newsupdates')}}" style="text-decoration:none;" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">NEWS & UPDATES</a>
       </li>
       <li class="mx-4 my-6 md:my-0">
-        <a href="{{route('aboutpage')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">ABOUT US</a>
+        <a href="{{route('aboutpage')}}" style="text-decoration:none;" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">ABOUT US</a>
       </li>
       @auth
       <li class="mx-4 my-6 md:my-0">
-        <a href="{{route('dashboard')}}" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">DASHBOARD</a>
+        <a href="{{route('dashboard')}}" style="text-decoration:none;" class="px-8 py-2 font-poppin text-[14px] font-medium text-black hover:text-darkblue hover:shadow-md">DASHBOARD</a>
       </li>
-      <form method="POST" action="{{ route('logout') }}" class="w-max px-8 py-2 font-poppin text-[14px] font-medium hover:text-darkblue hover:shadow-md">
+      <form method="POST" action="{{ route('logout') }}" style="text-decoration:none;" class="w-max px-8 py-2 font-poppin text-[14px] font-medium hover:text-darkblue hover:shadow-md">
                         @csrf
       <button class="bg-darkblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded ">
         LOGOUT
       </button>
       </form>
       @else
-      <a href="{{route('login')}}" class="bg-darkblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded ">
+      <a href="{{route('login')}}" style="text-decoration:none;" class="bg-darkblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded ">
         LOGIN
       </a>
       @endauth
