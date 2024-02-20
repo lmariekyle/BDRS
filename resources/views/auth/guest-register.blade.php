@@ -29,7 +29,7 @@
     <body class="bg-registerbg">
 
         <div class="flex flex-col justify-center items-center px-5 py-5">
-            <div class="flex flex-col self-center mt-[13rem] bg-[#274255a6] border-2 border-black rounded-md shadow-md px-8 py-4">
+            <div class="flex flex-col self-center mt-[5rem] ml-2 bg-[#274255a6] border-2 border-black rounded-md shadow-md px-8 py-4">
                 <div class="flex flex-row">
                     <div class="flex flex-col">
                         <p class="font-poppin text-dirtywhite font-medium mt-4 text-2xl text-center underline underline-offset-8">CREATE ACCOUNT</p>
