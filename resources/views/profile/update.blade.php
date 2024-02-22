@@ -1,6 +1,6 @@
 <x-app-layout>
 <div class=" flex flex-row sm:px-6 lg:-ml-9">
-        <div class="flex flex-col items-center w-max -mt-[25rem] sm:px-6 lg:ml-[38rem] bg-dirtywhite border-l-blue-950 shadow-md">
+        <div class="flex flex-col items-center w-max mt-[7rem] sm:px-6 lg:ml-[30rem] bg-dirtywhite border-l-blue-950 shadow-md">
                 <p class="font-poppins mb-4 text-2xl underline underline-offset-8">Update Account</p>
             <form method="POST" action="{{ route('profile.update', $user->id) }}" class="flex flex-col w-[800px] h-max px-2 py-4">
             @method('PUT')    

@@ -6,12 +6,12 @@
     </x-slot>
 
     @role('User')
-            <div class="flex flex-col ml-[40rem] mt-[10rem] bg-dirtywhite border-2 border-black shadow-md rounded-md h-[500px] w-[500px] px-4 py-4">
+            <div class="flex flex-col ml-[40rem] mt-[7rem] bg-dirtywhite border-2 border-black shadow-md rounded-md h-[500px] w-[500px] px-4 py-4">
                     <div class="flex flex-row w-full h-[50px] space-x-8 justify-center place-items-center">
                             <p class="font-poppin text-[38px]">MY PROFILE</p>
                     </div>
 
-                    <div class="flex flex-col w-full h-[50px] space-y-4 justify-start place-items-center mt-10">
+                    <div class="flex flex-col w-full h-[50px] space-y-4 justify-start place-items-center mt-2">
                             <div class="flex flex-col space-y-1 justify-center">
                                     <p class="font-poppin text-[24px] bg-greywhite text-center px-2 py-2 w-[400px]">{{$user->firstName}} {{$user->middleName}} {{$user->lastName}}</p>
                                     <p class="font-poppin text-[18px] text-center">Full Name</p>                
@@ -24,7 +24,7 @@
                                     <p class="font-poppin text-[24px] bg-greywhite text-center px-2 py-2 w-[400px]">{{$user->contactNumber}}</p>
                                     <p class="font-poppin text-[18px] text-center">Contact Number</p>                
                             </div>
-                            <a href="{{route('profile.edit', $user->id)}}" class="font-poppin text-[18px] bg-gold px-2 py-2 w-max -mr-10" style="text-decoration: none; color:black;">Update Profile</a>
+                            <a href="{{route('profile.edit', $user->id)}}" class="font-poppin text-[18px] bg-gold px-2 py-2 w-max mt-4" style="text-decoration: none; color:black;">Update Profile</a>
                     </div>
             </div>
     @endrole

@@ -69,7 +69,12 @@
     <body class="bg-dirtywhite antialiased">
 
     <div class="flex flex-row">
-        <div class="bg-gold w-[315px] h-full flex justify-start flex-col py-5 px-2 -ml-[2rem] z-10">
+        @hasanyrole('Admin|Customer Service|Marketing')
+        <div class="bg-gold w-[315px] h-[1500px] flex justify-start flex-col py-5 px-2 -ml-[2rem] z-10">
+        @endhasanyrole
+        @role('User')
+        <div class="bg-gold w-[315px] h-[755px] flex justify-start flex-col py-5 px-2 -ml-[2rem] z-10">
+        @endrole
             <div class="self-center mr-5 bg-dirtywhite rounded-full w-[140px] h-[134px] sm:-my-px sm:ml-10 sm:flex px-14">
                    <!-- <img src="images/logo.png" alt=""  style="width: 100px; height:100px;"> -->
             </div>
@@ -101,13 +106,8 @@
 
             <div class="mt-24 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
-                <a href="/" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">HOME</a>
+                <a href="/" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">HOMEPAGE</a>
             </div>
-
-            @role('User')
-            <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
-            </div>
-            @endrole
 
             @role('Admin')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
