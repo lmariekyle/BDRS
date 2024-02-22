@@ -24,7 +24,7 @@
                                     <p class="font-poppin text-[24px] bg-greywhite text-center px-2 py-2 w-[400px]">{{$user->contactNumber}}</p>
                                     <p class="font-poppin text-[18px] text-center">Contact Number</p>                
                             </div>
-                            <a href="{{route('profile.edit', $user->id)}}" class="font-poppin text-[18px] bg-gold px-2 py-2 w-max -mr-10">Update Profile</a>
+                            <a href="{{route('profile.edit', $user->id)}}" class="font-poppin text-[18px] bg-gold px-2 py-2 w-max -mr-10" style="text-decoration: none; color:black;">Update Profile</a>
                     </div>
             </div>
     @endrole
@@ -41,8 +41,8 @@
         @endrole
             <p style="font-family: Poppins; font-size: 30px; margin-left:10px; margin-top:8px; margin-bottom:10px; font-weight:bold;">Welcome back , {{$user->firstName}}!</p>
             <div class="datetime">
-                <div class="time"></div>
-                <div class="date"></div>
+                <div class="time" style="font-size: 32px;"></div>
+                <div class="date" style="font-size: 24px; margin-top:4px;"></div>
             </div>
             <div style="display: flex; justify-content: center; height: max-content; height: 100px; width: max-content;">
                 <div style="display: flex; flex-direction: row; justify-content: center; margin-top:20px;height: max-content; width: max-content;">
@@ -51,7 +51,7 @@
                             <i class="fa-solid fa-at" style="text-align:center;font-size: 30px;"></i>
                             <p style="font-family: Poppins; font-size: 22px; color: black; text-align:center; margin-top:10px; font-weight:bold; text-decoration: underline; text-underline-offset: 0.5rem;">NUMBER OF INQUIRIES</p>
                             <div style="display:flex; flex-direction:row; justify-content:center; margin-top:10px;">
-                                <p style="font-family: Poppins; font-size: 62px; font-weight:bold;">20</p>
+                                <p style="font-family: Poppins; font-size: 62px; font-weight:bold;">{{$inquiries}}</p>
                                 <p style="font-family: Poppins; font-size: 30px; margin-left:10px; margin-top:25px; font-weight:bold;">INQUIRIES</p>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <i class="fa-solid fa-building" style="text-align:center;font-size: 30px;"></i>
                             <p style="font-family: Poppins; font-size: 22px; color: black; text-align:center; margin-top:10px; font-weight:bold; text-decoration: underline; text-underline-offset: 0.5rem;">PROPERTIES POSTED</p>
                             <div style="display:flex; flex-direction:row; justify-content:center; margin-top:10px;">
-                                <p style="font-family: Poppins; font-size: 62px; font-weight:bold;">50</p>
+                                <p style="font-family: Poppins; font-size: 62px; font-weight:bold;">{{$properties}}</p>
                                 <p style="font-family: Poppins; font-size: 30px; margin-left:10px; margin-top:25px; font-weight:bold;">PROPERTIES</p>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             <i class="fa-solid fa-users" style="text-align:center;font-size: 30px;"></i>
                             <p style="font-family: Poppins; font-size: 22px; color: black; text-align:center; margin-top:10px; font-weight:bold; text-decoration: underline; text-underline-offset: 0.5rem;">TOTAL USERS</p>
                             <div style="display:flex; flex-direction:row; justify-content:center; margin-top:10px;">
-                                <p style="font-family: Poppins; font-size: 62px; font-weight:bold;">20</p>
+                                <p style="font-family: Poppins; font-size: 62px; font-weight:bold;">{{$users}}</p>
                                 <p style="font-family: Poppins; font-size: 30px; margin-left:10px; margin-top:25px; font-weight:bold;">USERS</p>
                             </div>
                         </div>

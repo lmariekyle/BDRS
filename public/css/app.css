@@ -1102,9 +1102,6 @@ select{
 .mt-\[12rem\]{
   margin-top: 12rem;
 }
-.mt-\[13rem\]{
-  margin-top: 13rem;
-}
 .mt-\[14rem\]{
   margin-top: 14rem;
 }
@@ -1209,6 +1206,9 @@ select{
 }
 .h-\[150px\]{
   height: 150px;
+}
+.h-\[200px\]{
+  height: 200px;
 }
 .h-\[230px\]{
   height: 230px;
@@ -1753,6 +1753,11 @@ select{
   --tw-gradient-to: rgb(253 251 251 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-neutral-500\/0{
+  --tw-gradient-from: rgb(115 115 115 / 0) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(115 115 115 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .from-transparent{
   --tw-gradient-from: transparent var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
@@ -1760,6 +1765,9 @@ select{
 }
 .to-\[\#ebedee\]{
   --tw-gradient-to: #ebedee var(--tw-gradient-to-position);
+}
+.to-neutral-900{
+  --tw-gradient-to: #171717 var(--tw-gradient-to-position);
 }
 .fill-current{
   fill: currentColor;

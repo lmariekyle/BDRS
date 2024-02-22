@@ -30,10 +30,7 @@
 
 
         <!-- Styles -->
-<<<<<<< HEAD
        
-=======
->>>>>>> 44a9d5e6e0c687680f49e917303d9ee1e2fb1403
     <title>BDRS</title>
 </head>
 

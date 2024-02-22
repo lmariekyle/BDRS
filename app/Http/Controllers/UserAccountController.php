@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Inquiry;
+use App\Models\Property;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -26,7 +27,10 @@ class UserAccountController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('dashboard',compact('user'));
+        $users = DB::table('users')->count();
+        $inquiries = DB::table('inquiries')->count();
+        $properties = DB::table('properties')->count();
+        return view('dashboard',compact('user','users','inquiries','properties'));
     }
 
     /**

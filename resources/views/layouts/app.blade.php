@@ -76,7 +76,7 @@
             <div class="-mt-[7rem] sm:ml-[112px] lg:ml-[112px]">
                 <img src="/images/logo.png" alt=""  style="width: 100px; height:100px;">
             </div>
-            
+<!--             
             <div class="mt-20 self-center">
                 @auth
                     <p class="font-poppins text-2xl text-center underline underline-offset-8"> {{Auth::user()->firstName}} {{Auth::user()->middleName}} {{Auth::user()->lastName}}</p>
@@ -97,69 +97,68 @@
                     @role('User')
                     <p class="font-poppins mt-4 text-2xl text-center text-darkblue">Welcome, {{Auth::user()->firstName}}!</p>
                     @endrole
-            </div>
+            </div> -->
 
             <div class="mt-24 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
-                <a href="/" class="font-poppins text-[18px] font-medium ">HOME</a>
+                <a href="/" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">HOME</a>
             </div>
 
             @role('User')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
-                <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('profile.inquiries')}}" class="font-poppins text-[18px] font-medium ">INQUIRIES</a>
             </div>
             @endrole
 
             @role('Admin')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{ route('accounts.index') }}" class="font-poppins text-[18px] font-medium ">USERS</a>
+                <a href="{{ route('accounts.index') }}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">USERS</a>
             </div>
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-house px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium ">PROPERTIES</a>
+                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">PROPERTIES</a>
             </div>
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium ">INQUIRIES</a>
+                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">INQUIRIES</a>
             </div>
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('updates.index')}}" class="font-poppins text-[18px] font-medium ">UPDATES</a>
+                <a href="{{route('updates.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">UPDATES</a>
             </div>
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('categories.index')}}" class="font-poppins text-[18px] font-medium ">CATEGORIES</a>
+                <a href="{{route('categories.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">CATEGORIES</a>
             </div>
             @endrole
 
             @role('Marketing')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium ">PROPERTIES</a>
+                <a href="{{route('properties.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">PROPERTIES</a>
             </div>
 
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('updates.index')}}" class="font-poppins text-[18px] font-medium ">UPDATES</a>
+                <a href="{{route('updates.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">UPDATES</a>
             </div>
             @endrole
 
             @role('Customer Service')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
-                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium ">INQUIRIES</a>
+                <a href="{{route('inquiry.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">INQUIRIES</a>
             </div>
             @endrole
 
             <div class="static mt-24 self-center bg-gold border-y-2 border-dirtywhite shadow-md px-8 py-2 hover:shadow-inner">
                 <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a href="route('logout')"
+                        <a style="text-decoration:none; color:black;" href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             {{ __('LOGOUT') }}
+                            
                         </a>
                 </form>
             </div>
