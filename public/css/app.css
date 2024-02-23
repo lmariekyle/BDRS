@@ -802,6 +802,9 @@ select{
 .-ml-8{
   margin-left: -2rem;
 }
+.-ml-\[20rem\]{
+  margin-left: -20rem;
+}
 .-ml-\[23rem\]{
   margin-left: -23rem;
 }
@@ -825,9 +828,6 @@ select{
 }
 .-ml-px{
   margin-left: -1px;
-}
-.-mr-10{
-  margin-right: -2.5rem;
 }
 .-mr-\[7rem\]{
   margin-right: -7rem;
@@ -864,9 +864,6 @@ select{
 }
 .-mt-\[1rem\]{
   margin-top: -1rem;
-}
-.-mt-\[25rem\]{
-  margin-top: -25rem;
 }
 .-mt-\[26rem\]{
   margin-top: -26rem;
@@ -1102,9 +1099,6 @@ select{
 .mt-\[12rem\]{
   margin-top: 12rem;
 }
-.mt-\[13rem\]{
-  margin-top: 13rem;
-}
 .mt-\[14rem\]{
   margin-top: 14rem;
 }
@@ -1144,11 +1138,20 @@ select{
 .mt-\[65rem\]{
   margin-top: 65rem;
 }
+.mt-\[7rem\]{
+  margin-top: 7rem;
+}
 .mt-\[8rem\]{
   margin-top: 8rem;
 }
 .mt-\[9rem\]{
   margin-top: 9rem;
+}
+.-mr-10{
+  margin-right: -2.5rem;
+}
+.-mt-\[25rem\]{
+  margin-top: -25rem;
 }
 .line-clamp-5{
   overflow: hidden;
@@ -1207,8 +1210,14 @@ select{
 .h-\[134px\]{
   height: 134px;
 }
+.h-\[1500px\]{
+  height: 1500px;
+}
 .h-\[150px\]{
   height: 150px;
+}
+.h-\[200px\]{
+  height: 200px;
 }
 .h-\[230px\]{
   height: 230px;
@@ -1252,6 +1261,9 @@ select{
 .h-\[732px\]{
   height: 732px;
 }
+.h-\[755px\]{
+  height: 755px;
+}
 .h-\[802px\]{
   height: 802px;
 }
@@ -1261,15 +1273,15 @@ select{
 .h-auto{
   height: auto;
 }
-.h-full{
-  height: 100%;
-}
 .h-max{
   height: -moz-max-content;
   height: max-content;
 }
 .h-px{
   height: 1px;
+}
+.h-full{
+  height: 100%;
 }
 .min-h-screen{
   min-height: 100vh;
@@ -1753,6 +1765,11 @@ select{
   --tw-gradient-to: rgb(253 251 251 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-neutral-500\/0{
+  --tw-gradient-from: rgb(115 115 115 / 0) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(115 115 115 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .from-transparent{
   --tw-gradient-from: transparent var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
@@ -1760,6 +1777,9 @@ select{
 }
 .to-\[\#ebedee\]{
   --tw-gradient-to: #ebedee var(--tw-gradient-to-position);
+}
+.to-neutral-900{
+  --tw-gradient-to: #171717 var(--tw-gradient-to-position);
 }
 .fill-current{
   fill: currentColor;
@@ -2880,10 +2900,6 @@ select{
     margin-left: 35rem;
   }
 
-  .lg\:ml-\[38rem\]{
-    margin-left: 38rem;
-  }
-
   .lg\:ml-\[45rem\]{
     margin-left: 45rem;
   }
@@ -2942,6 +2958,10 @@ select{
 
   .lg\:mt-\[7rem\]{
     margin-top: 7rem;
+  }
+
+  .lg\:ml-\[38rem\]{
+    margin-left: 38rem;
   }
 
   .lg\:flex{
