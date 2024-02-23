@@ -185,10 +185,10 @@
                         <p class="font-poppin lg:text-[25px] text-[14px] font-medium mt-[3rem]">See Properties</p>
                         <div class="flex flex-row self-center mt-5 space-x-5">
                             <div class="border-2 bg-gold border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
-                                <a href="{{route('posts.showbuy')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">BUY</a>
+                                <a href="{{route('posts.showbuy')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue" style="text-decoration: none; color:black;">BUY</a>
                             </div>
                             <div class="self-center border-2 bg-gold border-darkblue hover:bg-dirtywhite shadow-md w-max h-max px-3 py-2">
-                                <a href="{{route('posts.showrent')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue">RENT</a>
+                                <a href="{{route('posts.showrent')}}" class="font-playfair text-[18px] font-semibold hover:text-darkblue" style="text-decoration: none; color:black;">RENT</a>
                             </div>
                         </div>
                 </div>
@@ -246,9 +246,9 @@
 
                         <img class="w-full h-[300px] lg:h-[500px] object-cover rounded-t-lg transition-transform ease-in-out duration-75" src="/{{$update->coverphoto}}" alt="Update Image">
 
-                        <div class="p-4 bg-gradient-to-b from-transparent to-rgba(0,0,0,0.7) text-white absolute bottom-0 left-0 right-0">
+                        <div class="p-4 bg-gradient-to-b from-neutral-500/0 to-neutral-900 h-[200px] text-white absolute bottom-0 left-0 right-0">
 
-                            <h2 class="text-[20px] mb-2 font-playfair text-white font-bold">{{$update->titleHeading}}</h2>
+                            <h2 class="text-[20px] mb-2 text-white font-bold">{{$update->titleHeading}}</h2>
 
                             <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
                                 <?php

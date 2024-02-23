@@ -6,6 +6,7 @@
     @role('Marketing')
         <div class="flex flex-col items-center w-max mt-[5rem] sm:px-6 lg:ml-[30rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole       
+    <a href="{{ route('updates.index')}}"><i class="absolute -ml-[20rem] mt-[2rem] fa-solid fa-arrow-left text-[20px]"></i></a> 
                 <p class="font-poppin mb-4 text-2xl underline underline-offset-8">Create Updates / News</p>
             <form method="POST" action="{{route('updates.store')}}" class="grid grid-cols-2 w-max h-max py-4" enctype="multipart/form-data">  
                 @csrf

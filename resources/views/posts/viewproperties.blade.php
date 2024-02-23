@@ -131,7 +131,6 @@
     </div>
 @endforeach
     
-    
 
         
     @include('modal.authentication-modal')
