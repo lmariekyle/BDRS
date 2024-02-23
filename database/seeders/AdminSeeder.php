@@ -83,6 +83,6 @@ class AdminSeeder extends Seeder
             'email' => 'horbs@bdrs.com',
             'email_verified_at' => now(),
             'password' => Hash::make('horbsbdrs'),
-        ])->assignRole('Marketing Head');
+        ])->assignRole('Marketing');
     }
 }

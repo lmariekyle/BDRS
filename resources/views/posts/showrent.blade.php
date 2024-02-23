@@ -24,11 +24,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
-<<<<<<< HEAD
         
-=======
- 
->>>>>>> 44a9d5e6e0c687680f49e917303d9ee1e2fb1403
 
     </head>
 <body class="bg-dirtywhite antialised">
@@ -78,7 +74,7 @@
                     <option value="House and Lot">House and Lot</option>
                     </select>
 
-                    <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="price">
+                    <!-- <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="price">
                     <option value="">Price Range</option>
                     <option value="1,000,000">1,000,000</option>
                     <option value="3,000,000">3,000,000</option>
@@ -87,7 +83,7 @@
                     <option value="9,000,000">9,000,000</option>
                     <option value="10,000,000">10,000,000</option>
                     <option value="12,000,000">12,000,000</option>
-                    </select>
+                    </select> -->
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="state">
                     <option value="">Location</option>

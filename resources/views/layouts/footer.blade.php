@@ -1,5 +1,5 @@
 <div class="bg-gold w-full h-[230px] flex flex-row justify-evenly place-items-center top-0 px-8 py-12">
-            <img src="images/logo.png" alt="" style="width: 200px; height: 200px;" class="-ml-[7rem] mr-[3rem] mt-3">
+            <img src="images/logo.png" alt="" style="width: 150px; height: 150px;" class="-ml-[2rem] mr-[3rem] mt-3">
 
             <div class="flex flex-col mt-4">
                    <p class="font-playfair text-[22px] text-black self-start font-semibold mb-3">FOLLOW US</p>    
@@ -22,7 +22,7 @@
                    <a href="http://" class="font-poppin text-[15px] text-black self-start mb-2 font-medium"><i class="fa-solid fa-phone mr-3"></i>0123456789</a>  
             </div>
 
-            <div class="flex flex-col mt-[2px] ml-[4rem]">
+            <div class="flex flex-col mt-[2px] ml-[5rem]">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.382801794333!2d123.8789958757879!3d10.311217789810678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99eb3caa9d177%3A0x802aa9e7bef32171!2s1312%20Horseshoe%20Dr%2C%20Banawa%2C%20Cebu%20City%2C%206000%20Cebu!5e0!3m2!1sen!2sph!4v1697653164881!5m2!1sen!2sph" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
             </div>
 </div>

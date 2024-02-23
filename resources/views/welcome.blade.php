@@ -97,7 +97,7 @@
                                     <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
                                     </div>
                              
-                                    <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                          
+                                    <!-- <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                           -->
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 lg:mx-auto lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
@@ -124,7 +124,7 @@
                                     <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">491 Archbishop Reyes Ave, Cebu City, 6000 Cebu</p>
                                     </div>
                              
-                                    <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                          
+                                    <!-- <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                           -->
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 mx-auto max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
@@ -151,7 +151,7 @@
                                     <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">Punta Engaño Road, Lapu-Lapu City</p>
                                     </div>
                              
-                                    <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                          
+                                    <!-- <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                           -->
                             </div><!--end of featured property description -->
                             <!-- image section -->
                             <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 lg:mx-auto lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
