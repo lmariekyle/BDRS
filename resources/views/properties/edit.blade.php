@@ -11,10 +11,15 @@
             @method('PUT') 
                 @csrf
                 <!-- Name -->
+
                 <div class="mt-4 px-4">
                     <x-input-label for="name" :value="__('Property Name')" />
-                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="$property->name" required autofocus autocomplete="name" />
-                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                <select id="name" class="block mt-1 w-full" name="name" required autofocus>
+                    <option value="" >Property Name</option>
+                        @foreach($project as $p)
+                        <option value="{{$p->name}}" {{ $property->name === $p->name ? 'selected' : '' }}>{{$p->name}}</option>
+                        @endforeach
+                </select>
                 </div>
 
                 <div class="mt-4 px-4">
@@ -32,11 +37,9 @@
                 <x-input-label for="unitType" :value="__('Property Unit Type')" />
                 <select id="unitType" class="block mt-1 w-full" name="unitType" required autofocus>
                     <option value="" >Unit Type</option>
-                    <option value="Studio Home Office" {{ $property->unitType === 'Studio Home Office' ? 'selected' : '' }}>Studio Home Office</option>
-                    <option value="Bedroom Home Office" {{ $property->unitType === 'Bedroom Home Office' ? 'selected' : '' }}>Bedroom Home Office</option>
-                    <option value="Studio Residence" {{ $property->unitType === 'Studio Residence' ? 'selected' : '' }}>Studio Residence</option>
-                    <option value="1 Bedroom Residence" {{ $property->unitType === '1 Bedroom Residence' ? 'selected' : '' }}>1 Bedroom Residence</option>
-                    <option value="2 Bedroom Residence" {{ $property->unitType === '2 Bedroom Residence' ? 'selected' : '' }}>2 Bedroom Residence</option>
+                        @foreach($unitType as $u)
+                        <option value="{{$u->name}}" {{ $property->unitType === $u->name ? 'selected' : '' }}>{{$u->name}}</option>
+                        @endforeach
                 </select>
             </div>
 

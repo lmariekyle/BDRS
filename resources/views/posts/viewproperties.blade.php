@@ -113,7 +113,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-items-center w-max lg:ml-16 lg:mt-8">
             @foreach($properties as $property)
                 @if($property->name == "$p->name")
-                <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2">    
+                <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2 mt-8">    
                     <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->unitType}}</p>
                     <img src="{{$property->coverphoto}}" class="mt-1 lg:ml-4 rounded-2xl self-center lg:self-start" style="width:180px; height: 180px;">
                         <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>

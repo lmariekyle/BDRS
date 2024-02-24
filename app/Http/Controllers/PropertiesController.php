@@ -139,14 +139,16 @@ class PropertiesController extends Controller
     {
         try {
             $property = Property::where('id',$id)->first();
+            $project = Project::where('status','Approved')->get();
             $imagePaths = json_decode($property->img, true);
+            $unitType = UnitType::where('status','Approved')->get();
         } catch (QueryException $e) {
             // Handle the database query exception.
             // You can log the error or display a user-friendly message.
             return view('error.index', ['message' => 'An error occurred while fetching data from the database.']);
         }
     
-        return view('properties.edit', compact('property','imagePaths'));
+        return view('properties.edit', compact('property','imagePaths','unitType','project'));
     }
 
     /**
@@ -155,7 +157,6 @@ class PropertiesController extends Controller
     public function update(Request $request, string $id)
     {
 
-        dd($id);
         $property = Property::where('id',$id)->first();
 
         $propertyimages = [];
@@ -254,7 +255,7 @@ class PropertiesController extends Controller
 
             $property->save();
           
-            return redirect()->back()->with('success','Property has been Updated!');
+            return redirect()->back();
             
     }
  
