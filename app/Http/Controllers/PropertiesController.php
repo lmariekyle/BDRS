@@ -155,6 +155,7 @@ class PropertiesController extends Controller
     public function update(Request $request, string $id)
     {
 
+        dd($id);
         $property = Property::where('id',$id)->first();
 
         $propertyimages = [];
