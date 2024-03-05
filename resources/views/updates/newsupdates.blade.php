@@ -143,7 +143,7 @@
         
     </div>
 
-    <div class="mt-[5rem]">@include('layouts.footer')</div>
+    <div class="mt-[5rem] bottom-0 w-full">@include('layouts.footer')</div>
 </body>
 
 </html>

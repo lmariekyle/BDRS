@@ -43,7 +43,7 @@
 
                 <div class="mt-4 px-4 col-span-2">
                     <x-input-label for="thirdParagraph" :value="__('Third Paragraph')" />
-                    <textarea id="thirdParagraph" class="block mt-1 w-[650px] h-[150px] rounded-md" type="text" name="thirdParagraph" :value="old('thirdParagraph')"  autofocus autocomplete="name"></textarea>
+                    <textarea id="thirdParagraph" class="block mt-1 w-[650px] h-[150px] rounded-md" type="text" name="thirdParagraph" :value="old('thirdParagraph')" autofocus autocomplete="name"></textarea>
                     <x-input-error :messages="$errors->get('thirdParagraph')" class="mt-2" />
                 </div>
 

@@ -3,27 +3,56 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    // public function index()
+    // {
+       
+    //     try {
+    //         $roles = Role::all();
+    //         $users = User::all();
+    //         $users = User::whereNot('userRole','User')->paginate(10);
+    //     } catch (QueryException $e) {
+    //         // Handle the database query exception.
+    //         // You can log the error or display a user-friendly message.
+    //         return view('error.index', ['message' => 'An error occurred while fetching data from the database.']);
+    //     }
+    
+    //     return view('accounts.index', compact('users', 'roles'));
+    // }
+
     public function index()
     {
         try {
             $roles = Role::all();
-            $users = User::whereNot('userRole','User')->paginate(10);
+            $authUser = Auth::user();
+
+            if ($authUser->userRole == 'Super Admin') {
+                $users = DB::table('users')
+                ->whereNotIn('userRole', 'User')
+                ->paginate(10);
+            } else {
+                // $users = User::whereNot('userRole', ['User', 'Admin'])->paginate(10);
+                $users = DB::table('users')
+                ->whereNotIn('userRole', ['User', 'Admin'])
+                ->paginate(10);
+            }
+
         } catch (QueryException $e) {
             // Handle the database query exception.
             // You can log the error or display a user-friendly message.
             return view('error.index', ['message' => 'An error occurred while fetching data from the database.']);
         }
-    
         return view('accounts.index', compact('users', 'roles'));
     }
 

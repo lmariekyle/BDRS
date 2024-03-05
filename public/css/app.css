@@ -1096,6 +1096,9 @@ select{
 .mt-\[50px\]{
   margin-top: 50px;
 }
+.mt-\[50rem\]{
+  margin-top: 50rem;
+}
 .mt-\[53rem\]{
   margin-top: 53rem;
 }
@@ -1176,9 +1179,6 @@ select{
 }
 .h-\[150px\]{
   height: 150px;
-}
-.h-\[200px\]{
-  height: 200px;
 }
 .h-\[230px\]{
   height: 230px;
@@ -1697,18 +1697,10 @@ select{
 .bg-registerbg{
   background-image: url('/public/images/registerbg.jpg');
 }
-.from-neutral-500\/0{
-  --tw-gradient-from: rgb(115 115 115 / 0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(115 115 115 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .from-transparent{
   --tw-gradient-from: transparent var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.to-neutral-900{
-  --tw-gradient-to: #171717 var(--tw-gradient-to-position);
 }
 .fill-current{
   fill: currentColor;
@@ -2873,12 +2865,20 @@ select{
     margin-top: 5rem;
   }
 
+  .lg\:mt-\[65rem\]{
+    margin-top: 65rem;
+  }
+
   .lg\:mt-\[6rem\]{
     margin-top: 6rem;
   }
 
   .lg\:mt-\[7rem\]{
     margin-top: 7rem;
+  }
+
+  .lg\:mt-\[85rem\]{
+    margin-top: 85rem;
   }
 
   .lg\:flex{

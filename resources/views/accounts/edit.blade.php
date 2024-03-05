@@ -50,15 +50,15 @@
                 <x-input-label for="userRole" :value="__('User Role')" />
                         <select id="userRole" class="block mt-1 w-full" name="userRole" :value="$user->userRole" required autofocus>
                             @foreach($roles as $role)
-                            <option value="{{$role->name}}">{{$role->name}}</option>
+                            <option value="{{$role->name}}" {{ $user->userRole === $role->name ? 'selected' : '' }}>{{$role->name}}</option>
                             @endforeach
                         </select>
                 </div>
                 <div class="mt-4 px-4 ">
                 <x-input-label for="userStatus" :value="__('User Status')" />
                         <select id="userStatus" class="block mt-1 w-full" name="userStatus" :value="$user->userStatus" required autofocus>
-                            <option value="0">Active</option>
-                            <option value="1">Archived</option>
+                            <option value="0" {{ $user->userStatus === '0' ? 'selected' : '' }}>Active</option>
+                            <option value="1" {{ $user->userStatus === '1' ? 'selected' : '' }}>Archived</option>
                         </select>
                 </div>
 

@@ -40,13 +40,13 @@
 
                 <div class="mt-4 px-4 col-span-2">
                     <x-input-label for="secondParagraph" :value="__('Second Paragraph')" />
-                    <textarea id="secondParagraph" class="block mt-1 w-[650px] h-[150px] rounded-md" type="text" name="secondParagraph" :value="$update->secondParagraph" required autofocus autocomplete="name">{{$update->secondParagraph}}</textarea>
+                    <textarea id="secondParagraph" class="block mt-1 w-[650px] h-[150px] rounded-md" type="text" name="secondParagraph" :value="$update->secondParagraph"  autofocus autocomplete="name">{{$update->secondParagraph}}</textarea>
                     <x-input-error :messages="$errors->get('secondParagraph')" class="mt-2" />
                 </div>
 
                 <div class="mt-4 px-4 col-span-2">
                     <x-input-label for="thirdParagraph" :value="__('Third Paragraph')" />
-                    <textarea id="thirdParagraph" class="block mt-1 w-[650px] h-[150px] rounded-md" type="text" name="thirdParagraph" :value="$update->thirdParagraph" required autofocus autocomplete="name">{{$update->thirdParagraph}}</textarea>
+                    <textarea id="thirdParagraph" class="block mt-1 w-[650px] h-[150px] rounded-md" type="text" name="thirdParagraph" :value="$update->thirdParagraph"  autofocus autocomplete="name">{{$update->thirdParagraph}}</textarea>
                     <x-input-error :messages="$errors->get('thirdParagraph')" class="mt-2" />
                 </div>
 
@@ -90,7 +90,7 @@
                 </div>
                 @endrole
 
-        
+    
                 <!-- <div class="mt-4 px-4"> 
                     <x-input-label for="vid" :value="__('Video')" />
                     <div>

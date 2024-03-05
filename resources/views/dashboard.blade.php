@@ -29,7 +29,7 @@
             </div>
     @endrole
     
-    @hasanyrole('Customer Service|Marketing|Admin')
+    @hasanyrole('Customer Service|Marketing|Admin|Super Admin')
         @role('Customer Service')
             <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: 10rem; height: 600px; width: max-content;">
         @endrole
@@ -37,6 +37,9 @@
             <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: 10rem; height: 600px; width: max-content;">
         @endrole
         @role('Admin')
+            <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: 10rem; height: 600px; width: max-content;">
+        @endrole
+        @role('Super Admin')
             <div style="display: flex; flex-direction: column;margin-left: 25rem; margin-top: 10rem; height: 600px; width: max-content;">
         @endrole
             <p style="font-family: Poppins; font-size: 30px; margin-left:10px; margin-top:8px; margin-bottom:10px; font-weight:bold;">Welcome back , {{$user->firstName}}!</p>

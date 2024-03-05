@@ -78,7 +78,47 @@
                     <p class="font-poppins lg:text-[28px] lg:w-max pn:w-[350px] text-[12px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
                 </div>
 
-                <ul class="slider flex flex-col justify-items-center" id="slider1">
+                 <!-- start of update -->
+            <div style="display: flex; flex-direction: column; position: absolute; margin-top: 18rem; margin-left: 13rem; justify-content: start;">
+
+                <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 2rem;">
+                    <p style="font-family: 'Rozha One', serif; font-size: 44px; margin-right: 1rem;">News & Events</p>
+                    <div style=" margin-left:5px;width: 70%; border-bottom-width: 3px; border-bottom-color: #000000;">
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-left: -2rem;">
+
+                    @foreach($updates as $update)
+                    <div style="width: 18rem; margin: 0 2rem 2rem 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease-in-out, transform 0.5s ease-in-out;">
+
+                        <div style="position: relative; overflow: hidden; border-radius: 1rem;">
+
+                            <img style="width: 100%; height: 500px; object-fit: cover; border-radius: 1rem 1rem 0 0; transition: transform 0.5s ease-in-out;" src="{{$update->coverphoto}}" alt="Update Image">
+
+                            <div style="padding: 1rem; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); color: #fff; position: absolute; bottom: 0; left: 0; right: 0;">
+
+                                <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; color: white; font-weight: bold;">{{$update->titleHeading}}</h2>
+
+                                <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
+                                    <?php
+                                    $paragraph = $update->description;
+                                    $maxCharacters = 200;
+                                    echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
+                                    ?>
+                                </p>
+
+                                <a href="{{route('posts.showupdate', $update->id)}}" style="color: #FFD700; text-decoration: none; transition: color 0.3s ease-in-out; display: inline-block; margin-top: 1rem;">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    </div>
+                </div>
+
+                    <!-- end of update -->
+                
+                <ul class="slider flex flex-col justify-items-center mt-[50rem]" id="slider1">
                     <li class="relative">
                         <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
@@ -163,7 +203,7 @@
                   
                 </ul>
                   <!-- slider buttons -->
-                  <div class="absolute self-center mt-[30rem] lg:mt-[35rem] lg:ml-[30rem] lg:w-[790px] pn:w-[400px] pn:ml-[34px] flex flex-row justify-between px-2">
+                  <div class="absolute self-center mt-[30rem] lg:mt-[85rem] lg:ml-[30rem] lg:w-[790px] pn:w-[400px] pn:ml-[34px] flex flex-row justify-between px-2">
                             <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
@@ -174,7 +214,7 @@
         </div> <!-- end of featured content -->
         
         <!-- start of buy or rent  -->
-        <div class="flex flex-col lg:flex-row -ml-[3rem] mt-[3rem] lg:mt-[15rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
+        <div class="flex flex-col lg:flex-row -ml-[3rem] mt-[3rem] lg:mt-[65rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
                 <img src="/images/BDRSPost.png" alt="" style="" class="h-auto w-auto border-2 border-white shadow-md rounded-md">
 
                 <div class="flex flex-col justify-center place-items-center px-2 pn:ml-[10rem] lg:px-4 py-4 w-[180px] lg:w-[600px]">
@@ -195,82 +235,8 @@
         </div>
         <!-- end of buy or rent -->
            
-        <!-- start of update -->
-        <!-- <div class = "flex flex-col absolute mt-[5rem] ml-[13rem] justify-start">   
-                    <div class="flex flex-row">
-                        <div>
-                            <p class = "self-center text-center font-rozha text-[5rem]">News &</p>  
-                            <p class = "self-center text-center font-rozha text-[5rem] -mt-[3rem]">Events </p>
-                        </div>
-                        <hr class="h-px my-8 bg-black border-0">
-                    </div>
-                        <div class="flex flex-row overflow-x-auto space-x-4 p-4 -ml-[4rem] mt-[2rem]">
-                            @foreach($updates as $update)
-                            <div class="container">
-                                <div class="blog__post w-[22rem] shadow-mg border-4 rounded-lg overflow-hidden hover:cursor-pointer group h-[37rem] hover:shadow-xl border-gold">
-                                    <div class="relative overflow-hidden">
-                                        <img class="flex group-hover:scale-105 transition-transform duration-500 object-cover h-60 w-full" src="{{$update->coverphoto}}" alt="Update Image">
-                                        <div class="px-5 pt-5 bg-gradient-to-b text-black font-bold text-lg">
-                                            <h2 class="text-2xl text-left font-playfair">{{$update->titleHeading}}</h2>
-                                        </div>
-                                        <div class="px-6 pb-5">
-                                                <?php $paragraph = $update->description ?>
-                                                <?php $maxCharacters = 200 ?>
-                                                <?php if (strlen($paragraph) > $maxCharacters): ?>
-                                                <p class="line-clamp-5 text-left text-gray-700 dark:text-gray-400 text-lg font-light my-4  h4 mb-[10px] font-poppin"><?php echo substr($paragraph, 0, $maxCharacters); ?></p>
-                                                <a href="{{route('posts.showupdate', $update->id)}}" class="text-darkblue hover:text-gold">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                                                    <?php else: ?>
-                                                        <p class = "text-left text-gray-700 dark:text-gray-400 text-lg font-poppin  my-4 h4 mb-[10px]"><?php echo $paragraph; ?></p>
-                                                    <?php endif; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-        </div> -->
-        <div class="flex flex-col absolute mt-[3rem] ml-[1rem] lg:mt-[6rem] lg:ml-52 justify-start">
 
-            <div class="flex flex-row items-center ml-[1rem] mb-8 gap-0">
-                <p class="font-rozha text-[28px] lg:text-[54px] w-[800px]">News & Events</p>
-                <div class="ml-4 w-[700px] border-b-3 border-black">
-                </div>
-            </div>
-
-            <div class="flex flex-col lg:flex-row flex-wrap gap-8 ml-8">
-
-                @foreach($updates as $update)
-                <div class="w-[18rem] mx-2 mb-2 mr-0 rounded-lg overflow-hidden shadow-md transition ease-in-out duration-75 hover:shadow-lg ">
-
-                    <div class="relative overflow-hidden rounded-lg">
-
-                        <img class="w-full h-[300px] lg:h-[500px] object-cover rounded-t-lg transition-transform ease-in-out duration-75" src="/{{$update->coverphoto}}" alt="Update Image">
-
-                        <div class="p-4 bg-gradient-to-b from-neutral-500/0 to-neutral-900 h-[200px] text-white absolute bottom-0 left-0 right-0">
-
-                            <h2 class="text-[20px] mb-2 text-white font-bold">{{$update->titleHeading}}</h2>
-
-                            <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
-                                <?php
-                                $paragraph = $update->description;
-                                $maxCharacters = 200;
-                                echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
-                                ?>
-                            </p>
-
-                            <a href="{{route('posts.showupdate', $update->id)}}" style="color: #FFD700; text-decoration: none; transition: color 0.3s ease-in-out; display: inline-block; margin-top: 1rem;">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <!-- end of update -->
-
-
-        <div class="mt-[65rem]">
-            @include('layouts.footer')
-        </div>
+        <div class="mt-[10rem] bottom-0 w-full">@include('layouts.footer')</div>
            
 
 

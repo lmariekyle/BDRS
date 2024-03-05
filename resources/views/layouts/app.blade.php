@@ -69,7 +69,7 @@
     <body class="bg-dirtywhite antialiased">
 
     <div class="flex flex-row">
-        @hasanyrole('Admin|Customer Service|Marketing')
+        @hasanyrole('Super Admin|Admin|Customer Service|Marketing')
         <div class="bg-gold w-[315px] h-[1500px] flex justify-start flex-col py-5 px-2 -ml-[2rem] z-10">
         @endhasanyrole
         @role('User')
@@ -109,7 +109,7 @@
                 <a href="/" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">HOMEPAGE</a>
             </div>
 
-            @role('Admin')
+            @hasanyrole('Super Admin|Admin')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
                 <a href="{{ route('accounts.index') }}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">USERS</a>
@@ -130,7 +130,7 @@
                 <i class="fa-solid fa-users px-2 text-dirtywhite text-[18px]"></i>
                 <a href="{{route('categories.index')}}" class="font-poppins text-[18px] font-medium text-black" style="text-decoration:none;">CATEGORIES</a>
             </div>
-            @endrole
+            @endhasanyrole
 
             @role('Marketing')
             <div class="mt-4 ml-[6px] w-full bg-gold border-y-2 border-dirtywhite shadow-md px-4 py-2 hover:shadow-inner">
