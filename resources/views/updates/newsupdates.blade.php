@@ -51,7 +51,7 @@
             margin: 3rem auto 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 500px;
-            height: 300px;
+           height: max-content;
             max-width: 60rem;
         }
 
