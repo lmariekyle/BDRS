@@ -171,34 +171,32 @@ class PropertiesController extends Controller
                     $propertyimages[] = $path;
                 }
             }
-        // If new images are uploaded, delete the old images
-        $existingImages = json_decode($property->img, true); 
-            // Merge the new images with the existing images
-            $updatedImages = array_merge($existingImages, $propertyimages);
-            $imgJson = json_encode($updatedImages);
+            // If new images are uploaded, delete the old images
+            $existingImages = json_decode($property->img, true); 
+            foreach ($existingImages as $existingImage) {
+                if (file_exists(public_path($existingImage))) {
+                    unlink(public_path($existingImage));
+                }
+            }
+
+            $imgJson = json_encode($propertyimages);
         } else {
             // If no new images are uploaded, keep the existing images
             $imgJson = $property->img;
         }
 
-        // Check if new coverphoto is being uploaded
         if ($request->hasFile('coverphoto')) {
-            foreach ($request->file('coverphoto') as $image) {
-                if ($image->isValid()) {
-                    $coverphoto_name = time().'.'.$request->coverphoto->getClientOriginalExtension();
-                    $request->coverphoto->move(public_path('property'),$coverphoto_name);
-                    $coverphotopath="property/".$coverphoto_name;
-                }
+            // Delete the old video if it exists
+            if (!empty($property->coverphoto) && File::exists(public_path($property->coverphoto))) {
+                File::delete(public_path($property->coverphoto));
             }
-            // If new images are uploaded, delete the old images
-            $existingImages = json_decode($property->coverphoto, true); 
-                // Merge the new images with the existing images
-            $updatedImages = array_merge($existingImages, $coverphotopath);
-            $cJson = json_encode($updatedImages);
-
-            } else {
-                // If no new images are uploaded, keep the existing images
-                $cJson = $property->coverphoto;
+        
+            $coverphoto_name = time().'.'.$request->coverphoto->getClientOriginalExtension();
+            $request->coverphoto->move(public_path('property'), $coverphoto_name);
+            $coverphotopath = "property/".$coverphoto_name;
+        } else {
+            // No new video uploaded, use default or keep the existing one
+            $coverphotopath = $request->has('delete_coverphoto') ? $property->coverphoto : $property->coverphoto;
         }
 
         if ($request->hasFile('vid')) {
@@ -248,7 +246,7 @@ class PropertiesController extends Controller
             $property->zip= $request->zip;
             $property->status= $request->status;
             $property->featured= $request->featured;
-            $property->coverphoto =$cJson;
+            $property->coverphoto =$coverphotopath;
             $property->img= $imgJson;
             $property->vid= $vidpath;
             $property->priceimg= $priceimgpath;

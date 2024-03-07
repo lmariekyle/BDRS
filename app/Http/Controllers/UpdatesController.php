@@ -150,39 +150,33 @@ class UpdatesController extends Controller
 
         // If new images are uploaded, delete the old images
         $existingImages = json_decode($update->img, true); // Assuming $property represents the existing property data
-        // foreach ($existingImages as $existingImage) {
-        //     if (file_exists(public_path($existingImage))) {
-        //         unlink(public_path($existingImage));
-        //     }
-        // }
-            // Merge the new images with the existing images
-            $updatedImages = array_merge($existingImages, $updateimages);
-            $imgJson = json_encode($updatedImages);
+
+            foreach ($existingImages as $existingImage) {
+                if (file_exists(public_path($existingImage))) {
+                    unlink(public_path($existingImage));
+                }
+            }
+            $imgJson = json_encode($updateimages);
         } else {
             // If no new images are uploaded, keep the existing images
             $imgJson = $update->img;
         }
 
 
+        
         if ($request->hasFile('coverphoto')) {
-            foreach ($request->file('coverphoto') as $image) {
-                if ($image->isValid()) {
-                    $coverphoto_name = time().'.'.$request->coverphoto->getClientOriginalExtension();
-                    $request->coverphoto->move(public_path('update'),$coverphoto_name);
-                    $coverphotopath="update/".$coverphoto_name;
-                }
+            // Delete the old video if it exists
+            if (!empty($update->coverphoto) && File::exists(public_path($update->coverphoto))) {
+                File::delete(public_path($update->coverphoto));
             }
-            // If new images are uploaded, delete the old images
-            $existingImages = json_decode($update->coverphoto, true); 
-                // Merge the new images with the existing images
-            $updatedImages = array_merge($existingImages, $coverphotopath);
-            $cJson = json_encode($updatedImages);
-
-            } else {
-                // If no new images are uploaded, keep the existing images
-                $cJson = $update->coverphoto;
+        
+            $coverphoto_name = time().'.'.$request->coverphoto->getClientOriginalExtension();
+            $request->coverphoto->move(public_path('update'), $coverphoto_name);
+            $coverphotopath = "update/".$coverphoto_name;
+        } else {
+            // No new video uploaded, use default or keep the existing one
+            $coverphotopath = $request->has('delete_coverphoto') ? $update->coverphoto : $update->coverphoto;
         }
-
     
         if ($request->hasFile('vid')) {
             // Delete the old video if it exists
@@ -209,7 +203,7 @@ class UpdatesController extends Controller
         $update->status = $request->status;
         $update->featured =  $request->featured;
         $update->img = $imgJson;
-        $update->coverphoto = $cJson;
+        $update->coverphoto = $coverphotopath;
         $update->vid = $vidpath;
 
         $update->save();

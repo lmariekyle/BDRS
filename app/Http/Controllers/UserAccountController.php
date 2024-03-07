@@ -111,6 +111,7 @@ class UserAccountController extends Controller
         $user->contactNumber=$request->contactNumber;
         $user->email=$request->email;
 
+        $user->assignRole($request->userRole);
         $user->save();
 
         // return redirect('accounts.show',compact('user','personalInfo'))->with('success','Account has been Updated!');
