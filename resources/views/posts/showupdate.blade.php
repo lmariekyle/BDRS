@@ -47,6 +47,13 @@
     </div>
     <!-- End of Title Container -->
 
+    <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
+                         <video width="1140px" height="700px" controls>
+                            <source src="/{{$update->vid}}" type="video/mp4">
+                            Your browser does not support the video tag.
+            </video>
+    </div>
+
     <!--Start of Content -->
     <div style="display: flex; flex-direction: row;margin-top:5rem;">
                 <!-- Image Gallery Container -->
