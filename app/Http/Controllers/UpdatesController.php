@@ -79,7 +79,7 @@ class UpdatesController extends Controller
             $request->vid->move(public_path('update'),$vid_name);
             $vidpath="update/".$vid_name;
         }else{
-            $vidpath="update/default.mp4";
+            $vidpath=null;
         }
 
         $update = Update::create([

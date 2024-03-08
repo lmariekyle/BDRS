@@ -38,12 +38,18 @@
     <div class="flex flex-col h-max w-[1400px] mt-[8rem] ml-8 bg-[#f6f6f6] shadow-md px-8 py-8 rounded-lg border-t-2 border-l-2 border-white">
         <div class="-mt-[2rem] w-[600px] lg:w-[1400px] flex flex-col justify-start items-start px-4 py-8">
                            <!-- gallery -->
-                <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
-                         <video width="1140px" height="700px" controls>
-                            <source src="/{{$property->vid}}" type="video/mp4">
-                            Your browser does not support the video tag.
-                         </video>
-                    </div>
+                           @if(!empty($property->vid))
+                        <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
+                            <video width="800px" height="700px" controls>
+                                <source src="/{{$property->vid}}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    @else
+                        <div>
+                     
+                        </div>
+                    @endif
                       
                     <p class="px-3 py-4 font-playfair font-semibold text-[54px] -mt-[1rem] self-center">{{$property->name}}</p>
 
@@ -92,7 +98,7 @@
                     <p class="px-8 py-2 font-poppin text-[14px] lg:text-[16px] font-medium text-black w-[700px] -ml-4">{{$property->locationdesc}}</p>
                 </div>
                 <div class="border-r-2 border-b-2 w-max h-max px-6 py-5 border-black">
-                <img src="/{{$imagePaths[1]}}" alt="" style="height: 500px; width: 800px;" >
+                <img src="/{{$imagePaths[1]}}" alt="" style="height: 500px; width: 600px;" >
                 </div>
         </div>
 

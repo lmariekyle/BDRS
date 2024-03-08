@@ -103,12 +103,19 @@
                         </div>
                       
                     @endforelse
-                    <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
-                         <video width="800px" height="700px" controls>
-                            <source src="/{{$update->vid}}" type="video/mp4">
-                            Your browser does not support the video tag.
+                  
+                    @if(!empty($update->vid))
+                        <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
+                            <video width="800px" height="700px" controls>
+                                <source src="/{{$update->vid}}" type="video/mp4">
+                                Your browser does not support the video tag.
                             </video>
-                    </div>
+                        </div>
+                    @else
+                        <div>
+                     
+                        </div>
+                    @endif
                 </div>
                 <p style="font-family: 'Poppins', sans-serif; font-size: 12px; text-align: center; margin-top:1rem">Click on the pictures to view.</p>
             </div>

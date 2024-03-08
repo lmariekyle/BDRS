@@ -81,7 +81,7 @@ class PropertiesController extends Controller
             $request->vid->move(public_path('property'),$vid_name);
             $vidpath="property/".$vid_name;
         }else{
-            $vidpath="property/default.mp4";
+            $vidpath=null;
         }
 
         if ($request->hasFile('priceimg')){
