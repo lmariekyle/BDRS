@@ -47,12 +47,6 @@
     </div>
     <!-- End of Title Container -->
 
-    <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
-                         <video width="1140px" height="700px" controls>
-                            <source src="/{{$update->vid}}" type="video/mp4">
-                            Your browser does not support the video tag.
-            </video>
-    </div>
 
     <!--Start of Content -->
     <div style="display: flex; flex-direction: row;margin-top:5rem;">
@@ -126,6 +120,13 @@
                     <p style="font-family: 'Poppins', sans-serif; font-size: 20px; text-indent: 1rem; text-align: justify; margin: 20px;">{{ $update->thirdParagraph }}</p>
                 </div>
         </div>
+    </div>
+
+    <div class="relative ml-[23rem] mx-auto max-w-full overflow-hidden border-4 w-max border-white bg-greywhite rounded-mdp-2 sm:p-4 mb-10 mt-10">
+                         <video width="800px" height="700px" controls>
+                            <source src="/{{$update->vid}}" type="video/mp4">
+                            Your browser does not support the video tag.
+            </video>
     </div>
     
 </div>
