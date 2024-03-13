@@ -118,7 +118,15 @@
                 <div class="flex flex-col w-max justify-center lg:h-[300px] lg:w-[450px] bg-white rounded-lg shadow-inner border-2">    
                     <p class="lg:absolute pn:mt-2 lg:-mt-[16rem] self-center font-playfair lg:text-[22px] font-bold w-max px-4 py-1 bg-dirtywhite shadow-md mb-4">{{$property->unitType}}</p>
                     <img src="{{$property->coverphoto}}" class="mt-1 lg:ml-4 rounded-2xl self-center lg:self-start" style="width:180px; height: 180px;">
-                        <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3">{{$property->description}}</p>
+                    <?php
+                        $paragraph = $property->description;
+                        $maxCharacters = 350;
+                    ?>
+                    <?php if (strlen($paragraph) > $maxCharacters): ?>
+                        <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3"> <?php echo substr($paragraph, 0, $maxCharacters);?></p>
+                    <?php else: ?> 
+                        <p class="lg:absolute ml-3 font-poppin text-black text-[11px] inline-block indent-2 text-left h-max w-[228px] lg:ml-[13rem] px-1 mt-3"> <?php echo $paragraph; ?></p>
+                    <?php endif; ?>
                         <div class="lg:absolute px-1 py-1 self-center lg:mt-[18rem] lg:ml-[12rem] rounded-md bg-gold w-[100px] h-max border-1 shadow-md">
                         @if ($user) 
                             <a href="{{route('posts.showproperty', $property->id)}}"  class="font-poppins text-[14px] text-center ml-7 tracking-wide font-semibold">VIEW</a>

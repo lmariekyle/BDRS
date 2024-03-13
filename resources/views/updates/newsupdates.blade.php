@@ -51,8 +51,9 @@
             margin: 3rem auto 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 500px;
-           height: max-content;
+           height: 300px;
             max-width: 60rem;
+            justify-content: center;
         }
 
         .article-card img {
