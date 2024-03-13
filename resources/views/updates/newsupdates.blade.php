@@ -71,7 +71,7 @@
 
         .article-card h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
+            font-size: 16px;
             color: black;
             font-weight: bold;
             margin-bottom: 1rem;
@@ -84,7 +84,7 @@
             -webkit-line-clamp: 4;
             text-align: left;
             color: black;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 300;
             margin-bottom: 1rem;
             font-family: 'Poppins', sans-serif;
