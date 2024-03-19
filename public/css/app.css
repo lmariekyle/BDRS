@@ -1117,6 +1117,12 @@ select{
 .mt-\[9rem\]{
   margin-top: 9rem;
 }
+.mt-\[35rem\]{
+  margin-top: 35rem;
+}
+.-mt-\[8rem\]{
+  margin-top: -8rem;
+}
 .line-clamp-5{
   overflow: hidden;
   display: -webkit-box;
@@ -1179,9 +1185,6 @@ select{
 }
 .h-\[150px\]{
   height: 150px;
-}
-.h-\[200px\]{
-  height: 200px;
 }
 .h-\[230px\]{
   height: 230px;
@@ -1279,9 +1282,6 @@ select{
 }
 .w-\[18rem\]{
   width: 18rem;
-}
-.w-\[200px\]{
-  width: 200px;
 }
 .w-\[228px\]{
   width: 228px;

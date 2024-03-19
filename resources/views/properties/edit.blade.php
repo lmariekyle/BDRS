@@ -4,7 +4,7 @@
     <div class="flex flex-col items-center w-max h-max mt-[8rem] ml-[25rem] mb-8 bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
     @role('Marketing')
-        <div class="flex flex-col items-center w-max -mt-[30rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+        <div class="flex flex-col items-center w-max mt-[8rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
                 <p class="font-poppin mb-4 text-2xl underline underline-offset-8">UPDATE PROPERTY</p>
             <form method="POST" action="{{route('properties.update' , $property->id) }}" class="grid grid-cols-3 w-max h-max py-4" enctype="multipart/form-data">  

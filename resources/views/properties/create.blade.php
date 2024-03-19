@@ -3,7 +3,7 @@
     <div class="flex flex-col items-center w-max h-max mt-[8rem] ml-[25rem] mb-8 bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole
     @role('Marketing')
-        <div class="flex flex-col items-center w-max -mt-[35rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
+        <div class="flex flex-col items-center w-max mt-[8rem] sm:px-6 lg:ml-[25rem] bg-dirtywhite border-l-blue-950 shadow-md">
     @endrole       
         <a href="{{ route('properties.index')}}"><i class="absolute -ml-[30rem] mt-[2rem] fa-solid fa-arrow-left text-[20px]"></i></a> 
         <p class="font-poppin mb-4 text-2xl underline underline-offset-8">CREATE PROPERTY</p>
