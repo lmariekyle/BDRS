@@ -214,6 +214,27 @@
                         </select>
                 </div>
                 @endrole
+
+                
+                @role('Marketing')
+                <div class="mt-4 px-4 hidden ">
+                <x-input-label for="status" :value="__('Status')" />
+                        <select id="status" class="mt-1 w-full hidden" name="status" :value="Disapprove" autofocus>
+                        <option value="">Property Status</option>
+                            <option value="Approved">Approve</option>
+                            <option value="Disapprove">Disapprove</option>
+                        </select>
+                </div>
+
+              
+                <div class="mt-4 px-4 hidden">
+                <x-input-label for="featured" :value="__('Feature')" />
+                        <select id="featured" class="block mt-1 w-full" name="featured" :value="Not Featured" autofocus>
+                        <option value="Not Featured">Not Featured</option>
+                            <option value="Featured">Featured</option>
+                        </select>
+                </div>
+                @endrole
                 <!-- <div class="mt-4 px-4"> 
                     <x-input-label for="vid" :value="__('Video')" />
                     <div>

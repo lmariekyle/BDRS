@@ -859,12 +859,6 @@ select{
 .-mt-\[2rem\]{
   margin-top: -2rem;
 }
-.-mt-\[30rem\]{
-  margin-top: -30rem;
-}
-.-mt-\[35rem\]{
-  margin-top: -35rem;
-}
 .-mt-\[3rem\]{
   margin-top: -3rem;
 }
@@ -1116,12 +1110,6 @@ select{
 }
 .mt-\[9rem\]{
   margin-top: 9rem;
-}
-.mt-\[35rem\]{
-  margin-top: 35rem;
-}
-.-mt-\[8rem\]{
-  margin-top: -8rem;
 }
 .line-clamp-5{
   overflow: hidden;

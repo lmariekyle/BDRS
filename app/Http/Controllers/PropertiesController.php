@@ -8,6 +8,7 @@ use App\Models\UnitType;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 
@@ -44,6 +45,8 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
+
+        $user = auth()->user();
 
         $request->validate([
             'img' => 'required|array',
@@ -91,32 +94,59 @@ class PropertiesController extends Controller
         }else{
             $priceimgpath="property/default.jpg";
         }
-        
 
-        $property = Property::create([
-            'name' => $request->name,
-            'availability' => $request->availability,
-            'furnish' =>$request->furnish,
-            'description' => $request->description,
-            'unitdesc' => $request->unitdesc,
-            'beddesc' => $request->beddesc,
-            'furnishdesc' => $request->furnishdesc,
-            'locationdesc' => $request->locationdesc,
-            'type'=> $request->type,
-            'unitType'=> $request->unitType,
-            'sizes' => $request->sizes,
-            'address'=> $request->address,
-            'state'=> $request->state,
-            'zip'=> $request->zip,
-            'bed'=> $request->bed,
-            'provision'=> $request->provision,
-            'status' => $request->status,
-            'featured'=> $request->featured,
-            'coverphoto'=> $imgpath,
-            'img'=> $imgJson,
-            'vid'=> $vidpath,
-            'priceimg' => $priceimgpath
-        ]);
+        if($user->userRole == 'Marketing'){
+            $property = Property::create([
+                'name' => $request->name,
+                'availability' => $request->availability,
+                'furnish' =>$request->furnish,
+                'description' => $request->description,
+                'unitdesc' => $request->unitdesc,
+                'beddesc' => $request->beddesc,
+                'furnishdesc' => $request->furnishdesc,
+                'locationdesc' => $request->locationdesc,
+                'type'=> $request->type,
+                'unitType'=> $request->unitType,
+                'sizes' => $request->sizes,
+                'address'=> $request->address,
+                'state'=> $request->state,
+                'zip'=> $request->zip,
+                'bed'=> $request->bed,
+                'provision'=> $request->provision,
+                'status' => 'Disapprove',
+                'featured'=> 'Not Featured',
+                'coverphoto'=> $imgpath,
+                'img'=> $imgJson,
+                'vid'=> $vidpath,
+                'priceimg' => $priceimgpath
+            ]);
+        }else{
+            $property = Property::create([
+                'name' => $request->name,
+                'availability' => $request->availability,
+                'furnish' =>$request->furnish,
+                'description' => $request->description,
+                'unitdesc' => $request->unitdesc,
+                'beddesc' => $request->beddesc,
+                'furnishdesc' => $request->furnishdesc,
+                'locationdesc' => $request->locationdesc,
+                'type'=> $request->type,
+                'unitType'=> $request->unitType,
+                'sizes' => $request->sizes,
+                'address'=> $request->address,
+                'state'=> $request->state,
+                'zip'=> $request->zip,
+                'bed'=> $request->bed,
+                'provision'=> $request->provision,
+                'status' => $request->status,
+                'featured'=> $request->featured,
+                'coverphoto'=> $imgpath,
+                'img'=> $imgJson,
+                'vid'=> $vidpath,
+                'priceimg' => $priceimgpath
+            ]);
+        }
+      
 
          
         return redirect()->back()->with('success','Property has been Added!');
@@ -156,6 +186,8 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        $user = auth()->user();
 
         $property = Property::where('id',$id)->first();
 
@@ -226,9 +258,6 @@ class PropertiesController extends Controller
             // No new video uploaded, use default or keep the existing one
             $priceimgpath = $request->has('delete_priceimg') ? $property->priceimg : $property->priceimg;
         }
-
-
-
 
             $property->name = $request->name;
             $property->availability = $request->availability;

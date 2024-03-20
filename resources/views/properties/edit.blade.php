@@ -222,8 +222,26 @@
                 </div>
 
                 <div class="mt-4 px-4 ">
-                <x-input-label for="featured" :value="__('Feature')" />
+            <x-input-label for="featured" :value="__('Feature')" />
                         <select id="featured" class="block mt-1 w-full" name="featured" :value="$property->featured" required autofocus>
+                            <option value="Featured" {{ $property->featured === 'Featured' ? 'selected' : ''}}>Featured</option>
+                            <option value="Not Featured" {{ $property->featured === 'Not Featured' ? 'selected' : ''}}>Not Featured</option>
+                        </select>
+                </div>
+                @endrole
+
+                @role('Marketing')
+                <div class="mt-4 px-4 ">
+                <x-input-label for="status" :value="__('Property Status')" />
+                        <select id="status" class="mt-1 w-full hidden" name="status" :value="$property->status" required autofocus>
+                            <option value="Approved" {{ $property->status === 'Approved' ? 'selected' : ''}} >Approve</option>
+                            <option value="Disapprove" {{ $property->status === 'Disapprove' ? 'selected' : ''}}>Disapprove</option>
+                        </select>
+                </div>
+
+                <div class="mt-4 px-4 ">
+            <x-input-label for="featured" :value="__('Feature')" />
+                        <select id="featured" class="mt-1 w-full hidden" name="featured" :value="$property->featured" required autofocus>
                             <option value="Featured" {{ $property->featured === 'Featured' ? 'selected' : ''}}>Featured</option>
                             <option value="Not Featured" {{ $property->featured === 'Not Featured' ? 'selected' : ''}}>Not Featured</option>
                         </select>
