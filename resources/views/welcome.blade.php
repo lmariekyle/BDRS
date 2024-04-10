@@ -138,7 +138,7 @@
                         <li class="relative">
                             <div class="flex flex-col lg:flex-row justify-evenly self-start lg:mt-[2rem] pn:mt-2 ml-[2rem] w-max h-max">
                                 <!-- featured property description -->
-                                <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[90vw] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-8 lg:mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
+                                <div class="lg:flex lg:flex-col grid grid-cols-2 justify-center w-[90vw] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-8 lg:mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
                                     <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
                                     <div>
                                         <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
@@ -163,7 +163,7 @@
                         <li class="relative hidden">
                         <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
+                            <div class="lg:flex lg:flex-col grid grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
                                     <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
                                     <div>
                                     <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
@@ -181,7 +181,7 @@
                                     <!-- <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                           -->
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 mx-auto max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
+                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] ml-1 mx-auto max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
                                     <img src="/images/vertexcentral.jpg" alt="" style="" class="w-auto h-auto">
                             </div>
                             <!-- end of image section -->
@@ -190,7 +190,7 @@
                     <li class="relative hidden">
                         <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
-                            <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
+                            <div class="lg:flex lg:flex-col grid grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
                                     <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
                                     <div>
                                     <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
@@ -208,7 +208,7 @@
                                     <!-- <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                           -->
                             </div><!--end of featured property description -->
                             <!-- image section -->
-                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 lg:mx-auto lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
+                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] ml-1 lg:mx-auto lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
                                     <img src="/images/vertexcoast.png" alt="" style="" class="w-auto h-auto">
                             </div>
                             <!-- end of image section -->
