@@ -136,7 +136,7 @@
 
                     <ul class="slider flex flex-col justify-items-center mt-[45rem] lg:mt-[50rem]" id="slider1">
                         <li class="relative">
-                            <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[2rem] pn:mt-2 ml-[2rem] w-max h-max">
+                            <div class="flex flex-col lg:flex-row justify-evenly self-start lg:mt-[2rem] pn:mt-2 ml-[2rem] w-max h-max">
                                 <!-- featured property description -->
                                 <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[90vw] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-8 lg:mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
                                     <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
