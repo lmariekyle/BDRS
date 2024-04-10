@@ -1283,6 +1283,9 @@ select{
 .h-px{
   height: 1px;
 }
+.h-\[200px\]{
+  height: 200px;
+}
 .min-h-screen{
   min-height: 100vh;
 }
@@ -1394,6 +1397,9 @@ select{
 }
 .w-\[80px\]{
   width: 80px;
+}
+.w-\[130px\]{
+  width: 130px;
 }
 .max-w-6xl{
   max-width: 72rem;

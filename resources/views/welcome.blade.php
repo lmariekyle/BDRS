@@ -103,11 +103,11 @@
 
                 <div class="flex flex-row -ml-4">
                     @foreach($updates as $update)
-                    <div class="w-[100px] h-[100px] md:w-1/2 lg:w-max lg:h-[100px] p-4">
+                    <div class="w-[130px] h-[200px] md:w-1/2 lg:w-max lg:h-[100px] p-4">
 
                         <div class="relative overflow-hidden rounded-lg shadow-md">
 
-                        <img class="w-[100px] h-[100px] lg:h-[280px] lg:w-64 object-cover rounded-t-lg transition duration-500 ease-in-out" src="{{$update->coverphoto}}" alt="Update Image">
+                        <img class="w-[130px] h-[200px] lg:h-[280px] lg:w-64 object-cover rounded-t-lg transition duration-500 ease-in-out" src="{{$update->coverphoto}}" alt="Update Image">
 
                         <div class="p-2 bg-gradient-to-b from-transparent to-black text-white">
 
