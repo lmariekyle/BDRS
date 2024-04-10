@@ -103,7 +103,7 @@
 
                 <div class="flex flex-row -ml-4">
                     @foreach($updates as $update)
-                    <div class="w-[130px] h-[200px] md:w-1/2 lg:w-max lg:h-[100px] p-4">
+                    <div class="w-[130px] h-[200px] md:w-1/2 lg:w-[250px] lg:h-[100px] p-4">
 
                         <div class="relative overflow-hidden rounded-lg shadow-md">
 

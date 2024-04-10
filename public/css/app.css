@@ -3195,6 +3195,10 @@ select{
     width: 400px;
   }
 
+  .lg\:w-\[200px\]{
+    width: 200px;
+  }
+
   .lg\:max-w-\[1000px\]{
     max-width: 1000px;
   }

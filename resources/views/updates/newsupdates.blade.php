@@ -105,11 +105,11 @@
         <p class="lg:text-[32px] text-[32px] font-rozha text-center font-bold">News and Updates</p>
     </div>
     <div class="flex flex-col justify-center ml-[3rem] lg:ml-[15rem] mt-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-[1000px] w-[550px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-[1000px]">
             <div class="container">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-[1000px] w-[550px]">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-[1000px]">
                     @foreach($updates as $update)
-                    <div class="article-card lg:w-[400px] lg:h-[280px]">
+                    <div class="article-card lg:w-[500px] lg:h-max">
                         <article class="flex flex-col lg:flex-row justify-center">
                             <img src="/{{$update->coverphoto}}" alt="Image" class="ml-[2.5rem]">
                             <div class="mt-4">
