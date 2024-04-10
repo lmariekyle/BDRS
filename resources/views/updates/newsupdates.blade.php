@@ -37,12 +37,6 @@
             text-align: center;
         }
 
-        .heading p {
-            font-family: 'Rozha One', serif;
-            font-size: 3.5rem;
-            color: black;
-            font-weight: bold;
-        }
 
         /* Responsive styles for the article cards */
         .article-card {
@@ -50,8 +44,8 @@
             border: 4px solid #eddea4;
             margin: 3rem auto 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 500px;
-           height: 300px;
+            width: 300px;
+           height: fit-content;
             max-width: 60rem;
             justify-content: center;
         }
@@ -108,18 +102,17 @@
     @include('layouts.navigation')
 
     <div class="heading">
-                    <p>News and Updates</p>
+        <p class="lg:text-[32px] text-[32px] font-rozha text-center font-bold">News and Updates</p>
     </div>
-    <div class="flex flex-col justify-center ml-[15rem] mt-6">
-
-        <div class="grid grid-cols-2 gap-4 w-[1000px]">
+    <div class="flex flex-col justify-center ml-[3rem] lg:ml-[15rem] mt-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-[1000px] w-[550px]">
             <div class="container">
-                <div class="grid grid-cols-2 gap-4 w-[1000px]">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-[1000px] w-[550px]">
                     @foreach($updates as $update)
-                    <div class="article-card">
-                        <article>
-                            <img src="/{{$update->coverphoto}}" alt="Image">
-                            <div>
+                    <div class="article-card lg:w-[400px] lg:h-[280px]">
+                        <article class="flex flex-col lg:flex-row justify-center">
+                            <img src="/{{$update->coverphoto}}" alt="Image" class="ml-[2.5rem]">
+                            <div class="mt-4">
                                 <h2>{{$update->titleHeading}}</h2>
                                 <div>
                                     <?php

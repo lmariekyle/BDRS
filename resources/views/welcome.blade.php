@@ -248,73 +248,70 @@
            
 
         <div class="mt-[5rem] bottom-0 w-full">@include('layouts.footer')</div>
-           
+  
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to initialize a slider
+            function initializeSlider(sliderID) {
+                let currentSlideID = 1;
+                let sliderElement = document.getElementById(sliderID);
+                let totalSlides = sliderElement ? sliderElement.childElementCount : 0;
+                console.log(`Slider ID: ${sliderID}`);
+            console.log(`Total Slides: ${totalSlides}`);
+
+                if (sliderElement) {
+                    // Get references to the buttons for this slider
+                    let prevButton = document.getElementById(`prevButton${sliderID}`);
+                    let nextButton = document.getElementById(`nextButton${sliderID}`);
 
 
-               
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Function to initialize a slider
-        function initializeSlider(sliderID) {
-            let currentSlideID = 1;
-            let sliderElement = document.getElementById(sliderID);
-            let totalSlides = sliderElement ? sliderElement.childElementCount : 0;
-            console.log(`Slider ID: ${sliderID}`);
-        console.log(`Total Slides: ${totalSlides}`);
-
-            if (sliderElement) {
-                // Get references to the buttons for this slider
-                let prevButton = document.getElementById(`prevButton${sliderID}`);
-                let nextButton = document.getElementById(`nextButton${sliderID}`);
-
-
-                if (prevButton && nextButton) {
-                    prevButton.addEventListener('click', prev);
-                    nextButton.addEventListener('click', next);
-                }
-
-                function next() {
-                    console.log('Next button clicked');
-                    if (currentSlideID < totalSlides) {
-                        currentSlideID++;
-                        showSlide();
+                    if (prevButton && nextButton) {
+                        prevButton.addEventListener('click', prev);
+                        nextButton.addEventListener('click', next);
                     }
-                }
 
-                function prev() {
-                    console.log('prev button clicked');
-                    if (currentSlideID > 1) {
-                        currentSlideID--;
-                        showSlide();
+                    function next() {
+                        console.log('Next button clicked');
+                        if (currentSlideID < totalSlides) {
+                            currentSlideID++;
+                            showSlide();
+                        }
                     }
-                }
 
-                function showSlide() {
-                    slides = sliderElement.getElementsByTagName('li');
-                    for (let index = 0; index < totalSlides; index++) {
-                        const element = slides[index];
-                        if (currentSlideID === index + 1) {
-                            element.classList.remove('hidden');
-                        } else {
-                            element.classList.add('hidden');
+                    function prev() {
+                        console.log('prev button clicked');
+                        if (currentSlideID > 1) {
+                            currentSlideID--;
+                            showSlide();
+                        }
+                    }
+
+                    function showSlide() {
+                        slides = sliderElement.getElementsByTagName('li');
+                        for (let index = 0; index < totalSlides; index++) {
+                            const element = slides[index];
+                            if (currentSlideID === index + 1) {
+                                element.classList.remove('hidden');
+                            } else {
+                                element.classList.add('hidden');
+                            }
                         }
                     }
                 }
             }
+
+            // Initialize each slider
+            initializeSlider('slider1');
+            // Initialize more sliders as needed
+
+        function Menu(e){
+        let list = document.querySelector('ul');
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
         }
 
-        // Initialize each slider
-        initializeSlider('slider1');
-        // Initialize more sliders as needed
+        });
 
-      function Menu(e){
-      let list = document.querySelector('ul');
-      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-    }
-
-    });
-
-    </script>
+        </script>
 
     </body>
 </html>
