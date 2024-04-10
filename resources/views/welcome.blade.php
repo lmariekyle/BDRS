@@ -80,60 +80,59 @@
                 </div>
             </div>
 
-
-
         </div>
         <!-- end of landing page welcome content -->
-
-        <!-- start of featured content -->
-        <div class="flex flex-col justify-start mt-3 lg:mt-[5rem] h-[732px] w-full">
-                <div class="flex flex-row justify-evenly self-center mt-5 w-max h-[100px]">
+    
+        <div class="flex flex-row justify-evenly self-center mt-[2rem] lg:mt-[5rem] ml-[6rem] lg:ml-[20rem] w-max h-[100px]">
                     <p class="font-playfair text-[20px] lg:text-[68px] ml-2 sm:text-start md:text-center ">Sell,</p>
                     <p class="font-playfair text-[20px] lg:text-[68px] lg:ml-8 ml-2"> Buy,</p>
                     <p class="font-playfair text-[20px] lg:text-[68px] lg:ml-8 ml-2"> Rent,</p>
                     <p class="font-playfair text-[20px] lg:text-[68px] lg:ml-8 ml-2"> Brokerage</p>
-                </div>
-                <div class="flex flex-col justify-items-center lg:ml-4 pn:ml-8 pn:mt-[10px]">
+        </div>
+                <div class="flex flex-col justify-items-center -mt-[4rem] lg:mt-[2rem] lg:ml-4 pn:ml-8">
                     <p class="font-poppins lg:text-[28px] lg:w-max pn:w-[350px] text-[12px] self-center">Helping you find the property that suits your lifestyle and needs.<br></p>
                 </div>
 
-                 <!-- start of update -->
-                    <div class="flex flex-col absolute mt-[8rem] ml-[4rem] justify-start lg:mt-[15rem] lg:ml-[10rem] mb-4">
+        <!-- start of update -->
+            <div class="flex flex-col absolute mt-[4rem] ml-[4rem] justify-start lg:mt-[12rem] lg:ml-[10rem] mb-4">
 
-                            <div class="flex items-center mb-4">
-                                <p class="text-[26px] lg:text-[42px] font-rozha mr-4">News & Events</p>
-                                <div class="border-b-2 border-black w-full md:w-3/4"></div>
-                            </div>
+                <div class="flex items-center mb-4">
+                    <p class="text-[26px] lg:text-[42px] font-rozha mr-4">News & Events</p>
+                    <div class="border-b-2 border-black w-full md:w-3/4"></div>
+                </div>
 
-                            <div class="flex flex-wrap -ml-4">
+                <div class="flex flex-wrap -ml-4">
 
-                                @foreach($updates as $update)
-                                <div class="w-[250px] h-[80px] md:w-1/2 lg:w-[250px] p-4">
+                    @foreach($updates as $update)
+                    <div class="w-[250px] h-[50px] md:w-1/2 lg:w-[250px] lg:h-[100px] p-4">
 
-                                    <div class="relative overflow-hidden rounded-lg shadow-md">
+                        <div class="relative overflow-hidden rounded-lg shadow-md">
 
-                                    <img class="w-full h-64 object-cover rounded-t-lg transition duration-500 ease-in-out" src="{{$update->coverphoto}}" alt="Update Image">
+                        <img class="w-full h-[100px] lg:h-64 object-cover rounded-t-lg transition duration-500 ease-in-out" src="{{$update->coverphoto}}" alt="Update Image">
 
-                                    <div class="p-6 bg-gradient-to-b from-transparent to-black text-white">
+                        <div class="p-6 bg-gradient-to-b from-transparent to-black text-white">
 
-                                        <h2 class="text-xl font-playfair-display font-bold mb-2">{{$update->titleHeading}}</h2>
+                            <h2 class="text-[14px] lg:text-xl font-playfair-display font-bold mb-2">{{$update->titleHeading}}</h2>
 
-                                        <p class="text-sm font-semibold mb-4">
-                                        <?php
-                                        $paragraph = $update->description;
-                                        $maxCharacters = 200;
-                                        echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
-                                        ?>
-                                        </p>
+                            <p class="text-[12px] lg:text-sm font-semibold mb-4">
+                            <?php
+                            $paragraph = $update->description;
+                            $maxCharacters = 200;
+                            echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
+                            ?>
+                            </p>
 
-                                        <a href="{{route('posts.showupdate', $update->id)}}" class="text-yellow-400 transition duration-300 ease-in-out inline-block mb-4">Read more <i class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
+                            <a href="{{route('posts.showupdate', $update->id)}}" class="text-yellow-400 transition duration-300 ease-in-out inline-block mb-4">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        </div>
                     </div>
-                    <!-- end of update -->
+                    @endforeach
+                </div>
+            </div>
+                <!-- end of update -->
+
+        <!-- start of featured content -->
+        <div class="flex flex-col justify-start mt-[3rem] lg:mt-[5rem] h-[732px] w-full">
 
                     <ul class="slider flex flex-col justify-items-center mt-[45rem] lg:mt-[50rem]" id="slider1">
                         <li class="relative">

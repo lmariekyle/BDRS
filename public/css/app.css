@@ -1129,6 +1129,30 @@ select{
 .ml-\[5\=7rem\]{
   margin-left: 5=7rem;
 }
+.ml-\[12rem\]{
+  margin-left: 12rem;
+}
+.ml-\[14rem\]{
+  margin-left: 14rem;
+}
+.ml-\[18rem\]{
+  margin-left: 18rem;
+}
+.ml-\[22rem\]{
+  margin-left: 22rem;
+}
+.ml-\[20rem\]{
+  margin-left: 20rem;
+}
+.ml-\[10rem\]{
+  margin-left: 10rem;
+}
+.-mt-\[4rem\]{
+  margin-top: -4rem;
+}
+.mt-\[4rem\]{
+  margin-top: 4rem;
+}
 .line-clamp-5{
   overflow: hidden;
   display: -webkit-box;
@@ -2989,6 +3013,10 @@ select{
     margin-top: 10rem;
   }
 
+  .lg\:mt-\[12rem\]{
+    margin-top: 12rem;
+  }
+
   .lg\:flex{
     display: flex;
   }
@@ -3016,6 +3044,14 @@ select{
 
   .lg\:h-\[150px\]{
     height: 150px;
+  }
+
+  .lg\:h-\[100px\]{
+    height: 100px;
+  }
+
+  .lg\:h-64{
+    height: 16rem;
   }
 
   .lg\:w-1\/4{
@@ -3197,6 +3233,16 @@ select{
 
   .lg\:text-\[42px\]{
     font-size: 42px;
+  }
+
+  .lg\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 @media (min-width: 1280px){
