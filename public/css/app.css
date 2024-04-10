@@ -1153,6 +1153,12 @@ select{
 .mt-\[4rem\]{
   margin-top: 4rem;
 }
+.-mt-\[8rem\]{
+  margin-top: -8rem;
+}
+.-mt-\[9rem\]{
+  margin-top: -9rem;
+}
 .line-clamp-5{
   overflow: hidden;
   display: -webkit-box;
@@ -1379,6 +1385,15 @@ select{
 }
 .w-\[200px\]{
   width: 200px;
+}
+.w-\[80vw\]{
+  width: 80vw;
+}
+.w-\[85vw\]{
+  width: 85vw;
+}
+.w-\[80px\]{
+  width: 80px;
 }
 .max-w-6xl{
   max-width: 72rem;
@@ -1991,6 +2006,9 @@ select{
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-\[8px\]{
+  font-size: 8px;
 }
 .font-bold{
   font-weight: 700;
@@ -3062,6 +3080,18 @@ select{
     height: 16rem;
   }
 
+  .lg\:h-\[80px\]{
+    height: 80px;
+  }
+
+  .lg\:h-\[180px\]{
+    height: 180px;
+  }
+
+  .lg\:h-\[280px\]{
+    height: 280px;
+  }
+
   .lg\:w-1\/4{
     width: 25%;
   }
@@ -3121,6 +3151,10 @@ select{
 
   .lg\:w-\[150px\]{
     width: 150px;
+  }
+
+  .lg\:w-64{
+    width: 16rem;
   }
 
   .lg\:max-w-\[1000px\]{
@@ -3251,6 +3285,10 @@ select{
   .lg\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .lg\:text-\[14px\]{
+    font-size: 14px;
   }
 }
 @media (min-width: 1280px){

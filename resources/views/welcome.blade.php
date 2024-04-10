@@ -101,18 +101,17 @@
                     <div class="border-b-2 border-black w-full md:w-3/4"></div>
                 </div>
 
-                <div class="flex flex-wrap -ml-4">
-
+                <div class="flex flex-row -ml-4">
                     @foreach($updates as $update)
-                    <div class="w-[250px] h-[50px] md:w-1/2 lg:w-[250px] lg:h-[100px] p-4">
+                    <div class="w-[100px] h-[100px] md:w-1/2 lg:w-max lg:h-[100px] p-4">
 
                         <div class="relative overflow-hidden rounded-lg shadow-md">
 
-                        <img class="w-full h-[100px] lg:h-64 object-cover rounded-t-lg transition duration-500 ease-in-out" src="{{$update->coverphoto}}" alt="Update Image">
+                        <img class="w-[100px] h-[100px] lg:h-[280px] lg:w-64 object-cover rounded-t-lg transition duration-500 ease-in-out" src="{{$update->coverphoto}}" alt="Update Image">
 
-                        <div class="p-6 bg-gradient-to-b from-transparent to-black text-white">
+                        <div class="p-2 bg-gradient-to-b from-transparent to-black text-white">
 
-                            <h2 class="text-[14px] lg:text-xl font-playfair-display font-bold mb-2">{{$update->titleHeading}}</h2>
+                            <h2 class="text-[8px] lg:text-[16px] font-playfair-display font-bold w-max">{{$update->titleHeading}}</h2>
 
                             <p class="text-[12px] lg:text-sm font-semibold mb-4">
                             <?php
@@ -121,8 +120,7 @@
                             echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
                             ?>
                             </p>
-
-                            <a href="{{route('posts.showupdate', $update->id)}}" class="text-yellow-400 transition duration-300 ease-in-out inline-block mb-4">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="{{route('posts.showupdate', $update->id)}}" class="text-yellow-400 transition duration-300 ease-in-out inline-block mb-4 text-[8px] lg:text-[16px]">Read more <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                         </div>
                     </div>
@@ -132,7 +130,7 @@
                 <!-- end of update -->
 
         <!-- start of featured content -->
-        <div class="flex flex-col justify-start mt-[3rem] lg:mt-[5rem] h-[732px] w-full">
+        <div class="flex flex-col justify-start -mt-[10rem] lg:mt-[5rem] h-[732px] w-full">
 
                     <ul class="slider flex flex-col justify-items-center mt-[45rem] lg:mt-[50rem]" id="slider1">
                         <li class="relative">
@@ -217,7 +215,7 @@
 
                     </ul>
                     <!-- slider buttons -->
-                    <div class="-mt-[12rem] self-center lg:-mt-[18rem] lg:ml-[31rem] lg:w-[700px] pn:w-[90vw] pn:ml-[2rem] flex flex-row justify-between px-2">
+                    <div class="-mt-[12rem] self-center lg:-mt-[18rem] lg:ml-[31rem] lg:w-[700px] ml-8 w-[400px] flex flex-row justify-between px-2">
                         <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
@@ -226,8 +224,6 @@
                         </button>
                     </div> <!-- end of buttons -->
 
-                
-        
         <!-- start of buy or rent  -->
         <div class="flex flex-col lg:flex-row mt-[12rem] lg:mt-[25rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
                 <img src="/images/BDRSPost.png" alt="" style="" class="h-auto w-auto border-2 border-white shadow-md rounded-md">
