@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>BDRS Realty Management Services Co.</title>
 
@@ -30,7 +30,26 @@
                 html {
                     user-select: none;
                 }
-    </style>
+                @media (max-width: 390px) {
+                .flex-wrap {
+                    flex-wrap: nowrap;
+                    overflow-x: auto;
+                }
+                .w-full {
+                    width: 100%;
+                }
+                .h-64 {
+                    height: 20rem;
+                }
+                .text-xl {
+                    font-size: 1.25rem;
+                }
+                .text-sm {
+                    font-size: 0.875rem;
+                }
+                }
+         </style>
+
 
 
 
@@ -50,14 +69,14 @@
                 <img src="images/collageOne.png">
             </div> 
            
-            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[1000px] mt-[9rem] lg:mt-[28rem] lg:ml-[31rem] pn:ml-[3rem]">
-                    <p class="ml-[8rem] -mt-6 font-playfair lg:text-[60px] text-dirtywhite text-[16px]">We are the key</p>
+            <div class="absolute flex flex-col justify-center px-2 py-2 h-[400px] w-[500px] lg:w-[1000px] mt-[9rem] lg:mt-[28rem] lg:ml-[31rem] pn:ml-[3rem]">
+                    <p class="ml-[8rem] -mt-6 font-playfair lg:text-[60px] text-dirtywhite text-[12px]">We are the key</p>
                 <div class="flex flex-row px-2 lg:-mt-[3rem] pn:-mt-[1rem] pn:ml-[8.5rem] lg:ml-[10rem] mb-1">
-                    <p class="font-playfair mt-2 lg:text-[60px] text-[16px] text-dirtywhite">to your new</p>
-                    <p class="font-baby lg:text-[78px] text-[18px] pn:mt-2 pn:ml-1 text-dirtywhite lg:ml-2">Home</p>
+                    <p class="font-playfair mt-2 lg:text-[60px] text-[12px] text-dirtywhite">to your new</p>
+                    <p class="font-baby lg:text-[78px] text-[14px] pn:mt-2 pn:ml-1 text-dirtywhite lg:ml-2">Home</p>
                 </div>
-                <div class="self-center lg:-ml-[13rem] -ml-[35rem] lg:-mt-5 -mt-1 border-2 border-dirtywhite bg-darkblue hover:bg-dirtywhite shadow-md lg:w-max lg:h-max lg:px-3 lg:py-2 pn:w-[80px] pn:h-[25px] text-center">
-                    <a href="{{route('posts.viewproperties')}}" class="font-playfair text-center text-dirtywhite lg:text-[18px] text-[12px] font-semibold hover:text-darkblue">explore now.</a>
+                <div class="self-center h-max w-max lg:-ml-[13rem] -ml-[5rem] lg:-mt-5 -mt-1 border-2 border-dirtywhite bg-darkblue hover:bg-dirtywhite shadow-md lg:w-max lg:h-max lg:px-3 lg:py-2 pn:w-[80px] pn:h-[25px] text-center">
+                    <a href="{{route('posts.viewproperties')}}" class="font-playfair text-center text-dirtywhite lg:text-[18px] text-[10px] font-semibold hover:text-darkblue">explore now.</a>
                 </div>
             </div>
 
@@ -79,74 +98,70 @@
                 </div>
 
                  <!-- start of update -->
-            <div style="display: flex; flex-direction: column; position: absolute; margin-top: 18rem; margin-left: 13rem; justify-content: start;">
+                    <div class="flex flex-col absolute mt-[8rem] ml-[4rem] justify-start lg:mt-[15rem] lg:ml-[10rem] mb-4">
 
-                <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 2rem;">
-                    <p style="font-family: 'Rozha One', serif; font-size: 44px; margin-right: 1rem;">News & Events</p>
-                    <div style=" margin-left:5px;width: 70%; border-bottom-width: 3px; border-bottom-color: #000000;">
-                    </div>
-                </div>
-
-                <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-left: -2rem;">
-
-                    @foreach($updates as $update)
-                    <div style="width: 18rem; margin: 0 2rem 2rem 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease-in-out, transform 0.5s ease-in-out;">
-
-                        <div style="position: relative; overflow: hidden; border-radius: 1rem;">
-
-                            <img style="width: 100%; height: 500px; object-fit: cover; border-radius: 1rem 1rem 0 0; transition: transform 0.5s ease-in-out;" src="{{$update->coverphoto}}" alt="Update Image">
-
-                            <div style="padding: 1rem; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); color: #fff; position: absolute; bottom: 0; left: 0; right: 0;">
-
-                                <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; color: white; font-weight: bold;">{{$update->titleHeading}}</h2>
-
-                                <p style="margin-bottom: 0; color: #ccc; font-size: 1rem; font-weight: 600;">
-                                    <?php
-                                    $paragraph = $update->description;
-                                    $maxCharacters = 200;
-                                    echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
-                                    ?>
-                                </p>
-
-                                <a href="{{route('posts.showupdate', $update->id)}}" style="color: #FFD700; text-decoration: none; transition: color 0.3s ease-in-out; display: inline-block; margin-top: 1rem;">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            <div class="flex items-center mb-4">
+                                <p class="text-[26px] lg:text-[42px] font-rozha mr-4">News & Events</p>
+                                <div class="border-b-2 border-black w-full md:w-3/4"></div>
                             </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    </div>
-                </div>
 
+                            <div class="flex flex-wrap -ml-4">
+
+                                @foreach($updates as $update)
+                                <div class="w-[250px] h-[80px] md:w-1/2 lg:w-[250px] p-4">
+
+                                    <div class="relative overflow-hidden rounded-lg shadow-md">
+
+                                    <img class="w-full h-64 object-cover rounded-t-lg transition duration-500 ease-in-out" src="{{$update->coverphoto}}" alt="Update Image">
+
+                                    <div class="p-6 bg-gradient-to-b from-transparent to-black text-white">
+
+                                        <h2 class="text-xl font-playfair-display font-bold mb-2">{{$update->titleHeading}}</h2>
+
+                                        <p class="text-sm font-semibold mb-4">
+                                        <?php
+                                        $paragraph = $update->description;
+                                        $maxCharacters = 200;
+                                        echo strlen($paragraph) > $maxCharacters ? substr($paragraph, 0, $maxCharacters) . '...' : $paragraph;
+                                        ?>
+                                        </p>
+
+                                        <a href="{{route('posts.showupdate', $update->id)}}" class="text-yellow-400 transition duration-300 ease-in-out inline-block mb-4">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                    </div>
                     <!-- end of update -->
-                
-                <ul class="slider flex flex-col justify-items-center mt-[50rem]" id="slider1">
-                    <li class="relative">
-                        <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
-                            <!-- featured property description -->
-                            <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
+
+                    <ul class="slider flex flex-col justify-items-center mt-[45rem] lg:mt-[50rem]" id="slider1">
+                        <li class="relative">
+                            <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[2rem] pn:mt-2 ml-[2rem] w-max h-max">
+                                <!-- featured property description -->
+                                <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[90vw] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-8 lg:mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
                                     <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
                                     <div>
-                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
-                                    <p class="font-poppins lg:text-[28px] text-[14px]">Taft East Gate</p>
+                                        <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
+                                        <p class="font-poppins lg:text-[28px] text-[14px]">Taft East Gate</p>
                                     </div>
                                     <div>
-                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">TYPE</p>
-                                    <p class="font-poppins lg:text-[28px] text-[14px]">Condominium Complex</p>
+                                        <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">TYPE</p>
+                                        <p class="font-poppins lg:text-[28px] text-[14px]">Condominium Complex</p>
                                     </div>
-                                    <div class="ml-2 lg:ml-0"> 
-                                    <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2 ">ADDRESS</p>
-                                    <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
+                                    <div class="ml-2 lg:ml-0">
+                                        <p p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">ADDRESS</p>
+                                        <p class="font-poppins lg:text-[28px] text-[12px] w-[150px] lg:w-[300px]">8 Cardinal Rosales Avenue, corner Pope John Paul II Ave, Cebu City, 6000 Cebu</p>
                                     </div>
-                             
-                                    <!-- <p class="font-poppins lg:text-[16px] text-[12px] mt-8 ml-1 self-center">Interested?</p>                           -->
-                            </div><!--end of featured property description -->
-                            <!-- image section -->
-                            <div class="relative lg:ml-[2rem] lg:mt-[3.5rem] pn:ml-1 lg:mx-auto lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-10 mt-[50px] pn:-mt-[0.90px] pn:w-[400px] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
+                                </div><!--end of featured property description -->
+                                <!-- image section -->
+                                <div class="relative lg:ml-[2rem] lg:mt-[2rem] pn:ml-1 mx-auto max-w-[90vw] lg:max-w-[1000px] overflow-hidden rounded-md bg-gray-100 p-2 sm:p-4 mb-4 mt-6 pn:-mt-[0.90px] pn:w-[90vw] pn:h-[330px] lg:w-[800px] lg:h-[530px]">
                                     <img src="/images/tafteastgate.png" alt="" style="" class="w-auto h-auto">
+                                </div>
+                                <!-- end of image section -->
                             </div>
-                            <!-- end of image section -->
-                        </div>
-                    </li>
-                    <li class="relative hidden">
+                        </li>
+                        <li class="relative hidden">
                         <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
                             <div class="lg:flex lg:flex-col pn:grid pn:grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
@@ -200,24 +215,25 @@
                             <!-- end of image section -->
                         </div>
                     </li>
-                  
-                </ul>
-                  <!-- slider buttons -->
-                  <div class="absolute self-center mt-[30rem] lg:mt-[85rem] lg:ml-[30rem] lg:w-[790px] pn:w-[400px] pn:ml-[34px] flex flex-row justify-between px-2">
-                            <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </button>
-                            <button  id="nextButtonslider1" class="p-3 text-black bg-dirtywhite opacity-75 rounded-full">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
-                     </div> <!-- end of buttons -->
-        </div> <!-- end of featured content -->
+
+                    </ul>
+                    <!-- slider buttons -->
+                    <div class="-mt-[12rem] self-center lg:-mt-[18rem] lg:ml-[31rem] lg:w-[700px] pn:w-[90vw] pn:ml-[2rem] flex flex-row justify-between px-2">
+                        <button id="prevButtonslider1" class="p-3 text-black rounded-full bg-dirtywhite opacity-75">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button id="nextButtonslider1" class="p-3 text-black bg-dirtywhite opacity-75 rounded-full">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div> <!-- end of buttons -->
+
+                
         
         <!-- start of buy or rent  -->
-        <div class="flex flex-col lg:flex-row -ml-[3rem] mt-[3rem] lg:mt-[65rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
+        <div class="flex flex-col lg:flex-row mt-[12rem] lg:mt-[25rem] lg:ml-[7rem] px-[4rem] space-x-[10px]">
                 <img src="/images/BDRSPost.png" alt="" style="" class="h-auto w-auto border-2 border-white shadow-md rounded-md">
 
-                <div class="flex flex-col justify-center place-items-center px-2 pn:ml-[10rem] lg:px-4 py-4 w-[180px] lg:w-[600px]">
+                <div class="flex flex-col justify-center place-items-center mt-12 ml-[5rem] px-2 pn:ml-[10rem] lg:px-4 py-4 w-[180px] lg:w-[600px]">
                         <p class="font-rozha lg:text-[55px] text-[25px] font-medium">EMPOWERING</p>
                         <p class="font-rozha lg:text-[55px] text-[25px] font-medium -mt-[1.1rem] lg:-mt-[2.5rem]">YOUR CHOICE</p>
                         <p class="font-playfair lg:text-[50px] text-[16px] font-medium">Buy or Rent</p>
@@ -236,7 +252,7 @@
         <!-- end of buy or rent -->
            
 
-        <div class="mt-[10rem] bottom-0 w-full">@include('layouts.footer')</div>
+        <div class="mt-[5rem] bottom-0 w-full">@include('layouts.footer')</div>
            
 
 
