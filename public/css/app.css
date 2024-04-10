@@ -3017,6 +3017,14 @@ select{
     margin-top: 12rem;
   }
 
+  .lg\:-mt-\[10rem\]{
+    margin-top: -10rem;
+  }
+
+  .lg\:mt-4{
+    margin-top: 1rem;
+  }
+
   .lg\:flex{
     display: flex;
   }

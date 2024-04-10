@@ -139,7 +139,7 @@
                             <div class="flex flex-col lg:flex-row justify-evenly self-start lg:mt-[2rem] pn:mt-2 ml-[2rem] w-max h-max">
                                 <!-- featured property description -->
                                 <div class="lg:flex lg:flex-col grid grid-cols-2 justify-center w-[90vw] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-8 lg:mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
-                                    <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
+                                    <p class="font-playfair self-center mb-8 mr-8 mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
                                     <div>
                                         <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
                                         <p class="font-poppins lg:text-[28px] text-[14px]">Taft East Gate</p>
@@ -164,7 +164,7 @@
                         <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
                             <div class="lg:flex lg:flex-col grid grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
-                                    <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
+                                    <p class="font-playfair self-center mb-8 mr-8 mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
                                     <div>
                                     <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
                                     <p class="font-poppins lg:text-[28px] text-[14px]">Vertex Central</p>
@@ -191,7 +191,7 @@
                         <div class="flex lg:flex-row pn:flex-col justify-evenly self-start lg:mt-[5rem] pn:mt-2 ml-[2rem] w-max h-max">
                             <!-- featured property description -->
                             <div class="lg:flex lg:flex-col grid grid-cols-2 justify-center w-[400px] h-max lg:w-[430px] lg:h-[530px] px-[2rem] pn:ml-[4px] pn:mb-2 py-4 mt-14 lg:ml-[5rem] border-t-2 border-l-2 border-r-2 lg:border-b-2 lg:border-r-0 border-darkblue">
-                                    <p class="font-playfair self-center mb-8 mr-8 -mt-[10rem] pn:mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
+                                    <p class="font-playfair self-center mb-8 mr-8 mt-4 lg:text-[38px] underline underline-offset-8">FEATURED</p>
                                     <div>
                                     <p class="font-poppins lg:text-[18px] text-[12px] underline underline-offset-4 mt-2">NAME</p>
                                     <p class="font-poppins lg:text-[28px] text-[14px]">Vertex Coast</p>
