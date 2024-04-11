@@ -34,6 +34,8 @@
                         <option value="Condominium">Condominium</option>
                         <option value="Commercial Space">Commercial Space</option>
                         <option value="House and Lot">House and Lot</option>
+                        <option value="Columbarium">Columbarium</option>
+                        <option value="Resort">Resort</option>
                         </select>
                 </div>
 

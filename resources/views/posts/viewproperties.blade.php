@@ -70,6 +70,8 @@
                     <option value="Condominium">Condominium</option>
                     <option value="Apartment">Apartment</option>
                     <option value="House and Lot">House and Lot</option>
+                    <option value="Columbarium">Columbarium</option>
+                    <option value="Resort">Resort</option>
                     </select>
 
                     <!-- <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="price">
