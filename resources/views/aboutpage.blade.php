@@ -36,7 +36,7 @@
 
             <div class="flex flex-col ml-[3rem] md:flex-row justify-center items-center w-full h-auto md:h-500 mt-8 md:mt-2 px-4 md:px-0 md:py-4">
                 <div class="w-[500px] md:w-1/2 lg:w-[400px] h-auto md:h-500 ml-2 md:ml-[2rem] md:mt-1">
-                    <img src="images/logo.png" alt="" class="w-40 h-40 md:w-64 md:h-64 ml-[10rem] md:ml-0 mt-20 md:mt-10 self-center">
+                    <img src="images/logo.png" alt="" class="w-40 h-40 md:w-[150px] md:h-[150px] ml-[10rem] md:ml-0 mt-20 md:mt-10 self-center">
                 </div>
                 <div class="w-full md:w-1/2 lg:w-2/3 flex flex-col md:ml-4 md:mt-0">
                     <p class="font-poppin text-base text-black mt-4 md:text-lg">Established on September 21, 2018, BDRS Realty Management Services Co. has emerged as a prominent player in the real estate sector, garnering the title of the most awarded realty for three consecutive years within its six-year existence. Specializing in top-tier Realty Brokerage, Management, and Services, the company ensures a personalized experience for clients engaged in buying, selling, or property management. The success of BDRS Realty is a testament to the trust earned from a diverse clientele. Beyond real estate, their commitment to excellence extends to sister companies, Patrona Gastro Pub and La Jefa Trading Inc., showcasing a dedication that spans various industries.</p>
@@ -107,7 +107,7 @@
         <p class="font-rozha ml-[18rem] text-[32px] lg:text-[44px] text-black self-center mt-[18rem] lg:mt-[12rem] w-[400px]">Our Leaders</p>
         <div class="flex flex-col ml-[4rem] justify-center items-center max-h-max-content max-w-max-content mt-8 md:mt-16 lg:mt-20">
             <div class="flex flex-col">
-                <img src="images/SirJerome.png" alt="" class="h-52 w-52 md:h-72 md:w-72 lg:h-80 lg:w-80 absolute border-4 border-[#eddea4] border-solid bg-[#fffcf2] rounded-lg shadow-md">
+                <img src="images/SirJerome.png" alt="" class="h-52 w-52 md:h-[[150px]] md:w-[[150px]] lg:h-80 lg:w-80 absolute border-4 border-[#eddea4] border-solid bg-[#fffcf2] rounded-lg shadow-md">
                 <div class="flex flex-col bg-[#fffcf2] border-2 border-[#0d5385] shadow-md ml-[10rem] mt-2 md:mt-4 lg:mt-6 max-w-max-content">
                     <div class="ml-16 md:ml-[8rem] lg:ml-[12rem] px-3 py-1 w-96 md:w-[204px] lg:w-[820px]">
                         <p class="font-playfair font-semibold text-2xl md:text-3xl lg:text-4xl text-black self-start mb-2 md:mb-4 border-b-2 border-[#eddea4]">President Jerome Barbanida</p>
@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="flex flex-col mt-14 md:mt-20 lg:mt-[14rem] mb-8 md:mb-12 lg:mb-16">
-                <img src="images/MamInin.png" alt="" class="h-52 w-52 md:h-72 md:w-72 lg:h-80 lg:w-80 absolute border-4 border-[#eddea4] border-solid bg-[#fffcf2] rounded-lg shadow-md">
+                <img src="images/MamInin.png" alt="" class="h-52 w-52 md:h-[[150px]] md:w-[[150px]] lg:h-80 lg:w-80 absolute border-4 border-[#eddea4] border-solid bg-[#fffcf2] rounded-lg shadow-md">
                 <div class="flex flex-col bg-[#fffcf2] border-2 border-[#0d5385] shadow-md ml-[10rem] mt-2 md:mt-4 lg:mt-6 max-w-max-content">
                     <div class="ml-16 md:ml-[8rem] lg:ml-[12rem] px-3 py-1 w-96 md:w-[204px] lg:w-[820px]">
                         <p class="font-playfair font-semibold text-2xl md:text-3xl lg:text-4xl text-black self-start mb-2 md:mb-4 border-b-2 border-[#eddea4]">Chairwoman Novellyn G. Quiambao</p>

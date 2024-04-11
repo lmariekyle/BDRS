@@ -2908,6 +2908,14 @@ select{
     height: 18rem;
   }
 
+  .md\:h-\[150px\]{
+    height: 150px;
+  }
+
+  .md\:h-\[\[150px\]\]{
+    height: [150px];
+  }
+
   .md\:w-1\/2{
     width: 50%;
   }
@@ -2942,6 +2950,14 @@ select{
 
   .md\:w-\[404px\]{
     width: 404px;
+  }
+
+  .md\:w-\[150px\]{
+    width: 150px;
+  }
+
+  .md\:w-\[\[150px\]\]{
+    width: [150px];
   }
 
   .md\:grid-cols-3{
