@@ -29,130 +29,103 @@
 
         <!-- start of  content -->
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 2rem; width: 100%; max-height: max-content;">
-           <div style="display: flex; flex-direction: column; margin-bottom: 5rem;">
-            <p style="font-family: 'Rozha One', serif; font-size: 42px; color: #000000; align-self: center; margin-top: 8rem;">About Us</p>
-            <p style="font-family: 'Poppins', sans-serif; font-size: 22px; color: #000000; align-self: center; margin-top: 1rem; font-weight: 600; margin-left: 1rem;">BDRS Realty Management Services Co.</p>
-           </div>
+        <div class="flex flex-col ml-[2rem] mb-20">
+                <p class="font-rozha text-5xl text-black self-center mt-32 md:text-[44px] md:mt-8">About Us</p>
+                <p class="font-poppins text-xl text-black self-center font-semibold mt-4 md:mt-1 md:ml-4">BDRS Realty Management Services Co.</p>
+            </div>
 
-           <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%; height: 500px; margin-top: 2rem; padding-left: 1rem; padding-right: 1rem; padding-top: 1rem; padding-bottom: 1rem;">
-                <div style="width: 1200px; height: 500px; margin-left: 0.5rem; margin-top: 8rem;">
-                    <img src="images/logo.png" alt="" style="width: 200px; height: 200px;margin-left: 5rem; margin-top: 10rem; align-self: center;">
+            <div class="flex flex-col ml-[3rem] md:flex-row justify-center items-center w-full h-auto md:h-500 mt-8 md:mt-2 px-4 md:px-0 md:py-4">
+                <div class="w-[500px] md:w-1/2 lg:w-[400px] h-auto md:h-500 ml-2 md:ml-[2rem] md:mt-1">
+                    <img src="images/logo.png" alt="" class="w-40 h-40 md:w-64 md:h-64 ml-[10rem] md:ml-0 mt-20 md:mt-10 self-center">
                 </div>
-                <div style="display: flex; flex-direction: column; margin-left: 1rem; margin-top: 3rem;">
-                    <p style="font-family: 'Rozha One', serif; font-size: 32px; color: #000000; margin-top: 10rem; margin-left: 35rem; margin-bottom: 1rem;">Our Story</p>
-                        <table style="table-layout: auto; border-spacing: 2px; margin-left: 1rem; border-right: 1px solid #000000; border-right-width: 2px; margin-right:2rem;">
-                            <tbody>
-                                <tr class="">
-                                    <th scope="row" style="padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 1rem; padding-bottom: 1rem; font-family: 'Poppins', sans-serif; font-size: 14px; color: #000000; align-self: center;">
-                                        2017-2018
-                                    </th>
-                                    <td style="padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 2rem; font-family: 'Poppins', sans-serif; font-size: 12px; color: #000000;">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </td>
-                                </tr>
-                                <tr>
-                                <th scope="row" style="width: 20rem; padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 1rem; padding-bottom: 1rem; font-family: 'Poppins', sans-serif; font-size: 14px; color: #000000; align-self: center;"">2019</th>
-                                <td style="padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 2rem; font-family: 'Poppins', sans-serif; font-size: 12px; color: #000000;">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </td>
-                                </tr>
-                                <tr>
-                                <th scope="row" style="padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 1rem; padding-bottom: 1rem; font-family: 'Poppins', sans-serif; font-size: 14px; color: #000000; align-self: center;">2020-2022</th>
-                                <td style="padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 2rem; font-family: 'Poppins', sans-serif; font-size: 12px; color: #000000;">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </td>
-                                </tr>
-                                <tr>
-                                <th scope="row" style="padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 1rem; padding-bottom: 1rem; font-family: 'Poppins', sans-serif; font-size: 14px; color: #000000; align-self: center;">2023-Present</th>
-                                <td style="padding-left: 2rem; padding-right: 2rem; padding-top: 1rem; padding-bottom: 2rem; font-family: 'Poppins', sans-serif; font-size: 12px; color: #000000;">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </td>
-                                </tr>
-                            </tbody>
-                            </table>
+                <div class="w-full md:w-1/2 lg:w-2/3 flex flex-col md:ml-4 md:mt-0">
+                    <p class="font-poppin text-base text-black mt-4 md:text-lg">Established on September 21, 2018, BDRS Realty Management Services Co. has emerged as a prominent player in the real estate sector, garnering the title of the most awarded realty for three consecutive years within its six-year existence. Specializing in top-tier Realty Brokerage, Management, and Services, the company ensures a personalized experience for clients engaged in buying, selling, or property management. The success of BDRS Realty is a testament to the trust earned from a diverse clientele. Beyond real estate, their commitment to excellence extends to sister companies, Patrona Gastro Pub and La Jefa Trading Inc., showcasing a dedication that spans various industries.</p>
                 </div>
-           </div>
+            </div>
+
                 
-           <p style="font-family: 'Rozha One', serif; font-size: 42px; color: #000000; align-self: center; margin-top: 18rem;">Our Brand Identity</p>
+            <p class="font-rozha ml-[2rem] text-[42px] text-black self-center mt-72">Our Brand Identity</p>
             <div style="border-bottom: 1px solid #000000;"></div>
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; max-height: max-content; max-width: max-content; margin-top: 1rem; column-gap: 8rem;">
-                    <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; height: 500px; max-width: max-content; margin-top: 12rem;">
-                        <p style="font-family: 'Rozha One', serif; font-size: 32px; color: #000000; align-self: center; margin-top: 2rem;">Realty</p>
-                        <p style="width: 40rem; height: 200px; padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 1rem; padding-bottom: 1rem; font-family: 'Poppins', sans-serif; font-size: 16px; color: #000000; align-self: center; word-break: break-word; text-indent: 2rem;">Experience a world of possibilities with our expert consultancy services tailored to your real estate dreams. Discover the perfect lifestyle that suits your desires and needs, all while ensuring the utmost security and peace of mind. Explore a diverse range of options and embark on your journey towards the ideal living experience with confidence.</p>
+            <div class="flex flex-col ml-[6rem] lg:flex-row justify-center items-center max-h-max max-w-max -mt-[5rem] gap-x-4">
+                <div class="flex flex-col justify-start items-center lg:h-[500px] max-w-max mt-48">
+                    <p class="font-rozha text-2xl lg:text-[22px] text-black self-center mt-8">Realty</p>
+                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8">Experience a world of possibilities with our expert consultancy services tailored to your real estate dreams. Discover the perfect lifestyle that suits your desires and needs, all while ensuring the utmost security and peace of mind. Explore a diverse range of options and embark on your journey towards the ideal living experience with confidence.</p>
+                </div>
+                <div class="flex flex-row justify-center items-center h-[500px] w-[500px]">
+                    <div class="bg-blue-800 border-2 border-black h-[400px] w-[400px] shadow-md"></div>
+                    <div class="flex flex-col justify-center items-center absolute bg-gray-200 border-2 border-black h-[400px] w-[400px] mr-12 mt-8">
+                        <img src="images/realty.jpg" alt="" class="h-[360px] w-[360px] border-4 border-gray-200 rounded-md shadow-inner">
                     </div>
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; height: 500px; width: 500px;">
-                            <div style="background-color: #0d5385; border-width: 2px; border-color: #000000; height: 400px; width: 400px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);"></div>
-                            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; background-color: #f7f5f2; border-width: 2px; border-color: #000000; height: 400px; width: 400px; margin-right: 3rem; margin-top: 2rem;">
-                                <img src="images/realty.jpg" alt="" style="height:360px; width:360px;border-width: 4px; border-color: #f4f4f4; border-radius: 0.375rem; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);">
-                            </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col ml-[6rem] lg:flex-row justify-center items-center max-h-max max-w-max -mt-[5rem] gap-x-4">
+                <div class="flex flex-col justify-start items-center lg:h-[500px] max-w-max mt-48">
+                    <p class="font-rozha text-2xl lg:text-[22px] text-black self-center mt-8">Management</p>
+                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8">Elevate your investment strategy with our exclusive MANAGEMENT services, designed to not only save you valuable time but also guarantee exceptional returns on your investments. Our expert team is dedicated to guiding you in making the most informed and profitable choices, ensuring that your assets are managed to exceed even the loftiest of expectations. Let us empower your investments and turn your aspirations into a reality.</p>
+                </div>
+                <div class="flex flex-row justify-center items-center h-[500px] w-[500px] mt-[3rem]">
+                        <div class="bg-blue-800 border-2 border-black h-[400px] w-[400px] shadow-md"></div>
+                        <div class="flex flex-col justify-center items-center absolute bg-gray-200 border-2 border-black h-[400px] w-[400px] mr-12 mt-4">
+                            <img src="images/management.jpg" alt="" class="h-[360px] w-[360px] border-4 border-gray-200 rounded-md shadow-inner">
+                        </div>
                     </div>
             </div>
 
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; max-height: max-content; max-width: max-content; margin-top: 1rem; column-gap: 10rem; margin-left:-5rem;">
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;  height: 500px; width: 500px;margin-left:4rem;">
-                            <div style="background-color: #0d5385; border-width: 2px; border-color: #000000; height: 400px; width: 400px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5); "></div>
-                                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; background-color: #f7f5f2; border-width: 2px; border-color: #000000; height: 400px; width: 400px; margin-left: 3rem; margin-top: 3rem;">
-                                        <img src="images/management.jpg" alt="" style="height:460px; width:460px;border-width: 4px; border-color: #f4f4f4; border-radius: 0.375rem; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);">
-                                    </div>
+            <div class="flex flex-col ml-[6rem] lg:flex-row justify-center items-center max-h-max max-w-max -mt-[5rem] gap-x-4">
+                <div class="flex flex-col justify-start items-center lg:h-[500px] max-w-max mt-48">
+                    <p class="font-rozha text-2xl lg:text-[22px] text-black self-center mt-8">Services</p>
+                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8">>We champion the art of exemplary service, going above and beyond without expecting anything in return. It's not just about the business at hand; it's about the dedication to deliver the absolute best in service, elevating the customer experience to unparalleled heights.</p>
+                </div>
+                <div class="flex flex-row justify-center items-center h-[500px] w-[500px]">
+                    <div class="bg-blue-800 border-2 border-black h-[400px] w-[400px] shadow-md"></div>
+                    <div class="flex flex-col justify-center items-center absolute bg-gray-200 border-2 border-black h-[400px] w-[400px] mr-12 mt-8">
+                        <img src="images/services.jpg" alt="" class="h-[360px] w-[360px] border-4 border-gray-200 rounded-md shadow-inner">
                     </div>
-
-                    <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; height: 500px; width: max-content; margin-top: 8px;">
-                        <p style="font-family: 'Rozha One', serif; font-size: 32px; color: black; align-self: center; margin-top: 6rem;">Management</p>
-                        <p style="width: 40rem; height: 200px; padding-left: 3px; padding-right: 3px; padding-top: 4px; padding-bottom: 4px; font-family: 'Poppins', sans-serif; font-size: 16px; color: black; align-self: center; word-wrap: break-word; text-indent: 8em;margin-top:1rem;">Elevate your investment strategy with our exclusive MANAGEMENT services, designed to not only save you valuable time but also guarantee exceptional returns on your investments. Our expert team is dedicated to guiding you in making the most informed and profitable choices, ensuring that your assets are managed to exceed even the loftiest of expectations. Let us empower your investments and turn your aspirations into a reality.</p>
-                    </div>
+                </div>
             </div>
 
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; max-height: 100vh; max-width: max-content; margin-top: 4rem; gap: 10rem; margin-left:1rem;">
-                <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; height: 500px; width: max-content; margin-top: 1rem;">
-                                <p style="font-family: 'Rozha One', serif; font-size: 32px; color: black; align-self: center; margin-top: 36px;">Services</p>
-                                <p style="width: 40rem; height: 200px; padding-left: 6px; padding-right: 6px; padding-top: 4px; padding-bottom: 4px; font-family: 'Poppins', sans-serif; font-size: 18px; color: black; align-self: center; word-wrap: break-word; text-indent: 8em;">We champion the art of exemplary service, going above and beyond without expecting anything in return. It's not just about the business at hand; it's about the dedication to deliver the absolute best in service, elevating the customer experience to unparalleled heights.</p>
-                </div>
-                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; height: 500px; width: 500px;">
-                            <div style="background-color: #0d5385; border: 2px solid black; height: 400px; width: 400px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);"></div>
-                                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; background-color: #fffcf2; border: 2px solid black; height: 400px; width: 400px; margin-right: 43px; margin-top: 40px;">
-                                        <img src="images/services.jpg" alt="" style="height:360px; width:360px;border-width: 4px; border-color: #edede9; border-style: solid; border-radius: 0.375rem; box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);">
-                                    </div>
-                    </div>
-        </div>
 
-        <p style="font-family: 'Rozha One', serif; font-size: 32px; color: black; align-self: center; margin-top: 4rem;">Our Core Commitments</p>
 
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; max-height: 100vh; max-width: max-content; margin-top: 3rem;">
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding-left: 5px; padding-right: 5px; padding-top: 7px; padding-bottom: 7px; gap: 3rem;">
+            <p class="font-rozha ml-[32rem] text-[32px] lg:[44px] text-black self-center mt-[12rem] w-[800px]">Our Core Commitments</p>
+
+        <div class="flex flex-col lg:flex-row justify-center items-center max-h-screen max-w-max mt-[15rem]">
+            <div class="flex flex-col ml-[3rem] lg:flex-row justify-center items-center shadow-md px-5 py-7 gap-12">
                 <div class="">
-                    <img src="images/4.png" alt="" style="height:360px; width:360px;border-width: 4px; border-color: #eddea4; border-style: solid; border-radius: 0.375rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <img src="images/4.png" alt="" class="h-96 w-96 border-4 border-[#eddea4] border-solid rounded-md shadow-md">
                 </div>
                 <div class="">
-                    <img src="images/5.png" alt="" style="height:360px; width:360px;border-width: 4px; border-color: #eddea4; border-style: solid; border-radius: 0.375rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <img src="images/5.png" alt="" class="h-96 w-96 border-4 border-[#eddea4] border-solid rounded-md shadow-md">
                 </div>
                 <div class="">
-                    <img src="images/6.png" alt="" style="height:360px; width:360px;border-width: 4px; border-color: #eddea4; border-style: solid; border-radius: 0.375rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    <img src="images/6.png" alt="" class="h-96 w-96 border-4 border-[#eddea4] border-solid rounded-md shadow-md">
                 </div>
             </div>
         </div>
 
-        <p style="font-family: 'Rozha One', serif; font-size: 52px; color: black; align-self: center; margin-top: 10rem;">Our Leaders</p>
 
-        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; max-height: max-content; max-width: max-content; margin-top: 2rem;">
-                <div style="display: flex; flex-direction: row;">
-                    <img src="images/SirJerome.png" alt="" style="height:260px; width:260px;position: absolute; border-width: 4px; border-color: #eddea4; border-style: solid;background-color: #fffcf2; border-radius: 0.375rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                    <div style="display: flex; flex-direction: column; background-color: #fffcf2; border: 2px solid #0d5385; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin-left: 10rem; margin-top: 10px; width: max-content;">
-                            <div style="margin-left: 8rem; padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; width: 800px;">
-                                <p style="font-family: 'Playfair Display', serif; font-size: 42px; color: black; align-self: flex-start; margin-right: 10px; font-weight: 600; border-bottom-width: 2px; border-bottom-color: eddea4; margin-bottom: 4px;">President Jerome Barbanida</p>
-                                <p style="font-family: 'Poppins', sans-serif; font-size: 22px; color: black; align-self: flex-start; margin-right: 10px; margin-bottom: 4px;">As the President of a thriving Realty Company, I've embarked on a journey of leadership, innovation, and unwavering dedication, shaping the company's success while helping countless individuals find their dream homes and build their futures.</p>
-                            </div>
+        <p class="font-rozha ml-[18rem] text-[32px] lg:text-[44px] text-black self-center mt-[18rem] lg:mt-[12rem] w-[400px]">Our Leaders</p>
+        <div class="flex flex-col ml-[4rem] justify-center items-center max-h-max-content max-w-max-content mt-8 md:mt-16 lg:mt-20">
+            <div class="flex flex-col">
+                <img src="images/SirJerome.png" alt="" class="h-52 w-52 md:h-72 md:w-72 lg:h-80 lg:w-80 absolute border-4 border-[#eddea4] border-solid bg-[#fffcf2] rounded-lg shadow-md">
+                <div class="flex flex-col bg-[#fffcf2] border-2 border-[#0d5385] shadow-md ml-[10rem] mt-2 md:mt-4 lg:mt-6 max-w-max-content">
+                    <div class="ml-16 md:ml-[8rem] lg:ml-[12rem] px-3 py-1 w-96 md:w-[204px] lg:w-[820px]">
+                        <p class="font-playfair font-semibold text-2xl md:text-3xl lg:text-4xl text-black self-start mb-2 md:mb-4 border-b-2 border-[#eddea4]">President Jerome Barbanida</p>
+                        <p class="font-poppins text-lg md:text-xl lg:text-2xl text-black self-start mb-2 md:mb-4">As the President of a thriving Realty Company, I've embarked on a journey of leadership, innovation, and unwavering dedication, shaping the company's success while helping countless individuals find their dream homes and build their futures.</p>
                     </div>
                 </div>
-                <div style="display: flex; flex-direction: row; margin-top: 7rem; margin-botton: 3rem;">
-                    <img src="images/MamInin.png" alt="" style="height:260px; width:260px;position: absolute; border-width: 4px; border-color: #eddea4; border-style: solid; background-color: #fffcf2; border-radius: 0.375rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                    <div style="display: flex; flex-direction: column; background-color: #fffcf2; border: 2px solid #0d5385; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin-left: 10rem; margin-top: 10px; width: max-content;">
-                            <div style="margin-left: 8rem; padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; width: 800px;">
-                                <p style="font-family: 'Playfair Display', serif; font-size: 42px; color: black; align-self: flex-start; margin-right: 10px; font-weight: 600; border-bottom-width: 2px; border-bottom-color: #eddea4; margin-bottom: 4px;">Chairwoman Novellyn G. Quiambao</p>
-                                <p style="font-family: 'Poppins', sans-serif; font-size: 22px; color: black; align-self: flex-start; margin-right: 10px; margin-bottom: 4px;">As the Chairwoman of our esteemed Realty Company, I've led with a commitment to excellence, fostering growth, and empowering our team to redefine industry standards while creating countless success stories for our clients and partners.</p>
-                            </div>
+            </div>
+            <div class="flex flex-col mt-14 md:mt-20 lg:mt-[14rem] mb-8 md:mb-12 lg:mb-16">
+                <img src="images/MamInin.png" alt="" class="h-52 w-52 md:h-72 md:w-72 lg:h-80 lg:w-80 absolute border-4 border-[#eddea4] border-solid bg-[#fffcf2] rounded-lg shadow-md">
+                <div class="flex flex-col bg-[#fffcf2] border-2 border-[#0d5385] shadow-md ml-[10rem] mt-2 md:mt-4 lg:mt-6 max-w-max-content">
+                    <div class="ml-16 md:ml-[8rem] lg:ml-[12rem] px-3 py-1 w-96 md:w-[204px] lg:w-[820px]">
+                        <p class="font-playfair font-semibold text-2xl md:text-3xl lg:text-4xl text-black self-start mb-2 md:mb-4 border-b-2 border-[#eddea4]">Chairwoman Novellyn G. Quiambao</p>
+                        <p class="font-poppins text-lg md:text-xl lg:text-2xl text-black self-start mb-2 md:mb-4">As the Chairwoman of our esteemed Realty Company, I've led with a commitment to excellence, fostering growth, and empowering our team to redefine industry standards while creating countless success stories for our clients and partners.</p>
                     </div>
                 </div>
+            </div>
         </div>
+
         
     </div> <!-- end div of col! -->
         <div style="margin-top:10rem;">
