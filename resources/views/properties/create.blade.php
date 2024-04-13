@@ -82,7 +82,8 @@
                         <select id="state" class="block mt-1 w-full" name="state" :value="old('state')" required autofocus>
                         <option value="">State</option>
                         <option value="Cebu">Cebu</option>
-                    <option value="Lapu-Lapu">Lapu-Lapu</option>
+                        <option value="Lapu-Lapu">Lapu-Lapu</option>
+                        <option value="Aklan">Aklan</option>
                         </select>
                 </div>
                 <div class="mt-4 px-4">

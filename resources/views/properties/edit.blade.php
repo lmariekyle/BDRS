@@ -30,8 +30,8 @@
                     <option value="Condominium" {{ $property->type === 'Condominium' ? 'selected' : '' }}>Condominium</option>
                     <option value="Commercial Space" {{ $property->type === 'Commercial Space' ? 'selected' : '' }}>Commercial Space</option>
                     <option value="House and Lot" {{ $property->type === 'House and Lot' ? 'selected' : '' }}>House and Lot</option>
-                    <option value="Columbarium" {{ $property->type === 'Commercial Space' ? 'selected' : '' }}>Columbarium</option>
-                    <option value="Resort" {{ $property->type === 'House and Lot' ? 'selected' : '' }}>Resort</option>
+                    <option value="Columbarium" {{ $property->type === 'Columbarium' ? 'selected' : '' }}>Columbarium</option>
+                    <option value="Resort" {{ $property->type === 'Resort' ? 'selected' : '' }}>Resort</option>
                 </select>
             </div>
 
@@ -92,8 +92,9 @@
                 <div class="mt-4 px-4 ">
                 <x-input-label for="state" :value="__('State')" />
                         <select id="state" class="block mt-1 w-full" name="state" :value="$property->state" required autofocus>
-                            <option value="Cebu">Cebu</option>
-                            <option value="Manila">Manila</option>
+                        <option value="Cebu" {{ $property->state === 'Cebu' ? 'selected' : '' }}>Cebu</option>
+                    <option value="Lapu-Lapu" {{ $property->state === 'Lapu-Lapu' ? 'selected' : '' }}>Lapu-Lapu</option>
+                    <option value="Aklan" {{ $property->state === 'Aklan' ? 'selected' : '' }}>Aklan</option>
                         </select>
                 </div>
                 <div class="mt-4 px-4">

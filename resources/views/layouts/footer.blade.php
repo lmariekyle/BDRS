@@ -19,7 +19,7 @@
         <p class="font-playfair lg:text-[22px] text-black self-start font-semibold mb-3 text-[14px]">CONTACT US</p>
         <a href="https://maps.app.goo.gl/2TD6WNgrpQduZzCP7" class="font-poppin lg:text-[15px] text-black self-start mb-2 font-medium text-[14px]"><i class="fa-solid fa-map-pin mr-3 "></i>1312 Horseshoe Dr, Banawa, <br> Cebu City, 6000 Cebu</a>
         <a href="http://" class="font-poppin lg:text-[15px] text-black self-start mb-2 font-medium text-[14px]"><i class="fa-solid fa-envelope mr-3"></i>BDRS@REALTY.COM</a>
-        <a href="http://" class="font-poppin lg:text-[15px] text-black self-start mb-2 font-medium text-[14px]"><i class="fa-solid fa-phone mr-3"></i>+63 917 130 9444</a>
+        <a href="http://" class="font-poppin lg:text-[15px] text-black self-start mb-2 font-medium text-[14px]"><i class="fa-solid fa-phone mr-3"></i>09173110192</a>
     </div>
 
     <div class="flex flex-col mt-[2px] ml-[5rem] lg:ml-[5rem] w-[200px]">
