@@ -87,6 +87,7 @@
 
                     <select class="px-4 py-3 w-full rounded-md bg-gray-100 border-black focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" name="state">
                     <option value="">Location</option>
+                    <option value="Aklan">Aklan</option>
                     <option value="Cebu">Cebu</option>
                     <option value="Lapu-Lapu">Lapu-Lapu</option>
                     <option value="Ilo-Ilo">Ilo-Ilo</option>

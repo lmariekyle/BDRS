@@ -39,7 +39,7 @@
                     <img src="images/logo.png" alt="" class="w-40 h-40 md:w-[150px] md:h-[150px] ml-[10rem] md:ml-0 mt-20 md:mt-10 self-center">
                 </div>
                 <div class="w-full md:w-1/2 lg:w-2/3 flex flex-col md:ml-4 md:mt-0">
-                    <p class="font-poppin text-base text-black mt-4 md:text-lg">Established on September 21, 2018, BDRS Realty Management Services Co. has emerged as a prominent player in the real estate sector, garnering the title of the most awarded realty for three consecutive years within its six-year existence. Specializing in top-tier Realty Brokerage, Management, and Services, the company ensures a personalized experience for clients engaged in buying, selling, or property management. The success of BDRS Realty is a testament to the trust earned from a diverse clientele. Beyond real estate, their commitment to excellence extends to sister companies, Patrona Gastro Pub and La Jefa Trading Inc., showcasing a dedication that spans various industries.</p>
+                    <p class="font-poppin text-base text-black mt-4 md:text-lg text-justify">Established on September 21, 2018, BDRS Realty Management Services Co. has emerged as a prominent player in the real estate sector, garnering the title of the most awarded realty for three consecutive years within its six-year existence. Specializing in top-tier Realty Brokerage, Management, and Services, the company ensures a personalized experience for clients engaged in buying, selling, or property management. The success of BDRS Realty is a testament to the trust earned from a diverse clientele. Beyond real estate, their commitment to excellence extends to sister companies, Patrona Gastro Pub and La Jefa Trading Inc., showcasing a dedication that spans various industries.</p>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
             <div class="flex flex-col ml-[6rem] lg:flex-row justify-center items-center max-h-max max-w-max -mt-[5rem] gap-x-4">
                 <div class="flex flex-col justify-start items-center lg:h-[500px] max-w-max mt-48">
                     <p class="font-rozha text-2xl lg:text-[22px] text-black self-center mt-8">Realty</p>
-                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8">Experience a world of possibilities with our expert consultancy services tailored to your real estate dreams. Discover the perfect lifestyle that suits your desires and needs, all while ensuring the utmost security and peace of mind. Explore a diverse range of options and embark on your journey towards the ideal living experience with confidence.</p>
+                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8 text-justify">Experience a world of possibilities with our expert consultancy services tailored to your real estate dreams. Discover the perfect lifestyle that suits your desires and needs, all while ensuring the utmost security and peace of mind. Explore a diverse range of options and embark on your journey towards the ideal living experience with confidence.</p>
                 </div>
                 <div class="flex flex-row justify-center items-center h-[500px] w-[500px]">
                     <div class="bg-blue-800 border-2 border-black h-[400px] w-[400px] shadow-md"></div>
@@ -62,7 +62,7 @@
             <div class="flex flex-col ml-[6rem] lg:flex-row justify-center items-center max-h-max max-w-max -mt-[5rem] gap-x-4">
                 <div class="flex flex-col justify-start items-center lg:h-[500px] max-w-max mt-48">
                     <p class="font-rozha text-2xl lg:text-[22px] text-black self-center mt-8">Management</p>
-                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8">Elevate your investment strategy with our exclusive MANAGEMENT services, designed to not only save you valuable time but also guarantee exceptional returns on your investments. Our expert team is dedicated to guiding you in making the most informed and profitable choices, ensuring that your assets are managed to exceed even the loftiest of expectations. Let us empower your investments and turn your aspirations into a reality.</p>
+                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8 text-justify">Elevate your investment strategy with our exclusive MANAGEMENT services, designed to not only save you valuable time but also guarantee exceptional returns on your investments. Our expert team is dedicated to guiding you in making the most informed and profitable choices, ensuring that your assets are managed to exceed even the loftiest of expectations. Let us empower your investments and turn your aspirations into a reality.</p>
                 </div>
                 <div class="flex flex-row justify-center items-center h-[500px] w-[500px] mt-[3rem]">
                         <div class="bg-blue-800 border-2 border-black h-[400px] w-[400px] shadow-md"></div>
@@ -75,7 +75,7 @@
             <div class="flex flex-col ml-[6rem] lg:flex-row justify-center items-center max-h-max max-w-max -mt-[5rem] gap-x-4">
                 <div class="flex flex-col justify-start items-center lg:h-[500px] max-w-max mt-48">
                     <p class="font-rozha text-2xl lg:text-[22px] text-black self-center mt-8">Services</p>
-                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8">>We champion the art of exemplary service, going above and beyond without expecting anything in return. It's not just about the business at hand; it's about the dedication to deliver the absolute best in service, elevating the customer experience to unparalleled heights.</p>
+                    <p class="w-[400px] h-[200px] px-6 py-4 font-poppins text-base text-black self-center break-words text-indent-8 text-justify">>We champion the art of exemplary service, going above and beyond without expecting anything in return. It's not just about the business at hand; it's about the dedication to deliver the absolute best in service, elevating the customer experience to unparalleled heights.</p>
                 </div>
                 <div class="flex flex-row justify-center items-center h-[500px] w-[500px]">
                     <div class="bg-blue-800 border-2 border-black h-[400px] w-[400px] shadow-md"></div>
@@ -111,7 +111,7 @@
                 <div class="flex flex-col bg-[#fffcf2] border-2 border-[#0d5385] shadow-md ml-[10rem] mt-2 md:mt-4 lg:mt-6 max-w-max-content">
                     <div class="ml-16 md:ml-[8rem] lg:ml-[12rem] px-3 py-1 w-96 md:w-[204px] lg:w-[820px]">
                         <p class="font-playfair font-semibold text-2xl md:text-3xl lg:text-4xl text-black self-start mb-2 md:mb-4 border-b-2 border-[#eddea4]">President Jerome Barbanida</p>
-                        <p class="font-poppins text-lg md:text-xl lg:text-2xl text-black self-start mb-2 md:mb-4">As the President of a thriving Realty Company, I've embarked on a journey of leadership, innovation, and unwavering dedication, shaping the company's success while helping countless individuals find their dream homes and build their futures.</p>
+                        <p class="font-poppins text-lg md:text-xl lg:text-2xl text-black self-start mb-2 md:mb-4 text-justify">As the President of a thriving Realty Company, I've embarked on a journey of leadership, innovation, and unwavering dedication, shaping the company's success while helping countless individuals find their dream homes and build their futures.</p>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                 <div class="flex flex-col bg-[#fffcf2] border-2 border-[#0d5385] shadow-md ml-[10rem] mt-2 md:mt-4 lg:mt-6 max-w-max-content">
                     <div class="ml-16 md:ml-[8rem] lg:ml-[12rem] px-3 py-1 w-96 md:w-[204px] lg:w-[820px]">
                         <p class="font-playfair font-semibold text-2xl md:text-3xl lg:text-4xl text-black self-start mb-2 md:mb-4 border-b-2 border-[#eddea4]">Chairwoman Novellyn G. Quiambao</p>
-                        <p class="font-poppins text-lg md:text-xl lg:text-2xl text-black self-start mb-2 md:mb-4">As the Chairwoman of our esteemed Realty Company, I've led with a commitment to excellence, fostering growth, and empowering our team to redefine industry standards while creating countless success stories for our clients and partners.</p>
+                        <p class="font-poppins text-lg md:text-xl lg:text-2xl text-black self-start mb-2 md:mb-4 text-justify">As the Chairwoman of our esteemed Realty Company, I've led with a commitment to excellence, fostering growth, and empowering our team to redefine industry standards while creating countless success stories for our clients and partners.</p>
                     </div>
                 </div>
             </div>
